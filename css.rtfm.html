@@ -523,7 +523,7 @@ Also see AdvancedOptions</pre>
   }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="A-E" modifier="rvr" created="201101062108" modified="202209051937" changecount="63">
+<div title="A-E" modifier="rvr" created="201101062108" modified="202209081303" changecount="64">
 <pre>[[absolute]]
 [[after and before]]
 [[anchor]]
@@ -562,6 +562,7 @@ Also see AdvancedOptions</pre>
 [[CSS guidelines]]
 [[CSS Rules]]
 [[CSS Styles]]
+[[Custom Properties|variables]] - variables
 [[display]]
 [[div]]
 [[document]]
@@ -955,11 +956,12 @@ Grid items will use:
 ** ''align-self: center;'' - to center individual item in row
 </pre>
 </div>
-<div title="CSS Rules" modifier="rvr" created="201004022310" modified="202208311650" changecount="67">
+<div title="CSS Rules" modifier="rvr" created="201004022310" modified="202209081058" changecount="68">
 <pre>CSS rules are simple, and it is how we declare the format is:
 &lt;html&gt;&lt;pre&gt;   selector {declaration;}      // basic format
-
    selector {property:value;}   // more detail format
+&lt;/pre&gt;&lt;/html&gt;
+Aome examples: &lt;html&gt;&lt;pre&gt;
    p{color:pink;}               // an example of an element type selector - all &quot;p&quot; tags
    footer p{color:red;}         // only p tags in footer 
    .make-blue { color: blue; }  // an example of a class selector
@@ -1029,7 +1031,7 @@ To move around use cntl-] and cntl-[</pre>
 <div title="DefaultTiddlers" modifier="rvr" created="200906011623" modified="201004022303" changecount="3">
 <pre>[[Introduction]]</pre>
 </div>
-<div title="F-L" modifier="rvr" created="201004051706" modified="202209071304" changecount="92">
+<div title="F-L" modifier="rvr" created="201004051706" modified="202209081050" changecount="93">
 <pre>[[fieldset]]
 [[first-child and last-child]]
 [[first-line]]
@@ -1047,6 +1049,7 @@ To move around use cntl-] and cntl-[</pre>
 [[head]]
 [[header]] 
 [[height]]
+[[hover]]
 [[HTML]]
 [[HTML element]]
 [[ID]]
@@ -1291,7 +1294,7 @@ loadRemoteFile = function(url,callback,params)
 //}}}
 </pre>
 </div>
-<div title="M-Z" modifier="rvr" created="200905302335" modified="201705190120" changecount="83">
+<div title="M-R" modifier="rvr" created="202209081300" changecount="8">
 <pre>[[margin]] 
 [[margin examples]]
 [[media queries]]
@@ -1312,35 +1315,17 @@ loadRemoteFile = function(url,callback,params)
 [[rem|units]] - units
 [[responsive web design]]
 [[rgba]]
-[[root element]]
-[[SASS]]
-[[selector]]  
-[[selector examples]]
-[[sibling selector]]
-[[span]]
-[[style]]
-[[syntax]]
-[[table]]
-[[tags]]
-[[text]]
-[[tooltip]]
-[[tricks]]
-[[universal selector]]
-[[units]]
-[[user agent stylesheet]]
-[[vertical-align]]
-[[vw]] - also ''vh''
-[[width|height]]
-[[z-index]]</pre>
+[[root element]]</pre>
 </div>
-<div title="MainMenu" modifier="rvr" created="200905302328" modified="202207141553" changecount="30">
+<div title="MainMenu" modifier="rvr" created="200905302328" modified="202209081301" changecount="31">
 <pre>[[Introduction]]
 [[Bootstrap]]
 
 !!Index
 [[A-E]]
 [[F-L]]
-[[M-Z]]
+[[M-R]]
+[[S-Z]]
 [[special chars]]
 
 !!Other Sites
@@ -1502,6 +1487,30 @@ merge(config.optionsDesc,{
 */
 //}}}</pre>
 </div>
+<div title="S-Z" modifier="rvr" created="200905302335" modified="202209081302" changecount="86">
+<pre>[[SASS]]
+[[selector]]  
+[[selector examples]]
+[[sibling selector]]
+[[span]]
+[[style]]
+[[syntax]]
+[[table]]
+[[tags]]
+[[text]]
+[[tooltip]]
+[[transform]]
+[[transition]]
+[[tricks]]
+[[universal selector]]
+[[units]]
+[[user agent stylesheet]]
+[[variables]]
+[[vertical-align]]
+[[vw]] - also ''vh''
+[[width|height]]
+[[z-index]]</pre>
+</div>
 <div title="SASS" modifier="rvr" created="201507131728" modified="201709150249" changecount="25">
 <pre>Sass is a language for writing stylesheets that improves on CSS:
 *[[nesting]]
@@ -1626,18 +1635,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209071903">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209081554">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 04/09/2022 20:51:29 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 05/09/2022 13:55:26 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 05/09/2022 15:19:45 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 05/09/2022 23:17:23 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/09/2022 12:25:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/09/2022 22:51:00 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 07/09/2022 18:23:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 07/09/2022 20:28:56 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 07/09/2022 20:38:41 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 07/09/2022 21:03:27 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 07/09/2022 21:03:27 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 08/09/2022 13:57:44 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 08/09/2022 14:46:10 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 08/09/2022 17:54:54 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2252,16 +2261,17 @@ Here you can add an @@color(red):A@@ after the ''h1'' element:
 }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="anchor" modifier="rvr" created="201407220605" modified="201601221711" changecount="9">
+<div title="anchor" modifier="rvr" created="201407220605" modified="202209081050" changecount="13">
 <pre>The anchor link has many [[pseudo-class]] values:
-*A:link - this is for unvisited links
-*A:visited - this is for visited links
-*A:active - this is what happens when you click
-*A:hover - when you hover over it.</pre>
+*a:link - this is for unvisited links
+*a:visited - this is for visited links
+*a:active - this is what happens when you click
+*a:hover - when you [[hover]] over it.
+</pre>
 </div>
-<div title="animation" modifier="rvr" created="201705240014" modified="201705240026" changecount="9">
+<div title="animation" modifier="rvr" created="201705240014" modified="202209081218" changecount="12">
 <pre>There are some CSS animation properties to do ''fun''ky things in CSS
-See also [[transition]]
+See also [[transition]] and its companion [[transform]].
 Example
 &lt;html&gt;&lt;pre&gt;
 &amp;lt;property&gt;: duration timing-function delay iteration-count direction fill-mode play-state name
@@ -2281,7 +2291,41 @@ The animation CSS property is a shorthand property for
 |animation-direction|normal|
 |animation-fill-mode|none|
 |animation-play-state|running|
-</pre>
+
+
+See [[animation example]].</pre>
+</div>
+<div title="animation example" modifier="rvr" created="202209081222" modified="202209081246" changecount="8">
+<pre>We have a div that is a box. To animate, we are going to:
+*move it
+** in 50% of time alloted to the right 222px
+** by 100% of time, down 333px.
+*take 3 seconds to do that
+*keep box at ending position (''animation-fill-mode'')
+All these can be in a shortcut - see [[animation]]. Here is the css to do such a thing:&lt;html&gt;&lt;pre&gt;
+div#animate {
+    background-color: darkblue;
+    color: white;
+    border-radius: 42px;
+    animation-name: moveitmoveit88;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+} 
+
+@keyframes moveitmoveit88 {
+    50% {
+        transform: translate(222px, 0px);
+    }
+    100% {
+         transform: translate(222px, 333px);
+    }
+&lt;/pre&gt;&lt;/html&gt;
+If we use:
+* ''animation-direction: reverse;'' - it starts at ending position and goes to start.
+* ''animation-iteration-count: 3;'' - repeats 3x. Want more? try ''infinite''. 
+* '' animation-play-state: paused;'' - change to ''running'' by javascript. Or vice versa.
+* ''animation-timing-function: ease-out;'' - velocity style of animation. Very cusomizable.
+See also [[transition example]].</pre>
 </div>
 <div title="attribute" modifier="rvr" created="200912130228" modified="201602220951" changecount="8">
 <pre>In HTML an ''attribute'' is a property of an [[element]], providing more information, they look like a key/value pair. For the following paragraph element, there is one attribute:
@@ -3211,6 +3255,14 @@ header {
    height:100%        // Will fit perfectly in the container/wrapper it is in.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
+<div title="hover" modifier="rvr" created="202209081050" changecount="8">
+<pre>We have a div that is a box with content. We want to hover over this box, and want to see it expand by 50%.
+&lt;html&gt;&lt;pre&gt;
+div:hover {
+  width: 50%;
+}
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
 <div title="image darker" modifier="rvr" created="201601192005" modified="201601211901" changecount="2">
 <pre>Sometimes a image is too light and text on top can be hard to read. 
 One trick is to use the linear-gradient, but set both values the same and a transparency of 69%.
@@ -4043,10 +4095,9 @@ On a button it's defaulted to the top. But it can be on any side by adding: @@da
 &lt;/pre&gt;&lt;/html&gt;See example at (click on ''sun'' http://rtfm.ca/bootstrap/navtab.html)
 </pre>
 </div>
-<div title="transform" modifier="rvr" created="201705180254" modified="201705180318" changecount="30">
-<pre>The ''transform'' property allows us to do all kinds of things.
-One thing is to center an image.
-Format: @@ transform: translate(x, y); @@
+<div title="transform" modifier="rvr" created="201705180254" modified="202209081149" changecount="33">
+<pre>The ''transform'' property can move or change the appearance of an element. It is often used with [[transition]].
+Let's center an image. Format: @@ transform: translate(x, y); @@
 Header with a logo
 &lt;html&gt;&lt;pre&gt;
 .header-logo {
@@ -4057,19 +4108,65 @@ Header with a logo
   position: absolute;
   transform: translate(-50%, -50%);
 }
-&lt;/pre&gt;&lt;/html&gt;Here we can get the center of the element - using top/left of 50%. But the image needs to be centered, not the top-left corner of it. So we have to ''transform'' this image, by moving it 50% along the x and y axis to get the image at center.</pre>
+&lt;/pre&gt;&lt;/html&gt;Here we can get the center of the element - using top/left of 50%. But the image needs to be centered, not the top-left corner of it. So we have to ''transform'' this image, by moving it 50% along the x and y axis to get the image at center.
+
+See also [[transition]].</pre>
 </div>
-<div title="transition" modifier="rvr" created="201705240027" modified="201705240036" changecount="9">
-<pre>CSS ''transitions'' provide a way to smoothly control animation speed when changing CSS properties.
-Example: ''transition: all 0.5s ease-in-out;'' - animates from partially transparent to opaque.
+<div title="transition" modifier="rvr" created="201705240027" modified="202209081149" changecount="17">
+<pre>CSS ''transitions'' provide a way to smoothly control animation speed when changing CSS properties from one state to another. It is often used with [[transform]].
+An example would be to animate an element from partially transparent to opaque.
 
 Format: @@ transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;; @@
 
 |!Property|!Values|!Description|
-|transition-property||The name of transition.|
+|transition-property|all, inherit, &lt;css property name&gt;|The name of the css property to transition.|
 |transition-duration|ns (n=# s=s)|Period over which transition occurs.|
 |transition-timing-function|ease, linear, stop-end, steps(4, end)|Specifies a function to define how intermediate values for properties are computed.|
-|transition-delay|ns (n=# s=s)|Defines how long to wait between the time a property is changed and the transition actually begins.|</pre>
+|transition-delay|ns (n=# s=s)|Defines how long to wait between the time a property is changed and the transition actually begins.|
+
+See [[transition example]] and [[transform]]</pre>
+</div>
+<div title="transition example" modifier="rvr" created="202209081100" modified="202209081151" changecount="8">
+<pre>This example, we have a div that is a box, and we want to expand the box from 22% to 50% when we hover over it. We want the ''transition'' to be smooth, so we add 2 [[CSS Rules]] setting 4 ''transition-'' properties. Here is the required CSS:
+&lt;html&gt;&lt;pre&gt;div:hover {
+    width: 50%;
+}
+
+div {
+    background-color: orchid;
+    width: 22%;
+    height: 8em;
+    border-radius: 13px;
+    width: 50%;
+    padding: 123x;
+    margin: 4em;
+    transition-property: width;    // What property in &quot;hover&quot; to transition!
+    transition-duration: 1s;       // How long to do this complex haha task
+    transition-timing-function: ease;   // default - could also pick others
+    transition-delay: 1s;          // How long to delay the transition
+} 
+&lt;/pre&gt;&lt;/html&gt;You could also use the shortcut: ''transition width 1s ease 1%''
+
+Now let's add [[transform]] to this example - see [[transition example 2]].</pre>
+</div>
+<div title="transition example 2" modifier="rvr" created="202209081152" modified="202209081157" changecount="8">
+<pre>This expands the [[transition example]], we are adding a [[transform]] to the ''a:hover'' selector.
+Note that we need to call transition twice. Once for our width change and once for our ''transform''. Notice we used the shortcut to collapse 4 separate ''transition-'' properties (see [[transition example]]) into one property: ''transition''.
+&lt;html&gt;&lt;pre&gt;
+div:hover {
+    width: 50%;
+    transform: rotate(90deg)
+  }
+div {
+    background-color: orchid;
+    width: 22%;
+    height: 8em;
+    border-radius: 13px;
+    padding: 13px;
+    margin: 4em;
+    transition: width 1s, ease 1s, transform 1s ease 0s;
+} 
+&lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="tricks" modifier="rvr" created="201705190127" modified="201705190129" changecount="30">
 <pre>!!Down pointing triangle.
@@ -4151,6 +4248,31 @@ To narrow the range of this action, you can! This turns all focus highlighting o
 <div title="user agent stylesheet" modifier="rvr" created="201407110822" modified="201407110823" changecount="9">
 <pre>When using developer tools in Chrome (or firefox) you will see: ''user agent stylesheet'' with stuff you did not code. This is what the browser will set as a base styling. Anything that you do will override this! That is why you will see it at the bottom of the &quot;styles&quot; tab in the developer window. If you set any of its values, it will appear before &quot;user agent stylesheet&quot; and will cross out entries that are overridden.
 That is why you will see &quot;reset&quot; stylesheets - to start with a blank slate, especially for cross browser support.</pre>
+</div>
+<div title="variables" modifier="rvr" created="202209081303" modified="202209081355" changecount="8">
+<pre>Variables are used to help reduce redundancy. aka ''Custom Properties''.
+
+If we have multiple instances of same color, like: ''color #123456'' do:&lt;html&gt;&lt;pre&gt;
+:root {  --main-color: #448877; }
+h1 { color: var(--main-color); }
+em { background-color: var(--main-color); }   ...etc
+&lt;/pre&gt;&lt;/html&gt;
+
+Another example using numbers and maths:
+&lt;html&gt;&lt;pre&gt;
+:root {  
+  --some-size: 666px;
+  --some-pcent: 13%;
+  --a-bit-more: 3px;
+}
+div { 
+  gap: var(--a-bit-more);
+  height: calc(var(--some-pcent)*2 );
+  width: calc(var(--some-size) + var(--a-bit-more));
+}
+&lt;/pre&gt;&lt;/html&gt;You can even do things like ''calc(25px + 20vw);'' 
+
+</pre>
 </div>
 <div title="vertical-align" modifier="rvr" created="201705151836" modified="201705151837" changecount="30">
 <pre>The vertical-align property sets the vertical alignment of an element. It has an effect only on objects that are [[inline]], or ''inline block'' (see [[display]]. It centers them only in relation to the line of text that they appear on. 
