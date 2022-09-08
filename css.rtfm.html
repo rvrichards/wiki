@@ -663,7 +663,7 @@ Here are some
 |''well''|Provides visual depth for columns.|
 |''target''|Provides a target for jQuery.|</pre>
 </div>
-<div title="Bootstrap container" modifier="rvr" created="201703160425" modified="201703160447" changecount="21">
+<div title="Bootstrap container" modifier="rvr" created="201703160425" modified="202209071759" changecount="22">
 <pre>A Bootstrap container is for holding HTML elements and implementing a grid system.
 A container is fluid or fixed, inside a container you can use the [[grid]] system.
 !!Fixed Container
@@ -674,7 +674,7 @@ A fixed container is HTML responsive. Resizing a browser the width remains const
 &amp;lt/div&gt;
 &lt;/pre&gt;&lt;/html&gt;
 !!Fluid Container
-A fluid container spans the full width of the viewport. It will expand and contract fluidly as you resize the browser.
+A fluid container spans the full width of the [[viewport]]. It will expand and contract fluidly as you resize the browser.
 &lt;html&gt;&lt;pre&gt;
 &amp;lt;div class=&quot;container-fluid&quot;&amp;gt;
   ...
@@ -1029,7 +1029,7 @@ To move around use cntl-] and cntl-[</pre>
 <div title="DefaultTiddlers" modifier="rvr" created="200906011623" modified="201004022303" changecount="3">
 <pre>[[Introduction]]</pre>
 </div>
-<div title="F-L" modifier="rvr" created="201004051706" modified="202209051159" changecount="90">
+<div title="F-L" modifier="rvr" created="201004051706" modified="202209071304" changecount="92">
 <pre>[[fieldset]]
 [[first-child and last-child]]
 [[first-line]]
@@ -1050,7 +1050,9 @@ To move around use cntl-] and cntl-[</pre>
 [[HTML]]
 [[HTML element]]
 [[ID]]
+[[inherit]]
 [[image darker]]
+[[Image Sprites]]
 [[images]]
 [[! important]]
 [[inline]]
@@ -1136,7 +1138,7 @@ To get a thumbs-up icon on the &quot;Like&quot; button, it's just...
 &amp;lt;button class=&quot;btn btn-block btn-primary&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-thumbs-up&quot;&amp;gt;&amp;lt;/i&amp;gt; Like&amp;lt;/button&amp;gt;
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="HTML" modifier="rvr" created="201005252128" modified="201712152107" changecount="28">
+<div title="HTML" modifier="rvr" created="201005252128" modified="202209071753" changecount="30">
 <pre>HTML is a language for display content that uses [[element]]s, which are comprised of [[tags]]. 
 You should always choose the ~UTF-8 character encoding, Like: @@&lt;meta charset=&quot;utf-8&quot;/&gt;@@
 It is also an [[element]]! Albeit, a special one, see [[HTML element]].
@@ -1155,14 +1157,8 @@ An HTML [[document]] has 2 main sections, a [[head]] and a [[body]]:
   &amp;lt;/body&gt;
 &amp;lt;/html&gt;
 &lt;/pre&gt;&lt;/html&gt;
-There are two types of HTML elements:
-
-''Inline elements'' 
-- do not usually begin on a new line and usually contain only their own properties. They can appear with block-level elements.
-- things like img, b, strong, button, input...
-''[[block]]-level elements'' 
-- are elements may appear only within a &lt;body&gt; element.Typically they have a line break before and after it. They take up the width of their containers.
-- things like head, table, p, div</pre>
+There are two types of HTML [[element]]s : &lt;- &quot;inline&quot; and &quot;block-level&quot;.
+</pre>
 </div>
 <div title="HTML element" modifier="rvr" created="201509122043" modified="201601101315" changecount="22">
 <pre>The [[element]] HTML is a special one, it is the base element. It has it's height automatically assigned by the width &amp; height of the browser. 
@@ -1192,6 +1188,33 @@ You can also omit the element so that it can be applied anywhere:
 #bold
 &lt;/pre&gt;&lt;/html&gt;
 You can [[chain]] [[class]] selector with ID selector.</pre>
+</div>
+<div title="Image Sprites" modifier="rvr" created="202209062024" modified="202209062050" changecount="13">
+<pre>Image Sprites is a collection of images put into a single image. This is useful to save bandwidth.
+Example: Image is: width x height : 50x500 pixels - there are 10 images stacked, first at 0,0, second at 0,-50, last one at 0,-450
+&lt;html&gt;&lt;pre&gt;
+/* CSS */
+.sprite {
+    background: url(&quot;qwerty.png&quot;) no-repeat;
+}
+.one {
+    width: 50px; 
+    height: 50px; 
+    display: inline-block;  
+    background-position: 0 0px;  
+}
+.ten {
+    width: 50px; 
+    height: 50px; 
+    display: inline-block;  
+    background-position: 0 -450px; 
+}  
+
+/*  HTML  */
+    &amp;lt;span class=&quot;sprite one&quot;&gt;&amp;lt;/span&gt;
+    &amp;lt;span class=&quot;sprite ten&quot;&gt;&amp;lt;/span&gt;
+&lt;/pre&gt;&lt;/html&gt;
+Ya, you'll see both images.</pre>
 </div>
 <div title="Introduction" modifier="rvr" created="200905302331" modified="202209021839" changecount="107">
 <pre>[[HTML]] is best for defining content. Understand the definitions in [[HTML]].
@@ -1603,18 +1626,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209061025">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209071903">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 02/09/2022 20:39:50 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 03/09/2022 13:31:52 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 03/09/2022 16:26:25 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 03/09/2022 16:37:45 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 04/09/2022 20:02:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 04/09/2022 20:51:29 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 05/09/2022 13:55:26 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 05/09/2022 15:19:45 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 05/09/2022 23:17:23 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 06/09/2022 12:25:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 06/09/2022 12:25:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 06/09/2022 22:51:00 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 07/09/2022 18:23:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 07/09/2022 20:28:56 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 07/09/2022 20:38:41 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 07/09/2022 21:03:27 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2280,13 +2303,18 @@ a[target=&quot;_blank&quot;] {
 }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="background" modifier="rvr" created="201004022352" modified="201705181841" changecount="62">
+<div title="background" modifier="rvr" created="201004022352" modified="202209061946" changecount="69">
 <pre>The CSS Background properties are:
-*''background-size'' - size of image - because height and width properties don’t work for background styles.
-**Example: @@ background-size: cover; @@
-*''background-color''
 *''background-image ''- id the image to use
 **Example: @@ background-image: url(/images/donut.jpg); @@
+**With nothing else styled, the image will probably overflow and will be cropped to fit width and height.
+**So we can use the below setting
+*[[background-size]] - size of image - because height and width properties don’t work for background styles.
+**Example: @@ background-size: 100px 100px; @@ - this might repeat images (if image is small)
+**Example: @@ background-size: contain; @@ - will stretch until one edge it hit, then repeat image
+**Example: @@ background-size: cover; @@ - will stretch until all covered, but will crop
+*''background-clip''
+*''background-color''
 *''background-repeat'' - set if there will be one image or many
 *''background-attachment'' - so it doesn't move or it does (scroll)
 *''background-position'' - so we can place it where we want - ie set an anchor point so when resizing the pix will be resized on that anchor.
@@ -2304,6 +2332,37 @@ Examples:
    body { background: red url('coolpix.gif') no-repeat top right; }
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
+</div>
+<div title="background-size" modifier="rvr" created="202209061944" modified="202209062013" changecount="13">
+<pre>The ''background-size'' property handles the width and height of an image. Here is our css:
+&lt;html&gt;&lt;pre&gt;
+#rrimg {
+    width: 300px;
+    height: 200px;
+    border: 10px dashed black;
+    padding: 10px;
+    background-image: url('qwerty.jpg');
+}
+&lt;/pre&gt;&lt;/html&gt;
+Our image will be set in a space of 300x200 px.
+It will probably overflow, but we can change the size of the image, so let's try 100x100px:
+''background-size: 100px 100px;''
+This will probably show many repeating images.
+
+So let's try:
+''background-size: cover;''
+This will keep aspect ration until the image fills the space, will crop. Next...
+
+''background-size: contain;''
+This will keep the aspect ration for one side and then repeat image (aka tile) - kinda like 1x1.2 images. We could also add:
+''background-size: contain;''
+''background-repeat: no-repeat;''
+And this will only give 1 image but the rest is white space. You can play around with this more by adding the property ''background-origin'' with the following ''attributes'':
+* ''border-box;'' - background is positioned relative to the border box. Default is inside border.
+* ''padding-box'' - background is positioned relative to the padding box.
+* ''content-box'' - background is positioned relative to the content box.
+
+See [[background]] image.</pre>
 </div>
 <div title="block" modifier="rvr" created="201407220615" modified="202209031422" changecount="17">
 <pre>An element is either ''block'' or [[inline]]. A block element is the width of the web page and has line breaks enforced at the edges. 
@@ -2669,10 +2728,14 @@ The nodes are:
 *text nodes - the text inside elements
 *comment nodes - comments</pre>
 </div>
-<div title="element" modifier="rvr" created="200912130221" modified="202209051154" changecount="38">
+<div title="element" modifier="rvr" created="200912130221" modified="202209071757" changecount="41">
 <pre>In HTML the element describes the structure and content of a web page. There are two types of elements:
-* [[block]] - always start on a new line &amp; takes full page width. [[tags]] like ''&lt;h1&gt;'' or ''&lt;p&gt;''.
-* [[inline]] - only takes the space it needs. No new line either. With [[tags]] like a [[span]] or the emphasis element ''&lt;em&gt;''
+* [[block]] - always start on a new line (a line break before and after) &amp; takes full width of their container. 
+** these elements may appear only within a &lt;body&gt; element.
+** [[tags]] like h1, table, p, div
+* [[inline]] - only takes the space it needs. No new line either. 
+** [[tags]] like img, b, em, strong, button, input, [[span]]...
+** usually contain only their own properties
 
 An element would be: ''open-~HTML-tag + content + close-~HTML-tag''
 &lt;html&gt;&lt;pre&gt;&amp;lt;h1 class=&quot;awesome&quot;&amp;gt;Some Heading&amp;lt;/h1&amp;gt;
@@ -2685,7 +2748,6 @@ Elements are organized like a tree. This means that there are siblings, parents 
 In conventional use tag &amp; element are often interchanged.
 
 See also [[element space]].
-
 </pre>
 </div>
 <div title="element space" modifier="rvr" created="202209031421" changecount="1">
@@ -3161,13 +3223,32 @@ header {
 }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="images" modifier="rvr" created="201509071418" modified="201705181839" changecount="22">
+<div title="images" modifier="rvr" created="201509071418" modified="202209062014" changecount="23">
 <pre>Image tags, should include an ''alt'' attribute.
 @@&lt;img class=&quot;some-custom-border&quot; src=&quot;https://rtfm.ca/monster&quot; alt=&quot;A monster&quot;&gt;@@
 To open in a new tab use the ''target'' attribute: @@ target=&quot;_blank&quot; @@
-
+See also [[Image Sprites]]. An image sprite is a collection of images put into a single image, a whole other ball of wax,
 Make an [[image darker]].
 Note that background images are slightly different than just images. See [[background]].</pre>
+</div>
+<div title="inherit" modifier="rvr" created="202209071305" modified="202209071737" changecount="8">
+<pre>Inheritance. 
+We get css properties from stylesheets:
+* user agents -  aka the browser, set basic default styles.
+* author - these are stylesheets set by web developers. They can reset user-agent styles above.
+** Set using the ''style'' element.
+* user - these stylesheets are added typically by browser extensions or by web config.
+Every [[property]] is inherited or non-inherited.  
+* Inherited properties, if not set by stylesheet, will inherit what it's parent value. Like ''color''.
+** Element ''button'' is inherited, and is styled in ''user agent'' stylesheet.
+* Non-inherited will not look up the DOM tree. Like element ''border''.
+To get a non-inheriting element to inherit from its parent or to override an inheriting element:
+&lt;html&gt;&lt;pre&gt;
+button {
+    color: inherit;
+}
+&lt;/pre&gt;&lt;/html&gt;
+There is an ''all: initial'' property resets all properties to their initial value. There is also a ''inherit'' and ''unset'' property.</pre>
 </div>
 <div title="inline" modifier="rvr" created="201407220627" modified="202209031428" changecount="35">
 <pre>An element is either [[block]] or ''inline''.
@@ -3312,7 +3393,7 @@ The above could be shortened by just using numbers.
 Guideline: ''margin-top, margin-right, margin-bottom, and margin-left''
 CSS code: ''margin: 13px 27px 33px 42px;''</pre>
 </div>
-<div title="media queries" modifier="rvr" created="201601251354" modified="202208291713" changecount="5">
+<div title="media queries" modifier="rvr" created="201601251354" modified="202209071838" changecount="9">
 <pre>To determine the screen size so that we can do [[responsive web design]], we'll do a ''media query''. The browser will report this.
 |!Device|!Screen Width|
 |Mobile|0-480|
@@ -3325,46 +3406,23 @@ First we need to add a couple of lines to the ''index.html'' file:
 &amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;resources/css/queries.css&quot;&gt;
 &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
 &lt;/pre&gt;&lt;/html&gt;
-Here is ''queries.css''.
+Here is a sample ''queries.css''.
 &lt;html&gt;&lt;pre&gt;
-
-/* Big tablet to 1200px (widths smaller that the 1140px row) */
-@media only screen and (max-width: 1200px) { 
-  ...
-}
-
-/* Small tablet to big tablet: from 768px to 1023px */
-@media only screen and (max-width: 1023px) {
-    ...
-}
-
-/* Small phones to small tablets: from 481px to 767px */
-@media only screen and (max-width: 767px) { 
-  ...
-}
-
-/* Small phones: from 0 to 480px */
-@media only screen and (max-width: 480px) {
-    section { padding: 25px 0; }
-    .contact-form {width: 100%; }
-}
-
-
-
-
-
-&lt;/pre&gt;&lt;/html&gt;</pre>
+@media (min-width: 1001px) and (max-width: 1280px){ ... }      /* Laptops */
+@media (min-width: 768px) and (max-width: 1000px)) { ... }     /* Tablets and iPads */
+@media (min-width: 481px) and (max-width: 767px) { ...  }      /* Small tablets:  */
+@media (max-width: 480px){  ... }                              /* Small phones */
+&lt;/pre&gt;&lt;/html&gt;You may use or just one, depends on your needs. Anything not covered, regular css runs (ie not in these squiggly brackets and the browser will zoom in/out as required.</pre>
 </div>
-<div title="meta tags" modifier="rvr" created="201101060610" modified="201101060752" changecount="14">
-<pre>Meta tags are used to describe your web page and provide meta information.
+<div title="meta tags" modifier="rvr" created="201101060610" modified="202209071808" changecount="18">
+<pre>Meta tags are used to describe your web page and provide meta information. They always go in the head. Metadata is used by browsers to determine how to display content or reload page. Search engines will use it in the hunt for key words.
 |!Tag|!Description|
 |&lt;meta name=&quot;description&quot; content=&quot;widget sale&quot;/&gt;|For search engines - description.|
 |&lt;meta name=&quot;keywords&quot; content=&quot;widgets, grommets&quot;/&gt;|For search engine consumption.|
 |&lt;meta http-equiv=&quot;refresh&quot; content=&quot;xxx&quot;/&gt;|refresh web page in xxx seconds.|
 |&lt;meta http-equiv=&quot;refresh&quot; content=&quot;2;url=http://rtfm.ca&quot;/&gt;|Redirect to new page in 2 seconds.|
-
-&lt;html&gt;&lt;pre&gt;
-&lt;/pre&gt;&lt;/html&gt;</pre>
+|&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;|Designers use to control [[viewport]].|
+</pre>
 </div>
 <div title="more styling forms" modifier="rvr" created="201703160620" modified="201703160714" changecount="21">
 <pre>This has more styling of [[Bootstrap forms]].
@@ -3584,8 +3642,8 @@ You can overlap elements.There are four positioning methods:
 &lt;/pre&gt;&lt;/html&gt; 
 There are some other interesting positioning properties, like clip, cursor, and [[z-index]] not covered here.</pre>
 </div>
-<div title="property" modifier="rvr" created="201407110715" modified="202209031434" changecount="12">
-<pre>There are many properties that can be used in CSS, here are the ones I will cover:
+<div title="property" modifier="rvr" created="201407110715" modified="202209061942" changecount="14">
+<pre>There are many properties that can be used in CSS. To see exactly what a property is see: [[CSS Rules]]. Here are the properties I will cover:
 *[[colors]]
 *[[display]]
 *[[units]]
@@ -3593,6 +3651,7 @@ There are some other interesting positioning properties, like clip, cursor, and 
 *[[text]]
 *[[height]] - width
 *[[border-radius]]
+* [[background-size]]
 Probably others too.</pre>
 </div>
 <div title="pseudo-class" modifier="rvr" created="201601221710" modified="202209021826" changecount="23">
@@ -3663,18 +3722,29 @@ Note ''name'' groups the radio buttons. To have the user select one or more opti
 *Scrolls with content.
 </pre>
 </div>
-<div title="responsive web design" modifier="rvr" created="201601200752" modified="202208291714" changecount="8">
-<pre>Responsive web design means that as the screen size changes, desktop size -&gt; laptop size -&gt; tablet size -&lt; mobile size, that the design does not become ugly but responds professionally to the change.
-There are many techniques for doing this.
-One technique is to set a default pixel size for the document (use ''html'' element) and then for all other places use ''percentage'' for font-size. We won't actually use that html+font-size, but use it for a base.
-
-
-!Responsive design
-* Flexible grid-based layout - columns layout
-* [[media queries]] (To determine the screen size)
+<div title="responsive web design" modifier="rvr" created="201601200752" modified="202209071840" changecount="26">
+<pre>Responsive web design means that as the screen size changes, desktop size -&gt; laptop size -&gt; tablet size -&lt; mobile size, that the design does not become ugly but responds professionally to the change. Current philosophy is to design for mobile first and then scale up to larger screens.
+!!Responsive design Steps
+There are a few steps to this.
+* Flexible grid-based layout - columns layout. Like [[CSS Grids]].
+* Let browser know we will control viewport we'll use [[meta tags]]
+* To determine the screen size we'll use [[media queries]] 
 * Images that resize - based on screen resolution new [[picture]] tag
 
-JavaScript is not in responsive design, it's css + html only.
+To let the browser know that we want to use responsive design and honor how we tell it to scale using the [[viewport]], here is the [[meta tags]] we will need:
+&lt;html&gt;&lt;pre&gt;
+ &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;/pre&gt;&lt;/html&gt;
+Now, we'll need [[media queries]] to determine screen sizes. For example, if we are under 888px, then we take over the viewport and run lucky css code and then again under 666 we can have even other devlishly css code to run. Over 888 and the default viewport will run (pure zooming in and out).
+&lt;html&gt;&lt;pre&gt;
+@media (max-width: 888px) {
+    ... css code for lucky smaller screens
+}
+@media (max-width: 666) {
+    ... css code for devilishly smaller screens
+}
+&lt;/pre&gt;&lt;/html&gt;
+Javascript is not responsive design, it's css + html only. We have to set meta tage and control viewport to do that. Default browser viewport behaviour is simple zoom in and out.
 </pre>
 </div>
 <div title="rgba" modifier="rvr" created="201601141048" modified="201705102152" changecount="4">
