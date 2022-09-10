@@ -519,32 +519,110 @@ Also see [[AdvancedOptions]]</pre>
 <div title="DefaultTiddlers" creator="rvr" modifier="rvr" created="201804050755" changecount="1">
 <pre>[[Introduction]]</pre>
 </div>
+<div title="ERC20" creator="rvr" modifier="rvr" created="202209102039" modified="202209102054" changecount="5">
+<pre>The ''ERC20'' is the @@technical standard@@ for fungible tokens created using the Ethereum blockchain. 
+ERC20 is a form of token that can be issued on Ethereum, and presents a set of standards.
+Of course Ethereum tokens (ETH) follow this standard, and other tokens that follow this standard will be ''fungible'', that is they can be exchanged. Like converting between fiat CAD and EURO.
+ERC20 smart contracts use ERC20 tokens to make payments. There are many ERC20 tokens, like USDT, BNB, DAI, and LINK. 
+The standard currently has 9 rules, 6 are mandatory and 3 are optional.
+
+One implementation of this ERC20 is: ''@openzeppelin/contracts/token/~ERC20/~ERC20.sol;''
+The github repo is: ''https://github.com/OpenZeppelin/openzeppelin-contracts''</pre>
+</div>
 <div title="EVM" creator="YourName" modifier="rvr" created="202209081812" modified="202209081847" changecount="2">
 <pre>EVM - The Ethereum Virtual Machine  computes the state of the Ethereum network after each new block is added to the chain. 
 The EVM sits on top of Ethereum's hardware and node network layer. It is essentially a [[state machine]]
 It exists as a single entity on thousands of connected computers running an Ethereum client.
 TO know if your token will work with etherium, testing it against an ''evm'' is the key.</pre>
 </div>
-<div title="Index A-M" creator="rvr" modifier="rvr" created="201805141259" modified="202209091830" changecount="2">
-<pre>[[hardhat]]
+<div title="ElizaToken.sol" creator="rvr" modifier="rvr" created="202209102014" modified="202209102107" changecount="21">
+<pre>Here is the [[smart contract]] in file ''~ElizaToken.sol''. Following I'll go over the important points.
+&lt;html&gt;&lt;pre&gt;
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.0;
+import &quot;@openzeppelin/contracts/token/ERC20/ERC20.sol&quot;;
+contract ElizaToken is ERC20 {
+    constructor() ERC20(&quot;ElizaToken&quot;, &quot;ELIZA&quot;){
+        _mint(msg.sender, 42*10**6);
+    }
+
+    function mintTokens(address account, uint256 amount) public {
+        _mint(account, amount);
+    }
+}&lt;/pre&gt;&lt;/html&gt;
+Let's examine this file:
+* 1st like &quot;SPDX...&quot; is needed so that there are no compiler warnings.
+* 2nd line &quot;pragma..&quot; is needed so that we provide the [[Solidity]] version we are using
+* 3rd line &quot;import...&quot; is needed so that...
+**To import it has to be installed. Run: ''npm install @openzeppelin/contracts''
+** The github repo is: ''https://github.com/OpenZeppelin/openzeppelin-contracts''
+*4th line &quot;contract ~ElizaToken...&quot; is where we create and name the smart contract.
+** To create a token we use the [[ERC20]] standard 
+** We need to inherit from this contract, that is done via ''is ~ERC20''
+* 5th-7th line we have to overwrite the imported constructor ''~ERC20''.
+** Constructor expects 2 arguments: name of token &quot;~ElizaToken&quot;  and symbol &quot;ELIZA&quot;
+** The ''_mint'' function has two arguments: who gets the tokens &quot;msg.sender&quot; and 42.000000 tokens.
+* The last function ''mintTokens'' will allow us to send tokens to someone (account).</pre>
+</div>
+<div title="Hardhat" creator="rvr" modifier="rvr" created="202209091712" modified="202209102021" changecount="5">
+<pre>Hardhat is a development environment for Ethereum software.
+It is used for editing, compiling, debugging and deploying your smart contracts and dApps.
+It is tightly bound to [[Solidity]].
+It can be installed using npx. To work with hardhat:
+&lt;html&gt;&lt;pre&gt;
+$ npx hardhat
+Welcome to Hardhat v2.11.1
+✔ What do you want to do? · Create a JavaScript project
+...
+&lt;/pre&gt;&lt;/html&gt;
+See [[Hardhat directory structure]].</pre>
+</div>
+<div title="Hardhat directory structure" creator="rvr" modifier="rvr" created="202209100602" modified="202209102020" changecount="8">
+<pre>Once you have run [[Hardhat]] you will have a directory structure in that directory you installed in.
+It will look like:
+&lt;html&gt;&lt;pre&gt;
+Root
+├── contracts  - smart contracts, for tokens and NFTs
+│   └── Lock.sol
+├── hardhat.config.js
+├── node_modules  - tons of stuff in here node packages
+│   ├── abbrev
+│   ...
+├── package.json
+├── package-lock.json
+├── README.md
+├── scripts
+│   └── deploy.js
+├──test  - testing against our smart contracts
+├──.gitignore
+├──hardhat.config.js  - where we config our public testnet, 
+├──package.json - the node dependencies that this project will use
+└── README.md
+
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="Index A-M" creator="rvr" modifier="rvr" created="201805141259" modified="202209102108" changecount="4">
+<pre>[[create a smart contract]]
+[[Hardhat]]
 [[ico]]</pre>
 </div>
-<div title="Index N-Z" creator="rvr" modifier="rvr" created="201804061548" changecount="1">
+<div title="Index N-Z" creator="rvr" modifier="rvr" created="201804061548" modified="202209102006" changecount="2">
 <pre>[[remix]]
+[[smart contract]]
 [[solidity]]
 [[Truffle and Embark]]
 [[technology]]
 [[Web3.js and ETHJS]]</pre>
 </div>
-<div title="Introduction" creator="rvr" modifier="rvr" created="201804050754" modified="202209081906" changecount="10">
-<pre>Ethereum is a decentralized blockchain platform that establishes a peer-to-peer network that securely executes and verifies application code, called smart contracts. 
+<div title="Introduction" creator="rvr" modifier="rvr" created="201804050754" modified="202209102029" changecount="12">
+<pre>Ethereum is a decentralized blockchain platform that establishes a peer-to-peer network that securely executes and verifies application code, called smart contracts. Essentially: Ethereum is a network built for smart contracts.
 
 All about Etherium.
 * Decentralized blockchain platform  (Decentralized opposite of centralized. No central authority)
 * is a peer-to-peer network of many connected computer
 * like a ledger - recording immutable transactions for all to see.
 * verifies code and executes code running on the blockchain (EVM)
-* has smart contracts - mostly written in [[Solidity]]. See [[development]].
+* has [[smart contract]]s - mostly written in [[Solidity]]. See [[development]].
 * [[EVM]] - The Ethereum Virtual Machine is a piece of software that executes smart contracts
 * The chain token is ''Ethereum'' or ''Ether''.
 * To sign transactions on the network, you need to spend ''Ether''.
@@ -682,6 +760,10 @@ merge(config.optionsDesc,{
 <div title="SiteTitle" creator="rvr" modifier="rvr" created="201804050755" changecount="1">
 <pre>Ethereum</pre>
 </div>
+<div title="Solidity" creator="rvr" modifier="rvr" created="202209102043" changecount="1">
+<pre>''Solidity'' is is an object-oriented programming language for implementing [[smart contract]]s.
+It is similar to Javascript (EMCA), but has some OO features not available to EMCA.</pre>
+</div>
 <div title="Truffle and Embark" creator="rvr" modifier="rvr" created="201804061547" changecount="1">
 <pre>These...
 *provide [[contract management]]
@@ -759,18 +841,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201804050755" modified="202209100602">
+<div title="UploadLog" modifier="rvr" created="201804050755" modified="202209102110">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 05/04/2018 16:06:56 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
-| 06/04/2018 23:48:58 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
-| 28/04/2018 07:32:27 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
-| 14/05/2018 21:00:26 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 14/05/2018 21:06:22 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
-| 29/06/2018 21:25:53 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
-| 27/04/2019 09:39:17 | YourName | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
 | 08/09/2022 20:53:53 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 08/09/2022 21:06:31 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
-| 10/09/2022 08:02:37 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 10/09/2022 08:02:37 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
+| 10/09/2022 22:17:44 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 22:21:51 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 22:54:46 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 23:01:15 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 23:06:25 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 23:07:27 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 23:10:49 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201804050754" tags="systemConfig">
 <pre>/***
@@ -1341,47 +1423,36 @@ Browserify
 Node Package Manager (npm)
 *Downloads and manages modules from Node repo.</pre>
 </div>
-<div title="development" creator="rvr" modifier="rvr" created="202209081850" modified="202209081855" changecount="3">
+<div title="create a smart contract" creator="rvr" modifier="rvr" created="202209102008" modified="202209102106" changecount="4">
+<pre>This will show how to create a smart contract with [[Hardhat]] and [[Solidity]].
+In the [[Hardhat directory structure]] under contracts is where [[smart contract]]s go.
+Here would be some steps:
+*create a new file [[ElizaToken.sol]]</pre>
+</div>
+<div title="development" creator="rvr" modifier="rvr" created="202209081850" modified="202209102109" changecount="7">
 <pre>Development of anything in the Etherium space requires a few software tools:
-*smart contracts - mostly written in ''Solidity''. Also Rust.
+*[[smart contract]] - mostly written in ''Solidity''. Also Rust.
 *testing and front end work:  ''javascript''  
 *smart contract framework: ''Hardhat'' - to write-dev-test-debug smart contract - works with solidity
 *front end framework: ';React;; is most used for UI.
-*Connect website to blockchain, the library is: ''ethers.js''</pre>
+*Connect website to blockchain, the library is: ''ethers.js''
+See [[create a smart contract]].</pre>
 </div>
-<div title="environment" creator="rvr" modifier="rvr" created="201804050754" modified="202209091710" changecount="3">
+<div title="environment" creator="rvr" modifier="rvr" created="201804050754" modified="202209102023" changecount="4">
 <pre>The Ethereum Environment
 
-For writing [[smart contracts]] see [[hardhat]].
+For writing [[smart contract]]s see [[Hardhat]].
 
 Blockchain Nodes - they run client side
-Examples include Geth, Parity, or CPP-Etherium. (using different languages)
-They are implementing the Etherium protocol. 
+Examples include Geth, Parity, or CPP. (using different languages)
+They are implementing the Etherieum protocol. 
 They replicate all blocks in the blockchain locally - by querying nearby nodes.
 Can also run in &quot;lite&quot; mode, in which case they only download the headers.
 
 MetaMask or Mist is the software that connects the browser and the blockchain.
 MetaMask is actually a chrome/firefox plugin - makes it easy for the browser to connect to the blockchain.
 MetaMask uses a service called ''Infura'', which has Geth/Parity Blockchain nodes running.
-Mist its own browser with builtin capabilities to connect to blockchain. It is an actual blockchin node using GETH node.</pre>
-</div>
-<div title="hardhat" creator="rvr" modifier="rvr" created="202209091712" modified="202209091830" changecount="3">
-<pre>Hardhat is a development environment for Ethereum software.
-It is used for editing, compiling, debugging and deploying your smart contracts and dApps.
-It can be installed using npx. To work with hardhat:
-&lt;html&gt;&lt;pre&gt;
-$ npx hardhat
-Welcome to Hardhat v2.11.1
-✔ What do you want to do? · Create a JavaScript project
-...
-&lt;/pre&gt;&lt;/html&gt;
-See [[hardhat directory structure]].</pre>
-</div>
-<div title="hardhat directory structure" creator="rvr" modifier="rvr" created="202209100602" changecount="1">
-<pre>Once you have run [[hardhat]] you will have a directory structure in that directory you installed in.
-It will look like:
-&lt;html&gt;&lt;pre&gt;
-&lt;/pre&gt;&lt;/html&gt;</pre>
+Mist its own browser with builtin capabilities to connect to blockchain. It is an actual blockchain node using GETH node.</pre>
 </div>
 <div title="ico" creator="rvr" modifier="rvr" created="201805141259" changecount="1">
 <pre>An ''ico'' is an &quot;Initial Coin Offering&quot;
@@ -1393,6 +1464,11 @@ The ICO was on Ethereum’s blockchain which meant that I needed to send my Ethe
 *Compiles [[solidity]].
 *Debugging capabilities
 *Static analyzer</pre>
+</div>
+<div title="smart contract" creator="rvr" modifier="rvr" created="202209102006" modified="202209102032" changecount="2">
+<pre>Smart contract are virtual agreements written in code, programmed to execute automatically when certain conditions are met. Thus the ability to create decentralized applications is born. In order to do this the [[ERC20]] standard was created. This allows other blockchains and tokens built on top of Ethereum to work properly with Ethereum.
+
+How to [[create a smart contract]].</pre>
 </div>
 <div title="solidity" creator="rvr" modifier="rvr" created="201804061547" modified="201805141259" changecount="2">
 <pre>Solidity is a contract-oriented programming language for writing smart contracts
