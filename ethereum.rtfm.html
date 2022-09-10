@@ -525,8 +525,9 @@ The EVM sits on top of Ethereum's hardware and node network layer. It is essenti
 It exists as a single entity on thousands of connected computers running an Ethereum client.
 TO know if your token will work with etherium, testing it against an ''evm'' is the key.</pre>
 </div>
-<div title="Index A-M" creator="rvr" modifier="rvr" created="201805141259" changecount="1">
-<pre>[[ico]]</pre>
+<div title="Index A-M" creator="rvr" modifier="rvr" created="201805141259" modified="202209091830" changecount="2">
+<pre>[[hardhat]]
+[[ico]]</pre>
 </div>
 <div title="Index N-Z" creator="rvr" modifier="rvr" created="201804061548" changecount="1">
 <pre>[[remix]]
@@ -758,9 +759,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201804050755" modified="202209081906">
+<div title="UploadLog" modifier="rvr" created="201804050755" modified="202209100602">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 05/04/2018 15:56:49 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 05/04/2018 16:06:56 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/04/2018 23:48:58 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
 | 28/04/2018 07:32:27 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
@@ -769,7 +769,8 @@ merge(config.shadowTiddlers,{
 | 29/06/2018 21:25:53 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
 | 27/04/2019 09:39:17 | YourName | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
 | 08/09/2022 20:53:53 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 08/09/2022 21:06:31 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 08/09/2022 21:06:31 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
+| 10/09/2022 08:02:37 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201804050754" tags="systemConfig">
 <pre>/***
@@ -1348,8 +1349,10 @@ Node Package Manager (npm)
 *front end framework: ';React;; is most used for UI.
 *Connect website to blockchain, the library is: ''ethers.js''</pre>
 </div>
-<div title="environment" creator="rvr" modifier="rvr" created="201804050754" modified="201804050806" changecount="2">
+<div title="environment" creator="rvr" modifier="rvr" created="201804050754" modified="202209091710" changecount="3">
 <pre>The Ethereum Environment
+
+For writing [[smart contracts]] see [[hardhat]].
 
 Blockchain Nodes - they run client side
 Examples include Geth, Parity, or CPP-Etherium. (using different languages)
@@ -1361,6 +1364,24 @@ MetaMask or Mist is the software that connects the browser and the blockchain.
 MetaMask is actually a chrome/firefox plugin - makes it easy for the browser to connect to the blockchain.
 MetaMask uses a service called ''Infura'', which has Geth/Parity Blockchain nodes running.
 Mist its own browser with builtin capabilities to connect to blockchain. It is an actual blockchin node using GETH node.</pre>
+</div>
+<div title="hardhat" creator="rvr" modifier="rvr" created="202209091712" modified="202209091830" changecount="3">
+<pre>Hardhat is a development environment for Ethereum software.
+It is used for editing, compiling, debugging and deploying your smart contracts and dApps.
+It can be installed using npx. To work with hardhat:
+&lt;html&gt;&lt;pre&gt;
+$ npx hardhat
+Welcome to Hardhat v2.11.1
+✔ What do you want to do? · Create a JavaScript project
+...
+&lt;/pre&gt;&lt;/html&gt;
+See [[hardhat directory structure]].</pre>
+</div>
+<div title="hardhat directory structure" creator="rvr" modifier="rvr" created="202209100602" changecount="1">
+<pre>Once you have run [[hardhat]] you will have a directory structure in that directory you installed in.
+It will look like:
+&lt;html&gt;&lt;pre&gt;
+&lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="ico" creator="rvr" modifier="rvr" created="201805141259" changecount="1">
 <pre>An ''ico'' is an &quot;Initial Coin Offering&quot;

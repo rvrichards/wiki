@@ -523,7 +523,7 @@ Also see AdvancedOptions</pre>
   }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="A-E" modifier="rvr" created="201101062108" modified="202209081303" changecount="64">
+<div title="A-E" modifier="rvr" created="201101062108" modified="202209100954" changecount="67">
 <pre>[[absolute]]
 [[after and before]]
 [[anchor]]
@@ -558,8 +558,10 @@ Also see AdvancedOptions</pre>
 [[comments]]
 [[context dependant]]
 [[CSS]]
+[[CSS best practices]]
 [[CSS Grids]]
 [[CSS guidelines]]
+[[CSS Performance]]
 [[CSS Rules]]
 [[CSS Styles]]
 [[Custom Properties|variables]] - variables
@@ -956,6 +958,16 @@ Grid items will use:
 ** ''align-self: center;'' - to center individual item in row
 </pre>
 </div>
+<div title="CSS Performance" modifier="rvr" created="202209101000" modified="202209101000" changecount="11">
+<pre>Time for  ''CSS Performance'' info.  Here we go:
+* Browsers read right to left.
+** ''#specific &gt; p '' - this will get all paragraphs first!
+*Expensive properties
+** These are: box-shadow, transform, position:fixed, nth-child etc
+*Don't use unused style. Get rif of them.
+*Minify CSS files
+</pre>
+</div>
 <div title="CSS Rules" modifier="rvr" created="201004022310" modified="202209081058" changecount="68">
 <pre>CSS rules are simple, and it is how we declare the format is:
 &lt;html&gt;&lt;pre&gt;   selector {declaration;}      // basic format
@@ -986,6 +998,26 @@ An [[example stylesheet]].</pre>
 *[[height]] and width
 *[[float]]
 Note that I cover some detail with background, but not with all styles.</pre>
+</div>
+<div title="CSS best practices" modifier="rvr" created="202209100938" modified="202209100952" changecount="11">
+<pre>There are many different CSS best practices. I won't go further than a quick intro:
+*Object Oriented CSS
+*Atomic CSS.
+*Inverted Triangle CSS (ITCSS)
+*Scalable And Module Architecture for CSS (SMACSS)
+*and finally BEM, described below, as an example
+
+Block Element Modifier (BEM) is organizing your CSS into three parts:
+* ''Block'' - stand-alone entity with independent meaning
+** If we are styling a menu area, its a &quot;block&quot;. Have class name for all CSS like ''class=&quot;menu&quot; ''
+* ''Element'' - part of block with no standalone use.
+** This would be styled as ''class=&quot;menu_item&quot; ''
+* ''Modifier''  - Small falgs on elements, to change stylesm variants.
+** This would be styled as ''class=&quot;menu menu_disabled&quot; ''
+This is easy to read but does get bulky.
+
+See [[Good CSS]].
+</pre>
 </div>
 <div title="CSS guidelines" modifier="rvr" created="201511221220" modified="202208311629" changecount="7">
 <pre>Some basic ''CSS guidelines''.
@@ -1031,7 +1063,7 @@ To move around use cntl-] and cntl-[</pre>
 <div title="DefaultTiddlers" modifier="rvr" created="200906011623" modified="201004022303" changecount="3">
 <pre>[[Introduction]]</pre>
 </div>
-<div title="F-L" modifier="rvr" created="201004051706" modified="202209081050" changecount="93">
+<div title="F-L" modifier="rvr" created="201004051706" modified="202209100927" changecount="95">
 <pre>[[fieldset]]
 [[first-child and last-child]]
 [[first-line]]
@@ -1043,7 +1075,8 @@ To move around use cntl-] and cntl-[</pre>
 [[font]]
 [[Font Awesome]]
 [[form]] aka ''input form''
-[[frameworks]]
+[[framework]]
+[[Good CSS]]
 [[grid]]
 [[grid of images example]]
 [[head]]
@@ -1141,6 +1174,18 @@ To get a thumbs-up icon on the &quot;Like&quot; button, it's just...
 &amp;lt;button class=&quot;btn btn-block btn-primary&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-thumbs-up&quot;&amp;gt;&amp;lt;/i&amp;gt; Like&amp;lt;/button&amp;gt;
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
+<div title="Good CSS" modifier="rvr" created="202209100929" modified="202209100954" changecount="11">
+<pre>There are some good practices here.
+* Keep consistent. Get a design plan before coding.
+* Don't place CSS in HTML
+* Do use responsive design.
+* Understand and use cascading.  Understand [[Selector Specificity]].
+* Try and keep it DRY (Rubies: Don't repeat yourself)
+* Group similar things.
+
+Check out [[CSS best practices]] and [[CSS Performance]].
+</pre>
+</div>
 <div title="HTML" modifier="rvr" created="201005252128" modified="202209071753" changecount="30">
 <pre>HTML is a language for display content that uses [[element]]s, which are comprised of [[tags]]. 
 You should always choose the ~UTF-8 character encoding, Like: @@&lt;meta charset=&quot;utf-8&quot;/&gt;@@
@@ -1219,12 +1264,13 @@ Example: Image is: width x height : 50x500 pixels - there are 10 images stacked,
 &lt;/pre&gt;&lt;/html&gt;
 Ya, you'll see both images.</pre>
 </div>
-<div title="Introduction" modifier="rvr" created="200905302331" modified="202209021839" changecount="107">
+<div title="Introduction" modifier="rvr" created="200905302331" modified="202209100926" changecount="109">
 <pre>[[HTML]] is best for defining content. Understand the definitions in [[HTML]].
 [[CSS]] is to be used to format or style content. Understand the definitions in [[CSS]].
 
 There will probably be many changes as I'm looking at this again like 5 years later. Get right of cruft.
 
+What is [[Good CSS]]?
 See some [[examples]] of css in actual code.
 There is also a whole bunch of [[Bootstrap]] in this wiki.
 The heart of HTML is [[tags]] - which is an [[element]] surrounded by angle brackets, ie an anchor tag: ''&lt;a&gt;''. 
@@ -1294,7 +1340,7 @@ loadRemoteFile = function(url,callback,params)
 //}}}
 </pre>
 </div>
-<div title="M-R" modifier="rvr" created="202209081300" changecount="8">
+<div title="M-R" modifier="rvr" created="202209081300" modified="202209100908" changecount="9">
 <pre>[[margin]] 
 [[margin examples]]
 [[media queries]]
@@ -1307,6 +1353,7 @@ loadRemoteFile = function(url,callback,params)
 [[overflow]] 
 [[padding]]
 [[positioning]]
+[[preprocessor]]
 [[property]]
 [[pseudo-class]]
 [[pseudo-elements]]
@@ -1542,12 +1589,12 @@ Another example:
 *Type: @@ul.nav.navbar-nav.navbar-right@@
 *Get: @@ul.nav.navbar-&lt;nav class=&quot;navbar-right&quot;&gt;&lt;/nav&gt;@@</pre>
 </div>
-<div title="Selector Specificity" modifier="rvr" created="202209031011" modified="202209031016" changecount="6">
+<div title="Selector Specificity" modifier="rvr" created="202209031011" modified="202209100932" changecount="7">
 <pre>If a selector has a conflict - let's say one selector specifies red and the other blue. How to pick which one?
 In the case of this conflict, the most &quot;specific&quot; selector is used, if the same, it defaults to the last rule in the stylesheet.  
 &quot;Specificity&quot; is done by weighted calculation. 
 * Inline styles - 1000 pts
-* IDs - 100 pts
+* ~IDs - 100 pts
 * Classes - 10 pts
 * Pseudo classes - 10 pts
 * Attributes - 10 pts
@@ -1635,18 +1682,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209081554">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209101937">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 05/09/2022 23:17:23 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 06/09/2022 12:25:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 06/09/2022 22:51:00 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 07/09/2022 18:23:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 07/09/2022 20:28:56 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 07/09/2022 20:38:41 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 07/09/2022 21:03:27 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 08/09/2022 13:57:44 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 08/09/2022 14:46:10 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 08/09/2022 17:54:54 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 08/09/2022 17:54:54 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 10/09/2022 11:24:54 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 11:53:17 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 10/09/2022 21:37:22 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -3104,14 +3151,33 @@ The form tag has an ''action'' [[attribute]] to direct where to go after [[submi
 *''optgroup'' - groups related option elements contained in a select list
 *''option'' - defines an item in a select list</pre>
 </div>
-<div title="frameworks" modifier="rvr" created="201510182026" modified="201601200749" changecount="4">
+<div title="framework" modifier="rvr" created="201510182026" modified="202209100920" changecount="8">
 <pre>There are CSS frameworks that are toolkits to help with provide a standardization. One such is [[Bootstrap]]. The aim is to provide:
 *An easily customizable [[grid]]
 *Some default typography
 *A typographic baseline
 *CSS reset for default browser styles
 *A stylesheet for printing
-*[[responsive web design]].</pre>
+*[[responsive web design]].
+
+CSS frameworks are libraries are designed to help make a developers job easier. Instead of re-inventing the wheel, popular patterns like nav bars, hamburger menus, 3 grid layouts - are already done. This makes it easier to get it done quick and provides standards-compliant design. Simply put, they are libraries of code available for use right away.
+These libraries often include:
+* a default &quot;blank&quot; stylesheet.
+* provide standardized/consistent color, fonts, icons
+* compatibility with different browsers
+* often used helper classes
+
+Some popular ones:
+* ''Tailwind'' - can create classes of colors that others can use.
+**Easy to build consistent looking sites. May intimidate because of he use of classes in HTML
+* ''Bootstrap'' - has many prebuilt components. Very popular, but many use it. Like grids.
+**Means adding a large css style file to you website
+*''Materialize'' - has own grid, and responsive components.
+** From google. From designs that are to look familiar. Must follow their style on all pages,
+*''Foundation'' - many prebuilt components and a grid system. 
+**Very flexible.
+* ''Bulma'' - CSS Only framework. No javascript like all others.
+A ''framework'' is different from a [[preprocessor]].</pre>
 </div>
 <div title="grid" modifier="rvr" created="201509131759" modified="201703160446" changecount="44">
 <pre>[[Bootstrap]] has a grid system for layout. It has a 12 column grid, you can choose any size up to 12 columns.
@@ -3693,6 +3759,17 @@ You can overlap elements.There are four positioning methods:
    p.absolute { position:absolute; left:22px; top:33px; }  // Absolute position
 &lt;/pre&gt;&lt;/html&gt; 
 There are some other interesting positioning properties, like clip, cursor, and [[z-index]] not covered here.</pre>
+</div>
+<div title="preprocessor" modifier="rvr" created="202209100911" modified="202209100925" changecount="11">
+<pre>A ''preprocessor'' is different from a [[framework]].
+Preprocessors add language functionality. They will have their own unique language and this will run through a ''preprocessor'' and pump out CSS code. Most preprocessors will have some great features that are not available in purse CSS.
+Popular ones include:
+*[[SASS]] - Ruby based. Provides its own syntax. Most popular.
+**variable, mixins, @extends, nesting, looping
+*''less'' - JS based, similar to sass. simple to learn
+*''Stylus'' - similar to above.
+*''~PostCSS'' - JS, very customizable. Plugin collection.
+This will make CSS easier to write and produce fewer bugs.</pre>
 </div>
 <div title="property" modifier="rvr" created="201407110715" modified="202209061942" changecount="14">
 <pre>There are many properties that can be used in CSS. To see exactly what a property is see: [[CSS Rules]]. Here are the properties I will cover:
