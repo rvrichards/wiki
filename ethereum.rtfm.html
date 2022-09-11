@@ -519,7 +519,23 @@ Also see [[AdvancedOptions]]</pre>
 <div title="DefaultTiddlers" creator="rvr" modifier="rvr" created="201804050755" changecount="1">
 <pre>[[Introduction]]</pre>
 </div>
-<div title="ERC20" creator="rvr" modifier="rvr" created="202209102039" modified="202209102054" changecount="5">
+<div title="ERC1155" creator="rvr" modifier="rvr" created="202209110846" modified="202209110911" changecount="10">
+<pre>The ''~ERC1155'' is a standard interface for contracts on the Ethereum blockchain. It can:
+* handle multiple fungible and non-fungible tokens and multiples of each
+* puts it all in one smart contract so only one transaction is needed.
+* allow semi-fungible, ie a concert ticket is bought and sold, but after the show they lose their pre-sale value. They go from fungible &amp;#8594;  non-fungible.
+* has a safe transfer ability, if you sent to invalid address, it can recover.
+
+Following the ''~ERC1155'' standard gives you the efficient transfer of tokens and ~NFTs in a single transaction. Following standards also gives access to other exchanges, dapps, and wallets that also follow these standards.
+As an example, in a game with 1 million items (swords, belts, helmets, ...) you would need 1 million smart contracts! That would create a metric ton of duplicate or redundant code. This standard would pile that all into one smart contract. Great idea.
+
+Also used is [[ERC721]] but it manages a single NFT and the associated unique content whereas ''~ERC1155'' handles many.
+
+How to [[create an ERC1155]].
+
+ </pre>
+</div>
+<div title="ERC20" creator="rvr" modifier="rvr" created="202209102039" modified="202209110837" changecount="6">
 <pre>The ''ERC20'' is the @@technical standard@@ for fungible tokens created using the Ethereum blockchain. 
 ERC20 is a form of token that can be issued on Ethereum, and presents a set of standards.
 Of course Ethereum tokens (ETH) follow this standard, and other tokens that follow this standard will be ''fungible'', that is they can be exchanged. Like converting between fiat CAD and EURO.
@@ -527,7 +543,15 @@ ERC20 smart contracts use ERC20 tokens to make payments. There are many ERC20 to
 The standard currently has 9 rules, 6 are mandatory and 3 are optional.
 
 One implementation of this ERC20 is: ''@openzeppelin/contracts/token/~ERC20/~ERC20.sol;''
-The github repo is: ''https://github.com/OpenZeppelin/openzeppelin-contracts''</pre>
+The github repo is: ''https://github.com/OpenZeppelin/openzeppelin-contracts''
+
+See also [[ERC1155]]</pre>
+</div>
+<div title="ERC721" creator="rvr" modifier="rvr" created="202209110855" changecount="1">
+<pre>''ERC721'' standard handles a single NFT. It could link to unique content, and verified cryptographically. By following this standard, you have access to other exchanges, dapps, and wallets. 
+If you wanted to transfer a Token and an NFT, you would need multiple transactions. This lead to the creation and more used standard [[ERC1155]], that can handle multiples of both.
+''ERC721'' is a more complex standard than [[ERC20]], with multiple optional extensions, and is split across a number of contracts.
+If you have are playing a game, and pick up an NFT, then it will be minted and sent to you using ''ERC721''.</pre>
 </div>
 <div title="EVM" creator="YourName" modifier="rvr" created="202209081812" modified="202209081847" changecount="2">
 <pre>EVM - The Ethereum Virtual Machine  computes the state of the Ethereum network after each new block is added to the chain. 
@@ -535,7 +559,7 @@ The EVM sits on top of Ethereum's hardware and node network layer. It is essenti
 It exists as a single entity on thousands of connected computers running an Ethereum client.
 TO know if your token will work with etherium, testing it against an ''evm'' is the key.</pre>
 </div>
-<div title="ElizaToken.sol" creator="rvr" modifier="rvr" created="202209102014" modified="202209102107" changecount="21">
+<div title="ElizaToken.sol" creator="rvr" modifier="rvr" created="202209102014" modified="202209111332" changecount="23">
 <pre>Here is the [[smart contract]] in file ''~ElizaToken.sol''. Following I'll go over the important points.
 &lt;html&gt;&lt;pre&gt;
 // SPDX-License-Identifier: GPL-3.0
@@ -553,9 +577,10 @@ contract ElizaToken is ERC20 {
 Let's examine this file:
 * 1st like &quot;SPDX...&quot; is needed so that there are no compiler warnings.
 * 2nd line &quot;pragma..&quot; is needed so that we provide the [[Solidity]] version we are using
-* 3rd line &quot;import...&quot; is needed so that...
-**To import it has to be installed. Run: ''npm install @openzeppelin/contracts''
+* 3rd line &quot;import...&quot; is needed to import the token standard. We need ...
+**To import it, but first it has to be installed. Run: ''npm install @openzeppelin/contracts''
 ** The github repo is: ''https://github.com/OpenZeppelin/openzeppelin-contracts''
+** See [[openzeppelin]].
 *4th line &quot;contract ~ElizaToken...&quot; is where we create and name the smart contract.
 ** To create a token we use the [[ERC20]] standard 
 ** We need to inherit from this contract, that is done via ''is ~ERC20''
@@ -583,16 +608,16 @@ It will look like:
 &lt;html&gt;&lt;pre&gt;
 Root
 ├── contracts  - smart contracts, for tokens and NFTs
-│   └── Lock.sol
+│&amp;nbsp;&amp;nbsp; └── Lock.sol
 ├── hardhat.config.js
 ├── node_modules  - tons of stuff in here node packages
-│   ├── abbrev
-│   ...
+│&amp;nbsp;&amp;nbsp; ├── abbrev
+│&amp;nbsp;&amp;nbsp; ...
 ├── package.json
 ├── package-lock.json
 ├── README.md
 ├── scripts
-│   └── deploy.js
+│&amp;nbsp;&amp;nbsp; └── deploy.js
 ├──test  - testing against our smart contracts
 ├──.gitignore
 ├──hardhat.config.js  - where we config our public testnet, 
@@ -601,8 +626,11 @@ Root
 
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Index A-M" creator="rvr" modifier="rvr" created="201805141259" modified="202209102108" changecount="4">
+<div title="Index A-M" creator="rvr" modifier="rvr" created="201805141259" modified="202209110917" changecount="5">
 <pre>[[create a smart contract]]
+[[ERC20]]
+[[ERC721]]
+[[ERC1155]]
 [[Hardhat]]
 [[ico]]</pre>
 </div>
@@ -841,10 +869,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201804050755" modified="202209102110">
+<div title="UploadLog" modifier="rvr" created="201804050755" modified="202209111347">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 08/09/2022 20:53:53 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 08/09/2022 21:06:31 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
 | 10/09/2022 08:02:37 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
 | 10/09/2022 22:17:44 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 10/09/2022 22:21:51 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -852,7 +878,9 @@ merge(config.shadowTiddlers,{
 | 10/09/2022 23:01:15 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 10/09/2022 23:06:25 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 10/09/2022 23:07:27 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 10/09/2022 23:10:49 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 10/09/2022 23:10:49 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |
+| 11/09/2022 15:28:24 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 11/09/2022 15:47:11 | rvr | [[/|http://ethereum.rtfm.tiddlyspot.com/]] | [[store.cgi|http://ethereum.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://ethereum.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201804050754" tags="systemConfig">
 <pre>/***
@@ -1429,6 +1457,57 @@ In the [[Hardhat directory structure]] under contracts is where [[smart contract
 Here would be some steps:
 *create a new file [[ElizaToken.sol]]</pre>
 </div>
+<div title="create an ERC1155" creator="rvr" modifier="rvr" created="202209110928" modified="202209111333" changecount="9">
+<pre>To create an ''ERC1155'' contract, we need to import the NFT standard. Here is the code and an explanation will follow:
+&lt;html&gt;&lt;pre&gt;
+//SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
+import &quot;@openzeppelin/contracts/token/ERC1155/ERC1155.sol&quot;;
+import &quot;@openzeppelin/contracts/utils/Strings.sol&quot;;
+contract ElizaCollection is ERC1155 {
+    string public name;
+    string public symbol; 
+    uint256 public tokenCount;
+    string public baseUri;
+
+    constructor(string memory _name, string memory _symbol, string memory _baseUri) ERC1155(_baseUri) {
+        name = _name;
+        symbol = _symbol;
+        baseUri = _baseUri;
+    }
+
+    // we need to override the uri function so our nfts are compatible with opensea
+    function uri(uint256 _tokenId) override public view returns(string memory) {
+        return string (
+            abi.encodePacked(
+                baseUri,
+                Strings.toString(_tokenId),
+                &quot;.json&quot;
+            )
+        );
+    }
+
+    function mint(uint256 amount) public {
+        tokenCount += 1;
+        _mint(msg.sender, tokenCount, amount, &quot;&quot;);
+    }
+}
+&lt;/pre&gt;&lt;/html&gt;
+This file will create ~NFTs, the important points are:
+* 1st line &quot;SPDX&quot; - supress compiler warnings
+* 2nd line &quot;pragma..&quot; is provide the Solidity version being used
+* 3rd line '&quot;import ~ERC1155'&quot; - is to import the NFT standard.
+** See [[openzeppelin]].
+* 4th line &quot;import strings'&quot; - is to import string functions because Solidity has poor string capability.
+* 5th line &quot;contract...&quot; - is to create an NFT object. It has:
+** to inherit the ~ERC1155 standard we imported above.
+** 4 variables, name, symbol, count, and uri. The ''uri'' points to the actial NFT.
+* constructor function - overrides default constructor - has the above 4 vars 
+* uri function - override because we have our ~NFTs at [[opensea]].
+** ~NFTs are json files.
+* mint function - to create the NFT, called from the UI
+</pre>
+</div>
 <div title="development" creator="rvr" modifier="rvr" created="202209081850" modified="202209102109" changecount="7">
 <pre>Development of anything in the Etherium space requires a few software tools:
 *[[smart contract]] - mostly written in ''Solidity''. Also Rust.
@@ -1458,6 +1537,12 @@ Mist its own browser with builtin capabilities to connect to blockchain. It is a
 <pre>An ''ico'' is an &quot;Initial Coin Offering&quot;
 
 The ICO was on Ethereum’s blockchain which meant that I needed to send my Ether (ETH) to an Ethereum smart contract address.</pre>
+</div>
+<div title="openzeppelin" creator="rvr" modifier="rvr" created="202209111334" modified="202209111347" changecount="3">
+<pre>The open-source site ''openzeppelin'' provides a framework to build, test, deploy, and monitor smart contracts. It also provides independent Security audits.
+The githib repo: https://github.com/OpenZeppelin/openzeppelin-contracts
+
+ </pre>
 </div>
 <div title="remix" creator="rvr" modifier="rvr" created="201804061547" changecount="1">
 <pre>''Remix'' is a cloud IDE (remix.ethereum.org)
