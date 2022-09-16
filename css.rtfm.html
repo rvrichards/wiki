@@ -523,13 +523,14 @@ Also see AdvancedOptions</pre>
   }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="A-E" modifier="rvr" created="201101062108" modified="202209100954" changecount="67">
+<div title="A-E" modifier="rvr" created="201101062108" modified="202209141027" changecount="68">
 <pre>[[absolute]]
 [[after and before]]
 [[anchor]]
 [[animation]]
 [[attribute]]
 [[background]]
+[[basic HTML]]
 [[block]]
 [[body]]
 [[Bootstrap]]
@@ -958,23 +959,24 @@ Grid items will use:
 ** ''align-self: center;'' - to center individual item in row
 </pre>
 </div>
-<div title="CSS Performance" modifier="rvr" created="202209101000" modified="202209101000" changecount="11">
+<div title="CSS Performance" modifier="rvr" created="202209101000" modified="202209161158" changecount="13">
 <pre>Time for  ''CSS Performance'' info.  Here we go:
 * Browsers read right to left.
 ** ''#specific &gt; p '' - this will get all paragraphs first!
 *Expensive properties
-** These are: box-shadow, transform, position:fixed, nth-child etc
+** These are: [[box-shadow]], text-shadow, transform, position:fixed, nth-child etc
 *Don't use unused style. Get rif of them.
 *Minify CSS files
 </pre>
 </div>
-<div title="CSS Rules" modifier="rvr" created="201004022310" modified="202209081058" changecount="68">
-<pre>CSS rules are simple, and it is how we declare the format is:
+<div title="CSS Rules" modifier="rvr" created="201004022310" modified="202209151458" changecount="77">
+<pre>CSS rules require a [[selector]] and the [[property]] to change:
 &lt;html&gt;&lt;pre&gt;   selector {declaration;}      // basic format
    selector {property:value;}   // more detail format
 &lt;/pre&gt;&lt;/html&gt;
-Aome examples: &lt;html&gt;&lt;pre&gt;
+Some examples: &lt;html&gt;&lt;pre&gt;
    p{color:pink;}               // an example of an element type selector - all &quot;p&quot; tags
+   p{font-family:verdana;}      // again, all p tags.
    footer p{color:red;}         // only p tags in footer 
    .make-blue { color: blue; }  // an example of a class selector
    #do-it { color: green; }     // an example of an ID selector.
@@ -1264,7 +1266,7 @@ Example: Image is: width x height : 50x500 pixels - there are 10 images stacked,
 &lt;/pre&gt;&lt;/html&gt;
 Ya, you'll see both images.</pre>
 </div>
-<div title="Introduction" modifier="rvr" created="200905302331" modified="202209100926" changecount="109">
+<div title="Introduction" modifier="rvr" created="200905302331" modified="202209151450" changecount="112">
 <pre>[[HTML]] is best for defining content. Understand the definitions in [[HTML]].
 [[CSS]] is to be used to format or style content. Understand the definitions in [[CSS]].
 
@@ -1274,9 +1276,9 @@ What is [[Good CSS]]?
 See some [[examples]] of css in actual code.
 There is also a whole bunch of [[Bootstrap]] in this wiki.
 The heart of HTML is [[tags]] - which is an [[element]] surrounded by angle brackets, ie an anchor tag: ''&lt;a&gt;''. 
-The heart of [[CSS]] is to use a [[selector]] and a declaration to format content like this:&lt;html&gt;&lt;pre&gt;   selector { declaration; }        // Can have many declarations
+The heart of [[CSS]] is [[CSS Rules]] used to select elements to format. Syntax is:&lt;html&gt;&lt;pre&gt;   selector { declaration; }        // Can have many declarations
    selector { property:value; }     // a declaration is made of of 2 parts: property:value; &lt;/pre&gt;&lt;/html&gt;
-We add them together, by using It does this adding  [[attribute]]s to HTML [[element]]s.
+CSS Rules specify a [[selector]] and a property and [[attribute]]s to style.
 Examples: &lt;html&gt;&lt;pre&gt;
 h1, h2, h3, h4 { color: #009900;} // Combine the selectors. }
 p#bold { font-weight:bold; }      // This is used by an ID
@@ -1534,14 +1536,14 @@ merge(config.optionsDesc,{
 */
 //}}}</pre>
 </div>
-<div title="S-Z" modifier="rvr" created="200905302335" modified="202209081302" changecount="86">
+<div title="S-Z" modifier="rvr" created="200905302335" modified="202209151459" changecount="87">
 <pre>[[SASS]]
 [[selector]]  
 [[selector examples]]
 [[sibling selector]]
 [[span]]
 [[style]]
-[[syntax]]
+[[syntax|CSS Rules]]
 [[table]]
 [[tags]]
 [[text]]
@@ -1682,18 +1684,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209101937">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202209161514">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 07/09/2022 18:23:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 07/09/2022 20:28:56 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 07/09/2022 20:38:41 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 07/09/2022 21:03:27 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 08/09/2022 13:57:44 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 08/09/2022 14:46:10 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 08/09/2022 17:54:54 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 10/09/2022 11:24:54 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 10/09/2022 11:53:17 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 10/09/2022 21:37:22 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 10/09/2022 21:37:22 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 14/09/2022 12:59:59 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/09/2022 13:42:08 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 15/09/2022 17:03:00 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 15/09/2022 17:03:34 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 15/09/2022 20:50:15 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 15/09/2022 22:26:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 16/09/2022 12:28:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 16/09/2022 17:14:49 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2455,7 +2457,25 @@ And this will only give 1 image but the rest is white space. You can play around
 
 See [[background]] image.</pre>
 </div>
-<div title="block" modifier="rvr" created="201407220615" modified="202209031422" changecount="17">
+<div title="basic HTML" modifier="rvr" created="202209141028" modified="202209141029" changecount="3">
+<pre>Here is a basic HTML example, a template.
+
+&lt;html&gt;&lt;pre&gt;
+&amp;lt;html lang=&quot;en&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
+    &amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&amp;gt;
+    &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&amp;gt;
+    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot; /&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="block" modifier="rvr" created="201407220615" modified="202209141016" changecount="18">
 <pre>An element is either ''block'' or [[inline]]. A block element is the width of the web page and has line breaks enforced at the edges. 
 An ''H1'' or a ''p'' element is a block element.  A ''block'' level container - is a large block of content that can be handled by specific css. It should be some logical division. Blocks can contain blocks too. A [[div]] is a block
 &lt;html&gt;&lt;pre&gt;
@@ -2467,7 +2487,12 @@ An ''H1'' or a ''p'' element is a block element.  A ''block'' level container - 
   Can put stuff here too.
 &amp;lt;/div&amp;gt;
 &lt;/pre&gt;&lt;/html&gt;Block elements with margins will collapse when next to each other (ie overlap). The opposite for [[inline]].
-We can control the size of an element.</pre>
+You can change block &amp;larr;-&amp;rarr; inline using [[display]]. Like this:
+&lt;html&gt;&lt;pre&gt;
+h1 {
+  display: inline;
+}
+&lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="body" modifier="rvr" created="201509122015" modified="201705180150" changecount="30">
 <pre>The ''body'' element is automatically included in every HTML page. So CSS styling it will have every other element inheriting from it.
@@ -2540,8 +2565,8 @@ For example, the following will be ... 30px+10px+300px+10px+30px = 380px
 }
 &lt;/pre&gt;&lt;/html&gt;@@Note:@@ You can tweak the content width using: [[box-sizing]].</pre>
 </div>
-<div title="box shadow" modifier="rvr" created="201705180324" modified="201705180327" changecount="30">
-<pre>How to put a black box around your entire web page? Use ''box-shadow'':
+<div title="box-shadow" modifier="rvr" created="201705180324" modified="202209161158" changecount="33">
+<pre>This will place a shadow behind an elements frame. Use ''box-shadow''. There is also ''text-shadow'':
 &lt;html&gt;&lt;pre&gt;
 html {
   box-shadow: 0 0 0 10px #000 inset;
@@ -2623,7 +2648,7 @@ I like:
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="child selector" modifier="rvr" created="201705181807" modified="202209051935" changecount="33">
+<div title="child selector" modifier="rvr" created="201705181807" modified="202209151656" changecount="34">
 <pre>An advanced [[selector]] is ''child combinator selector''.
 &lt;html&gt;&lt;pre&gt;
   .my-nav &gt; li {
@@ -2635,6 +2660,7 @@ body &gt; * { ... } ;
 This says to: @@select only ''li'''s that are direct children of the .my-nav parent, and make them [[inline-block]].@@
 The second one reads: @@Select all direct children elements of the body element.@@
 This allows targeted/selective css styling.
+See [[inline-block]].
 </pre>
 </div>
 <div title="circle" modifier="rvr" created="202207141351" modified="202207141433" changecount="7">
@@ -2848,8 +2874,8 @@ There is space around every element, this is important. They can be controlled:
 *[[margin]] - a margin defines the white space around the element's border,
 *[[border]] - this surrounds the element.</pre>
 </div>
-<div title="element type selector" modifier="rvr" created="201407060642" modified="201705100700" changecount="27">
-<pre>The basic CSS [[selector]]s is a ''type selector''. This targets the basic HTML element, like the paragraph element.
+<div title="element type selector" modifier="rvr" created="201407060642" modified="202209141141" changecount="29">
+<pre>The basic CSS [[selector]]s is a ''type selector''. This targets the [[basic HTML]] element, like the paragraph element.
 To target all paragraph elements, you would use:
 &lt;html&gt;&lt;pre&gt;
   p { ... }                               # The selector is &quot;p&quot;
@@ -2865,7 +2891,7 @@ Let's say that we want all the paragraph elements in a div to be styled differen
 The more specific the selector takes precedence over the more general selector.
 &lt;html&gt;&lt;pre&gt;
 p { color: red; }           // All paragraphs are red. This is very general.
-div p { color: green; }     // All paragraphs inside a ''div'' are green - this overrides the above css because it is more specific.
+div p { color: green; }     // All paragraphs inside &quot;div&quot; are green - overrides above css because it placed later.
 &lt;/pre&gt;&lt;/html&gt;Of course if we want different divs to have colours, we'd need to do either an [[ID]] or [[class]].</pre>
 </div>
 <div title="em" modifier="rvr" created="201705102251" modified="202209031416" changecount="7">
@@ -2921,7 +2947,7 @@ Note that the three ''link_to''s will turn from Rails ERB format into HTML. Then
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="external stylesheet" modifier="rvr" created="200905310013" modified="202208311620" changecount="19">
+<div title="external stylesheet" modifier="rvr" created="200905310013" modified="202209141012" changecount="20">
 <pre>Here is how we pick up an external style sheet (it should be in the head of the HTML). Be aware that the order of linking the stylesheets is important!
 &lt;html&gt;&lt;pre&gt;
 &amp;lt;!DOCTYPE htm&amp;gt;
@@ -2930,7 +2956,7 @@ Note that the three ''link_to''s will turn from Rails ERB format into HTML. Then
   &amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot; /&amp;gt;
 &amp;lt;/head&amp;gt;
 ...
-&lt;/pre&gt;&lt;/html&gt;Make sure that a stytles.css file is there! Even better especially if there are many stylesheets, place it in its own subdirectory. See also [[internal stylesheet]].</pre>
+&lt;/pre&gt;&lt;/html&gt;Make sure that a styles.css file is there! Even better especially if there are many stylesheets, place it in its own subdirectory. See also [[internal stylesheet]].</pre>
 </div>
 <div title="fieldset" modifier="rvr" created="200906011625" modified="200906011626" changecount="2">
 <pre>The ''fieldset'' HTML tag is used to group elements in a form. It will draw a box around these form elements. The ''&lt;legend&gt;'' element will place a title or caption in the box created by the ''&lt;fieldset&gt;'' tag.</pre>
@@ -3054,12 +3080,14 @@ Notes:
 *flex-basis: if set to 25em - it will start that width &amp; keep it.
 See [[Flex Item Shortcuts]] Example: @@ flex: 1 1 0;@@  = equals =  @@flex: &lt;flex-grow&gt; &lt;flex-shrink&gt; &lt;flex-basis&gt; @@</pre>
 </div>
-<div title="float" modifier="rvr" created="201004050242" modified="202208301955" changecount="75">
+<div title="float" modifier="rvr" created="201004050242" modified="202209151855" changecount="79">
 <pre>Floats here are the details:
 *are a hack before we had good layouts. 
+* Used to flow text around images.
+* using ''float'' removed it from normal flow of document.
 *We had tables we used them.
 *they have rows and cells. 
-*if you float you must clear. 
+*if you float it may cover another element, to see that one you must ie ''clear: left''. 
 *limited rearranging on the screen. 
 *problem of equal row heights - many javascript code to fix
 
@@ -3098,13 +3126,14 @@ doit { float:right; margin:10px; padding:15px; border:1px solid black; text-alig
 &lt;/pre&gt;&lt;/html&gt;
 To stop this floating business, just set the [[clear]] property.</pre>
 </div>
-<div title="font" modifier="rvr" created="201004030016" modified="201202220134" changecount="86">
+<div title="font" modifier="rvr" created="201004030016" modified="202209151503" changecount="92">
 <pre>We can define font family, size, boldness and style. There are two types here:
-*generic family - Fonts that look similar. Serif, Sans-serif and Monospace
-*font family - Specific font. Arial, courier, Helvetica, ...
+*font family - Specific font. Arial, courier, Palatino, Helvetica, ...
+*generic family - Fonts that look similar. serif, sans-serif, fantasy,  cursive, and monospace
+**When listing fonts, have the last one a generic one - for fallback ie browser picks one
 In the following, we first list the font we want, a fallback in case the browser does not have that font and finally a generic font.
 &lt;html&gt;&lt;pre&gt;
-p{font-family:&quot;Times New Roman&quot;, Times, serif;}
+p{font-family:&quot;Times New Roman&quot;, Times, serif;} // specific, specific, generic (fallback)
 &lt;/pre&gt;&lt;/html&gt;Here are some more properties:
 |!Property|!Example|!Other options|
 |font-style|p {font-style:oblique;}|oblique,italic,normal.|
@@ -3116,7 +3145,11 @@ We can also put everything into one line, if done in the right order:
 &lt;html&gt;&lt;pre&gt;
   format: selector { font: style  weight variant    size font-family }
   example:     h1  { font: italic bold   small-caps 96pt &quot;Georgia&quot; }
-&lt;/pre&gt;&lt;/html&gt;See also [[text]]. Fini!</pre>
+&lt;/pre&gt;&lt;/html&gt;
+Generic fonts with :
+* serif, sans serif, cursive, fantasy, and monospace
+
+See also [[text]]. Fini!</pre>
 </div>
 <div title="form" modifier="rvr" created="201005251906" modified="201603291314" changecount="41">
 <pre>Form is an HTML element. It is like a container that defines the start and end of form for entering user information. 
@@ -3321,13 +3354,20 @@ header {
    height:100%        // Will fit perfectly in the container/wrapper it is in.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="hover" modifier="rvr" created="202209081050" changecount="8">
-<pre>We have a div that is a box with content. We want to hover over this box, and want to see it expand by 50%.
+<div title="hover" modifier="rvr" created="202209081050" modified="202209152026" changecount="15">
+<pre>Still some quiks with this, don't have it quite figured out yet.
+We have a div that is a box with content. We want to hover over this box, and want to see it expand by 50%.
 &lt;html&gt;&lt;pre&gt;
 div:hover {
   width: 50%;
 }
-&lt;/pre&gt;&lt;/html&gt;</pre>
+&lt;/pre&gt;&lt;/html&gt;
+If we hover over div, it's opacity changes only for the ''image'' tag. 
+&lt;html&gt;&lt;pre&gt;
+div:hover img {
+  opacity: 0.5;
+}
+&lt;/pre&gt;&lt;/html&gt;If we had an image set with a different opacity, it will override the div level.</pre>
 </div>
 <div title="image darker" modifier="rvr" created="201601192005" modified="201601211901" changecount="2">
 <pre>Sometimes a image is too light and text on top can be hard to read. 
@@ -3368,7 +3408,7 @@ button {
 &lt;/pre&gt;&lt;/html&gt;
 There is an ''all: initial'' property resets all properties to their initial value. There is also a ''inherit'' and ''unset'' property.</pre>
 </div>
-<div title="inline" modifier="rvr" created="201407220627" modified="202209031428" changecount="35">
+<div title="inline" modifier="rvr" created="201407220627" modified="202209141016" changecount="36">
 <pre>An element is either [[block]] or ''inline''.
 Inline elements 
 *typically have just content and are not large. 
@@ -3771,7 +3811,7 @@ Popular ones include:
 *''~PostCSS'' - JS, very customizable. Plugin collection.
 This will make CSS easier to write and produce fewer bugs.</pre>
 </div>
-<div title="property" modifier="rvr" created="201407110715" modified="202209061942" changecount="14">
+<div title="property" modifier="rvr" created="201407110715" modified="202209151452" changecount="15">
 <pre>There are many properties that can be used in CSS. To see exactly what a property is see: [[CSS Rules]]. Here are the properties I will cover:
 *[[colors]]
 *[[display]]
@@ -3909,8 +3949,8 @@ Which looks like:&lt;html&gt;&lt;pre&gt;&lt;select name=&quot;country&quot;&gt;
 &lt;/select&gt;
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="selector" modifier="rvr" created="200905302343" modified="202209031009" changecount="85">
-<pre>The ''selector'' (see [[style rules|CSS Rules]]) sets which element in our HTML to apply styles to. Think of it as: @@A selector selects which element to style@@. 
+<div title="selector" modifier="rvr" created="200905302343" modified="202209151455" changecount="88">
+<pre>The ''selector'' part of [[CSS Rules]] sets which element in our HTML to apply styles to (ie change [[property]]). Think of it as: @@A selector selects which element to style@@. 
 In the case of a conflict. the most &quot;specific&quot; selector is used, if the same, it defaults to the last rule in the stylesheet.  See [[Selector Specificity]].
 A [[universal selector]], selecting everything would be: @@* { ... } @@
  A selector can target a single element or a whole range of elements. CSS selectors are followed by the curly brackets. 
@@ -3924,16 +3964,18 @@ Here are the three selectors used by CSS:
 *Advanced selector: [[pseudo-class]]
 *[[sibling selector]]
 *[[child selector]]
-See [[selector examples]]</pre>
+Once we have selected the elements we want to style, we next must set the [[property]] we want to change.
+See [[selector examples]].</pre>
 </div>
-<div title="selector examples" modifier="rvr" created="201601181349" modified="201601181421" changecount="11">
+<div title="selector examples" modifier="rvr" created="201601181349" modified="202209141141" changecount="29">
 <pre>Here are some examples of selectors:
 !Element Type Selectors
 &lt;html&gt;&lt;pre&gt;
 p { color: red; }
 h1 {font-family:verdana;}
 ul { font-size: 9px; }
-&lt;/pre&gt;&lt;/html&gt;
+div p { background-color: aqua; }    // Every &quot;p&quot; inside a &quot;div&quot; is styled. &quot;div&quot; not styled.
+&lt;/pre&gt;&lt;/html&gt; This last one - the&quot;p&quot; can be a child or a grandchild ... All of'em are selected. To narrow it down see [[child selector]] an example is below too.
 !Class Selectors
 The class selector selects elements with a specific class. In the first example all elements with the class=&quot;warning&quot; get that styling.
 &lt;html&gt;&lt;pre&gt;
@@ -3951,12 +3993,21 @@ Uses the ID attribute of an [[element]] to select a specific element.
     text-align: center;
     color: #808080;
 }
+
+div&amp;num;tiny p { font-size: smaller; }  // All &quot;p&quot; tags in div with id=&quot;tiny&quot; get smaller
+div&amp;num;tiny&gt;p { color: aqua; }         // Only &quot;p&quot; tags that are children of div with id=&quot;tiny&quot; will be aqua.
 &lt;/pre&gt;&lt;/html&gt;
 !Grouped Selector
 You can combine groups with the same styling, like this:
 &lt;html&gt;&lt;pre&gt;
-h1, h2, h3, p { font-family: monospace; }
+h1, h2, h3, p { font-family: monospace; }     // each element has this style
 &lt;/pre&gt;&lt;/html&gt;
+!Child Selector
+See also [[child selector]]. Will only select the children of &quot;div&quot;, not grandchild. ie only one level down.
+&lt;html&gt;&lt;pre&gt;
+div &gt; p { color: #080808; }
+&lt;/pre&gt;&lt;/html&gt;
+There are more similar examples, see [[sibling selector]].
 !Other Things
 You can mix things up a little. If you an image that you want different then all other images on the page, and it is in a class ''navigation'' then you can specifically choose to just change that one. 
 Read this as &quot;inside class ''navigation'' style element ''img'' as ...&quot; :
@@ -4017,15 +4068,16 @@ The ''span'' element can be used inline without changing outer tags. example:
   &amp;lt;h1&amp;gt;Some &amp;lt;span style=&quot;color: red&quot;&amp;gt;Fancy&amp;lt;/span&amp;gt; Title&amp;lt;/h1&amp;gt;
 &lt;/pre&gt;&lt;/html&gt;&lt;html&gt;&lt;h1&gt;Some &lt;span style=&quot;color: red&quot;&gt;Fancy&lt;/span&gt; Title&lt;/h1&gt;&lt;/html&gt;</pre>
 </div>
-<div title="special chars" modifier="rvr" created="201009042054" modified="202209051936" changecount="21">
+<div title="special chars" modifier="rvr" created="201009042054" modified="202209141059" changecount="24">
 <pre>There are special characters that we use:
 
 |!Special Char|!Meaning|
 |# (hash)|This is an [[ID]] selector|
 |&amp;gt;|This is a [[child selector]]. Used to select elements with a specific parent.|
+|+|This is a [[sibling selector]]. Used to select just one element with a preceding sibling.|
+|&amp;#126;|This is a [[sibling selector]]. Used to select all sibling elements.|
 |. (period)|This is a [[class selector]]|
 |*{ ... }|The whole document selector. aka [[universal selector]].|
-
 </pre>
 </div>
 <div title="stacking context" modifier="rvr" created="202209051108" modified="202209051116" changecount="12">
@@ -4066,20 +4118,6 @@ Note that a [[class]] in [[CSS]] starts with a period.</pre>
 &lt;/pre&gt;&lt;/html&gt;
 You will often see a button tag in this situation which is the preferred method, however, it will ''not'' perform a submit. The button tag is used in conjunction with some javascript to perform a submit. </pre>
 </div>
-<div title="syntax" modifier="rvr" created="200905302337" modified="201407060632" changecount="16">
-<pre>CSS syntax is simple, we have a 
-* [[selector]] which is an HTML tag to define
-* [[property]] that we wish to change
-* ''value''  what we wish the value to be.
-&lt;html&gt;&lt;pre&gt;
-   selector {property:value}
-   --------------------------------
-   p{font-family:verdana}      
-   p{font-family:&quot;sans serif&quot;}   //if value has a space in it use the quotes &quot;
-   p{font-family:verdana, &quot;sans serif&quot;}   // Separate values with colon.
-   
-&lt;/pre&gt;&lt;/html&gt;</pre>
-</div>
 <div title="table" modifier="rvr" created="201004030058" modified="201406261746" changecount="54">
 <pre>The table:
 &lt;html&gt;&lt;pre&gt;
@@ -4097,10 +4135,10 @@ Think of it like this: An HTML paragraph [[element]] consists of two HTML tags.
 &lt;/pre&gt;&lt;/html&gt;
 Some typical tags: body, h1, p, div, section, link, title, ...</pre>
 </div>
-<div title="text" modifier="rvr" created="201004030005" modified="201705152021" changecount="61">
+<div title="text" modifier="rvr" created="201004030005" modified="202209151652" changecount="67">
 <pre>There are many text properties, here are some:
 |!Property|!Example|!Other options|
-|color|p { color:blue;}||
+|color|p { color:blue;}|See [[colors]].|
 |text-align|p { text-align:right; }|left, right, center, justify|
 |text-decoration|a {text-decoration:none;}|none, overline, underline, line-through, blink|
 |text-transform|p.uppercase {text-transform:uppercase;}|uppercase, lowercase, capitalize|
@@ -4109,7 +4147,9 @@ Some typical tags: body, h1, p, div, section, link, title, ...</pre>
 |text-decoration|p{text-decoration:underline;} |none, blink, underline, overline, line-through.|
 |word-spacing|p{word-spacing:42px;}|Space between words, px, pt, cm, em...|
 |letter-spacing|p{letter-spacing:-3px;}|Space between words, px, pt, cm, em. Negative means closer together.|
-|line-height|p{line-height:18px;}|Sets vertical space above and below text and other inline elements.|
+|line-height|p{line-height:18px;}|Sets line height - text is placed in vertical centre^^1^^.|
+^^1^^ For a horizontal center of the text use: ''text-align: center;''
+
 See also [[margin]], and while you are at it [[colors]] and [[units]].</pre>
 </div>
 <div title="text field" modifier="rvr" created="201005251915" modified="201509071430" changecount="8">
@@ -4189,18 +4229,18 @@ Header with a logo
 
 See also [[transition]].</pre>
 </div>
-<div title="transition" modifier="rvr" created="201705240027" modified="202209081149" changecount="17">
+<div title="transition" modifier="rvr" created="201705240027" modified="202209161233" changecount="22">
 <pre>CSS ''transitions'' provide a way to smoothly control animation speed when changing CSS properties from one state to another. It is often used with [[transform]].
 An example would be to animate an element from partially transparent to opaque.
 
 Format: @@ transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;; @@
 
 |!Property|!Values|!Description|
-|transition-property|all, inherit, &lt;css property name&gt;|The name of the css property to transition.|
+|transition-property|all, inherit, &lt;css property name&gt;|The css property names^^1^^ to transition. All CSS properties? Pick &quot;all&quot;|
 |transition-duration|ns (n=# s=s)|Period over which transition occurs.|
 |transition-timing-function|ease, linear, stop-end, steps(4, end)|Specifies a function to define how intermediate values for properties are computed.|
 |transition-delay|ns (n=# s=s)|Defines how long to wait between the time a property is changed and the transition actually begins.|
-
+^^1^^ One or more properties. An example: ''transition-property: width, box-shadow;'' So both properties transition.
 See [[transition example]] and [[transform]]</pre>
 </div>
 <div title="transition example" modifier="rvr" created="202209081100" modified="202209081151" changecount="8">
