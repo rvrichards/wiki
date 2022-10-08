@@ -919,11 +919,12 @@ See [[grid of images example]].
 In the Developer screen in Chrome, in the &quot;styles&quot; tab, it will list the order or priority, but reversing it, so the most important css rules are first! 
 As you go further down the page, there will be more overridden css rules, with --strikethrough--. </pre>
 </div>
-<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210061540" changecount="37">
+<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210081828" changecount="38">
 <pre>CSS Grids is a two-dimensional grid that defines multiple areas of layout with just a few CSS rules
 [[Flexbox]] is great for single rows and columns and is responsive, but we get better control where elements end up by using CSS Grids. And, grid items can be other grid containers. Flexbox and CSS grids work together well.
 CSS Grids are similar to Bootstrap grids, but Bootstrap has predefined breakpoints based on the min-width media queries. I think I will prefer CSS grids over bootstrap.
 Let's start: 
+* [[grid terminology]]
 * [[grid start]]
 * [[grid properties]]
 ** [[grid rows &amp; columns]]
@@ -1679,9 +1680,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210061542">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210081840">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 14/09/2022 13:42:08 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 15/09/2022 17:03:00 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 15/09/2022 17:03:34 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 15/09/2022 20:50:15 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1690,7 +1690,8 @@ merge(config.shadowTiddlers,{
 | 16/09/2022 17:14:49 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/10/2022 15:56:58 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 16:37:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 08/10/2022 20:40:38 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -3345,11 +3346,21 @@ These properties are for defining the number pf rows and columns of our grid.
 ** therefore with above (and below) we could use: ''grid-column: left/right;''
 See more [[grid properties]].</pre>
 </div>
-<div title="grid spanning" modifier="rvr" created="202210061509" modified="202210061540" changecount="28">
+<div title="grid spanning" modifier="rvr" created="202210061509" modified="202210081827" changecount="41">
 <pre>This will show [[CSS Grid|CSS Grids]] spanning properties. We want to occupy more than a single cell.
 This is very similar to [[grid positioning]].
 
-. . . add more here ...
+To occupy 2 adjacent grid cells (column 2 and 3), using the ''grid numbers'' in the second row, you'd need to specify:&lt;html&gt;&lt;pre&gt;
+    grid-row: 2/3;
+    grid-column: 2/4;
+&lt;/pre&gt;&lt;/html&gt;
+@@color(red):Important@@ - if we have two elements that we specify occupy the same cell - the later one will be on top of the earlier one. The earlier one will still be there but will be hidden underneath. Multiple grid items in same cell. To change this we use the [[z-index]]. For example:&lt;html&gt;&lt;pre&gt;z-index: 5; &lt;/pre&gt;&lt;/html&gt;
+@@color(red):Important@@ - if we specify a column and a row for an element and later we specify only a column for a different element, that element will be pushed to a new row and will not hide the first element. *Usually* later defined elements take precedence but not in this case - unless both a row and column are specified.
+
+There are THREE ways to span:
+* the span 2 columns: ''grid-column 3 / 5;''
+* to span to end or row: ''grid-column 3 / -1;''
+* ''span'' 2 columns - starting at column 3. use: ''grid-column 3 / span 2;''
 
 See also [[grid properties]].</pre>
 </div>
@@ -3383,6 +3394,20 @@ In the inspector debugging tool in Firefox, it will show the grid display info.
 See [[grid properties]].
 
 </pre>
+</div>
+<div title="grid terminology" modifier="rvr" created="202210081836" modified="202210081840" changecount="6">
+<pre>[[CSS Grids]] have some terminology to know. Given a 2x3 grid:
+* Grid ''container'' - this is a &quot;container that has a 2x3 grid pattern. It contains all elements.
+** This is identified by the CSS: ''display: grid;''
+*A ''cell'' is bounded by a grid line - where an element will live.
+* Grid ''lines'' - these are lines the split up the container into cells - 2 cells (rows) and 3 cells (columns).
+* Grid ''numbers'' - define the cells of a container.
+**The first cell would be defined as: 1 / 2 - meaning row line 1 and row line 2 and 1 / 2  - meaning column line 1 and column line 2 
+**the left edge of the container would be one and the right edge would be 4
+**the top edge of the container would be one and the bottom edge would be 3
+* Grid ''column'' is the space between two adjacent vertical grid lines.  
+* Grid ''row'' is the space between two adjacent horizontal grid lines. 
+* Grid ''area'' is a user defined area made up of multiple ''cells''.</pre>
 </div>
 <div title="grid-template-areas" modifier="rvr" created="202209060938" modified="202209060947" changecount="11">
 <pre>The ''grid-template-areas'' is a good way to have control over where content is placed in the CSS Grid system. You could use the ''grid-column'' and ''grid-row'' also, each has their strength.
