@@ -523,7 +523,7 @@ Also see AdvancedOptions</pre>
   }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="A-E" modifier="rvr" created="201101062108" modified="202209141027" changecount="68">
+<div title="A-E" modifier="rvr" created="201101062108" modified="202210091016" changecount="69">
 <pre>[[absolute]]
 [[after and before]]
 [[anchor]]
@@ -573,6 +573,7 @@ Also see AdvancedOptions</pre>
 [[element space]]
 [[element type selector]]
 [[em]] 
+[[emmet]]
 [[example stylesheet]]
 [[examples]]
 [[external stylesheet]]
@@ -1680,9 +1681,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210081840">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210091058">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 15/09/2022 17:03:00 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 15/09/2022 17:03:34 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 15/09/2022 20:50:15 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 15/09/2022 22:26:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
@@ -1691,7 +1691,8 @@ merge(config.shadowTiddlers,{
 | 06/10/2022 15:56:58 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 16:37:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 08/10/2022 20:40:38 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 08/10/2022 20:40:38 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 09/10/2022 12:58:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2908,6 +2909,34 @@ If a font-size is not set on a child element, it will inherit the font-size from
 &lt;/pre&gt;&lt;/html&gt;
 This is applied to things other than font, like ''border'' or &quot;padding&quot;. This can be a gotcha.</pre>
 </div>
+<div title="emmet" modifier="rvr" created="202210091022" modified="202210091056" changecount="7">
+<pre>Emmet is a plugin for text editors (many are builtin line codepen) that allow for high-speed coding and editing using structured code formats via content assist.
+In an HTML/CSS editor typing in ''doc'' and hitting enter will give an HTML skeleton - ready to go.
+The tips:
+* ''doc'' - expand out to basic HTML document
+* ''link'' - will give a link tag in header
+* ''link:css'' - will give a link tag in header with an href to css property.
+* &amp;lt;element&gt; - will expand to that element. a→anchor tag,  h1→header 1 tag, ...
+* @@color:red;Child: ''&gt;''@@
+** ''div&gt;ul&gt;li'' - will give a ''list'' element inside an ''unordered list'' element inside a ''div'' element
+* @@color:red;Sibling: ''+''@@
+** ''div+h1+ol'' - will give three element siblings
+* @@color:red;ID and CLASS attributes@@
+** ''.thing'' - gives a div with a thing class.
+** ''#thing'' - gives a div with a thing id.
+** ''#thing'' inside an ''ol'' will give a list element with a ''thing'' @@id@@.
+** ''.thing'' inside an ''ol'' will give a list element with a ''thing'' @@class@@.
+* @@color:red;Text: ''{}''@@
+** ''.thing{Bite Me}'' - will have a div with a class thing with content &quot;Bite Me&quot;.
+** ''h1.thing{Bite Me}'' - will have a h1 tag with a class thing with content &quot;Bite Me&quot;.
+* @@color:red;Multiplication: ''*'' @@ 
+** ''ul&gt;li*5'' - will give an ''unordered list'' containing 5 ''list'' elements 
+** ''ul.xlist&gt;li.xyz*5'' - gives an ''ul'' with a class ''xlist'' and 5 list elements with a class ''xyz''
+* @@color:red;Item numbering: ''$''@@
+** ''ul&gt;li.item-$*5'' - will give an ''unordered list'' containing 5 ''list'' elements with a class ''item-1'' to ''item-5''.
+** ''ul&gt;li{Item number $}*5'' - will give an ''unordered list'' containing 5 ''list'' elements with content: ''Item number 1''...
+</pre>
+</div>
 <div title="example stylesheet" modifier="rvr" created="201101060757" modified="201101060758" changecount="14">
 <pre>Here are some examples:
 |!css|!what it says|
@@ -3395,7 +3424,7 @@ See [[grid properties]].
 
 </pre>
 </div>
-<div title="grid terminology" modifier="rvr" created="202210081836" modified="202210081840" changecount="6">
+<div title="grid terminology" modifier="rvr" created="202210081836" modified="202210081840" changecount="7">
 <pre>[[CSS Grids]] have some terminology to know. Given a 2x3 grid:
 * Grid ''container'' - this is a &quot;container that has a 2x3 grid pattern. It contains all elements.
 ** This is identified by the CSS: ''display: grid;''
