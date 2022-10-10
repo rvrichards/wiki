@@ -920,7 +920,7 @@ See [[grid of images example]].
 In the Developer screen in Chrome, in the &quot;styles&quot; tab, it will list the order or priority, but reversing it, so the most important css rules are first! 
 As you go further down the page, there will be more overridden css rules, with --strikethrough--. </pre>
 </div>
-<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210081828" changecount="38">
+<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210102100" changecount="41">
 <pre>CSS Grids is a two-dimensional grid that defines multiple areas of layout with just a few CSS rules
 [[Flexbox]] is great for single rows and columns and is responsive, but we get better control where elements end up by using CSS Grids. And, grid items can be other grid containers. Flexbox and CSS grids work together well.
 CSS Grids are similar to Bootstrap grids, but Bootstrap has predefined breakpoints based on the min-width media queries. I think I will prefer CSS grids over bootstrap.
@@ -932,6 +932,8 @@ Let's start:
 ** [[grid positioning]] - where in the grid to position.
 ** [[grid alignment]] - where to align in the cell.
 ** [[grid spanning]] - multiple rows or columns.
+* [[grid naming]] - instead of numbers, names
+* [[grid area]] - define areas by name
 
 </pre>
 </div>
@@ -1681,9 +1683,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210091058">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210102202">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 15/09/2022 17:03:34 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 15/09/2022 20:50:15 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 15/09/2022 22:26:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 16/09/2022 12:28:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
@@ -1692,7 +1693,8 @@ merge(config.shadowTiddlers,{
 | 06/10/2022 16:37:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 08/10/2022 20:40:38 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 09/10/2022 12:58:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 09/10/2022 12:58:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 11/10/2022 00:02:13 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -3284,6 +3286,54 @@ These properties are for defining cell alignment:.
 * ''gap: 10px'' - gaps between each grid item
 See also [[grid positioning]].</pre>
 </div>
+<div title="grid area" modifier="rvr" created="202210102100" modified="202210102202" changecount="12">
+<pre>Grid areas are like [[grid naming]] except we name whole areas, including [[grid spanning]]. Using the code from [[grid naming]] we set up a ''grid template''. This looks a little strange, but in a 4x4 grid, this is what we want in each cell. You'll see it's much cleaner.
+&lt;html&gt;&lt;pre&gt;
+  grid-template-areas: &quot;head head head head&quot;
+                       &quot;box box box side&quot;
+                       &quot;main main main side&quot;
+                       &quot;foot foot foot foot&quot;;
+
+.main {
+  /* Formerly: grid-column: col-start 1 / col-end 3;   Formerly: 1/-2; */
+  grid-area: main;
+}
+
+.sidebar {
+  /* Formerly:  grid-row: box-start / main-end;    */
+  /* Formerly:  grid-column: col-end 3 / grid-end   Formerly: -2/-1;  */
+  grid-area: side;
+}
+
+/* .box naturally falls where it belongs. */
+.footer { 
+  grid-area: foot;
+}
+
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="grid naming" modifier="rvr" created="202210102049" modified="202210102102" changecount="12">
+<pre>We can use [[grid positioning]] to position elements, using numbers. But we can also use names which helps because we only have to change the cells covered by a name and not each occurrence if we had used numbers. 
+Here are some examples: Again, this is a 4x4 grid with a span &lt;html&gt;&lt;pre&gt;
+.container {
+  display: grid;
+  grid-template-rows: [header-start] 33px [header-end box-start] 66px [box-end main-start] 111px [main-end footer-start] 33px [footer-end];
+  grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 99px [grid-end];
+}
+
+.header {
+  grid-column: col-start 1 / grid-end 1;    /* With numbers, we'd use:  1/-1; */
+  grid-row: header-start / header-end;      /* With numbers, we'd use:  1/2; */
+}
+.main {
+  grid-column: col-start 1 / col-end 3;     /* With numbers, we'd use:  1/-2; */
+}
+.sidebar {
+  grid-row: box-start / main-end;      /* Span 2 rows */
+  grid-column: col-end 3 / grid-end;   /* With numbers, we'd use:  -2/-1;  */
+}&lt;/pre&gt;&lt;/html&gt;
+See also [[grid area]].</pre>
+</div>
 <div title="grid of images example" modifier="rvr" created="201601212025" modified="201601220834" changecount="22">
 <pre>Here you'll see how to make a grid of images and also to have a zoom-in capability.
 The images will fill the width of the web browser, no border. They are slightly dark, and when you hover over an image, it will lighten and transform in 1/2sec from 115% to 100%.
@@ -3327,7 +3377,7 @@ The CSS:
 }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="grid positioning" modifier="rvr" created="202210061433" modified="202210061435" changecount="28">
+<div title="grid positioning" modifier="rvr" created="202210061433" modified="202210102100" changecount="30">
 <pre>This will show [[CSS Grid|CSS Grids]] positioning properties.
 
 These properties are for defining where and how big the cells are. (Where the rows and columns are.)
@@ -3341,7 +3391,7 @@ These properties are for defining where and how big the cells are. (Where the ro
 ** ''justify-self: center;'' - to center individual item in column.
 ** ''align-self: center;'' - to center individual item in row
 
-See also [[grid alignment]].</pre>
+See also [[grid alignment]] and [[grid naming]].</pre>
 </div>
 <div title="grid properties" modifier="rvr" created="202210061204" modified="202210061540" changecount="28">
 <pre>[[CSS Grids]] is very flexible with how we specify values.
