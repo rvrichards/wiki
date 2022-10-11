@@ -1683,10 +1683,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210102202">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210111819">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 15/09/2022 20:50:15 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 15/09/2022 22:26:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 16/09/2022 12:28:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 16/09/2022 17:14:49 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/10/2022 15:56:58 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1694,7 +1692,9 @@ merge(config.shadowTiddlers,{
 | 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 08/10/2022 20:40:38 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 09/10/2022 12:58:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 11/10/2022 00:02:13 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 11/10/2022 00:02:13 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 11/10/2022 19:52:14 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 11/10/2022 20:19:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2911,7 +2911,7 @@ If a font-size is not set on a child element, it will inherit the font-size from
 &lt;/pre&gt;&lt;/html&gt;
 This is applied to things other than font, like ''border'' or &quot;padding&quot;. This can be a gotcha.</pre>
 </div>
-<div title="emmet" modifier="rvr" created="202210091022" modified="202210091056" changecount="7">
+<div title="emmet" modifier="rvr" created="202210091022" modified="202210111802" changecount="10">
 <pre>Emmet is a plugin for text editors (many are builtin line codepen) that allow for high-speed coding and editing using structured code formats via content assist.
 In an HTML/CSS editor typing in ''doc'' and hitting enter will give an HTML skeleton - ready to go.
 The tips:
@@ -2937,6 +2937,7 @@ The tips:
 * @@color:red;Item numbering: ''$''@@
 ** ''ul&gt;li.item-$*5'' - will give an ''unordered list'' containing 5 ''list'' elements with a class ''item-1'' to ''item-5''.
 ** ''ul&gt;li{Item number $}*5'' - will give an ''unordered list'' containing 5 ''list'' elements with content: ''Item number 1''...
+** ''.qwerty&gt;.item.item$*9'' - will give a div with a class of qwerty with 6 div children with class=&quot;item item1&quot; to item9.
 </pre>
 </div>
 <div title="example stylesheet" modifier="rvr" created="201101060757" modified="201101060758" changecount="14">
@@ -3286,34 +3287,37 @@ These properties are for defining cell alignment:.
 * ''gap: 10px'' - gaps between each grid item
 See also [[grid positioning]].</pre>
 </div>
-<div title="grid area" modifier="rvr" created="202210102100" modified="202210102202" changecount="12">
-<pre>Grid areas are like [[grid naming]] except we name whole areas, including [[grid spanning]]. Using the code from [[grid naming]] we set up a ''grid template''. This looks a little strange, but in a 4x4 grid, this is what we want in each cell. You'll see it's much cleaner.
+<div title="grid area" modifier="rvr" created="202210102100" modified="202210111758" changecount="20">
+<pre>[[CSS Grids]] has an area command to use similar to [[grid naming]] except we name whole areas, including [[grid spanning]]. Using the code from [[grid naming]] we set up a ''grid template''. This looks a little strange, but in a 4x4 grid, this is what we want in each cell. You'll see it's much cleaner.
 &lt;html&gt;&lt;pre&gt;
   grid-template-areas: &quot;head head head head&quot;
-                       &quot;box box box side&quot;
+                       &quot;box-1 box-2 box-3 side&quot;
                        &quot;main main main side&quot;
                        &quot;foot foot foot foot&quot;;
-
 .main {
-  /* Formerly: grid-column: col-start 1 / col-end 3;   Formerly: 1/-2; */
-  grid-area: main;
+  grid-area: main;   /* Formerly: grid-column: col-start 1 / col-end 3;   Formerly: 1/-2; */
 }
-
 .sidebar {
-  /* Formerly:  grid-row: box-start / main-end;    */
-  /* Formerly:  grid-column: col-end 3 / grid-end   Formerly: -2/-1;  */
-  grid-area: side;
+  grid-area: side;   /* Formerly:  grid-row: box-start / main-end;   and  grid-column: col-end 3 / grid-end  */
 }
-
-/* .box naturally falls where it belongs. */
-.footer { 
-  grid-area: foot;
+.box1 {grid-area: box-1;}
+.box2 {
+  background-color: #00ade7;
+  grid-area: box-2;
 }
+.box3 {
+  background-color: #009cd0;
+  grid-area: box-3;
+}
+.footer {   grid-area: foot;}
+&lt;/pre&gt;&lt;/html&gt;If we don't need a cell named, we can just use a dot, like: 
+* old: ''grid-template-areas: &quot;head head head head&quot; ''
+* new: ''grid-template-areas: &quot;head . . .&quot; ''
 
-&lt;/pre&gt;&lt;/html&gt;</pre>
+</pre>
 </div>
-<div title="grid naming" modifier="rvr" created="202210102049" modified="202210102102" changecount="12">
-<pre>We can use [[grid positioning]] to position elements, using numbers. But we can also use names which helps because we only have to change the cells covered by a name and not each occurrence if we had used numbers. 
+<div title="grid naming" modifier="rvr" created="202210102049" modified="202210111758" changecount="13">
+<pre>[[CSS Grids]] can use [[grid positioning]] to position elements, using numbers. But we can also use names which helps because we only have to change the cells covered by a name and not each occurrence if we had used numbers. 
 Here are some examples: Again, this is a 4x4 grid with a span &lt;html&gt;&lt;pre&gt;
 .container {
   display: grid;
@@ -3393,13 +3397,14 @@ These properties are for defining where and how big the cells are. (Where the ro
 
 See also [[grid alignment]] and [[grid naming]].</pre>
 </div>
-<div title="grid properties" modifier="rvr" created="202210061204" modified="202210061540" changecount="28">
+<div title="grid properties" modifier="rvr" created="202210061204" modified="202210111819" changecount="29">
 <pre>[[CSS Grids]] is very flexible with how we specify values.
 * There is a ''fr'' for fractional, meaning fraction of page.
 ** ''fr'' is in whole numbers.
 ** ''1fr'' is for 1-fractional space. If is is the last one, then the whole space.
 * There is a ''repeat'' to repeat things.
 ** ''repeat'' is in form: ''repeat(2, 100px);''
+** NO space between ''repeat'' and the first bracket!
 
 If we are not explicit with some property:values, then the browser will decide.
 We have control over where things will go.
