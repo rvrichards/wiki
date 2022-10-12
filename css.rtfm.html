@@ -920,20 +920,22 @@ See [[grid of images example]].
 In the Developer screen in Chrome, in the &quot;styles&quot; tab, it will list the order or priority, but reversing it, so the most important css rules are first! 
 As you go further down the page, there will be more overridden css rules, with --strikethrough--. </pre>
 </div>
-<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210102100" changecount="41">
-<pre>CSS Grids is a two-dimensional grid that defines multiple areas of layout with just a few CSS rules
+<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210121308" changecount="51">
+<pre>[[CSS]] Grids is a two-dimensional grid that defines multiple areas of layout with just a few CSS rules
 [[Flexbox]] is great for single rows and columns and is responsive, but we get better control where elements end up by using CSS Grids. And, grid items can be other grid containers. Flexbox and CSS grids work together well.
 CSS Grids are similar to Bootstrap grids, but Bootstrap has predefined breakpoints based on the min-width media queries. I think I will prefer CSS grids over bootstrap.
 Let's start: 
 * [[grid terminology]]
 * [[grid start]]
+* [[grid values]]
 * [[grid properties]]
 ** [[grid rows &amp; columns]]
-** [[grid positioning]] - where in the grid to position.
+** [[grid positioning]] - where in the grid to position (align too)
 ** [[grid alignment]] - where to align in the cell.
 ** [[grid spanning]] - multiple rows or columns.
-* [[grid naming]] - instead of numbers, names
-* [[grid area]] - define areas by name
+** [[grid explicit and implicit]] - what if we have more grid items?
+** [[grid naming]] - instead of numbers, names
+** [[grid area]] - define areas by name
 
 </pre>
 </div>
@@ -1683,9 +1685,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210111819">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210121625">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 16/09/2022 12:28:16 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 16/09/2022 17:14:49 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/10/2022 15:56:58 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 16:37:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1694,7 +1695,8 @@ merge(config.shadowTiddlers,{
 | 09/10/2022 12:58:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 11/10/2022 00:02:13 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 11/10/2022 19:52:14 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 11/10/2022 20:19:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 11/10/2022 20:19:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 12/10/2022 18:25:53 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2375,11 +2377,12 @@ If we use:
 * ''animation-timing-function: ease-out;'' - velocity style of animation. Very cusomizable.
 See also [[transition example]].</pre>
 </div>
-<div title="attribute" modifier="rvr" created="200912130228" modified="201602220951" changecount="8">
-<pre>In HTML an ''attribute'' is a property of an [[element]], providing more information, they look like a key/value pair. For the following paragraph element, there is one attribute:
+<div title="attribute" modifier="rvr" created="200912130228" modified="202210121110" changecount="20">
+<pre>In [[HTML]] an ''attribute'' is a property of an [[tag|tags]] (and by extension an [[element]]), providing more information, they look like a key/value pair (class=&quot;w00t&quot;). For the following paragraph element, there is one attribute:
 &lt;html&gt;&lt;pre&gt;
- &amp;lt;p class=&quot;woot&quot;&amp;gt;  // this is a paragraph tag with one attribute named class with value of woot.
-&lt;/pre&gt;&lt;/html&gt;</pre>
+ &amp;lt;p class=&quot;w00t&quot;&amp;gt;  // this is an opening paragraph tag with one class attribute named with value of w00t.
+ &amp;lt;div id=&quot;bar&quot; class=&quot;foo&quot;&amp;gt;  // this is a div tag with one class attribute with value &quot;foo&quot; and an id with value &quot;bar&quot;.
+&lt;/pre&gt;&lt;/html&gt;In [[CSS]] an ''attribute'' is not quite the same as in HTML We have a [[attribute selector]] - which is used to select elements with a ''specified attribute''. Otherwise we really don't use the word ''attribute'' in dealing with CSS.</pre>
 </div>
 <div title="attribute selector" modifier="rvr" created="202208311643" modified="202208311643" changecount="2">
 <pre>This is rarely used, but does have its purposes.
@@ -3276,15 +3279,36 @@ The following is code for 3 buttons taking the full width of the screen.
 #Wrap everything in a [[div]] with class ''row''. 
 #Then wrap each element in a ''div'' and give a class of ''col-md-*''.  (or ''col-xs-*'')</pre>
 </div>
-<div title="grid alignment" modifier="rvr" created="202210061434" modified="202210061441" changecount="28">
-<pre>This will show [[CSS Grid|CSS Grids]] alignment properties.
+<div title="grid alignment" modifier="rvr" created="202210061434" modified="202210121618" changecount="38">
+<pre>This will show [[CSS Grid|CSS Grids]] alignment properties. There are three types of alignment
+!Alignment Properties inside the Grid Container
 
-These properties are for defining cell alignment:.
-* See [[grid-template-areas]] for alternative to ''grid-column*''.
-* ''place-items: center;'' - element doesn't take full space of column and row..
-** ''justify-items: center;'' - element doesn't take full space of column.
-** ''align-items: center;'' - element doesn't take full space of row.
-* ''gap: 10px'' - gaps between each grid item
+These two properties control alignment inside a grid container.  There are 4 usual values: ''stretch/center/start/end''.
+* ''justify-items: &lt;value&gt;; '' - this will align in the ''x'' or horizontal direction or row axis or grid row or row track.
+** ''start'' - grid item is aligned on LHS of grid area
+** ''stretch'' - grid item stretches to fill grid area.
+** ''center'' - grid item is in center of grid area, with space to left and right.
+** ''end'' - grid item is aligned on RHS of grid area
+** ''left'' and ''right'' like ''start'' and ''end'' unless ''align-items'' has certain values
+* ''align-items:  &lt;value&gt;;'' - this will align grid items in the ''y'' of vertical direction or column axis or grid column or column track.
+** ''start'' - grid item is aligned on top of grid area
+** ''stretch'' - grid item stretches to fill grid area.
+** ''center'' - grid item is in center of grid area, with space top and bottom
+** ''end'' - grid item is aligned on RHS of grid area
+** Other, incorrect settings will produce other results like strech+start+end
+
+!Alignment Properties on the Grid Items Inside Element
+These two control alignment of grid items in the grids containing element. Effectively this is like box [[padding]]. If there is space inside the element not used by the grid, this is taken into account.
+Values: ''center/start/end/left/right''
+* ''justify-content'' - along x axis, or main axis.
+* ''align-content'' - along y axis, or cross axis.
+
+!Alignment Properties inside a Grid Cell
+We can override the overall [[CSS Grids]] settings for individual grid items:
+* ''place-self: center;'' - to center individual item in column and row
+* ''justify-self: center;'' - to center individual item in the row - this will align in the ''x'' or horizontal direction.
+* ''align-self: center;'' - to center individual item in the column  - this will align grid items in the ''y'' of vertical direction.
+
 See also [[grid positioning]].</pre>
 </div>
 <div title="grid area" modifier="rvr" created="202210102100" modified="202210111758" changecount="20">
@@ -3316,7 +3340,21 @@ See also [[grid positioning]].</pre>
 
 </pre>
 </div>
-<div title="grid naming" modifier="rvr" created="202210102049" modified="202210111758" changecount="13">
+<div title="grid explicit and implicit" modifier="rvr" created="202210111835" modified="202210111850" changecount="8">
+<pre>In [[CSS Grids]] we typically explicitly define our rows and columns using such commands as ''grid-template-rows'' or ''grid-template-columns''.
+Let's say we've explicitly defined 5 rows. If our CSS creates a [[grid item|grid terminology]] and we've filled up our 5 rows, it has to place it somewhere. In this case it creates a new grid row (aka ''track'') and placed the grid item there. These newly created grid tracks are known as the ''implicit grid''. This implicit grid is automatically created.
+
+This is the case where we've fetched some data from a server and do not know how much info we'll get back.
+
+We can actually specify how we want these rows styled instead of letting the system automatically do that task. Use: ''grid-auto-rows''
+
+Why not added columns? Because the default ''grid-auto-flow'' is set to &quot;row&quot;, so we'd need to add: ''grid-auto-flow: column''
+
+Firefox inspector will show differences in how explicit vs implicit rows are displayed.
+
+</pre>
+</div>
+<div title="grid naming" modifier="rvr" created="202210102049" modified="202210111822" changecount="14">
 <pre>[[CSS Grids]] can use [[grid positioning]] to position elements, using numbers. But we can also use names which helps because we only have to change the cells covered by a name and not each occurrence if we had used numbers. 
 Here are some examples: Again, this is a 4x4 grid with a span &lt;html&gt;&lt;pre&gt;
 .container {
@@ -3336,7 +3374,7 @@ Here are some examples: Again, this is a 4x4 grid with a span &lt;html&gt;&lt;pr
   grid-row: box-start / main-end;      /* Span 2 rows */
   grid-column: col-end 3 / grid-end;   /* With numbers, we'd use:  -2/-1;  */
 }&lt;/pre&gt;&lt;/html&gt;
-See also [[grid area]].</pre>
+See also [[grid explicit and implicit]] and [[grid area]].</pre>
 </div>
 <div title="grid of images example" modifier="rvr" created="201601212025" modified="201601220834" changecount="22">
 <pre>Here you'll see how to make a grid of images and also to have a zoom-in capability.
@@ -3381,43 +3419,34 @@ The CSS:
 }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="grid positioning" modifier="rvr" created="202210061433" modified="202210102100" changecount="30">
+<div title="grid positioning" modifier="rvr" created="202210061433" modified="202210121154" changecount="42">
 <pre>This will show [[CSS Grid|CSS Grids]] positioning properties.
 
-These properties are for defining where and how big the cells are. (Where the rows and columns are.)
+These properties are for defining where and how big the cells are. (Where the rows and columns are.) 
+We have control over where things will go, however, if we are not explicit with some attributes (ie property:attributes), then the browser will decide.
 * ''grid-column: 1/3;'' - what column to start  and end element being styled. Below 2 do same thing
 ** ''grid-column-start: 1;'' - what column to start element being styled.
 ** ''grid-column-end: 3;'' - what column to end element being styled.
+** To select just the first column: ''grid-column: 1/2''
 * ''grid-row: 1;'' - what row we want that element in.
 ** ''grid-row: 1/2;'' - is the same as above.
 * ''grid-area'' combines the above two, but I prefer to use ''grid-column&quot; and ''grid-row&quot;.
-* ''place-self: center;'' - to center individual item in column and row
-** ''justify-self: center;'' - to center individual item in column.
-** ''align-self: center;'' - to center individual item in row
-
 See also [[grid alignment]] and [[grid naming]].</pre>
 </div>
-<div title="grid properties" modifier="rvr" created="202210061204" modified="202210111819" changecount="29">
-<pre>[[CSS Grids]] is very flexible with how we specify values.
-* There is a ''fr'' for fractional, meaning fraction of page.
-** ''fr'' is in whole numbers.
-** ''1fr'' is for 1-fractional space. If is is the last one, then the whole space.
-* There is a ''repeat'' to repeat things.
-** ''repeat'' is in form: ''repeat(2, 100px);''
-** NO space between ''repeat'' and the first bracket!
-
-If we are not explicit with some property:values, then the browser will decide.
-We have control over where things will go.
-* column #1 = ''grid-column: 1/2''    
-*col #1+2 = ''grid-column: 1/3''
-
-Check out: 
+<div title="grid properties" modifier="rvr" created="202210121036" modified="202210121120" changecount="8">
+<pre>[[CSS Grids]] is very flexible and there are many properties to be set, see also [[grid values]].
+Here are the grid properties we can modify:
 * [[grid rows &amp; columns]] - the grid rows x columns.
 * [[grid positioning]] - where in the grid to position.
 * [[grid alignment]] - where to align in the cell.
-* [[grid spanning]] - multiple rows or columns.</pre>
+* [[grid spanning]] - multiple rows or columns.
+* [[grid explicit and implicit]] - what if we don't explicitly define a grid?
+* [[grid naming]] - instead of numbers, names
+* [[grid area]] - define areas by name
+* [[grid align]] - to be done
+The CSS justify-self property sets the way a box is justified inside its alignment container along the appropriate axis.</pre>
 </div>
-<div title="grid rows &amp; columns" modifier="rvr" created="202210061437" modified="202210061439" changecount="28">
+<div title="grid rows &amp; columns" modifier="rvr" created="202210061437" modified="202210121155" changecount="30">
 <pre>This will show [[CSS Grid|CSS Grids]] row x columns format:
 
 These properties are for defining the number pf rows and columns of our grid.
@@ -3428,6 +3457,7 @@ These properties are for defining the number pf rows and columns of our grid.
 ** If all rows same can use: ''repeat(3, 1fr);'' - meaning three rows of ''1fr''.
 * ''grid-template-rows: 1fr [left] 3fr [middle] 1fr [right];'' - as above - but with names
 ** therefore with above (and below) we could use: ''grid-column: left/right;''
+To give space between use: '' &quot;gap: 10px&quot; '' 
 See more [[grid properties]].</pre>
 </div>
 <div title="grid spanning" modifier="rvr" created="202210061509" modified="202210081827" changecount="41">
@@ -3479,11 +3509,16 @@ See [[grid properties]].
 
 </pre>
 </div>
-<div title="grid terminology" modifier="rvr" created="202210081836" modified="202210081840" changecount="7">
+<div title="grid terminology" modifier="rvr" created="202210081836" modified="202210121614" changecount="21">
 <pre>[[CSS Grids]] have some terminology to know. Given a 2x3 grid:
 * Grid ''container'' - this is a &quot;container that has a 2x3 grid pattern. It contains all elements.
 ** This is identified by the CSS: ''display: grid;''
-*A ''cell'' is bounded by a grid line - where an element will live.
+** An HTML document can have numerous grid containers. As well, a container can contain other containers!
+* Grid ''axis'' - there are 2 axes (x and y) 
+** ''x'' - called row, inline, or main. So ''grid row'' etc. 
+** ''y'' - called column, block, or cross. So ''cross axis'' etc.
+* Grid ''cell'' is the smallest unit in a grid. A 2x3 grid will have 6 cells.
+* Grid ''item'' is what we call the content that goes into a grid cell or area (multiple cells).
 * Grid ''lines'' - these are lines the split up the container into cells - 2 cells (rows) and 3 cells (columns).
 * Grid ''numbers'' - define the cells of a container.
 **The first cell would be defined as: 1 / 2 - meaning row line 1 and row line 2 and 1 / 2  - meaning column line 1 and column line 2 
@@ -3491,7 +3526,27 @@ See [[grid properties]].
 **the top edge of the container would be one and the bottom edge would be 3
 * Grid ''column'' is the space between two adjacent vertical grid lines.  
 * Grid ''row'' is the space between two adjacent horizontal grid lines. 
-* Grid ''area'' is a user defined area made up of multiple ''cells''.</pre>
+* Grid ''track'' - used interchangeably for row or column.
+* Grid ''area'' is a user defined area made up of multiple ''cells''.
+ 
+We can use interchangeably: row, grid row, grid track, and grid row track. :)
+See [[grid explicit and implicit]].</pre>
+</div>
+<div title="grid values" modifier="rvr" created="202210061204" modified="202210121114" changecount="37">
+<pre>[[CSS Grids]] has some special values to use in defining some [[grid properties]].
+* There is a ''fr'' for fractional, meaning fraction of page.
+** ''fr'' is in whole numbers.
+** ''1fr'' is for 1-fractional space. If is is the last one, then the whole space.
+* There is a ''repeat'' to repeat things.
+** ''repeat'' is in form: ''repeat(2, 100px);''
+** NO space between ''repeat'' and the first bracket!
+Check out: 
+* [[grid rows &amp; columns]] - the grid rows x columns.
+* [[grid positioning]] - where in the grid to position.
+* [[grid alignment]] - where to align in the cell.
+* [[grid spanning]] - multiple rows or columns.
+* [[grid explicit and implicit]] - what if we don't explicitly define a grid?
+</pre>
 </div>
 <div title="grid-template-areas" modifier="rvr" created="202209060938" modified="202209060947" changecount="11">
 <pre>The ''grid-template-areas'' is a good way to have control over where content is placed in the CSS Grid system. You could use the ''grid-column'' and ''grid-row'' also, each has their strength.
@@ -4328,14 +4383,20 @@ You will often see a button tag in this situation which is the preferred method,
    td { text-align:right; background-color:green; }
 &lt;/pre&gt;&lt;/html&gt;To have more control over the sizing of a table, use: ''table-layout: fixed;''</pre>
 </div>
-<div title="tags" modifier="rvr" created="200912130225" modified="202209051136" changecount="9">
+<div title="tags" modifier="rvr" created="200912130225" modified="202210121103" changecount="30">
 <pre>HTML tags are mark-up codes used to tell the browser how to mark-up a web page. They are bounded by angle brackets. Typically a beginning and end tag are required for an HTML [[element]].
+
+Some typical tags: body, h1, p, div, section, link, title. Which look like &lt;body&gt;, &lt;p&gt;, &lt;div&gt; ...
+Tags can have [[attribute]]s that are either class or id: ''&lt;h1 class=&quot;header&quot;&gt;'' or ''&lt;div id=&quot;w00t&quot;&gt; ''
+
 Think of it like this: An HTML paragraph [[element]] consists of two HTML tags.
-&lt;html&gt;&lt;pre&gt; &amp;lt;p&amp;gt; - this is a paragraph start tag, with no attributes.
- &amp;lt;/p&amp;gt; - this is a paragraph end tag.
- &amp;lt;p class=&quot;woot&quot;&amp;gt; - this is a paragraph start tag, with one attribute named class.
+&lt;html&gt;&lt;pre&gt; &amp;lt;p&amp;gt; A paragraph start tag, with no attributes. Following is the end tag --&gt; &amp;lt;/p&amp;gt; 
+ &amp;lt;p class=&quot;w00t&quot;&amp;gt; A paragraph start tag, with one class attribute named w00t &amp;lt;/p&amp;gt; 
 &lt;/pre&gt;&lt;/html&gt;
-Some typical tags: body, h1, p, div, section, link, title, ...</pre>
+Summing up: 
+* An HTML element typically consists of two HTML tags.
+* Tags can have [[attribute]]s
+</pre>
 </div>
 <div title="text" modifier="rvr" created="201004030005" modified="202209151652" changecount="67">
 <pre>There are many text properties, here are some:
