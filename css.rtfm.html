@@ -920,7 +920,7 @@ See [[grid of images example]].
 In the Developer screen in Chrome, in the &quot;styles&quot; tab, it will list the order or priority, but reversing it, so the most important css rules are first! 
 As you go further down the page, there will be more overridden css rules, with --strikethrough--. </pre>
 </div>
-<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210121308" changecount="51">
+<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210131455" changecount="52">
 <pre>[[CSS]] Grids is a two-dimensional grid that defines multiple areas of layout with just a few CSS rules
 [[Flexbox]] is great for single rows and columns and is responsive, but we get better control where elements end up by using CSS Grids. And, grid items can be other grid containers. Flexbox and CSS grids work together well.
 CSS Grids are similar to Bootstrap grids, but Bootstrap has predefined breakpoints based on the min-width media queries. I think I will prefer CSS grids over bootstrap.
@@ -931,12 +931,11 @@ Let's start:
 * [[grid properties]]
 ** [[grid rows &amp; columns]]
 ** [[grid positioning]] - where in the grid to position (align too)
-** [[grid alignment]] - where to align in the cell.
 ** [[grid spanning]] - multiple rows or columns.
 ** [[grid explicit and implicit]] - what if we have more grid items?
 ** [[grid naming]] - instead of numbers, names
 ** [[grid area]] - define areas by name
-
+* [[grid alignment]] - where to align in three different places.
 </pre>
 </div>
 <div title="CSS Performance" modifier="rvr" created="202209101000" modified="202209161158" changecount="13">
@@ -1685,9 +1684,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210121625">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210131507">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 16/09/2022 17:14:49 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/10/2022 15:56:58 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 16:37:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
@@ -1696,7 +1694,8 @@ merge(config.shadowTiddlers,{
 | 11/10/2022 00:02:13 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 11/10/2022 19:52:14 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 11/10/2022 20:19:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 12/10/2022 18:25:53 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 12/10/2022 18:25:53 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 13/10/2022 17:07:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -3279,8 +3278,8 @@ The following is code for 3 buttons taking the full width of the screen.
 #Wrap everything in a [[div]] with class ''row''. 
 #Then wrap each element in a ''div'' and give a class of ''col-md-*''.  (or ''col-xs-*'')</pre>
 </div>
-<div title="grid alignment" modifier="rvr" created="202210061434" modified="202210121618" changecount="38">
-<pre>This will show [[CSS Grid|CSS Grids]] alignment properties. There are three types of alignment
+<div title="grid alignment" modifier="rvr" created="202210061434" modified="202210131451" changecount="46">
+<pre>This will show [[CSS Grid|CSS Grids]] alignment properties. There are @@three@@ types of alignment.
 !Alignment Properties inside the Grid Container
 
 These two properties control alignment inside a grid container.  There are 4 usual values: ''stretch/center/start/end''.
@@ -3297,11 +3296,11 @@ These two properties control alignment inside a grid container.  There are 4 usu
 ** ''end'' - grid item is aligned on RHS of grid area
 ** Other, incorrect settings will produce other results like strech+start+end
 
-!Alignment Properties on the Grid Items Inside Element
-These two control alignment of grid items in the grids containing element. Effectively this is like box [[padding]]. If there is space inside the element not used by the grid, this is taken into account.
-Values: ''center/start/end/left/right''
-* ''justify-content'' - along x axis, or main axis.
-* ''align-content'' - along y axis, or cross axis.
+!Alignment Properties on the Grid Items Inside Containing Element
+These two properties control alignment of grid items in the CSS grid that are inside a containing element like a ''div''. Effectively this is like box [[padding]]. If there is space inside the containing element not used by the grid, this is taken into account.
+Values: ''center/start/end/left/right/space-around/space-between/space-evenly''
+* ''justify-content'' - along x axis, horizontal, or main axis.
+* ''align-content'' - along y axis, vertical, or cross axis.
 
 !Alignment Properties inside a Grid Cell
 We can override the overall [[CSS Grids]] settings for individual grid items:
@@ -3446,17 +3445,18 @@ Here are the grid properties we can modify:
 * [[grid align]] - to be done
 The CSS justify-self property sets the way a box is justified inside its alignment container along the appropriate axis.</pre>
 </div>
-<div title="grid rows &amp; columns" modifier="rvr" created="202210061437" modified="202210121155" changecount="30">
+<div title="grid rows &amp; columns" modifier="rvr" created="202210061437" modified="202210131505" changecount="31">
 <pre>This will show [[CSS Grid|CSS Grids]] row x columns format:
 
 These properties are for defining the number pf rows and columns of our grid.
 * ''grid-template-columns: minmax(200px, 1fr) 2fr 1fr;'' - gives us 3 columns of 3 different widths
 ** fr=fractional, better than px. covers entire width of page.
 ** optional ''minmax()'' - sets a min (200px) and a max (1fr)
-* ''grid-template-rows: 1fr 3fr 1fr;'' - sets how wide each of the three rows are
+* ''grid-template-rows: min-content 3fr 1fr;'' - sets how wide each of the three rows are
 ** If all rows same can use: ''repeat(3, 1fr);'' - meaning three rows of ''1fr''.
-* ''grid-template-rows: 1fr [left] 3fr [middle] 1fr [right];'' - as above - but with names
-** therefore with above (and below) we could use: ''grid-column: left/right;''
+* ''grid-template-rows: min-content [left] 3fr [middle] 1fr [right];'' - as above - but with names
+** ''min-content '' -  a size range greater than or equal to min and less than or equal to max
+** could also use: ''max-content'' -  represents the size a box needs to contain all of its content without being wrapped or it overflows the box.
 To give space between use: '' &quot;gap: 10px&quot; '' 
 See more [[grid properties]].</pre>
 </div>
@@ -4348,7 +4348,7 @@ If we incorporate a z-axis and a fixed position, then the block level elements a
 Stacking is in context (like scope), that is if one section uses stacking, it is separate from a sibling section that also may use stacking. 
 Stated another way - the ''z-index'' only applies within a stacking context, not the whole document.</pre>
 </div>
-<div title="style" modifier="rvr" created="201509071317" modified="201509071335" changecount="18">
+<div title="style" modifier="rvr" created="201509071317" modified="202210131444" changecount="19">
 <pre>You can change an [[element]]s ''style'' by using the ''style'' [[attribute]].
 Changing a paragraph to color blue: 
 &lt;html&gt;&lt;pre&gt;&amp;lt;p style=&quot;color: red&quot;&amp;gt;blah blah blah...&amp;lt;/p&amp;gt;&lt;/pre&gt;&lt;/html&gt;
