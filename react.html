@@ -175,6 +175,10 @@ Error message and password prompt
 
 <li>$:/UploadWithUrlOnly</li>
 
+<li>add babel</li>
+
+<li>basic start</li>
+
 <li>Component</li>
 
 <li>Component calls Component</li>
@@ -185,17 +189,27 @@ Error message and password prompt
 
 <li>createElement</li>
 
+<li>element</li>
+
 <li>Event Listener Examples</li>
 
 <li>Event Listeners</li>
+
+<li>First Component</li>
 
 <li>GettingStarted</li>
 
 <li>import</li>
 
+<li>Index</li>
+
 <li>Index A-F</li>
 
 <li>Index G-M</li>
+
+<li>Index N-Q</li>
+
+<li>Index R-Z</li>
 
 <li>Introduction</li>
 
@@ -205,17 +219,31 @@ Error message and password prompt
 
 <li>JSX Attributes</li>
 
+<li>JSX example</li>
+
 <li>JSX Syntax</li>
 
 <li>map</li>
 
 <li>Multiline JSX</li>
 
+<li>props</li>
+
 <li>react tools</li>
+
+<li>ReactDOM.render</li>
 
 <li>render()</li>
 
 <li>Rendering JSX</li>
+
+<li>skeleton file 1</li>
+
+<li>skeleton file 2</li>
+
+<li>skeleton file 3</li>
+
+<li>skeleton file 4</li>
 
 <li>Variables in JSX</li>
 
@@ -10139,7 +10167,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221013151236842" creator="rtfm" list="Introduction [[react tools]] JSX" modified="20221013151236842" modifier="rtfm" title="$:/StoryList">
+<div created="20221014142527123" creator="rtfm" list="[[First Component]] props [[skeleton file 3]] [[skeleton file 4]] [[Component Example]]" modified="20221014183242366" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10253,8 +10281,33 @@ JSX
 </div>
 <div title="$:/UploadURL"><pre></pre></div>
 <div title="$:/UploadWithUrlOnly"><pre>yes</pre></div>
-<div created="20210322054353366" modified="20210330053301652" tags="" title="Component">
-<pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. We'll start simple, here is Hello World!
+<div created="20221014170358820" creator="rtfm" modified="20221014173454454" modifier="rtfm" title="add babel">
+<pre>When using [[ReactDOM.render]] you may find that there are a whole pile of [[element]]s that you want to create. This is very cumbersome, so we can use a tool like [[babel]]. At first we'll use an in browser babel so we can learn and see what is going on, then we'll make it production ready.
+
+There are two things to do:
+
+* Add CDN: "https://unpkg.com/babel-standalone@6/babel.min.js"
+* In code add/change: ''text/babel''
+** Also see [[JSX example]] for a snippet of this!
+
+See [[skeleton file 2]].  </pre>
+</div>
+<div created="20221014144237810" creator="rtfm" modified="20221014173047138" modifier="rtfm" title="basic start">
+<pre>Basic React Program development. A [[basic skeleton file|skeleton file 1]] will get us going. A few points here:
+
+* We'll use a CDN to get access to React libraries to your page
+* React: "https://unpkg.com/react@18/umd/react.development.js"
+** This is entire react, and so we've referenced it.
+* React DOM:  "https://unpkg.com/react-dom@18/umd/react-dom.development.js" 
+** To add the react to the page
+* Babel:  "https://unpkg.com/babel-standalone@6/babel.min.js"
+
+We have not covered ''babel'' yet but that is coming up next in [[add babel]].</pre>
+</div>
+<div created="20210322054353366" creator="rtfm" modified="20221014175016681" modifier="rtfm" tags="" title="Component">
+<pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. 
+
+A ''component'' is simply a ''JavaScript'' function that returns [[JSX]]. Double check that. We'll start simple, here is Hello World!
 
 ```
 import React from 'react';     
@@ -10393,8 +10446,8 @@ const drinks = (
 );
 ```</pre>
 </div>
-<div created="20210320013100154" modified="20210322054300414" title="createElement">
-<pre>You can create JSX without actually writing it. The method ''createElement'' will take non JSX  code and translate it a JavaScript ''element''. 
+<div created="20210320013100154" creator="rtfm" modified="20221014151309919" modifier="rtfm" title="createElement">
+<pre>You can create [[JSX]] without actually writing it. The method ''createElement'' will take non JSX  code and translate it a JavaScript ''element''. 
 
 Here is JSX:  ''const theDiv = &amp;lt;div&gt;The Div&lt;/div&gt;;''
 
@@ -10407,6 +10460,12 @@ const theDiv = React.createElement(
   "The Div"
 );
 ```</pre>
+</div>
+<div created="20221014150346110" creator="rtfm" modified="20221014171020508" modifier="rtfm" title="element">
+<pre>An ''element'' is an HTML element, like `p` -  paragraph, or `div` for a div. An element consists to two tags - opening and closing. Elements and tags are often interchanged, but this is the difference.
+
+In React, think of elements are little chunks of HTML code. Often we will group them into chunks that are more than a single element.
+</pre>
 </div>
 <div created="20210323185615978" modified="20210323191317026" tags="" title="Event Listener Examples">
 <pre>Event handlers are methods on a component class. We have
@@ -10445,6 +10504,15 @@ A whole whack of'em here: https://reactjs.org/docs/events.html#generic-events
 
 See a;so [[Event Listener Examples]].</pre>
 </div>
+<div created="20221014174707734" creator="rtfm" modified="20221014182846136" modifier="rtfm" title="First Component">
+<pre>Building up from [[skeleton file 2]] check out [[skeleton file 3]], where we create our first component. Some details:
+
+* There can only be one top level element.
+** Therefore siblings have to nested under an element like ''div''
+*Traditionally ''App'' is the top level to [[render()]].
+
+To add dynamic content we use [[props]], see [[skeleton file 4]].</pre>
+</div>
 <div created="20210316042055620" modified="20210320011253025" title="GettingStarted">
 <pre>\define lingo-base() $:/language/ControlPanel/Basics/
 Welcome to ~TiddlyWiki and the ~TiddlyWiki community
@@ -10477,20 +10545,41 @@ If the import statement has a string that begins with either a dot or a slash, t
 This import/export style is [[ES6]], not React specific.
 </pre>
 </div>
-<div created="20210330053038278" modified="20210330061237173" title="Index A-F">
-<pre>The list:
+<div created="20221014172621944" creator="rtfm" modified="20221014172705713" modifier="rtfm" title="Index">
+<pre>The Index:
+
+*[[Introduction]]
+*[[Index A-F]]
+*[[Index G-M]]
+*[[Index N-Q]]
+*[[Index R-Z]]</pre>
+</div>
+<div created="20210330053038278" creator="rtfm" modified="20221014172722882" modifier="rtfm" title="Index A-F">
+<pre>The [[Index]]:
 
 * [[Component]]
 * [[export]]</pre>
 </div>
-<div created="20210330051232694" modified="20210330061500702" title="Index G-M">
-<pre>The list:
+<div created="20210330051232694" creator="rtfm" modified="20221014172731966" modifier="rtfm" title="Index G-M">
+<pre>The [[Index]]:
 
 * [[import]]
 * [[map]]</pre>
 </div>
-<div created="20210316042112719" creator="rtfm" modified="20221013151234109" modifier="rtfm" tags="" title="Introduction">
-<pre>React is Front End (UI or "view") library for making reusable UI [[Component]]s. It uses a virtual DOM which makes it quick and coder-friendly to work with the real DOM. It works on the front end and server side. It is: 
+<div created="20221014172743267" creator="rtfm" modified="20221014172744994" modifier="rtfm" title="Index N-Q">
+<pre>The [[Index]]:</pre>
+</div>
+<div created="20221014172754029" creator="rtfm" modified="20221014172842563" modifier="rtfm" title="Index R-Z">
+<pre>The [[Index]]:
+
+*[[skeleton file 1]]
+*[[react tools]]
+*[[ReactDOM.render]]</pre>
+</div>
+<div created="20210316042112719" creator="rtfm" modified="20221014174658508" modifier="rtfm" tags="" title="Introduction">
+<pre>React is Front End (UI or "view") library for making reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps.
+
+ It uses a virtual DOM which makes it quick and coder-friendly to work with the real DOM. It works on the front end and server side. It is: 
 
 * fast 
 * modular
@@ -10499,16 +10588,15 @@ This import/export style is [[ES6]], not React specific.
 React, check out reactjs.org and here is a list of places to start:
 
 * [[react tools]]
-*
+* [[basic start]]
+** [[skeleton file 1]]
+* [[add babel]]
+** [[skeleton file 2]]
+* [[JSX]] - to add more power
+** [[JSX example]]
+* Now its time for [[Component]], so see [[First Component]].
 
-See [[JSX]] and maybe [[JSX Attributes]].
-
-Check out some indexes:
-
-*[[Index A-F]]
-*[[Index G-M]]
-*[[Index N-Q]]
-*[[Index R-Z]]
+Check out the [[Index]].
 
 Note: "React Native" is different - it is for mobile apps.</pre>
 </div>
@@ -10571,6 +10659,49 @@ ReactDOM.render(
 &lt;/ul&gt;
 ```
 </pre>
+</div>
+<div created="20221014173303159" creator="rtfm" modified="20221014174306873" modifier="rtfm" title="JSX example">
+<pre>Using code from [[skeleton file 2]] we can show the power of [[JSX]].
+Taking the code:
+
+```
+      &lt;script type="text/babel"&gt;
+        ReactDOM.render(
+          &lt;ul&gt;
+            &lt;li&gt;Rob&lt;/li&gt;
+            &lt;li&gt;Elena&lt;/li&gt;
+          &lt;/ul&gt;,
+          document.getElementById("root")
+        );
+      &lt;/script&gt;
+```
+
+Using [[Variables in JSX]] we can:
+
+```
+    &lt;script type="text/babel"&gt;
+      let name1 = "Rob";
+      let name2 = "Elena";
+      ReactDOM.render(
+        &lt;ul&gt;
+          &lt;li&gt;{name1}&lt;/li&gt;
+          &lt;li&gt;{name2}&lt;/li&gt;
+          &lt;li&gt;{name1.toUpperCase()}&lt;/li&gt;
+          &lt;li&gt;{name2.length}&lt;/li&gt;
+        &lt;/ul&gt;,
+        document.getElementById("root")
+      );
+    &lt;/script&gt;
+```
+
+Which will look like this: 
+
+```
+• Rob
+• Elena
+• ROB
+• 5
+```</pre>
 </div>
 <div created="20210316050621729" modified="20210316050626291" title="JSX Syntax">
 <pre>A jsx ''element'' looks like:
@@ -10649,16 +10780,40 @@ export class NavBar extends React.Component {
     );
 ```</pre>
 </div>
-<div created="20221013151242679" creator="rtfm" modified="20221013155125332" modifier="rtfm" title="react tools">
-<pre>There are great dev tools for react, Check out "React Developer Tools" as an extension for firefox/chrome. React sites will show an icon in top RH corner. Look for a "component" tab. 
-I got this working in Brave but not firefox. Am weaning myself from Chrome because of issues.
-In Brave goto `brave://extensions`  to see settings for Dev Tools.
+<div created="20221014183050266" creator="rtfm" modified="20221014183212505" modifier="rtfm" title="props">
+<pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.</pre>
+</div>
+<div created="20221013151242679" creator="rtfm" modified="20221014171308772" modifier="rtfm" title="react tools">
+<pre>There are great dev tools for react, Check out "React Developer Tools" as an extension for brave/firefox/chrome. React sites will show an icon in top RH corner. Look for a "component" tab. 
 
-VSCode is great for developing.
+React Developer Tools is activated either by clicking on the react icon on top RHS of screen, or running developer tools ( ctrl+shift+i) and selecting "Components". In settings make sure that you have it turned on for "local files". To see if you have react tools and change settings goto:
 
-http://react.new goes to an online editor that is VSCode like. You'll end up at: https://codesandbox.io
+*Brave: `brave://extensions` 
+*Chrome: `chrome://extensions/`
+*Firefox `about:addons`
 
-https://codepen.io is also a good bet.</pre>
+Other great tools:
+
+* VSCode is great for developing.
+* http://react.new goes to an online editor that is VSCode like. 
+** You'll end up at: https://codesandbox.io
+* https://codepen.io is also a good bet.
+* Putzing around with [[babel]]: https://babeljs.io/</pre>
+</div>
+<div created="20221014150037780" creator="rtfm" modified="20221014171014420" modifier="rtfm" title="ReactDOM.render">
+<pre>The ''ReactDOM.render()''  takes two arguments:
+
+* An [[element]] 
+* and where to place it (in some HTML element!).  
+
+See this in action in [[basic skeleton file]].
+
+* To make an element see [[createElement]].
+* To place this in our HTML page: `document.getElementById("root")`
+** This ID's a location called ''root'' in our HTML document.
+** This is ID'd like: `&lt;div id="root"&gt;&lt;/div&gt;`
+** Content is placed between the div tags.
+* See [[render()]].</pre>
 </div>
 <div created="20210323005126170" modified="20210323010910226" tags="" title="render()">
 <pre>The ''render()'' function can have logic in it:
@@ -10704,6 +10859,158 @@ Breaking this down:
 * The ''render'' has two arguments
 ** ''Hello World'' element - is ''JSX''. This can also be a ''variable''!
 ** ''document'' - this magic will place the compiled jsx in the html at ''id='app' ''
+</pre>
+</div>
+<div created="20221014145357013" creator="rtfm" modified="20221014172348266" modifier="rtfm" title="skeleton file 1">
+<pre>Here is a basic file - HTML with React. Explanations follow.
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin&gt;&lt;/script&gt;
+   &lt;script src="https://unpkg.com/babel-standalone@6/babel.min.js"&gt;&lt;/script&gt;
+    &lt;title&gt;React ⚛️&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;div id="root"&gt;&lt;/div&gt;
+      
+      &lt;script type="text/javascript"&gt;
+          ReactDOM.render(
+              React.createElement("h1", null, "Hello World!"),
+              document.getElementById("root")
+          );
+      &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+
+Understanding this:
+
+* The two script tags have the React CDN and DOM that we need.
+* The third script tag is so that we have [[Babel]], see [[add babel]].
+* We need a `&lt;div id="root"&gt;&lt;/div&gt;` - to know where to put generated code
+* We need javascript (script tag in body) to write React code
+** `ReactDOM.render` - takes 2 parms - what [[element]] &amp; where to place
+* Thats it!
+
+For more detail and knowledge see [[ReactDOM.render]].
+
+Next [[skeleton file 2]].
+
+</pre>
+</div>
+<div created="20221014172024821" creator="rtfm" modified="20221014172315527" modifier="rtfm" title="skeleton file 2">
+<pre>This improves upon [[skeleton file 1]] by adding babel. Note that we are adding three elements here - a `ul` and two `li`. Instead of calling [[createElement]] three times we use [[babel]] to do it for us.
+
+To use ''babel'' add the ''CDN'' and the script element should be `"text/babel"`.
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/babel-standalone@6/babel.min.js"&gt;&lt;/script&gt;
+    &lt;title&gt;React ⚛️&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;div id="root"&gt;&lt;/div&gt;
+      &lt;script type="text/babel"&gt;
+        ReactDOM.render(
+          &lt;ul&gt;
+            &lt;li&gt;Rob&lt;/li&gt;
+            &lt;li&gt;Elena&lt;/li&gt;
+          &lt;/ul&gt;,
+          document.getElementById("root")
+        );
+      &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```</pre>
+</div>
+<div created="20221014174742094" creator="rtfm" modified="20221014182534195" modifier="rtfm" title="skeleton file 3">
+<pre>Following [[skeleton file 2]] - we are creating our first component as a function.
+
+A ''component'' is simply a ''JavaScript'' function that returns [[JSX]].  Below we :
+
+* Have three functions
+**Header - that has head info. Note we capitalize first letter
+**Main - our main content
+**App - traditionally this is what we will [[render()]].
+
+
+```
+  &lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+
+    &lt;script type="text/babel"&gt;
+      function Header() {
+        return (&lt;header&gt;&lt;h1&gt;Robs Room&lt;/h1&gt;&lt;/header&gt;);
+      }
+      function Main() {
+        return (&lt;section&gt;&lt;p&gt;Hello World! &lt;/p&gt;&lt;/section&gt;);
+      }
+      function App() {
+        return (
+          &lt;div&gt;
+            &lt;Header /&gt;
+            &lt;Main /&gt;
+          &lt;/div&gt;
+        );
+      }
+      ReactDOM.render(
+        &lt;App /&gt;,
+        document.getElementById("root")
+      );
+    &lt;/script&gt;
+  &lt;/body&gt;
+```
+Note that the ''App'' function has Header and Main as children of a div. React demands this nesting.
+
+Now let;s get some dynamic content in there. See [[skeleton file 4]].</pre>
+</div>
+<div created="20221014183247778" creator="rtfm" modified="20221014183623001" modifier="rtfm" title="skeleton file 4">
+<pre>We are using [[props]] to pass in data to our components.
+
+```
+ &lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+
+    &lt;script type="text/babel"&gt;
+      function Header(props) {
+        return (&lt;header&gt;&lt;h1&gt;{props.name}'s Room&lt;/h1&gt;&lt;/header&gt;);
+      }
+      function Main(props) {
+        return (
+          &lt;section&gt;&lt;p&gt;Hello {props.place}{"!"}&lt;/p&gt; &lt;/section&gt;
+        );
+      }
+      function App() {
+        return (
+          &lt;div&gt;
+            &lt;Header name="Rob" /&gt;
+            &lt;Main place="France" /&gt;
+          &lt;/div&gt;
+        );
+      }
+      ReactDOM.render(
+        &lt;App /&gt;,
+        document.getElementById("root")
+      );
+    &lt;/script&gt;
+  &lt;/body&gt;
+```
+
+This will give the output:
+
+```
+Rob's Room
+Hello France!
+```
 </pre>
 </div>
 <div created="20210319044819671" modified="20210323002040579" title="Variables in JSX">
