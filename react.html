@@ -193,6 +193,8 @@ Error message and password prompt
 
 <li>Component Example</li>
 
+<li>concepts</li>
+
 <li>Conditionals</li>
 
 <li>create react app</li>
@@ -228,6 +230,8 @@ Error message and password prompt
 <li>Fragment</li>
 
 <li>GettingStarted</li>
+
+<li>hook</li>
 
 <li>import</li>
 
@@ -277,9 +281,17 @@ Error message and password prompt
 
 <li>Rendering JSX</li>
 
+<li>state</li>
+
 <li>testing</li>
 
 <li>Tutorial</li>
+
+<li>useEffect</li>
+
+<li>useReducer</li>
+
+<li>useState</li>
 
 <li>Variables in JSX</li>
 
@@ -10212,7 +10224,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221015034646317" creator="rtfm" list="Component Tutorial [[create react app]] package.json [[npm start]] [[directory structure]] index.html App.js Fragment" modified="20221015060511257" modifier="rtfm" title="$:/StoryList">
+<div created="20221015034646317" creator="rtfm" list="hook useReducer useEffect useState" modified="20221015120759510" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10464,6 +10476,12 @@ class HelloClass extends React.Component {
  
 ReactDOM.render( &lt;HelloClass /&gt;, document.getElementById('app') );
 ```</pre>
+</div>
+<div created="20221015073940142" creator="rtfm" modified="20221015085041654" modifier="rtfm" title="concepts">
+<pre>There are a few to learn. Here are some:
+
+* [[hook]]
+* [[state]]</pre>
 </div>
 <div created="20210319052134620" modified="20210320010810453" title="Conditionals">
 <pre>We'll cover the:
@@ -10971,6 +10989,18 @@ Before you start storing important information in ~TiddlyWiki it is vital to mak
 See the [[control panel|$:/ControlPanel]] for more options.
 </pre>
 </div>
+<div created="20221015085009977" creator="rtfm" modified="20221015120154346" modifier="rtfm" title="hook">
+<pre>A ''hook'' is a special function that lets you “hook into” React features. You have access to these features ''without'' writing a class. For example, useState is a hook that lets you add state variables to functional components.
+
+* [[useState]] - keep state
+* [[useEffect]]
+* [[ useReducer]]
+
+All hooks have to declared, you can even combine them.
+
+`import { useState, useEffect } from "react";`
+</pre>
+</div>
 <div created="20210330051259048" modified="20210330061409658" title="import">
 <pre>You can import libraries. There are two different methods.
 
@@ -10994,16 +11024,18 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221014190959336" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221015113443457" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[Component]]
-* [[example file 1]]
+* [[dependency array]]
+* [[example file 1]] ... there are many [[more!|example file 2]]
 * [[export]]</pre>
 </div>
-<div created="20210330051232694" creator="rtfm" modified="20221014172731966" modifier="rtfm" title="Index G-M">
+<div created="20210330051232694" creator="rtfm" modified="20221015085002196" modifier="rtfm" title="Index G-M">
 <pre>The [[Index]]:
 
+* [[hook]]
 * [[import]]
 * [[map]]</pre>
 </div>
@@ -11045,7 +11077,7 @@ A few things to note here:
 
 </pre>
 </div>
-<div created="20210316042112719" creator="rtfm" modified="20221014190320067" modifier="rtfm" tags="" title="Introduction">
+<div created="20210316042112719" creator="rtfm" modified="20221015073932359" modifier="rtfm" tags="" title="Introduction">
 <pre>React is Front End (UI or "view") library for making reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps.
 
  It uses a virtual DOM which makes it quick and coder-friendly to work with the real DOM. It works on the front end and server side. It is: 
@@ -11059,6 +11091,7 @@ To dig into React, here is a list:
 * React resources: https://reactjs.org
 * [[react tools]]
 * [[Tutorial]]
+* React [[concepts]]
 * Of course, the [[Index]].
 
 Note: "React Native" is different - it is for mobile apps.</pre>
@@ -11351,10 +11384,14 @@ Breaking this down:
 ** ''document'' - this magic will place the compiled jsx in the html at ''id='app' ''
 </pre>
 </div>
+<div created="20221015074017583" creator="rtfm" modified="20221015074214458" modifier="rtfm" title="state">
+<pre>A tricky part of anything to do with a stateless language like HTML is keep state. Here is how we'll do it in React, [[useState]].
+</pre>
+</div>
 <div created="20221014192312309" creator="rtfm" modified="20221014192320563" modifier="rtfm" tags="" title="testing">
 <pre>@@color:red;Red colored text@@</pre>
 </div>
-<div created="20221014190013730" creator="rtfm" modified="20221015043127924" modifier="rtfm" title="Tutorial">
+<div created="20221014190013730" creator="rtfm" modified="20221015073915985" modifier="rtfm" title="Tutorial">
 <pre>This is like a tutorial, a series of steps to using React that bring in more complex features each step.
 
 * [[basic start]]
@@ -11373,6 +11410,115 @@ Breaking this down:
 ** [[example file 6]]
 * Now to more production quality react
 ** Use [[create react app]]
+
+Now the tutorial is done, we will focus on react [[concepts]]. Or go back to [[Introduction]].
+
+</pre>
+</div>
+<div created="20221015102014243" creator="rtfm" modified="20221015115704601" modifier="rtfm" title="useEffect">
+<pre>This [[hook]] is typically used to manage side effects not related to a components render. These side effects can cause hard to find bugs and are not allowed in the main body of a function component . To run them we use ''useEffect''. It will run after ''render'' has finished loading the screen, or you can choose to run it when a value changes.  It has two parameters that help with this. The side effects include:
+
+* console messages
+* timers
+* loading data
+* animations
+
+"""
+To run after ''every'' render: 
+`useEffect( () =&gt; {console.log(``Today is ${fruit} day!``); });`
+
+There are actually 2 parameters, the 2nd being when the effect is called.
+If we pass in `[]`, then it will only ever be called once.
+`useEffect( () =&gt; {console.log(``Today is ${fruit} day!``); }, []);`
+
+If we want it called after a state change (ie a variable changes) then we pass in an array of all the variables we want to monitor. This array is called a [[dependency array]].
+
+`useEffect(() =&gt; {`
+ `   console.log(``Today is ${fruit} day!``);`
+ ` }, [fruit, someOtherVar])`
+"""
+
+Final note - the ''someOtherVar'' could also be a side effect that we would want to act upon, so both would be displayed. Note that the 2nd ''useEffect'' has an empty array, meaning it only runs once. it could be like:
+
+```
+const [fruit, setDaFruit] = useState("mango");
+const [someOtherVar, setSOV] =  useState("sliced");
+
+  useEffect(() =&gt; {
+      console.log(``Today is ${fruit} day!``);
+  }, [fruit, secondary]);
+
+  useEffect(() =&gt; {
+    console.log(`Some other: ${someOtherVar}`);
+  }, []);
+```
+</pre>
+</div>
+<div created="20221015120806550" creator="rtfm" modified="20221015123343899" modifier="rtfm" title="useReducer">
+<pre>The ''useReducer'' [[hook]] can take 2 arguments. 
+
+* Function we use to update state
+* Our initial state
+
+The following code could be in the element "input", in attribute "onChange", but this is awkward if the code it large (ie much bigger than this example) or complex. SO we can use the ''useReducer'' to clean this up.
+The old input embedded in the ''input'' element: 
+
+```
+&lt;input type="checkbox" 
+    value={checked} 
+    onChange={() =&gt; setChecked((checked) =&gt; !checked)}
+ /&gt;
+```
+
+"""
+The new input: 
+`&lt;input type="checkbox" value={checked} onChange={setChecked} /&gt;`
+"""
+
+And this is the ''useReducer'' code:
+
+```
+  const [checked, setChecked] = useReducer(
+    (checked) =&gt; !checked,
+    false
+  );
+```
+
+And of course, at the top of the file we need to declare:
+
+`import { useEffect } from "react";`
+
+</pre>
+</div>
+<div created="20221015074219914" creator="rtfm" modified="20221015101916595" modifier="rtfm" title="useState">
+<pre>The library ''useState'' is a hook. A [[hook]] is a special function that lets you “hook into” React features without writing classes. In this example ''useState'' is a hook that lets you add state variables to functional components and React will preserve this state between re-renders.
+
+A two parts of: `const [fruit, setDaFruit] = useState("PickOne");`
+
+* setting the variable: ''fruit''
+* the function that will update that state: ''setDaFruit''
+
+Here is the code to do this:
+
+```
+import "./App.css";
+import { useState } from "react";
+
+function App() {
+  const [fruit, setMeSomeFruit] = useState("PickOne");
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;h1&gt;Favorite fruit: {fruit}&lt;/h1&gt;
+      &lt;button onClick={() =&gt; setDaFruit("apple")}&gt;apple&lt;/button&gt;
+      &lt;button onClick={() =&gt; setDaFruit("mango")}&gt;mango&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+```
+When we start the app, the favorite fruit will be "~PickOne", when we click either button, an apple or mango will be the new favorite.
 
 </pre>
 </div>
