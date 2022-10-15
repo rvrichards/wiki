@@ -427,6 +427,8 @@ Error message and password prompt
 
 <li>keyup</li>
 
+<li>linting</li>
+
 <li>Live Server</li>
 
 <li>Local Storage</li>
@@ -10538,7 +10540,7 @@ Error message and password prompt
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20220907132003841" creator="rtfm" list="Chrome [[Elements submenu]] Introduction" modified="20220907132010748" modifier="rtfm" title="$:/StoryList">
+<div created="20221015040910950" creator="rtfm" list="Introduction DOM" modified="20221015040910950" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -11836,8 +11838,14 @@ The ''_prototype_'' methods are grey - indicating that it is not unique to the o
 For example - typing `window` + return will open up the monstrous ''window'' object. You will see a list of properties. We can only store strings.
 </pre>
 </div>
-<div created="20210409233625026" creator="rtfm" modified="20220906105332312" modifier="rtfm" title="DOM">
-<pre>The DOM or Document [[Object]] Model is the representation of a web page. JavaScript can be used to modify it, and consequently the web page. Picture a typical hierarchical "tree" structure. At the root will be the "html" node. Typically the last element node" will be a ''text node''. Node "H1" is a header element and will have text associated with it.
+<div created="20210409233625026" creator="rtfm" modified="20221015041025993" modifier="rtfm" title="DOM">
+<pre>The DOM or Document [[Object]] Model is the representation of a web page. JavaScript can be used to modify it, and consequently the web page. React has the power to change this easily. Picture a typical hierarchical "tree" structure. 
+
+* At the root node it will be the element "html". 
+* The next node down will be typically 2 sibling nodes:  "head" and "body".
+**The "head" node will have HTML elements "meta", "title",  "link" etc. 
+**The "body" node will have "h1", "div", "p", etc.
+*Further nodes down will have elements embedded in the above elements.
 
 In the web browser ([[Chrome]]) there are [[dev tools]] which has a ''console'' tab that will have all this information.
 
@@ -12070,10 +12078,13 @@ Other info:
 *etc
 </pre>
 </div>
-<div created="20220613092234622" creator="rtfm" modified="20220613092557047" modifier="rtfm" title="emmet">
-<pre>''Emmet'' is a set of plug-ins for text editors that allow for high-speed coding and editing in HTML, XML, XSLT.
+<div created="20220613092234622" creator="rtfm" modified="20220908102949453" modifier="rtfm" title="emmet">
+<pre>All of these are for speeding code development. First - definitions:
 
-Type in `doc` and you should see a suggestion that if selected will produce:
+* Autocomplete - where you type some code and the software guesses what the complete sentence would be. If you like it hitting enter accepts it.
+* Code snippets - are small portions of re-usable source code, using custom keys to insert in code.
+
+Now, ''Emmet'' is kinda both of the above. It is code/content-assist software that where you type certain keywords and it shows suggestions that you accept by pressing enter. It expands into the code you want. It might be simply open and close h1 tags, or a complete "index.html" file. To see that coolness, type in `doc` and you should see a suggestion that if selected will produce:
 
 ```
 &lt;html lang="en"&gt;
@@ -12089,7 +12100,11 @@ Type in `doc` and you should see a suggestion that if selected will produce:
 &lt;/html&gt;
 ```
 
-How cool is that? Other things include any HTML tags. Type `h1` and you should see an "Emmet" suggestion, that if selected gives a complete h1 tag: `&lt;h1&gt;&lt;/h1&gt;`</pre>
+How neat is that? Other things include any HTML tags. Type `h1` and you should see an "Emmet" suggestion, that if selected gives a complete h1 tag: `&lt;h1&gt;&lt;/h1&gt;`
+
+Support for Emmet snippets and expansion is built right into Visual Studio Code, no extension required.
+
+See [[linting]].</pre>
 </div>
 <div created="20210408052524199" modified="20210408053543333" title="error tips">
 <pre>There are some real gotchas with JavaScript. Here are the ones I know:
@@ -12816,10 +12831,11 @@ Organized Alphabetically:
 * [[Javascript Objects]]
 * [[JSON]], [[JSON Parsing]] and [[JSON Convert Array]]</pre>
 </div>
-<div created="20210409050022656" creator="rtfm" modified="20220707160718354" modifier="rtfm" title="IndexKO">
+<div created="20210409050022656" creator="rtfm" modified="20220908095721004" modifier="rtfm" title="IndexKO">
 <pre>Here is the [[Index]] of K to O:
 
 *[[let|variables]] 
+* [[linting]]
 * [[map]]
 * [[null]]
 * [[Object]]</pre>
@@ -13097,6 +13113,17 @@ form.username.addEventListener('keyup', e =&gt; {
   }
 });
 ```
+</pre>
+</div>
+<div created="20220908095745359" creator="rtfm" modified="20220908100814962" modifier="rtfm" title="linting">
+<pre>Linting is the process of using a static code analysis tool identify stylistic and syntatical errors in your code. Originally the "c" language had a program named "lint" (ie removing lint from laundry) to check code before compiling. Because things like javascript are not compiled, easily fixed errors are caught by linting.
+Linting can:
+
+* find formatting problems
+* follow coding conventions
+* can pinpoint errors
+
+See [[emmet]].
 </pre>
 </div>
 <div created="20220613092652563" creator="rtfm" modified="20220613093115458" modifier="rtfm" title="Live Server">

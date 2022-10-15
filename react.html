@@ -183,6 +183,8 @@ Error message and password prompt
 
 <li>add babel</li>
 
+<li>App.js</li>
+
 <li>basic start</li>
 
 <li>Component</li>
@@ -193,7 +195,15 @@ Error message and password prompt
 
 <li>Conditionals</li>
 
+<li>create react app</li>
+
+<li>create-react-app</li>
+
 <li>createElement</li>
+
+<li>directory structure</li>
+
+<li>DOM</li>
 
 <li>element</li>
 
@@ -215,6 +225,8 @@ Error message and password prompt
 
 <li>First Component</li>
 
+<li>Fragment</li>
+
 <li>GettingStarted</li>
 
 <li>import</li>
@@ -229,9 +241,15 @@ Error message and password prompt
 
 <li>Index R-Z</li>
 
+<li>index.html</li>
+
+<li>index.js</li>
+
 <li>Introduction</li>
 
 <li>Javascript in JSX</li>
+
+<li>JSON</li>
 
 <li>JSX</li>
 
@@ -244,6 +262,10 @@ Error message and password prompt
 <li>map</li>
 
 <li>Multiline JSX</li>
+
+<li>npm start</li>
+
+<li>package.json</li>
 
 <li>props</li>
 
@@ -10190,7 +10212,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221014185722301" creator="rtfm" list="Tutorial [[example file 6]] [[example file 5]]" modified="20221014192423660" modifier="rtfm" title="$:/StoryList">
+<div created="20221015034646317" creator="rtfm" list="Component Tutorial [[create react app]] package.json [[npm start]] [[directory structure]] index.html App.js Fragment" modified="20221015060511257" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10315,8 +10337,31 @@ There are two things to do:
 
 See [[example file 2]].  </pre>
 </div>
-<div created="20221014144237810" creator="rtfm" modified="20221014190944768" modifier="rtfm" title="basic start">
-<pre>Basic React Program development. An [[example file 1]] will get us going. A few points here:
+<div created="20221015053715390" creator="rtfm" modified="20221015055812577" modifier="rtfm" title="App.js">
+<pre>The ''App.js'' is the main react component. All react components should be wrapped up in here, and they should be each in their own file with the same name. This is then injected in to the ''App'' component element in [[index.js]], which in turn is placed in the [[index.html]] file at the element id'd as "root".
+
+Here is an example of this file:
+
+```
+import './App.css';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;header className="App-header"&gt;
+        &lt;p&gt; Hello, World! &lt;/p&gt;
+      &lt;/header&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+```
+
+This file at the bottom should have an ''export default App;'' so that it can be grabbed by the App element in  [[index.js]].</pre>
+</div>
+<div created="20221014144237810" creator="rtfm" modified="20221015034905948" modifier="rtfm" title="basic start">
+<pre>Basic React Program development can be followed in [[Tutorial]]. An [[example file 1]] will get us going. A few points here:
 
 * We'll use a CDN to get access to React libraries to your page
 * React: "https://unpkg.com/react@18/umd/react.development.js"
@@ -10327,10 +10372,10 @@ See [[example file 2]].  </pre>
 
 We have not covered ''babel'' yet but that is coming up next in [[add babel]].</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221014175016681" modifier="rtfm" tags="" title="Component">
+<div created="20210322054353366" creator="rtfm" modified="20221015054740179" modifier="rtfm" tags="" title="Component">
 <pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. 
 
-A ''component'' is simply a ''JavaScript'' function that returns [[JSX]]. Double check that. We'll start simple, here is Hello World!
+A ''component'' is simply a ''JavaScript'' function that returns [[JSX]]. Double check that. A react component is usually and best kept in their own files of the same name.  We'll start simple, here is Hello World!
 
 ```
 import React from 'react';     
@@ -10469,6 +10514,62 @@ const drinks = (
 );
 ```</pre>
 </div>
+<div created="20221015043137996" creator="rtfm" modified="20221015060327614" modifier="rtfm" title="create react app">
+<pre>There is an app called "Create React App" that creates a React app from scratch. Like [[babel]], file bundling, etc.  Here we go:
+
+* Make sure node js is installed: ''node -v''
+* Also need npm installed: ''npm -v''
+*Now we can run ''npx create-react-app my-app''
+** This will install React, React-DOM, and React scripts ([[babel]], compiling)
+** See [[create-react-app]]
+** See https://create-react-app.dev/
+* Generated code will be in sub directory: ''my-app''
+** An example of the file [[directory structure]].
+* We change into that directory and run: ''npm start''
+** Project is compiled and run, see: http://localhost:3000/
+* We have all we need to start coding!
+
+@@color:red;Note@@ If we copy a project, typically we don't have all the node modules and dependencies copied over. The magic of [[package.json]] means that we can install them by simply running: `npm install` which will install them locally for us.</pre>
+</div>
+<div created="20221015044330147" creator="rtfm" modified="20221015045005011" modifier="rtfm" title="create-react-app">
+<pre>In [[create react app]] we showed that there is an app called ''create-react-app'' and here is the edited output:
+
+```
+$ npx create-react-app my-qwerty
+Need to install the following packages:
+  create-react-app@5.0.1
+Ok to proceed? (y) y
+Creating a new React app in /home/fred/code/react/my-qwerty.
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+Initialized a git repository.
+Installing template dependencies using npm...
+Created git commit.
+
+Success! Created my-qwerty at /home/fred/code/react/my-qwerty
+Inside that directory, you can run several commands:
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd my-qwerty
+  npm start
+
+Happy hacking!
+```
+</pre>
+</div>
 <div created="20210320013100154" creator="rtfm" modified="20221014151309919" modifier="rtfm" title="createElement">
 <pre>You can create [[JSX]] without actually writing it. The method ''createElement'' will take non JSX  code and translate it a JavaScript ''element''. 
 
@@ -10483,6 +10584,46 @@ const theDiv = React.createElement(
   "The Div"
 );
 ```</pre>
+</div>
+<div created="20221015045449898" creator="rtfm" modified="20221015053915253" modifier="rtfm" title="directory structure">
+<pre>Running [[create-react-app]] will generate the following directory structure. Note that I have removed the node libraries of which there are 1000s. Many of these are also just to show the app working and are deleted in an actual project.
+
+&lt;pre&gt;
+Root
+├── node_modules -- 1000s of files in here
+├── [[package.json]] 
+├── package-lock.json
+├── public
+│   ├── favicon.ico
+│   ├── [[index.html]]  /* All react code injected here */
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── README.md
+└── src   /* This is the entry point into our app */
+    ├── App.css
+    ├── [[App.js]]  /* Main react component */
+    ├── App.test.js
+    ├── index.css
+    ├── [[index.js]]   /* References "root" in "public" folder */
+    ├── logo.svg
+    ├── reportWebVitals.js
+    └── setupTests.js
+&lt;/pre&gt;
+
+</pre>
+</div>
+<div created="20221015035934752" creator="rtfm" modified="20221015041015196" modifier="rtfm" title="DOM">
+<pre>The DOM or Document [[Object]] Model is the representation of a web page. JavaScript can be used to modify it, and consequently the web page. React has the power to change this easily. Picture a typical hierarchical "tree" structure. 
+
+* At the root node it will be the element "html". 
+* The next node down will be typically 2 sibling nodes:  "head" and "body".
+**The "head" node will have HTML elements "meta", "title",  "link" etc. 
+**The "body" node will have "h1", "div", "p", etc.
+*Further nodes down will have elements embedded in the above elements.
+
+In the web browser ([[Chrome]]) there are [[dev tools]] which has a ''console'' tab that will have all this information.</pre>
 </div>
 <div created="20221014150346110" creator="rtfm" modified="20221014171020508" modifier="rtfm" title="element">
 <pre>An ''element'' is an HTML element, like `p` -  paragraph, or `div` for a div. An element consists to two tags - opening and closing. Elements and tags are often interchanged, but this is the difference.
@@ -10731,7 +10872,7 @@ However, the browser console gives us a @@color:red;warning:@@
 
 We'll address that in [[example file 6]]</pre>
 </div>
-<div created="20221014192429492" creator="rtfm" modified="20221014194439852" modifier="rtfm" title="example file 6" type=" ">
+<div created="20221014192429492" creator="rtfm" modified="20221015035424736" modifier="rtfm" title="example file 6" type=" ">
 <pre>When we created a list in [[example file 5]], the browser console gives us a warning:
 
 `Warning: Each child in a list should have a unique "key" prop.`
@@ -10785,7 +10926,8 @@ Key takeaways:
 *an object: `kidObj`
 *we pass that object to function ''Main''
 ** It has `key={kid.id}` to clear up that warning.
-</pre>
+
+If you find that you are getting too many ''div'' tags, use [[Fragment]].</pre>
 </div>
 <div created="20221014174707734" creator="rtfm" modified="20221014190812740" modifier="rtfm" title="First Component">
 <pre>Building up from [[example file 2]] check out [[example file 3]], where we create our first component. Some details:
@@ -10795,6 +10937,21 @@ Key takeaways:
 *Traditionally ''App'' is the top level to [[render()]].
 
 To add dynamic content we use [[props]], see [[example file 4]].</pre>
+</div>
+<div created="20221015035432248" creator="rtfm" modified="20221015035840574" modifier="rtfm" title="Fragment">
+<pre>If you are creating too many ''div'' tags, use `Fragment`, like this:
+
+```
+&lt;React.Fragment&gt;
+  &lt;Header name="Fred" /&gt;
+  &lt;Main
+    greeting="Salutations"
+    fruits={fruitObject}
+  /&gt;
+&lt;/React.Fragment&gt;
+```
+
+Basically, replace ''div'' with ''React.Fragment''. It will not add anything to the [[DOM]].</pre>
 </div>
 <div created="20210316042055620" modified="20210320011253025" title="GettingStarted">
 <pre>\define lingo-base() $:/language/ControlPanel/Basics/
@@ -10860,6 +11017,34 @@ This import/export style is [[ES6]], not React specific.
 *[[ReactDOM.render]]
 *[[Tutorial]]</pre>
 </div>
+<div created="20221015053922808" creator="rtfm" modified="20221015054458682" modifier="rtfm" title="index.html">
+<pre>This file, ''src/index.html'' is what is served for a website. In react, it is merely a place where we inject the entire react app. 
+
+The key part of this is: `&lt;div id="root"&gt;&lt;/div&gt;`
+
+
+</pre>
+</div>
+<div created="20221015053020221" creator="rtfm" modified="20221015054612999" modifier="rtfm" title="index.js">
+<pre>In [[directory structure]] the file under ''src/index.js'' has:
+
+```
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMode&gt;
+);
+```
+A few things to note here:
+
+*''App'' component is where ''src/[[App.js]]'' is placed
+*This is injected into ''public/[[index.html]]'' at element id = "root"
+
+''StrictMode'' means that it will highlight what may be problems in your app. This onbly works in development, not production. It is good to have a few safety checks.
+
+</pre>
+</div>
 <div created="20210316042112719" creator="rtfm" modified="20221014190320067" modifier="rtfm" tags="" title="Introduction">
 <pre>React is Front End (UI or "view") library for making reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps.
 
@@ -10909,6 +11094,14 @@ const peopleLis =
 ReactDOM.render(
      &lt;ul&gt;{peopleLis}&lt;/ul&gt;, document.getElementById("app"));
 ```</pre>
+</div>
+<div created="20221015050841030" creator="rtfm" modified="20221015051338910" modifier="rtfm" title="JSON">
+<pre>JavaScript Object Notation - is JSON. It is a plain text, lightweight, language independent, human readable, and open format, built using attribute–value pairs and arrays.  It can easily be converted to a JavaScript object and back:
+
+*JSON strings into JavaScript objects: `JSON.parse()`
+*Converting an object into a JSON string: `JSON.stringify()`
+
+</pre>
 </div>
 <div created="20210316042506350" modified="20210330052951436" title="JSX">
 <pre>JSX is a syntax extension for JavaScript. It is not javascript, but has to be compiled into javascript. Here are the topics covered at the moment:
@@ -11058,6 +11251,25 @@ export class NavBar extends React.Component {
     );
 ```</pre>
 </div>
+<div created="20221015060516351" creator="rtfm" modified="20221015060744305" modifier="rtfm" title="npm start">
+<pre>The ''npm start'' will start the react server so that we can code and see the changes right away on the website! This is most excellent for developing.
+
+If there are problems, it is probably because you don't have all the node modules you need. Running the `npm install` command will look for the file [[package.json]] and run it, installing all we need to run the project.</pre>
+</div>
+<div created="20221015050645786" creator="rtfm" modified="20221015060509601" modifier="rtfm" title="package.json">
+<pre>The ''package. json'' file is the heart of any Node-React project. It is npm’s configuration file. It is in [[JSON]] format, and contains meta data )descriptions, dependencies, ...) for the project.
+
+For our case, the two most important areL
+
+* ''react'' - everything we need to create react components.
+* ''react-dom'' - how we add components to the page
+* ''react-scripts'' - how we handle bundling
+
+@@color:red;Note@@ If we copy a project, typically we don't have all the node modules and dependencies copied over. The magic of [[package.json]] means that we can install them by simply running: `npm install` which will install them locally for us.
+
+And to follow that we'd run [[npm start]] to fire up the react server.
+</pre>
+</div>
 <div created="20221014183050266" creator="rtfm" modified="20221014183212505" modifier="rtfm" title="props">
 <pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.</pre>
 </div>
@@ -11142,7 +11354,7 @@ Breaking this down:
 <div created="20221014192312309" creator="rtfm" modified="20221014192320563" modifier="rtfm" tags="" title="testing">
 <pre>@@color:red;Red colored text@@</pre>
 </div>
-<div created="20221014190013730" creator="rtfm" modified="20221014192421462" modifier="rtfm" title="Tutorial">
+<div created="20221014190013730" creator="rtfm" modified="20221015043127924" modifier="rtfm" title="Tutorial">
 <pre>This is like a tutorial, a series of steps to using React that bring in more complex features each step.
 
 * [[basic start]]
@@ -11159,6 +11371,8 @@ Breaking this down:
 ** [[example file 5]]
 * Fix key @@color:red;warning@@
 ** [[example file 6]]
+* Now to more production quality react
+** Use [[create react app]]
 
 </pre>
 </div>
