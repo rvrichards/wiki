@@ -197,11 +197,15 @@ Error message and password prompt
 
 <li>Conditionals</li>
 
+<li>controlled component</li>
+
 <li>create react app</li>
 
 <li>create-react-app</li>
 
 <li>createElement</li>
+
+<li>custom hook</li>
 
 <li>directory structure</li>
 
@@ -226,6 +230,8 @@ Error message and password prompt
 <li>example file 6</li>
 
 <li>First Component</li>
+
+<li>form library</li>
 
 <li>Fragment</li>
 
@@ -290,6 +296,10 @@ Error message and password prompt
 <li>useEffect</li>
 
 <li>useReducer</li>
+
+<li>useRef</li>
+
+<li>useRef example using useState</li>
 
 <li>useState</li>
 
@@ -10224,7 +10234,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221015034646317" creator="rtfm" list="hook useReducer useEffect useState" modified="20221015120759510" modifier="rtfm" title="$:/StoryList">
+<div created="20221016151736454" creator="rtfm" list="concepts [[Index A-F]] hook [[useRef example using useState]] [[controlled component]] Introduction [[react tools]] [[form library]] JSX" modified="20221016164218314" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10532,6 +10542,10 @@ const drinks = (
 );
 ```</pre>
 </div>
+<div created="20221016152312262" creator="rtfm" modified="20221016152529040" modifier="rtfm" title="controlled component">
+<pre>A controlled component is one where we're controlling our form by creating state values for these form elements.
+Uncontrolled components mean that we manage our form elements outside of state.</pre>
+</div>
 <div created="20221015043137996" creator="rtfm" modified="20221015060327614" modifier="rtfm" title="create react app">
 <pre>There is an app called "Create React App" that creates a React app from scratch. Like [[babel]], file bundling, etc.  Here we go:
 
@@ -10602,6 +10616,11 @@ const theDiv = React.createElement(
   "The Div"
 );
 ```</pre>
+</div>
+<div created="20221016160206467" creator="rtfm" modified="20221016160903159" modifier="rtfm" title="custom hook">
+<pre>You can make a ''custom hook'' to do repeatable behaviour.
+
+A ''custom hook'' is a function that starts with ''use''.     </pre>
 </div>
 <div created="20221015045449898" creator="rtfm" modified="20221015053915253" modifier="rtfm" title="directory structure">
 <pre>Running [[create-react-app]] will generate the following directory structure. Note that I have removed the node libraries of which there are 1000s. Many of these are also just to show the app working and are deleted in an actual project.
@@ -10956,6 +10975,12 @@ If you find that you are getting too many ''div'' tags, use [[Fragment]].</pre>
 
 To add dynamic content we use [[props]], see [[example file 4]].</pre>
 </div>
+<div created="20221016161045213" creator="rtfm" modified="20221016161342100" modifier="rtfm" title="form library">
+<pre>There are many libraries that React can use for [[forms]]. I don't have a favorite yet, so here are some to check out.
+
+* formik.org - a popular open source form library for React 
+* react-hook-form.com - Performant, flexible and extensible forms with validation.</pre>
+</div>
 <div created="20221015035432248" creator="rtfm" modified="20221015035840574" modifier="rtfm" title="Fragment">
 <pre>If you are creating too many ''div'' tags, use `Fragment`, like this:
 
@@ -10989,12 +11014,14 @@ Before you start storing important information in ~TiddlyWiki it is vital to mak
 See the [[control panel|$:/ControlPanel]] for more options.
 </pre>
 </div>
-<div created="20221015085009977" creator="rtfm" modified="20221015120154346" modifier="rtfm" title="hook">
+<div created="20221015085009977" creator="rtfm" modified="20221016160159711" modifier="rtfm" title="hook">
 <pre>A ''hook'' is a special function that lets you “hook into” React features. You have access to these features ''without'' writing a class. For example, useState is a hook that lets you add state variables to functional components.
 
 * [[useState]] - keep state
 * [[useEffect]]
-* [[ useReducer]]
+* [[useReducer]]
+* [[useRef]]
+* [[custom hook]] - roll your own.
 
 All hooks have to declared, you can even combine them.
 
@@ -11024,13 +11051,15 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221015113443457" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221016161001920" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[Component]]
+* [[controlled component]]
 * [[dependency array]]
 * [[example file 1]] ... there are many [[more!|example file 2]]
-* [[export]]</pre>
+* [[export]]
+* [[form library]]</pre>
 </div>
 <div created="20210330051232694" creator="rtfm" modified="20221015085002196" modifier="rtfm" title="Index G-M">
 <pre>The [[Index]]:
@@ -11077,7 +11106,7 @@ A few things to note here:
 
 </pre>
 </div>
-<div created="20210316042112719" creator="rtfm" modified="20221015073932359" modifier="rtfm" tags="" title="Introduction">
+<div created="20210316042112719" creator="rtfm" modified="20221016161039777" modifier="rtfm" tags="" title="Introduction">
 <pre>React is Front End (UI or "view") library for making reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps.
 
  It uses a virtual DOM which makes it quick and coder-friendly to work with the real DOM. It works on the front end and server side. It is: 
@@ -11092,6 +11121,7 @@ To dig into React, here is a list:
 * [[react tools]]
 * [[Tutorial]]
 * React [[concepts]]
+* [[form library]]
 * Of course, the [[Index]].
 
 Note: "React Native" is different - it is for mobile apps.</pre>
@@ -11306,7 +11336,7 @@ And to follow that we'd run [[npm start]] to fire up the react server.
 <div created="20221014183050266" creator="rtfm" modified="20221014183212505" modifier="rtfm" title="props">
 <pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.</pre>
 </div>
-<div created="20221013151242679" creator="rtfm" modified="20221014171308772" modifier="rtfm" title="react tools">
+<div created="20221013151242679" creator="rtfm" modified="20221016164342787" modifier="rtfm" title="react tools">
 <pre>There are great dev tools for react, Check out "React Developer Tools" as an extension for brave/firefox/chrome. React sites will show an icon in top RH corner. Look for a "component" tab. 
 
 React Developer Tools is activated either by clicking on the react icon on top RHS of screen, or running developer tools ( ctrl+shift+i) and selecting "Components". In settings make sure that you have it turned on for "local files". To see if you have react tools and change settings goto:
@@ -11321,7 +11351,8 @@ Other great tools:
 * http://react.new goes to an online editor that is VSCode like. 
 ** You'll end up at: https://codesandbox.io
 * https://codepen.io is also a good bet.
-* Putzing around with [[babel]]: https://babeljs.io/</pre>
+* Putzing around with [[babel]]: https://babeljs.io/
+* Some good [[hook]] resources at https://usehooks.com/</pre>
 </div>
 <div created="20221014150037780" creator="rtfm" modified="20221014190911575" modifier="rtfm" title="ReactDOM.render">
 <pre>The ''ReactDOM.render()''  takes two arguments:
@@ -11454,7 +11485,7 @@ const [someOtherVar, setSOV] =  useState("sliced");
 ```
 </pre>
 </div>
-<div created="20221015120806550" creator="rtfm" modified="20221015123343899" modifier="rtfm" title="useReducer">
+<div created="20221015120806550" creator="rtfm" modified="20221015183551802" modifier="rtfm" title="useReducer">
 <pre>The ''useReducer'' [[hook]] can take 2 arguments. 
 
 * Function we use to update state
@@ -11489,6 +11520,102 @@ And of course, at the top of the file we need to declare:
 `import { useEffect } from "react";`
 
 </pre>
+</div>
+<div created="20221015183630219" creator="rtfm" modified="20221016152923148" modifier="rtfm" title="useRef">
+<pre>The ''useRef'' (reference) [[hook]] is used to check an individual element and get its value. This is done outside of state, so we have an[[uncontrolled component|controlled component]]. We have to reach out to get this value, it is not affected by a render.
+Here is the full code, explain at end:
+
+```
+1   import "./App.css";
+2   import { useRef } from "react";
+3   
+4   function App() {
+5     const txtTitle = useRef();
+6   
+7     const submit = (e) =&gt; {
+8        e.preventDefault();
+9       const title = txtTitle.current.value;
+10      alert(`${title}`);
+11      txtTitle.current.value = "";
+12    };
+13    return (
+14      &lt;form onSubmit={submit}&gt;
+15        &lt;input ref={txtTitle} type="text" " /&gt;
+16        &lt;button&gt;Submit&lt;/button&gt;
+17      &lt;/form&gt;
+18    );
+19  }
+2o
+21  export default App;
+```
+
+Line numbers:
+
+* #2 - we need to import ''useRef'' code.
+* #5 - "txtTitle" is an object. It will get a ''ref''erence to "txtTitle".
+** "txtTitle" object will have a field called "current".
+** this will be what we type into the input form "input" element.
+* #7 - this is the submit function (from #14).
+* #8 - no page refresh - prevent that default.
+* #9 - get the "title" from object "txtTitle", the "current" value.
+* #10 - Print the value from the input text box.
+* #11 - reset title to blank, ready for next click.
+* #14 - whenever form is submitted, we run the ''submit'' function.
+* #15 - Here we point/reference "txtTitle" to the input element. 
+* #21 - Don't forget to export!
+
+Finally, we could use state to manage these, the above is just an example of using ''useRef''. To see this above code using [[useState]] see [[useRef example using useState]].
+</pre>
+</div>
+<div created="20221016152930241" creator="rtfm" modified="20221016160015502" modifier="rtfm" title="useRef example using useState">
+<pre>The [[useState]] hook lets you add state variables to functional components and React will preserve this state between re-renders. This means we have a [[controlled component]].
+
+The ''useRef'' (reference) [[hook]] is used to check an individual element and get its value. This is done outside of state, so we have an[[uncontrolled component|controlled component]]. We have to reach out to get this value, it is not affected by a render.
+
+The following code is how we'd do the file from the [[useRef]] example, but using ''useState'':
+Here is the full code, explain at end:
+
+```
+1   import "./App.css";
+2   import { useState } from "react";
+3   
+4   function App() {
+5     const [title, setTitle] = useState(""); 
+6   
+7     const submit = (e) =&gt; {
+8        e.preventDefault();
+9       alert(`${title}`);
+10      setTitle("");
+11    };  
+12    return (
+13      &lt;form onSubmit={submit}&gt;
+14        &lt;input value={title} 
+15           onChange={(event) =&gt;
+16             setTitle(event.target.value) }
+17           type="text" /&gt;
+18        &lt;button&gt;Submit&lt;/button&gt;
+19      &lt;/form&gt;
+20    );
+21  }
+22
+23  export default App;
+```
+
+Line numbers:
+
+* #2 - we need to import ''useState'' code.
+* #5 - "title" is a variable and we update it with "setTitle".
+** We set its default value here.
+* #7 - this is the submit function (from #14).
+* #8 - no page refresh - prevent that default.
+* #9 - print the "title" (from the input text box.)
+* #10 - reset title to blank, ready for next click.
+* #13 - whenever form is submitted, we run the ''submit'' function.
+* #14 - we put "title" data to the input element box. 
+* #16 - set title on input box change
+* #23 - Don't forget to export!
+
+We used state to manage this code. See  [[useRef]].</pre>
 </div>
 <div created="20221015074219914" creator="rtfm" modified="20221015101916595" modifier="rtfm" title="useState">
 <pre>The library ''useState'' is a hook. A [[hook]] is a special function that lets you “hook into” React features without writing classes. In this example ''useState'' is a hook that lets you add state variables to functional components and React will preserve this state between re-renders.
