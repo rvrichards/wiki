@@ -523,7 +523,7 @@ Also see AdvancedOptions</pre>
   }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="A-E" modifier="rvr" created="201101062108" modified="202210091016" changecount="69">
+<div title="A-E" modifier="rvr" created="201101062108" modified="202210171019" changecount="71">
 <pre>[[absolute]]
 [[after and before]]
 [[anchor]]
@@ -533,16 +533,6 @@ Also see AdvancedOptions</pre>
 [[basic HTML]]
 [[block]]
 [[body]]
-[[Bootstrap]]
-[[Bootstrap buttons]]
-[[Bootstrap classes]]
-[[Bootstrap container]]
-[[Bootstrap dropdown]]
-[[Bootstrap form inputs]]
-[[Bootstrap forms]]
-[[Bootstrap images]]
-[[Bootstrap input]]
-[[Bootstrap table]]
 [[border]]
 [[box example]]
 [[Box Model]]
@@ -579,296 +569,6 @@ Also see AdvancedOptions</pre>
 [[external stylesheet]]
 </pre>
 </div>
-<div title="Bootstrap" modifier="rvr" created="201507131607" modified="201712170305" changecount="64">
-<pre>''Bootstrap'' is a commonly used ''framework'' created by Twitter. It helps keeps things consistent across platforms.
-Bootstrap will figure out how wide your screen is and resize your HTML elements. This means the design will look good on mobile as well as web, regardless of screen width.
-It can be added to a Rails app via a gem, or it can be added by using the [[link]] tag:
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css&quot; /&amp;gt;
-or
-&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css&quot;&gt;
-&lt;/pre&gt;&lt;/html&gt;
-Using the text editor ''Sublime Text 3'' - there are some great linters to use. See [[ST3 Linter]].
-Important concepts:
-*[[Bootstrap container]]
-*Bootstrap [[grid]]
-*In container there are rows,which will contain 1-12 columns (ie [[grid]])
-*Columns contain padding. More then 12 columns, then it will wrap.
-*[[typography]]
-*[[Bootstrap table]]
-*[[Bootstrap forms]]
-*[[Bootstrap input]]
-*[[Bootstrap buttons]]
-*[[Bootstrap images]]
-*[[Bootstrap dropdown]]
-*[[collapse]] - to hide content.
-*[[breadcrumb]]
-*[[Navs]] - used more for in page navigation
-*[[Navbars]] - used more for site wide navigation
-*[[tooltip]]
-Bootstrap has a 12 column [[grid]] system for layout.
-See [[Bootstrap forms]] and then [[Bootstrap form inputs]].
-Bootstrap has many classes predefined, see [[Bootstrap classes]].
-Cheat sheet - https://bootstrapcreative.com/resources/bootstrap-4-css-classes-index/
-</pre>
-</div>
-<div title="Bootstrap buttons" modifier="rvr" created="201509131431" modified="201703200603" changecount="58">
-<pre>The ''button'' element creates a clickable button. This example uses the [[Bootstrap]] framework (by calling class=&quot;btn&quot;).
-&lt;html&gt;&lt;pre&gt;
-  &amp;lt;button class=&quot;btn&quot;&amp;gt;Click Me!&amp;lt;/button&amp;gt;
-  &lt;button &gt;Click Me!&lt;/button&gt;
-&lt;/pre&gt;&lt;/html&gt;
-A button will not perform a [[submit]], so when used in a form it is anticipated that some javascript will perform the submit. You have more freedom to modify the text (even use an image) of the button than a submit. You can use buttons with the ''anchor'' element (ie &lt;a...&gt;) and with the ''input'' element, (ie &lt;input...&gt;)
-!!Example
-A log in button that once clicked will show an italicized &quot;Logging in...&quot; and a spinning wait icon.
-&lt;html&gt;&lt;pre&gt;
-&lt;a class=&quot;btn btn-primary&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Anchor&lt;/a&gt;
-&amp;lt;a class=&quot;btn btn-primary&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Anchor&amp;lt;/a&gt;
-&lt;button class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;Button&lt;/button&gt;
-&amp;lt;button class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;Button&amp;lt;/button&gt;
-&lt;input class=&quot;btn btn-primary&quot; type=&quot;button&quot; value=&quot;Input&quot;&gt;
-&amp;lt;input class=&quot;btn btn-primary&quot; type=&quot;button&quot; value=&quot;Input&quot;&gt;
-&lt;input class=&quot;btn btn-primary&quot; type=&quot;submit&quot; value=&quot;Submit This&quot;&gt;
-&amp;lt;input class=&quot;btn btn-primary&quot; type=&quot;submit&quot; value=&quot;Submit This&quot;&gt;
-&lt;/pre&gt;&lt;/html&gt;
-See [[toggle]] example.
-!!Bootstrap classes
-There are a number of [[Bootstrap]] classes to enhance buttons:
-*''btn'' - is the basic [[inline]] class, meaning that it is only large enough to hold the text it contains.
-*''btn-group'' - group buttons/checkbox/radio as one group. Use ''div'' element to wrap all concerned widgets.
-**''btn-group-sm'' - small buttons
-**''btn-group-lg'' - large buttons
-*''btn-group-vertical'' - to group vertically.
-*''btn-block'' - is the [[block]]-level class for the element, meaning the button covers the whole width of the screen.
-*''btn-lg'' - large button size.
-*''btn-sm'' - not large.
-*''disabled'' - disable
-
-
-|!Class|!Outline|!Description|
-|btn-primary|btn-outline-primary|Typically blue, text white.|
-|btn-secondary|btn-outline-secondary|Clear with black text.|
-|btn-info|btn-outline-info|Light blue.|
-|btn-success|btn-outline-success|Green button.|
-|btn-warning|btn-outline-warning|Yellow.|
-|btn-danger|btn-outline-danger|Typically styled red.|
-|btn-link|none|Almost looks like one, no outside &quot;button&quot; border&quot;.|
-The ''btn-outline-*'' class applies color to outline only.
-
-</pre>
-</div>
-<div title="Bootstrap classes" modifier="rvr" created="201509141734" modified="201703172207" changecount="10">
-<pre>Bootstrap has many classes to use.
-Here are some
-
-|!Class|!Description|
-|''text-center''|to center text.|
-|''btn''|Does [[button|Bootstrap buttons]] elements styling.|
-|''btn-default''|Does...|
-|''well''|Provides visual depth for columns.|
-|''target''|Provides a target for jQuery.|</pre>
-</div>
-<div title="Bootstrap container" modifier="rvr" created="201703160425" modified="202209071759" changecount="22">
-<pre>A Bootstrap container is for holding HTML elements and implementing a grid system.
-A container is fluid or fixed, inside a container you can use the [[grid]] system.
-!!Fixed Container
-A fixed container is HTML responsive. Resizing a browser the width remains constant, until it passes a certain breakpoint when it will jump to a new width.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;container&quot;&gt;
-  ...
-&amp;lt/div&gt;
-&lt;/pre&gt;&lt;/html&gt;
-!!Fluid Container
-A fluid container spans the full width of the [[viewport]]. It will expand and contract fluidly as you resize the browser.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;container-fluid&quot;&amp;gt;
-  ...
-&amp;lt;/div&amp;gt;
-&lt;/pre&gt;&lt;/html&gt;</pre>
-</div>
-<div title="Bootstrap dropdown" modifier="rvr" created="201703200226" modified="201703201759" changecount="43">
-<pre>Bootstrap dropdown requires javascript, but it comes packaged so you don't have to add anything. Make sure 
-*to wrap everything in the dropdown class (first ''div'' statement.)
-*add the ''dropdown-toggle'' Bootstrap class and add ''data-toggle=&quot;dropdown&quot;'' to the trigger element (in below it is the ''button'' element.)
-* Wrap all items within a ''div'' element and add the Bootstrap class ''dropdown-menu'' .
-*All items use the class ''dropdown-item''.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;dropdown&quot;&gt;
-  &amp;lt;button class=&quot;btn btn-primary dropdown-toggle&quot; type=&quot;button&quot; id=&quot;about-us&quot; data-toggle=&quot;dropdown&quot;&gt;
-  Fruit Backet
-  &amp;lt;/button&gt;
-    &amp;lt;div class=&quot;dropdown-menu&quot; &gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Avacado&amp;lt;/a&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Mango&amp;lt;/a&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Watermelon&amp;lt;/a&gt;
-  &amp;lt;/div&gt;
-&amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;Can substitute ''dropup'' for ''dropdown''.
-You can have dropdown headers in the item list: ''dropdown-header''
-You can also have dividers: ''dropdown-divider''
-To disable use ''disabled'' (see potato)
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;dropdown&quot;&gt;
-  &amp;lt;button class=&quot;btn btn-primary dropdown-toggle&quot; type=&quot;button&quot; id=&quot;about-us&quot; data-toggle=&quot;dropdown&quot; &gt;
-  Food
-  &amp;lt;/button&gt;
-  &amp;lt;div class=&quot;dropdown-menu&quot;&gt;
-    &amp;lt;h3 class=&quot;dropdown-header&quot;&gt;Fruit&amp;lt;/h3&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Mango&amp;lt;/a&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Peach&amp;lt;/a&gt;
-   &amp;lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
-    &amp;lt;h3 class=&quot;dropdown-header&quot;&gt;Veggies&amp;lt;/h3&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Carrrot&amp;lt;/a&gt;
-    &amp;lt;a class=&quot;dropdown-item disabled&quot; href=&quot;#&quot;&gt;Potato&amp;lt;/a&gt;
-  &amp;lt;/div&gt;
-&amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;
-There is an example of dropdown mixed in with [[Nav bars]], see [[nav dropdown example]].</pre>
-</div>
-<div title="Bootstrap form inputs" modifier="rvr" created="201604010927" modified="201703180011" changecount="25">
-<pre>Bootstrap supports these form inputs: input, textarea, checkbox, radio, and select.
-Bootstrap 4 provides these classes for displaying checkboxes and radio buttons.
-*''form-check''
-*''form-check-label''
-*''form-check-input''
-*''form-check-inline''
-To display the checkboxes or radio buttons stacked, nest each one inside a &lt;div&gt; with the ''form-check'' class.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;form-check&quot;&gt;
-  &amp;lt;label class=&quot;form-check-label&quot;&gt;
-    &amp;lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;checkbox1&quot; value=&quot;1&quot;&gt;Apple
-  &amp;lt;/label&gt;
-&amp;lt;/div&gt;
-&amp;lt;div class=&quot;form-check&quot;&gt;
-  &amp;lt;label class=&quot;form-check-label&quot;&gt;
-    &amp;lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;checkbox2&quot; value=&quot;2&quot;&gt;Coconut
-  &amp;lt;/label&gt;
-&amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;
-And just for fun...
-&lt;html&gt;&lt;pre&gt;
-&lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;checkbox1&quot; value=&quot;1&quot;&gt;Apple
-&lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;checkbox2&quot; value=&quot;2&quot;&gt;Coconut
-&lt;/pre&gt;&lt;/html&gt;
-To disable a control, use class: ''disabled''
-&gt;&lt;div class=&quot;form-check disabled&quot;&gt;
-!Inline
-Display controls inline by removing the  ''div'' element and adding the ''form-check-inline'' class to the element ''label''.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;label class=&quot;form-check-inline&quot;&gt;
-  &amp;lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;cb1&quot; value=&quot;1&quot;&gt; 1
-&amp;lt;/label&gt;
-&amp;lt;label class=&quot;form-check-inline&quot;&gt;
-  &amp;lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;cb2&quot; value=&quot;2&quot;&gt; 2
-&amp;lt;/label&gt;
-&amp;lt;label class=&quot;form-check-inline&quot;&gt;
-  &amp;lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; id=&quot;cb3&quot; value=&quot;3&quot;&gt; 3
-&amp;lt;/label&gt;
-&lt;/pre&gt;&lt;/html&gt;
-</pre>
-</div>
-<div title="Bootstrap forms" modifier="rvr" created="201603291109" modified="201705151829" changecount="42">
-<pre>Bootstrap comes with lots of for styling for ''forms''. See also [[Bootstrap input]]. There are three styles:
-*vertical styling (default)
-*horizontal styling
-*inline
-Bootstrap applies display: block and width: 100% to most form controls.
-Here are a couple of good basics to follow:
-*Wrap labels and form controls using HTML element ''fieldset'' and class ''.form-group'', example: @@&lt;fieldset class=&quot;form-group&quot;&gt;@@
-**Alternatively, wrap all labels and form controls in a ''div'': @@&lt;div class=&quot;form-group&quot;&gt;@@  
-*Add class ''.form-control'' to all &lt;input&gt;, &lt;textarea&gt;, and &lt;select&gt; elements.
-*Hide labels, use @@class=&quot;sr-only&quot;@@
-**This is useful if you don't want a label, you are using a ''placeholder'' as the label.
-**This is useful for dropdown where you want just the down arrow, no label.
-*Have labels in text input, use: @@placeholder=&quot;First Name&quot;@@
-More fancy form styling see [[more styling forms]].
-!!Vertical Styling
-Using the above basics, an example of the default vertical styling:
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;form ... &gt;
-  &amp;lt;fieldset class=&quot;form-group&quot;&gt;
-    &amp;lt;label for=&quot;first_name&quot; class=&quot;sr-only&quot;&gt;First Name:&amp;lt;/label&gt;
-    &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;first_name&quot; placeholder=&quot;First Name&quot;&gt;
-  &amp;lt;fieldset&gt;
-  &amp;lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&amp;lt;/button&gt;
-&amp;lt;/form&gt;
-&lt;/pre&gt;&lt;/html&gt;
-!!To make it inline:
-&lt;html&gt;&lt;pre&gt;&amp;lt;form class=&quot;form-inline&quot;&gt; ...&lt;/pre&gt;&lt;/html&gt;
-See also [[vertical-align]]
-!!For horizontal
-Some things...
-*Add a ''row'' class to the ''form-group''
-*v3: Add @@class=&quot;form-horizontal&quot; @@ to the &lt;form&gt; element. (Not needed for Bootstrap4)
-*v3: Add @@class=&quot;control-label&quot;@@ to all &lt;label&gt; elements. 
-*v4: Add @@class=&quot;col-form-label&quot;@@ to all &lt;label&gt; elements.  
-*Add the grid class: ''.col-*-*'' for each column. Below we used: @@col-sm-2@@
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;form class=&quot;form-horizontal&quot;&gt;
-  &amp;lt;div class=&quot;form-group row&quot;&gt;
-    &amp;lt;label class=&quot;col-form-label col-sm-2&quot; for=&quot;email&quot;&gt;Email:&amp;lt;/label&gt;
-    &amp;lt;div class=&quot;col-sm-10&quot;&gt;
-      &amp;lt;input type=&quot;email&quot; class=&quot;form-control&quot; name=&quot;email&quot; placeholder=&quot;Enter email&quot;&gt;
-    &amp;lt;/div&gt;
-  &amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;
-Next - [[Bootstrap form inputs]].
-</pre>
-</div>
-<div title="Bootstrap images" modifier="rvr" created="201703180035" modified="201703210027" changecount="23">
-<pre>Bootstrap images make them responsive.
-
-|!Class|!Description|
-|img-fluid|To make an image scale appropriately across devices.|
-|img-responsive|v3 - to make an image scale appropriately across devices.|
-|img-rounded|To round edges of image.|
-|img-circle|Image in a circle.|
-|img-thumbnail|A thumbnail.|
-|pull-*-left|Pull to left. * is xs, sm, md, lg, or xl.|
-|pull-*-right|Pull to right. * is xs, sm, md, lg, or xl.|
-Caution: ''pull-*'' for navbar was changed to ''float-*''.
-
-Centering [[block] level Images - Use Bootstrap's ''m-x-auto'' to center an image with d-block applied.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;img src=&quot;/pix/something.jpg&quot; class=&quot;img-circle m-x-auto d-block&quot; alt=&quot;Photo of something&quot;&gt;
-&lt;/pre&gt;&lt;/html&gt;
-Centering non-block level Images - Use Bootstrap's ''text-*-center'' (*= is xs, sm, md, lg, or xl.) classes on the image's parent to center a non-block-level image.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;text-xs-center&quot;&gt;
-  &amp;lt;img src=&quot;/pix/something.jpg&quot; class=&quot;img-circle&quot; alt=&quot;Photo of something&quot;&gt;
-&amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;
-</pre>
-</div>
-<div title="Bootstrap input" modifier="rvr" created="201703200603" modified="201703200612" changecount="43">
-<pre>To have a bit more styling only on the  ''input'' element.
-This example will have a &quot;$&quot; followed by an input field followed by a &quot;.00&quot;. To do so wrap it all in ''input-group'' and use ''input-group-addon'' to add on the element that you want to add to the form control.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;input-group&quot;&gt;
-  &amp;lt;span class=&quot;input-group-addon&quot;&gt;$&amp;lt;/span&gt;
-  &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; &gt;
-  &amp;lt;span class=&quot;input-group-addon&quot;&gt;.00&amp;lt;/span&gt;
-&amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;
-Change size by using: ''input-group-sm'' or ''input-group-lg''
-You can also add on checkboxes or radio buttons.</pre>
-</div>
-<div title="Bootstrap table" modifier="rvr" created="201703160527" modified="201703160534" changecount="21">
-<pre>You can add more styling by adding the bootstrap class.
-Example: @@ &lt;table class=&quot;table&quot;&gt;...@@
-More:
-*Make smaller table: @@&lt;table class=&quot;table table-sm&quot;&gt;...@@@
-*Horiz scrollbars: @@&lt;table class=&quot;table table-responsive&quot;&gt;...@@
-*Inverse color: @@&lt;table class=&quot;table table-inverse&quot;&gt;...@@
-*Striped rows: @@&lt;table class=&quot;table table-striped&quot;&gt;...@@
-*Borders: @@&lt;table class=&quot;table table-bordered&quot;&gt;...@@
-*Hover: @@&lt;table class=&quot;table table-hover&quot;&gt;...@@
-*Table Head style: @@&lt;thead class=&quot;thead-default&quot;&gt;...@@
-*Table Head inverse: @@&lt;thead class=&quot;thead-inverse&quot;&gt;@@
-*Table Head on LHS: @@&lt;table class=&quot;table table-reflow&quot;&gt;...@@
-
-</pre>
-</div>
 <div title="Box Model" modifier="rvr" created="201004042221" modified="202209041814" changecount="73">
 <pre>The ''Box Model'' concerns design and layout. Consider everything in CSS to be in boxes. It places a margin &amp; border around elements and spaces elements in relation to other elements. It is layered from the outer most edge to the inside, like nested boxes:
 *[[margin]] - Controls space. Clears an area around the border to other elements/boxes. Has no background color, and is always transparent. It affects other content in relation to it!
@@ -894,7 +594,7 @@ The &quot;Computed Style&quot; shows what is computed based on a % or a value ap
 <div title="CDnetwork" modifier="rvr" created="201406280705" changecount="10">
 <pre>The network tab shows various loading times of each part of the web page.</pre>
 </div>
-<div title="CSS" modifier="rvr" created="201407060620" modified="202208311619" changecount="21">
+<div title="CSS" modifier="rvr" created="201407060620" modified="202210171020" changecount="22">
 <pre>Cascading Style Sheets (CSS) is to be used to format content. The size &amp; color of fonts. It allows us to describe the layouts. The size and position of elements. The whole webpage is styled by css.
 
 Cascading is used because the order of stylesheets cascades. 
@@ -914,17 +614,15 @@ CSS has to be linked to a web page. Can be done in three ways:
 *[[internal stylesheet]] 
 *[[external stylesheet]] - this is what I prefer, best for any real project
 
-There are [[frameworks]] such as [[Bootstrap]] to help with things.
 See [[grid of images example]].
 
 In the Developer screen in Chrome, in the &quot;styles&quot; tab, it will list the order or priority, but reversing it, so the most important css rules are first! 
 As you go further down the page, there will be more overridden css rules, with --strikethrough--. </pre>
 </div>
-<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210131455" changecount="52">
+<div title="CSS Grids" modifier="rvr" created="202209051939" modified="202210171027" changecount="53">
 <pre>[[CSS]] Grids is a two-dimensional grid that defines multiple areas of layout with just a few CSS rules
 [[Flexbox]] is great for single rows and columns and is responsive, but we get better control where elements end up by using CSS Grids. And, grid items can be other grid containers. Flexbox and CSS grids work together well.
-CSS Grids are similar to Bootstrap grids, but Bootstrap has predefined breakpoints based on the min-width media queries. I think I will prefer CSS grids over bootstrap.
-Let's start: 
+CSS Grids were recently added to css. Let's start: 
 * [[grid terminology]]
 * [[grid start]]
 * [[grid values]]
@@ -1143,19 +841,20 @@ If we have a column direction we can use both:
 
 If we overflow our container, use ''flex-wrap:wrap''</pre>
 </div>
-<div title="Font Awesome" modifier="rvr" created="201509141609" modified="201608300316" changecount="12">
+<div title="Font Awesome" modifier="rvr" created="201509141609" modified="202210171051" changecount="19">
 <pre>This is a library of icons, stored as vectors (.svg) so they are treated as if a font. Therefore you can change their size easily!
 It is treated as a font so you can use: @@&lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt;@@ to get a garbage can icon.
 Anyways, you can access it via [[link]] :
-&lt;html&gt;&lt;pre&gt;&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot;&amp;gt;
+&lt;html&gt;&lt;pre&gt;&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css&quot;&amp;gt;
 ...
-&amp;lt--  Add a garbage can icon --&amp;gt;
-&amp;lt;button class=&quot;btn btn-block btn-danger&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-trash&quot;&amp;gt;&amp;lt;/i&amp;gt; Delete&amp;lt;/button&amp;gt;
+    &amp;lt;ul&gt;
+        &amp;lt;li&gt;Fly away &amp;lt;i class=&quot;fa-brands fa-twitter&quot;&gt;&amp;lt;/i&gt; &amp;lt;/li&gt;
+        &amp;lt;li&gt;A button: &amp;lt;button&gt; &amp;lt;i class=&quot;fa fa-trash&quot;&gt;&amp;lt;/i&gt; &amp;lt;/button&gt; &amp;lt;/li&gt;
+        &amp;lt;li&gt;&amp;lt;i class=&quot;fa fa-camera-retro fa-1x&quot;&gt;&amp;lt;/i&gt; La Photo&amp;lt;/li&gt;
+        &amp;lt;li&gt;You: &amp;lt;button class=&quot;btn &quot;&gt; &amp;lt;i class=&quot;fa fa-thumbs-up&quot;&gt;&amp;lt;/i&gt; Like&amp;lt;/button&gt; &amp;lt;/li&gt;
+    &amp;lt;/ul&gt;
 &lt;/pre&gt;&lt;/html&gt;
-To get a thumbs-up icon on the &quot;Like&quot; button, it's just...
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;button class=&quot;btn btn-block btn-primary&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-thumbs-up&quot;&amp;gt;&amp;lt;/i&amp;gt; Like&amp;lt;/button&amp;gt;
-&lt;/pre&gt;&lt;/html&gt;</pre>
+</pre>
 </div>
 <div title="Good CSS" modifier="rvr" created="202209100929" modified="202209100954" changecount="11">
 <pre>There are some good practices here.
@@ -1247,11 +946,12 @@ Example: Image is: width x height : 50x500 pixels - there are 10 images stacked,
 &lt;/pre&gt;&lt;/html&gt;
 Ya, you'll see both images.</pre>
 </div>
-<div title="Introduction" modifier="rvr" created="200905302331" modified="202210061036" changecount="113">
+<div title="Introduction" modifier="rvr" created="200905302331" modified="202210171020" changecount="115">
 <pre>[[HTML]] is best for defining content. Understand the definitions in [[HTML]].
 [[CSS]] is to be used to format or style content. Understand the definitions in [[CSS]].
 
 There will probably be many changes as I'm looking at this again like 5 years later. Get right of cruft.
+Removed all bootstrap, have never used much.
 
 What is [[Good CSS]]?
 See some [[examples]] of css in actual code.
@@ -1347,9 +1047,8 @@ loadRemoteFile = function(url,callback,params)
 [[rgba]]
 [[root element]]</pre>
 </div>
-<div title="MainMenu" modifier="rvr" created="200905302328" modified="202209081301" changecount="31">
+<div title="MainMenu" modifier="rvr" created="200905302328" modified="202210171020" changecount="32">
 <pre>[[Introduction]]
-[[Bootstrap]]
 
 !!Index
 [[A-E]]
@@ -1370,72 +1069,6 @@ loadRemoteFile = function(url,callback,params)
 [[Rails|http://rails.rtfm.tiddlyspot.com]]
 [[Linux|http://linux.rtfm.tiddlyspot.com]]
 [[Gems|http://gems.rtfm.tiddlyspot.com]]</pre>
-</div>
-<div title="Navbars" modifier="rvr" created="201703201944" modified="201703210026" changecount="43">
-<pre>Bootstrap uses ''navbars'' for site wide navigation. Just [[Navs]] is used for in page navigation. The semantics are very similar.
-Basic navbar details:
-*Wrap it all in a ''navbar'' class, plus any styling/coloring classes.
-**To fix: ''navbar-fixed-top'' or ''navbar-fixed-bottom''. (Note fixed if the webpage scrolls.)
-***So a fixed nav bar does not hide content you'll need: ''body { padding-top: 77px; }''
-**Like ''navbar-light'', ''navbar-dark''
-**Like ''bg-faded'', ''bg-primary'', ''bg-inverse''. 
-**For other colors, omit any ''bg-'' class and have in css: ''nav {background-color: yerColor;}''
-*The whole list is an ''&lt;ul&gt;'' element, add class ''nav navbar-nav''
-**To float components left or right use: ''float-*-left'', ''float-*-right'' (*=xs, sm, md, lg, xl)
-**Each item is an ''&lt;li&gt;'' element, add class ''nav-item''
-**Each link is an ''&lt;a&gt;'' element , ad class ''nav-link''
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;nav class=&quot;navbar navbar-light bg-faded&quot;&gt;
-  &amp;lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Da Logo&amp;lt;/a&gt;
-
-  &amp;lt;ul class=&quot;nav navbar-nav float-md-right&quot;&gt;
-    &amp;lt;li class=&quot;nav-item&quot;&gt;
-      &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Home&amp;lt;/a&gt;
-    &amp;lt;/li&gt;
-    &amp;lt;li class=&quot;nav-item&quot;&gt;
-      &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;About&amp;lt;/a&gt;
-    &amp;lt;/li&gt;
-    &amp;lt;li class=&quot;nav-item&quot;&gt;
-      &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Contact&amp;lt;/a&gt;
-    &amp;lt;/li&gt;
-  &amp;lt;/ul&gt;
-&amp;lt;/nav&gt;
-&lt;/pre&gt;&lt;/html&gt;In this above example the logo will be on the LHS and the 3 list items will be on the RHS
-</pre>
-</div>
-<div title="Navs" modifier="rvr" created="201703200625" modified="201705160221" changecount="46">
-<pre>Navigation Bars. The ''nav'' classes allow you to turn lists into navigation bars.
-The outer &quot;&lt;ul&gt;&quot; or &quot;&lt;nav&gt;&quot; elements must have the class ''nav'':
-*&lt;ul class=&quot;nav&quot;&gt;
-**Each &quot;&lt;li&gt;&quot; must have a: ''nav-item''
-**Also, there will be an &quot;&lt;a&gt;&quot; - like below.
-**This will give a vertical list of nav links.
-**A nice thing about ''nav-item'' is that an item can be a [[Bootstrap dropdown]] See [[nav dropdown example]].
-*&lt;nav class=&quot;nav&quot;&gt;
-**Each &quot;&lt;a&gt;&quot; must have a: ''nav-link''
-**Eg: &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Dog&lt;/a&gt;
-**This will give a horizontal list of links.
-One element must have an ''active'' Bootstrap class.
-The below can also be a&quot;&lt;ul&gt;&quot; type, just wrap each &quot;&lt;a&gt;&quot; in @@&lt;li class=&quot;nav-item&quot;&gt; ... &lt;/li&gt;@@
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;nav class=&quot;nav&quot;&gt;
-  &amp;lt;a class=&quot;nav-link active&quot; href=&quot;#&quot;&gt;Aardvark&amp;lt;/a&gt;
-  &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Bonobo&amp;lt;/a&gt;
-  &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Chicken&amp;lt;/a&gt;
-  &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Dog&amp;lt;/a&gt;
-&amp;lt;/nav&gt;
-&lt;/pre&gt;&lt;/html&gt;Produces&lt;html&gt;&lt;pre&gt;
-&lt;a class=&quot;nav-link active&quot; href=&quot;#&quot;&gt;Aardvark&lt;/a&gt; &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Bonobo&lt;/a&gt; &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Chicken&lt;/a&gt; &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Dog&lt;/a&gt;
-&lt;/pre&gt;&lt;/html&gt;
-More customization
-*Add Bootstrap class ''nav-inline'' to both &quot;&lt;ul&gt;&quot; and &quot;nav&gt;&quot; to give a horizontal nav bar with spaces.
-*Add Bootstrap class ''nav-tabs'' to make tabs, be sure to pick one item as ''active''.
-*Add Bootstrap class ''nav-pills'' to make pills (button-like), be sure to pick one item as ''active''.
-**Use Bootstrap class ''nav-stacked'' to stack pills vertically.
-
-See [[nav dropdown example]].
-See [[nav tab dropdown example]] with bonus class ''tab-pane''.
-</pre>
 </div>
 <div title="PasswordOptionsPlugin" modifier="YourName" created="200704220851" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -1684,10 +1317,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210131507">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210171148">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 06/10/2022 15:56:58 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 06/10/2022 16:37:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 08/10/2022 20:40:38 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 09/10/2022 12:58:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
@@ -1695,7 +1326,9 @@ merge(config.shadowTiddlers,{
 | 11/10/2022 19:52:14 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 11/10/2022 20:19:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 12/10/2022 18:25:53 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 13/10/2022 17:07:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 13/10/2022 17:07:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 17/10/2022 12:26:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 17/10/2022 13:48:51 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2602,20 +2235,6 @@ Finally, often one might set the whole stylesheet to use a particular model:
 }
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="breadcrumb" modifier="rvr" created="201703202014" modified="201703202016" changecount="43">
-<pre>Breadcrumbs. Three things to do
-#Have Bootstrap class of ''breadcrumb''
-#Each item to have class ''breadcrumb-item''
-#The current item has to have class ''active''
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;ul class=&quot;breadcrumb&quot;&gt;
-  &amp;lt;li class=&quot;breadcrumb-item&quot;&gt;&amp;lt;a href=&quot;#&quot;&gt;Sun&amp;lt;/a&gt;&amp;lt;/li&gt;
-  &amp;lt;li class=&quot;breadcrumb-item&quot;&gt;&amp;lt;a href=&quot;#&quot;&gt;Mercury&amp;lt;/a&gt;&amp;lt;/li&gt;
-  &amp;lt;li class=&quot;breadcrumb-item&quot;&gt;&amp;lt;a href=&quot;#&quot;&gt;Venus&amp;lt;/a&gt;&amp;lt;/li&gt;
-  &amp;lt;li class=&quot;breadcrumb-item active&quot;&gt;Earth&amp;lt;/li&gt;
-&amp;lt;/ul&gt;
-&lt;/pre&gt;&lt;/html&gt;</pre>
-</div>
 <div title="chain" modifier="rvr" created="201705100709" modified="201705101752" changecount="6">
 <pre>You can ''chain'' [[class]] [[selector]] with [[ID]] selector.
 In this example, the ID overrides the class, therefore we chain them to make sure that if want to use the ''alert'' class in the element with the id=&quot;return-address&quot;. That it is red background not pink.
@@ -2751,19 +2370,6 @@ Another example to end float:
 Another way is to wrap the whole thing in a [[div]] and style using [[overflow]], for example: @@ overflow: hidden; @@
 However, if you set a height or width on that element, the content inside can get cut off. 
 If you *have* to set a height or width, then you'll have to use the: @@:after@@ method. See example of this in [[after and before]].</pre>
-</div>
-<div title="collapse" modifier="rvr" created="201703200615" modified="201703200620" changecount="43">
-<pre>To hide content use ''collapse''. Here we have a title of &quot;Fruit&quot;, when you click on the link (toggle) the text will appear/hide.
-''data-toggle'' - toggles on/off, hide/display. Make sure you have the ''id''. The following uses the ''anchor'' element.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;container-fluid&quot;&gt;
-  &amp;lt;p&gt;&amp;lt;a data-toggle=&quot;collapse&quot; href=&quot;#Fruit&quot; &gt;Fruit&amp;lt;/a&gt;&amp;lt;/p&gt;
-  &amp;lt;div class=&quot;collapse&quot; id=&quot;fruit&quot;&gt;
-    &amp;lt;p&gt;Mangos are beautiful things, and things are beautiful mangos.&amp;lt;/p&gt;
-  &amp;lt;/div&gt;
-&amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;You could use the ''button'' element:
-&gt;&lt;button class=&quot;btn btn-info&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#fruit&quot; &gt;</pre>
 </div>
 <div title="colors" modifier="rvr" created="201407110709" modified="202209031400" changecount="29">
 <pre>You have background and foreground colors. See [[rgba]]. There are a few color standards:
@@ -2949,31 +2555,11 @@ The tips:
 |h1 { size: 16pt; color: red; font-family: Garamond }|The h1 tag will be 16pts, coloured red and be garamond.|
 </pre>
 </div>
-<div title="examples" modifier="rvr" created="201507131532" modified="201507131605" changecount="21">
-<pre>Here is what css looks like in some actual code.This uses [[Bootstrap]], a twitter framework in common use.
-*The [[header]] tag indicates that there are three css [[class]]es: ''navbar navbar-fixed-top navbar-inverse''
-*The [[div]] tag is used just to divide up content. In this division, there is a ''css'' class called ''container''.
-*The ''link_to'' is a rails thing. We care about the css id tag ''logo''. Notice its slightly different.
-*Next we have a ''nav'' tag, an HTML5 thing like ''div'', for navigation. 
-*The unordered list (''ul'') has three css classes associated with it.
+<div title="examples" modifier="rvr" created="201507131532" modified="202210171021" changecount="22">
+<pre>Here is what css looks like in some actual code.
+
 &lt;html&gt;&lt;pre&gt;
-&amp;lt;header class=&quot;navbar navbar-fixed-top navbar-inverse&quot;&amp;gt;
-  &amp;lt;div class=&quot;container&quot;&amp;gt;
-    &amp;lt;%= link_to &quot;sample app&quot;, '#', id: &quot;logo&quot; %&amp;gt;
-    &amp;lt;nav&gt;
-      &amp;lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
-        &amp;lt;li&gt;&amp;lt;%= link_to &quot;Home&quot;,   '#' %&gt;&amp;lt;/li&gt;
-        &amp;lt;li&gt;&amp;lt;%= link_to &quot;Help&quot;,   '#' %&gt;&amp;lt;/li&gt;
-        &amp;lt;li&gt;&amp;lt;%= link_to &quot;Log in&quot;, '#' %&gt;&amp;lt;/li&gt;
-      &amp;lt;/ul&gt;
-    &amp;lt;/nav&gt;
-  &amp;lt;/div&amp;gt;
-&lt;/pre&gt;&lt;/html&gt;
-Note that the three ''link_to''s will turn from Rails ERB format into HTML. Then it will look like:
-&lt;html&gt;&lt;pre&gt;
-    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;Help&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;Log in&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+...get some
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
@@ -3201,11 +2787,11 @@ code: @@&lt;input type=&quot;text&quot; placeholder=&quot;your username&quot;&gt
 &lt;/pre&gt;&lt;/html&gt;Note ''required'' attribute, if you leave it empty, it will complain.
 The form tag has an ''action'' [[attribute]] to direct where to go after [[submit]] has been pressed.</pre>
 </div>
-<div title="form elements" modifier="rvr" created="201603291254" modified="201703172210" changecount="11">
+<div title="form elements" modifier="rvr" created="201603291254" modified="202210171022" changecount="12">
 <pre>An HTML [[form]] has a group of [[element]]s that it works with. Here is the list:
 *[[form]] - defines a form that includes a range of inputs and controls
 *[[input]] - the input control for a form
-*''button'' - a button  (See [[Bootstrap buttons]])
+*''button'' - a button
 *[[select]] - this gives us a ''drop down list'', where a user can select a choice.
 *[[textarea]] - This defines a multiline text area.
 *''isindex'' - indicates that the document has an associated keyword index that can be searched
@@ -3214,8 +2800,8 @@ The form tag has an ''action'' [[attribute]] to direct where to go after [[submi
 *''optgroup'' - groups related option elements contained in a select list
 *''option'' - defines an item in a select list</pre>
 </div>
-<div title="framework" modifier="rvr" created="201510182026" modified="202209100920" changecount="8">
-<pre>There are CSS frameworks that are toolkits to help with provide a standardization. One such is [[Bootstrap]]. The aim is to provide:
+<div title="framework" modifier="rvr" created="201510182026" modified="202210171022" changecount="9">
+<pre>There are CSS frameworks that are tool kits to help with provide a standardisation. The aim is to provide:
 *An easily customizable [[grid]]
 *Some default typography
 *A typographic baseline
@@ -3241,42 +2827,6 @@ Some popular ones:
 **Very flexible.
 * ''Bulma'' - CSS Only framework. No javascript like all others.
 A ''framework'' is different from a [[preprocessor]].</pre>
-</div>
-<div title="grid" modifier="rvr" created="201509131759" modified="201703160446" changecount="44">
-<pre>[[Bootstrap]] has a grid system for layout. It has a 12 column grid, you can choose any size up to 12 columns.
-See also [[grid of images example]].
-
-|!Class|!Description|!Device Size|!Container Width|!Width in em|
-|.col-xs-*|extra small - for mobiles|&lt;576px|auto|&lt;34em|
-|.col-sm-*|small - for tablets|&gt;576px|540px|&gt;34em|
-|.col-md-*|medium - for laptops|&gt;768px|720px|&gt;48em|
-|.col-lg-*|Large - for desktops|&gt;992px|960px|&gt;62em|
-|.col-xl-*|Extra Large - for desktops|&gt;1200px|1140px|&gt;75em|
-
-The above ''*'' is how many columns the element should be. You have: @@''col-md-1'', ''col-md-2'', ''col-md-3'', ... ''col-md-12''@@
-For three equal columns: @@''col-md-4'', ''col-md-4'', ''col-md-4'' @@ (equals 12)
-For three unequal columns: @@''col-md-5'', ''col-md-2'', ''col-md-5'' @@ (equals 12)
-
-The following is code for 3 buttons taking the full width of the screen.
-#Wrap in a ''container'' class.
-#Organize by ''row'' classes.
-#Break up into &quot;columns&quot; classes, ie ''.col-sm-*''.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;main class=&quot;container&quot;&amp;gt;
-  &amp;lt;div class=&quot;row&quot;&amp;gt;
-    &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
-      &amp;lt;button class=&quot;btn btn-block btn-primary&quot;&amp;gt;Like&amp;lt;/button&amp;gt;
-    &amp;lt;/div&amp;gt;
-    &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
-      &amp;lt;button class=&quot;btn btn-block btn-info&quot;&amp;gt;Info&amp;lt;/button&amp;gt;
-    &amp;lt;/div&amp;gt;
-    &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
-      &amp;lt;button class=&quot;btn btn-block btn-danger&quot;&amp;gt;Delete&amp;lt;/button&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/main&amp;gt;&lt;/pre&gt;&lt;/html&gt;The key is to:
-#Wrap everything in a [[div]] with class ''row''. 
-#Then wrap each element in a ''div'' and give a class of ''col-md-*''.  (or ''col-xs-*'')</pre>
 </div>
 <div title="grid alignment" modifier="rvr" created="202210061434" modified="202210131451" changecount="46">
 <pre>This will show [[CSS Grid|CSS Grids]] alignment properties. There are @@three@@ types of alignment.
@@ -3839,129 +3389,20 @@ Here is a sample ''queries.css''.
 |&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;|Designers use to control [[viewport]].|
 </pre>
 </div>
-<div title="more styling forms" modifier="rvr" created="201703160620" modified="201703160714" changecount="21">
-<pre>This has more styling of [[Bootstrap forms]].
-Some more custom stuff: http://www.quackit.com/bootstrap/bootstrap_4/tutorial/bootstrap_custom_forms.cfm
-
-!Form Control Size 
-We use class ''form-control'' for the size of the input boxes.
-v3 we add ''input-lg'' and ''input-sm''
-v4 we add: ''form-control-lg'' and ''form-control-sm''.
-&gt;&lt;input type=&quot;text&quot; class=&quot;form-control form-control-sm&quot; placeholder=&quot;Small&quot;&gt;
-!Column Size
-Using the grid system we can limit the column size:
+<div title="nav dropdown example" modifier="rvr" created="201703201728" modified="202210171024" changecount="45">
+<pre>Using  ...
 &lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;col-xs-3&quot;&gt;
-  &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;first_name&quot; placeholder=&quot;First Name&quot;&gt;
-&amp;lt;/div&gt;
-...
-&amp;lt;div class=&quot;col-xs-5&quot;&gt;
-  &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;last_name&quot; placeholder=&quot;Last Name&quot;&gt;
-&amp;lt;/div&gt;
+..to do ...
 &lt;/pre&gt;&lt;/html&gt;
-!Help Text
-Use ''form-text'' to do this.
-Use ''aria-describedby'' to screen readers can id it.
-Use ''text-muted'' to give the text a muted look.
-v3 uses: ''help-block''.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot; aria-describedby=&quot;helpName&quot;&gt;
-&amp;lt;span id=&quot;helpName&quot; class=&quot;form-text text-muted&quot;&gt;Give a ficticious name.&amp;lt;/span&gt;
-&lt;/pre&gt;&lt;/html&gt;
-!Validation
-There are 3 validation states: ''has-success'', ''has-warning'', and ''has-danger''. 
-These should be applied to the parent element:, like:
-&gt;&lt;div class=&quot;form-group has-success&quot;&gt;...
-To get fancy icons, add a ''form-control-success'', ''form-control-warning'', or ''form-control-danger'' class to the .''form-control'' input field.
-&gt;&lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control form-control-success&quot;  aria-describedby=&quot;helpName&quot;&gt;
-&gt;&lt;div class=&quot;form-control-feedback&quot;&gt;Your name is good.&lt;/div&gt;
-!Static
-Use ''form-control-static'' on a &lt;p&gt; element to present plain text next to a label 
-&gt;&lt;label class=&quot;col-xs-3 col-form-label&quot;&gt;Username&lt;/label&gt;
-&gt;&lt;p class=&quot;form-control-static&quot;&gt;~JamesBond&lt;/p&gt;
-
-
 </pre>
 </div>
-<div title="nav dropdown example" modifier="rvr" created="201703201728" modified="201703201758" changecount="43">
-<pre>Using [[Nav bars]] and [[Bootstrap dropdown]] 
-Note: change ''nav-tabs'' to ''nav-pills'' to go from tabs to &quot;pills&quot;.
+<div title="nav tab dropdown example" modifier="rvr" created="201703201830" modified="202210171026" changecount="44">
+<pre>To have a nav bar with tabbed panes and content,....to do..
 &lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;container-fluid&quot;&gt;
-  &amp;lt;ul class=&quot;nav nav-tabs&quot;&gt;
-    &amp;lt;li class=&quot;nav-item&quot;&gt;
-      &amp;lt;a class=&quot;nav-link active&quot; href=&quot;#&quot;&gt;Aardvark&amp;lt;/a&gt;
-    &amp;lt;/li&gt;
-    &amp;lt;li class=&quot;nav-item&quot;&gt;
-      &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Baboon&amp;lt;/a&gt;
-    &amp;lt;/li&gt;
-    &amp;lt;li class=&quot;nav-item&quot;&gt;
-      &amp;lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Chicken&amp;lt;/a&gt;
-    &amp;lt;/li&gt;
-    &amp;lt;li class=&quot;nav-item dropdown&quot;&gt;
-      &amp;lt;a class=&quot;nav-link dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot;&gt;Dog&amp;lt;/a&gt;
-      &amp;lt;div class=&quot;dropdown-menu&quot; &gt;
-        &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Afghan&amp;lt;/a&gt;
-        &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Bulldog&amp;lt;/a&gt;
-        &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Corso&amp;lt;/a&gt;
-        &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Dalmation&amp;lt;/a&gt;
-      &amp;lt;/div&gt;
-    &amp;lt;/li&gt;
-  &amp;lt;/ul&gt;
-&amp;lt;/div&gt;
-&lt;/pre&gt;&lt;/html&gt;
-See: http://rtfm.ca/bootstrap/nav.html</pre>
-</div>
-<div title="nav tab dropdown example" modifier="rvr" created="201703201830" modified="201703201906" changecount="43">
-<pre>To have a nav bar with tabbed panes and content,
-*Need @@data-toggle=&quot;tab&quot;@@
-*Have a separate ''div'' with the panel content, use: @@class=&quot;tab-content&quot;@@
-**Nest in this another ''div'' with: @@class=&quot;tab-pane&quot;@@ as well as ''id'' to use.
-**In this content ''div'' have one ''in'' class for initial and ''fade'' in all others.
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;container-fluid&quot;&gt;
-  &amp;lt;ul id=&quot;planet-nav&quot; class=&quot;nav nav-tabs&quot;&gt;
-  &amp;lt;li class=&quot;nav-item&quot;&gt;
-    &amp;lt;a class=&quot;nav-link active&quot; href=&quot;#earth&quot; id=&quot;earth-tab&quot; data-toggle=&quot;tab&quot;&gt;Earth&amp;lt;/a&gt;
-  &amp;lt;/li&gt;
-  &amp;lt;li class=&quot;nav-item&quot;&gt;
-    &amp;lt;a class=&quot;nav-link&quot; href=&quot;#mercury&quot; id=&quot;mercury-tab&quot; data-toggle=&quot;tab&quot; &gt;Mercury&amp;lt;/a&gt;
-  &amp;lt;/li&gt;
-  &amp;lt;!-- Dropdown --&gt;
-  &amp;lt;li class=&quot;nav-item dropdown&quot;&gt;
-  &amp;lt;a class=&quot;nav-link dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot; &gt;Venus&amp;lt;/a&gt;
-  &amp;lt;div class=&quot;dropdown-menu&quot;&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#dropdown-planet&quot;  id=&quot;dropdown-planet-tab&quot; data-toggle=&quot;tab&quot;&gt;planet&amp;lt;/a&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#dropdown-godess&quot;  id=&quot;dropdown-godess-tab&quot; data-toggle=&quot;tab&quot;&gt;godess&amp;lt;/a&gt;
-    &amp;lt;a class=&quot;dropdown-item&quot; href=&quot;#dropdown-flytrap&quot; id=&quot;dropdown-flytrap-tab&quot; data-toggle=&quot;tab&quot;&gt;flytrap&amp;lt;/a&gt;
-  &amp;lt;/div&gt;
-  &amp;lt;/li&gt;
-  &amp;lt;/ul&gt;
-
-  &amp;lt;!-- Content Panel --&gt;
-  &amp;lt;div id=&quot;planet-nav-content&quot; class=&quot;tab-content&quot;&gt;
-    &amp;lt;div class=&quot;tab-pane fade in active&quot; id=&quot;earth&quot;&gt;
-      &amp;lt;p&gt;Earth, it's probably where you are now. Tab to go to other places.&amp;lt;/p&gt;
-    &amp;lt;/div&gt;
-    &amp;lt;div class=&quot;tab-pane fade&quot; id=&quot;mercury&quot;&gt;
-      &amp;lt;p&gt;Mercury is hot hot hot. Don't stay here long.&amp;lt;/p&gt;
-      &amp;lt;p&gt;Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 88 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger to the gods.&amp;lt;/p&gt;
-    &amp;lt;/div&gt;
-    &amp;lt;div class=&quot;tab-pane fade&quot; id=&quot;dropdown-planet&quot;&gt;
-      &amp;lt;p&gt;Venus is the second planet from the Sun, orbiting it every 224.7 Earth days.&amp;lt;/p&gt;
-      &amp;lt;p&gt;Venus is one of the four terrestrial planets in the Solar System, meaning that it is a rocky body like Earth.&amp;lt;/p&gt;
-    &amp;lt;/div&gt;
-    &amp;lt;div class=&quot;tab-pane fade&quot; id=&quot;dropdown-godess&quot;&gt;
-      &amp;lt;p&gt;Venus is the Roman goddess whose functions encompassed love, beauty, desire, sex, fertility, prosperity and victory.  &amp;lt;/p&gt;
-    &amp;lt;/div&gt;
-    &amp;lt;div class=&quot;tab-pane fade&quot; id=&quot;dropdown-flytrap&quot; &quot;&gt;
-      &amp;lt;p&gt;The Venus flytrap (also referred to as Venus's flytrap or Venus' flytrap), Dionaea muscipula, is a carnivorous plant native to subtropical wetlands on the East Coast of the United States in North Carolina and South Carolina.[3] It catches its prey—chiefly insects and arachnids—with a trapping structure formed by the terminal portion of each of the plant's leaves, which is triggered by tiny hairs on their inner surfaces. &amp;lt;/p&gt;
-    &amp;lt;/div&gt;
-  &amp;lt;/div&gt;
-&amp;lt;/div&gt;
+qwerty
 
 &lt;/pre&gt;&lt;/html&gt;
-See it live: http://rtfm.ca/bootstrap/navtab.html</pre>
+</pre>
 </div>
 <div title="negative margins" modifier="rvr" created="201705181757" changecount="30">
 <pre>You can specify negative margins to move content to overlap other content.
@@ -4430,50 +3871,12 @@ The tag will be rendered into a single line box (default=20 chars) where the use
    &amp;lt;textarea rows=&quot;4&quot; cols=&quot;20&quot;&amp;gt;
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="toggle" modifier="rvr" created="201703180016" modified="201703180022" changecount="21">
-<pre>Toggle - use Bootstrap class ''data-toggle''
-Wrap buttons in ''label'' elements.
+<div title="toggle" modifier="rvr" created="201703180016" modified="202210171024" changecount="22">
+<pre>Toggle - ...
 Can swap ''checkbox'' and ''radio''.
 &lt;html&gt;&lt;pre&gt;
-&amp;lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot;&gt;
-  &amp;lt;label class=&quot;btn btn-primary active&quot;&gt;
-    &amp;lt;input type=&quot;checkbox&quot; checked autocomplete=&quot;off&quot;&gt; Apples
-  &amp;lt;/label&gt;
-  &amp;lt;label class=&quot;btn btn-primary&quot;&gt;
-    &amp;lt;input type=&quot;checkbox&quot; autocomplete=&quot;off&quot;&gt; Boats 
-  &amp;lt;/label&gt;
-  &amp;lt;label class=&quot;btn btn-primary&quot;&gt;
-    &amp;lt;input type=&quot;checkbox&quot; autocomplete=&quot;off&quot;&gt; Mangos
-  &amp;lt;/label&gt;
-&amp;lt;/div&gt;
+..to do ...
 &lt;/pre&gt;&lt;/html&gt;</pre>
-</div>
-<div title="tooltip" modifier="rvr" created="201703202022" modified="201703202047" changecount="43">
-<pre>Bootstrap does not enable tooltip by default. To do so:
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;script&gt;
-$(function () {
-  $('[data-toggle=&quot;tooltip&quot;]').tooltip()
-})
-&amp;lt;/script&gt;
-&lt;/pre&gt;&lt;/html&gt;
-The Bootstrap class ''popover'' is a fancier ''tooltip'' that has more control. Like it has a title capability, and you can enable hover or click.
-The text of the tooltip comes from the title attribute.
-Here is an example:
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;p style=&quot;margin:22px;&quot;&amp;gt;
-  Bootstrap 
-  &amp;lt;a target=&quot;_blank&quot; href=&quot;http://rtfm.ca/bootstrap/navtab.html&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;RTFM!&quot;&gt;  navs&amp;lt;/a&gt; 
-  are cool.
-&amp;lt;/p&gt;
-&lt;/pre&gt;&lt;/html&gt;
-On a button it's defaulted to the top. But it can be on any side by adding: @@data-placement=&quot;right&quot;@@ (left, right, top, bottom):
-&lt;html&gt;&lt;pre&gt;
-&amp;lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;tooltip&quot; title=&quot;and Stars&quot; style=&quot;margin:20px;&quot; data-placement=&quot;right&quot;&gt;
-  Sun and Moon
-&amp;lt;/button&gt;
-&lt;/pre&gt;&lt;/html&gt;See example at (click on ''sun'' http://rtfm.ca/bootstrap/navtab.html)
-</pre>
 </div>
 <div title="transform" modifier="rvr" created="201705180254" modified="202209081149" changecount="33">
 <pre>The ''transform'' property can move or change the appearance of an element. It is often used with [[transition]].
@@ -4565,30 +3968,6 @@ border-color: #000 red purple blue;
 }
 &lt;/pre&gt;&lt;/html&gt;
 If we had used: @@ border-color: white red purple blue; @@ we'd have 4 triangles making a box, with white at the top. (Border is drawn top, right, bottom, left)</pre>
-</div>
-<div title="typography" modifier="rvr" created="201703160457" modified="201703160523" changecount="21">
-<pre>Bootstrap typography - some basics.
-Bootstrap will style some HTML elemtents, but to add more styling you need to add the appropriate bootstrap class.
-For example, you can use an HTML table, but to style it more via bootstrap use: @@&lt;table class=&quot;table&quot;&gt;...@@
-HTML text elements have defaults. The default font-family is &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif.
-You can use the HTML heading elements, or use them as a class, ie @@&lt;p class=&quot;h1&quot;&gt;Something&lt;/p1&gt;@@
-To make then stand out more use display class: @@&lt;h1 class=&quot;display-1&quot;&gt;Display 1&lt;/h1&gt;@@ - can be ''display-1'' to ''display-4''
-
-|!Class|!To|!Example|!Description|
-|blockquote||&lt;blockquote class=&quot;blockquote&quot;&gt;&lt;footer&gt;&lt;/cite&gt;...&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;|Add to HTML blockquote.|
-|blockquote-reverse||&lt;blockquote class=&quot;blockquote blockquote-reverse&quot;&gt;...|To right align.|
-|h1|to h6|&lt;p class=&quot;h1&quot;&gt;Something&lt;/p&gt;|Same as HTML element h1.|
-|display-1|display-4|&lt;h1 class=&quot;display-1&quot;&gt;Display 1&lt;/h1&gt;|To make heading even bigger.|
-|lead||&lt;p class=&quot;lead&quot;&gt;Blah blah...&lt;/p&gt;|Leading sentance to stand out.|
-|mark||&lt;p&gt;Sample &lt;mark&gt;marked text&lt;/mark&gt;.&lt;/p&gt;|To mark important text.|
-
-!!Lists
-There are a few new things to do with lists:
-*''list-unstyled'' - no styling (ie dots) Example: @@&lt;ul class=&quot;list-unstyled&quot;&gt;@@
-*''list-inline'' &amp; ''list-inline-item'' - list in a line (row) Example: @@&lt;ul class=&quot;list-inline&quot;&gt;   &lt;li class=&quot;list-inline-item&quot;&gt;Apples&lt;/li&gt;...@@
-*''dl-horizontal'', also ''&lt;dl&gt;'' in HTML.
-
-</pre>
 </div>
 <div title="units" modifier="rvr" created="201407110700" modified="202209041833" changecount="21">
 <pre>There are certain units that CSS understands. They are absolute &amp; relative measurements:
