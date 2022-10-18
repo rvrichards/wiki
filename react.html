@@ -159,6 +159,8 @@ Error message and password prompt
 
 <li>$:/state/edit/references-1394467985</li>
 
+<li>$:/state/edit/references-1605434839</li>
+
 <li>$:/state/edit/references-1714777777</li>
 
 <li>$:/state/sidebar</li>
@@ -182,6 +184,8 @@ Error message and password prompt
 <li>$:/UploadWithUrlOnly</li>
 
 <li>add babel</li>
+
+<li>api and data</li>
 
 <li>App.js</li>
 
@@ -271,6 +275,8 @@ Error message and password prompt
 
 <li>map</li>
 
+<li>Mock API</li>
+
 <li>Multiline JSX</li>
 
 <li>npm start</li>
@@ -290,6 +296,8 @@ Error message and password prompt
 <li>state</li>
 
 <li>testing</li>
+
+<li>testing color</li>
 
 <li>Tutorial</li>
 
@@ -10220,6 +10228,9 @@ JSX
 <div created="20221014190412598" creator="rtfm" modified="20221014190429367" modifier="rtfm" title="$:/state/edit/references-1394467985">
 <pre>hide</pre>
 </div>
+<div created="20221018122426209" creator="rtfm" modified="20221018122426209" modifier="rtfm" title="$:/state/edit/references-1605434839">
+<pre>show</pre>
+</div>
 <div created="20221014190517702" creator="rtfm" modified="20221014190517702" modifier="rtfm" title="$:/state/edit/references-1714777777">
 <pre>show</pre>
 </div>
@@ -10234,7 +10245,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221016151736454" creator="rtfm" list="concepts [[Index A-F]] hook [[useRef example using useState]] [[controlled component]] Introduction [[react tools]] [[form library]] JSX" modified="20221016164218314" modifier="rtfm" title="$:/StoryList">
+<div created="20221018061546306" creator="rtfm" list="useState useEffect [[react tools]] [[api and data]] Introduction" modified="20221018122648326" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10358,6 +10369,32 @@ There are two things to do:
 ** Also see [[JSX example]] for a snippet of this!
 
 See [[example file 2]].  </pre>
+</div>
+<div created="20221018122236522" creator="rtfm" modified="20221018123114420" modifier="rtfm" title="api and data">
+<pre>React can get data from a database of an API call.  
+Here I'll show how to use API.
+
+For this I will use the [[Mock API]]  program. Set up an endpoint by following the directions there.
+
+In our react cook we'll use the [[hook]] called [[useEffect]] and [[useState]] and the basic ''App'' component.
+
+```
+function App() {
+  const [data, setData] = useState(null);
+  useEffect(() =&gt; {
+    fetch( 'http://localhost:3333/apple'  )
+      .then((response) =&gt; response.json())
+      .then(setData);
+  }, []);
+  if (data) 
+    return (
+      &lt;pre&gt;{JSON.stringify(data, null, 2)} &lt;br /&gt; and that's all folks! &lt;/pre&gt;
+    );
+  return &lt;h1&gt;No Data&lt;/h1&gt;;
+}
+```
+
+</pre>
 </div>
 <div created="20221015053715390" creator="rtfm" modified="20221015055812577" modifier="rtfm" title="App.js">
 <pre>The ''App.js'' is the main react component. All react components should be wrapped up in here, and they should be each in their own file with the same name. This is then injected in to the ''App'' component element in [[index.js]], which in turn is placed in the [[index.html]] file at the element id'd as "root".
@@ -11051,9 +11088,10 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221016161001920" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221018122230776" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
+* [[api and data]]
 * [[Component]]
 * [[controlled component]]
 * [[dependency array]]
@@ -11061,12 +11099,13 @@ This import/export style is [[ES6]], not React specific.
 * [[export]]
 * [[form library]]</pre>
 </div>
-<div created="20210330051232694" creator="rtfm" modified="20221015085002196" modifier="rtfm" title="Index G-M">
+<div created="20210330051232694" creator="rtfm" modified="20221018122456689" modifier="rtfm" title="Index G-M">
 <pre>The [[Index]]:
 
 * [[hook]]
 * [[import]]
-* [[map]]</pre>
+* [[map]]
+* [[Mock API]]</pre>
 </div>
 <div created="20221014172743267" creator="rtfm" modified="20221014172744994" modifier="rtfm" title="Index N-Q">
 <pre>The [[Index]]:</pre>
@@ -11106,7 +11145,7 @@ A few things to note here:
 
 </pre>
 </div>
-<div created="20210316042112719" creator="rtfm" modified="20221016161039777" modifier="rtfm" tags="" title="Introduction">
+<div created="20210316042112719" creator="rtfm" modified="20221018122221348" modifier="rtfm" tags="" title="Introduction">
 <pre>React is Front End (UI or "view") library for making reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps.
 
  It uses a virtual DOM which makes it quick and coder-friendly to work with the real DOM. It works on the front end and server side. It is: 
@@ -11122,6 +11161,7 @@ To dig into React, here is a list:
 * [[Tutorial]]
 * React [[concepts]]
 * [[form library]]
+* Working with [[api and data]].
 * Of course, the [[Index]].
 
 Note: "React Native" is different - it is for mobile apps.</pre>
@@ -11303,6 +11343,30 @@ export class NavBar extends React.Component {
 }
 ```</pre>
 </div>
+<div created="20221018090250485" creator="rtfm" modified="20221018122430595" modifier="rtfm" title="Mock API">
+<pre>In creating an application before real apis are created, you'll need to mock some. Here are the steps for using mocktoon (https://mockoon.com/).
+
+* Download and install from website: https://mockoon.com/download/
+** Linux rpm  -fires up Ubuntu Software
+* Launch GUI - click on "New Environnment" (icon with a +)
+* Now create routes, look for `\   Get`
+** Click on blue @@color:darkblue; ''+''  @@ to create a new route.
+** Click on blue @@color:darkblue; ''GET''  @@ to change HTTP request type to POST.
+* Create a POST API called: ''/apple'' with JSON: 
+* Check Server and Port under "Settings" tab.
+* Add ''add CORS headers'' under "Headers" tab.
+* Click the @@font-size:2em;color:darkgreen;''green''@@ start arrow to start server
+
+```
+http://127.0.0.1:3333/apple
+
+{
+  "id": 1,
+  "name": "qwerty",
+  "total": 42
+}
+```</pre>
+</div>
 <div created="20210323000604889" modified="20210323003540265" title="Multiline JSX">
 <pre>When working with JSX, if you have to write JSX code over one line long, yo uwill have to wrap it in (brackets)!
 
@@ -11336,7 +11400,7 @@ And to follow that we'd run [[npm start]] to fire up the react server.
 <div created="20221014183050266" creator="rtfm" modified="20221014183212505" modifier="rtfm" title="props">
 <pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.</pre>
 </div>
-<div created="20221013151242679" creator="rtfm" modified="20221016164342787" modifier="rtfm" title="react tools">
+<div created="20221013151242679" creator="rtfm" modified="20221018122513241" modifier="rtfm" title="react tools">
 <pre>There are great dev tools for react, Check out "React Developer Tools" as an extension for brave/firefox/chrome. React sites will show an icon in top RH corner. Look for a "component" tab. 
 
 React Developer Tools is activated either by clicking on the react icon on top RHS of screen, or running developer tools ( ctrl+shift+i) and selecting "Components". In settings make sure that you have it turned on for "local files". To see if you have react tools and change settings goto:
@@ -11352,7 +11416,9 @@ Other great tools:
 ** You'll end up at: https://codesandbox.io
 * https://codepen.io is also a good bet.
 * Putzing around with [[babel]]: https://babeljs.io/
-* Some good [[hook]] resources at https://usehooks.com/</pre>
+* Some good [[hook]] resources at https://usehooks.com/
+* Mock up some test APIs using https://mockoon.com/
+** See [[Mock API]]</pre>
 </div>
 <div created="20221014150037780" creator="rtfm" modified="20221014190911575" modifier="rtfm" title="ReactDOM.render">
 <pre>The ''ReactDOM.render()''  takes two arguments:
@@ -11419,8 +11485,55 @@ Breaking this down:
 <pre>A tricky part of anything to do with a stateless language like HTML is keep state. Here is how we'll do it in React, [[useState]].
 </pre>
 </div>
-<div created="20221014192312309" creator="rtfm" modified="20221014192320563" modifier="rtfm" tags="" title="testing">
-<pre>@@color:red;Red colored text@@</pre>
+<div created="20221014192312309" creator="rtfm" modified="20221018120345044" modifier="rtfm" tags="" title="testing">
+<pre>!Header 1
+!!!Header 3
+!!!!!Header 5
+
+@@color:red;Red colored text@@ For more colors see [[testing color]].
+
+Produces: @@font-size:2em;Font size 2 Abcde@@
+
+Remove space between &amp; and # from below
+
+@@font-size:2em; 
+
+"""
+  &amp; #45; for - (hyphen)
+  &amp; #64; for @
+  &amp; #91; for [
+  &amp; #93; for ]
+  &amp; #8592; for &amp;#8592;
+  &amp; #8593; for &amp;#8593;
+  &amp; #8594; for &amp;#8594;
+  &amp; #8595; for &amp;#8595;
+
+  &amp; ndash; for &amp;ndash;  (en dash)
+  &amp; mdash; for &amp;mdash;  (em dash)
+"""
+@@
+
+</pre>
+</div>
+<div created="20221018115926046" creator="rtfm" modified="20221018121122416" modifier="rtfm" title="testing color">
+<pre>Lotta colors: https://www.quackit.com/css/css_color_codes.cfm
+
+See also [[testing]]
+
+"""
+@@color:darkgreen;green colored@@
+@@background-color:#ff0000;color:#ffffff;red background color PLUS white text@@ 
+@@background-color:#ff0000;red background color regular font color@@ 
+
+@@color:#C06;''Picking any colour you want via #xxx'' @@
+@@color:#C66;''Picking any colour you want via #xxx = #C66'' @@
+@@color:#666;''Picking any colour you want via #xxx = #666'' @@
+@@color:#606060;''Picking any colour you want via #xxx = #606060'' @@
+@@color:#EBFA14;''Picking any colour you want via #xxx = #EBFA14'' @@
+@@color:red; Picking colour by using name: red - regular weight @@
+@@color:green; ''This is green - also bolded using quotes'' @@
+
+"""</pre>
 </div>
 <div created="20221014190013730" creator="rtfm" modified="20221015073915985" modifier="rtfm" title="Tutorial">
 <pre>This is like a tutorial, a series of steps to using React that bring in more complex features each step.
