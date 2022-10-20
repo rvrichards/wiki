@@ -199,6 +199,8 @@ Error message and password prompt
 
 <li>component conventions</li>
 
+<li>component css</li>
+
 <li>Component Example</li>
 
 <li>concepts</li>
@@ -10251,7 +10253,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221020113620550" creator="rtfm" list="App.js [[directory structure]] [[declarative approach]] Component [[component conventions]] Introduction concepts JSX" modified="20221020120435417" modifier="rtfm" title="$:/StoryList">
+<div created="20221020113620550" creator="rtfm" list="[[Index A-F]] Component [[component css]] [[component conventions]] Introduction concepts JSX" modified="20221020194020008" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10488,7 +10490,7 @@ Final important point. The ''ReactDOM.render'' calls the ''&amp;lt;HelloClass /&
 * See also [[Component Example]].
 * See also [[Component calls Component]]</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221020120800343" modifier="rtfm" tags="" title="Component">
+<div created="20210322054353366" creator="rtfm" modified="20221020194005495" modifier="rtfm" tags="" title="Component">
 <pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
 
 A ''component'' is simply a ''JavaScript'' @@color:red;function@@ that returns [[JSX]]. Double check that. 
@@ -10500,9 +10502,11 @@ You can think of a component as a "custom HTML element". A react component is us
 
 
 See also
+
 * [[Multiline JSX]].
 * [[Component Example]].
-* [[Component calls Component]]</pre>
+* [[Component calls Component]]
+* [[component css]]</pre>
 </div>
 <div created="20210330050617960" modified="20210330063152465" title="Component calls Component">
 <pre>A [[Component]] can call a component. Check out the differences of [[import]].
@@ -10549,8 +10553,8 @@ export class NavBar extends React.Component {
 }
 ```</pre>
 </div>
-<div created="20221020120447451" creator="rtfm" modified="20221020130501633" modifier="rtfm" title="component conventions">
-<pre>Here are some good ]]Component]] conventions to follow.
+<div created="20221020120447451" creator="rtfm" modified="20221020194016520" modifier="rtfm" title="component conventions">
+<pre>Here are some good [[Component]] conventions to follow.
 
 * Components should be in their own ''component'' directory
 ** See [[directory structure]].
@@ -10560,12 +10564,17 @@ export class NavBar extends React.Component {
 * You can only return one root element, not sibling elements:
 ** It can have elements nested inside it.
 ** Wrap sibling divs in a parent div.
+* CSS files should have the same name, but with an extension ".css"
+** If we have "App.js", we'd use "App.css". etc
+** In the ".js" file we need: `import './App.css'; ` 
+** And "class=" becomes "className=". See [[component css]]
+
 
 Example of a component, in the ''/component'' folder:
 
 ```
 function ThisCoolThing() {
-   return &lt;p&gt;This is really cool, so says Kelvin.&lt;/p&gt;
+   return (&lt;p&gt;This is really cool, so says Kelvin.&lt;/p&gt;);
 }
 
 export default ThisCoolThing;
@@ -10583,8 +10592,59 @@ To use this, in [[App.js]] there are two steps:
 import ThisCoolThing from './components/ThisCoolThing';
 ...
 &lt;ThisCoolThing&gt;&lt;/ThisCoolThing&gt;
+```
+
+
+</pre>
+</div>
+<div created="20221020194024833" creator="rtfm" modified="20221020201803436" modifier="rtfm" title="component css">
+<pre>To use CSS with [[Component]]s there are conventions and requirements. Here they are:
+
+* CSS files should have the same name, but with an extension ".css"
+* If we have "App.js", we'd use "App.css". etc
+* In the ".js" file we need: `import './App.css'; ` 
+* And "class=" becomes "className=". See [[component css]]
+** This is because it's [[JSX]] we can't use "class="
+** because "class" is a restricted name in JavaScript.
+
+Let's see a small but complete example!
 
 ```
+// File: App.js
+import Apple from './components/Apple';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;&lt;Apple&gt;&lt;/Apple&gt;&lt;/div&gt;
+  );
+}
+
+export default App;
+```
+
+```
+// File: components/Apple.js
+import './Apple.css';
+
+function Apple() {
+  return (
+    &lt;div className="xitem"&gt;
+      &lt;div&gt;Cranston Snord&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Apple;
+```
+
+```
+// File: components/Apple.css
+  .xitem{
+    font-size: 20px;
+    font-weight: bold;
+  }
+```
+
 </pre>
 </div>
 <div created="20210323003612480" modified="20210323004017644" title="Component Example">
@@ -11176,11 +11236,12 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221019193108498" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221020193919358" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[api and data]]
 * [[Component]]
+* [[component css]]
 * [[controlled component]]
 * [[create react app]]
 * [[dependency array]]
