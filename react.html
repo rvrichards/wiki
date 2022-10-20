@@ -191,9 +191,13 @@ Error message and password prompt
 
 <li>basic start</li>
 
+<li>class component</li>
+
 <li>Component</li>
 
 <li>Component calls Component</li>
+
+<li>component conventions</li>
 
 <li>Component Example</li>
 
@@ -210,6 +214,8 @@ Error message and password prompt
 <li>createElement</li>
 
 <li>custom hook</li>
+
+<li>declarative approach</li>
 
 <li>directory structure</li>
 
@@ -10245,7 +10251,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221018061546306" creator="rtfm" list="useState useEffect [[react tools]] [[api and data]] Introduction" modified="20221018122648326" modifier="rtfm" title="$:/StoryList">
+<div created="20221020113620550" creator="rtfm" list="App.js [[directory structure]] [[declarative approach]] Component [[component conventions]] Introduction concepts JSX" modified="20221020120435417" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10370,34 +10376,53 @@ There are two things to do:
 
 See [[example file 2]].  </pre>
 </div>
-<div created="20221018122236522" creator="rtfm" modified="20221018123114420" modifier="rtfm" title="api and data">
+<div created="20221018122236522" creator="rtfm" modified="20221019134828135" modifier="rtfm" title="api and data">
 <pre>React can get data from a database of an API call.  
 Here I'll show how to use API.
 
 For this I will use the [[Mock API]]  program. Set up an endpoint by following the directions there.
 
-In our react cook we'll use the [[hook]] called [[useEffect]] and [[useState]] and the basic ''App'' component.
+In our react cook we'll use the [[hook]] called [[useEffect]] and [[useState]] and the basic ''App'' component. An explanation follows:
 
 ```
-function App() {
-  const [data, setData] = useState(null);
-  useEffect(() =&gt; {
-    fetch( 'http://localhost:3333/apple'  )
-      .then((response) =&gt; response.json())
-      .then(setData);
-  }, []);
-  if (data) 
-    return (
-      &lt;pre&gt;{JSON.stringify(data, null, 2)} &lt;br /&gt; and that's all folks! &lt;/pre&gt;
-    );
-  return &lt;h1&gt;No Data&lt;/h1&gt;;
-}
+1   import "./App.css";
+2   import { useState, useEffect } from "react";
+3   
+4   function App() {
+5     const [data, setData] = useState(null);
+6     useEffect(() =&gt; {
+7       fetch( 'http://localhost:3333/apple' )
+8        .then((response) =&gt; response.json())
+9        .then(setData);
+10    }, []);
+11    if (data) 
+12      return (
+13        &lt;pre&gt;{JSON.stringify(data, null, 2)} &lt;/pre&gt;
+14      );
+15   return &lt;h1&gt;No Data&lt;/h1&gt;;
+16 }
 ```
+Breaking the above down:
+
+* Line #2: We need both [[hook]]s to do this job.
+* Line #5: We have container for data named: "data".
+** It's initial value is null. Update value using: ''setData''.
+* Line #6: use hook for the side effect of getting data.
+* Line #7: the ''fetch'' call is builtin to the browser.
+* Line #8: when the response returns, ''response'' is set to [[JSON]].
+* Line #9: '' setData'' is short for: `data =&gt; setData(data)`
+* Line #10: `[]` means only do request once 
+* Line #11: if there is data, turn that in formatted form.
+* Line #15: else return the words: `No Data`
+
+
 
 </pre>
 </div>
-<div created="20221015053715390" creator="rtfm" modified="20221015055812577" modifier="rtfm" title="App.js">
-<pre>The ''App.js'' is the main react component. All react components should be wrapped up in here, and they should be each in their own file with the same name. This is then injected in to the ''App'' component element in [[index.js]], which in turn is placed in the [[index.html]] file at the element id'd as "root".
+<div created="20221015053715390" creator="rtfm" modified="20221020120019825" modifier="rtfm" title="App.js">
+<pre>The ''App.js'' is the main react component. All react components should be referenced (nested) in here, and they should be each in their own file with the same name. Since a large project can have many files, it makes sense to place components in their own folder, but leave the ''App.js'' in the ''src'' folder. See [[directory structure]]. 
+
+''App.js'' is then injected in to the ''App'' component element in ''src/''[[index.js]], which in turn is placed in the ''public/''[[index.html]] file at the element id'd as "root".
 
 Here is an example of this file:
 
@@ -10416,6 +10441,7 @@ function App() {
 
 export default App;
 ```
+What is curious is what the heck is returned above? It is [[JSX]]. And it's ok.
 
 This file at the bottom should have an ''export default App;'' so that it can be grabbed by the App element in  [[index.js]].</pre>
 </div>
@@ -10431,10 +10457,9 @@ This file at the bottom should have an ''export default App;'' so that it can be
 
 We have not covered ''babel'' yet but that is coming up next in [[add babel]].</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221015054740179" modifier="rtfm" tags="" title="Component">
-<pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. 
+<div created="20221019191740069" creator="rtfm" modified="20221019191758733" modifier="rtfm" title="class component">
+<pre>Here is a basic class [[Component]].
 
-A ''component'' is simply a ''JavaScript'' function that returns [[JSX]]. Double check that. A react component is usually and best kept in their own files of the same name.  We'll start simple, here is Hello World!
 
 ```
 import React from 'react';     
@@ -10462,6 +10487,22 @@ Final important point. The ''ReactDOM.render'' calls the ''&amp;lt;HelloClass /&
 * See also [[Multiline JSX]].
 * See also [[Component Example]].
 * See also [[Component calls Component]]</pre>
+</div>
+<div created="20210322054353366" creator="rtfm" modified="20221020120800343" modifier="rtfm" tags="" title="Component">
+<pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
+
+A ''component'' is simply a ''JavaScript'' @@color:red;function@@ that returns [[JSX]]. Double check that. 
+
+You can think of a component as a "custom HTML element". A react component is usually and best kept in their own files of the same name.  This allows re-usability and a separation of concerns. We'll start simple, but there are many ways to create and use a component.
+
+* [[class component]] - I don't use this way much.
+* [[component conventions ]]
+
+
+See also
+* [[Multiline JSX]].
+* [[Component Example]].
+* [[Component calls Component]]</pre>
 </div>
 <div created="20210330050617960" modified="20210330063152465" title="Component calls Component">
 <pre>A [[Component]] can call a component. Check out the differences of [[import]].
@@ -10507,6 +10548,44 @@ export class NavBar extends React.Component {
   }
 }
 ```</pre>
+</div>
+<div created="20221020120447451" creator="rtfm" modified="20221020130501633" modifier="rtfm" title="component conventions">
+<pre>Here are some good ]]Component]] conventions to follow.
+
+* Components should be in their own ''component'' directory
+** See [[directory structure]].
+* naming should be camel case: ''~ThisCoolThing.js''
+* ''components'' are JavaScript functions!
+** So we need a ''function'' keyword
+* You can only return one root element, not sibling elements:
+** It can have elements nested inside it.
+** Wrap sibling divs in a parent div.
+
+Example of a component, in the ''/component'' folder:
+
+```
+function ThisCoolThing() {
+   return &lt;p&gt;This is really cool, so says Kelvin.&lt;/p&gt;
+}
+
+export default ThisCoolThing;
+```
+
+To use this, in [[App.js]] there are two steps:
+
+* at the top of the file we would use ''import'' 
+* and to use it we use it, it is a custom Element
+** Custom Element - camel case like &amp;lt;~ThisCoolThing&gt;
+** Regular Element - lower case - like &amp;lt;p&gt;, &amp;lt;h2&gt;, &amp;lt;div&gt;, 
+
+```
+// App.js
+import ThisCoolThing from './components/ThisCoolThing';
+...
+&lt;ThisCoolThing&gt;&lt;/ThisCoolThing&gt;
+
+```
+</pre>
 </div>
 <div created="20210323003612480" modified="20210323004017644" title="Component Example">
 <pre>Here is a basic outline:
@@ -10583,13 +10662,14 @@ const drinks = (
 <pre>A controlled component is one where we're controlling our form by creating state values for these form elements.
 Uncontrolled components mean that we manage our form elements outside of state.</pre>
 </div>
-<div created="20221015043137996" creator="rtfm" modified="20221015060327614" modifier="rtfm" title="create react app">
+<div created="20221015043137996" creator="rtfm" modified="20221019193407056" modifier="rtfm" title="create react app">
 <pre>There is an app called "Create React App" that creates a React app from scratch. Like [[babel]], file bundling, etc.  Here we go:
 
 * Make sure node js is installed: ''node -v''
 * Also need npm installed: ''npm -v''
 *Now we can run ''npx create-react-app my-app''
 ** This will install React, React-DOM, and React scripts ([[babel]], compiling)
+** Will create a folder named ''my-app'' - CD into there to work.
 ** See [[create-react-app]]
 ** See https://create-react-app.dev/
 * Generated code will be in sub directory: ''my-app''
@@ -10659,7 +10739,14 @@ const theDiv = React.createElement(
 
 A ''custom hook'' is a function that starts with ''use''.     </pre>
 </div>
-<div created="20221015045449898" creator="rtfm" modified="20221015053915253" modifier="rtfm" title="directory structure">
+<div created="20221019192446837" creator="rtfm" modified="20221020115142061" modifier="rtfm" title="declarative approach">
+<pre>React focuses on you defining the desired state and and React will figure out how to do that - modifying javascript DOM instructions. You do not write any DOM modifying instructions - React figures that out! Again, you only need to define the end state (using [[JSX]]).
+
+An ''imperative'' approach (clear instructions)  is you explicitly finding where you want the code to be (~getElementById), create the code (~createElement), and then actually placing (using "append") it where you specify.
+
+See [[Introduction]].</pre>
+</div>
+<div created="20221015045449898" creator="rtfm" modified="20221020115934575" modifier="rtfm" title="directory structure">
 <pre>Running [[create-react-app]] will generate the following directory structure. Note that I have removed the node libraries of which there are 1000s. Many of these are also just to show the app working and are deleted in an actual project.
 
 &lt;pre&gt;
@@ -10676,6 +10763,7 @@ Root
 │   └── robots.txt
 ├── README.md
 └── src   /* This is the entry point into our app */
+    ├── components   /* Folder for components */
     ├── App.css
     ├── [[App.js]]  /* Main react component */
     ├── App.test.js
@@ -11051,8 +11139,8 @@ Before you start storing important information in ~TiddlyWiki it is vital to mak
 See the [[control panel|$:/ControlPanel]] for more options.
 </pre>
 </div>
-<div created="20221015085009977" creator="rtfm" modified="20221016160159711" modifier="rtfm" title="hook">
-<pre>A ''hook'' is a special function that lets you “hook into” React features. You have access to these features ''without'' writing a class. For example, useState is a hook that lets you add state variables to functional components.
+<div created="20221015085009977" creator="rtfm" modified="20221019122217300" modifier="rtfm" title="hook">
+<pre>A ''hook'' is a special function that lets you “hook into” React features. Hooks allow function components to have access to state and other React features. You have access to these features ''without'' writing a class. For example, useState is a hook that lets you add state variables to functional components.
 
 * [[useState]] - keep state
 * [[useEffect]]
@@ -11088,12 +11176,13 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221018122230776" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221019193108498" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[api and data]]
 * [[Component]]
 * [[controlled component]]
+* [[create react app]]
 * [[dependency array]]
 * [[example file 1]] ... there are many [[more!|example file 2]]
 * [[export]]
@@ -11125,10 +11214,17 @@ The key part of this is: `&lt;div id="root"&gt;&lt;/div&gt;`
 
 </pre>
 </div>
-<div created="20221015053020221" creator="rtfm" modified="20221015054612999" modifier="rtfm" title="index.js">
-<pre>In [[directory structure]] the file under ''src/index.js'' has:
+<div created="20221015053020221" creator="rtfm" modified="20221019200753671" modifier="rtfm" title="index.js">
+<pre>The first file loaded by a browser is [[index.html]]. It has a ''div'' called "root", where the following code is first executed, and is transformed into javascript as this file obviously is  *not* javascript. It is converted into Javascript and injected at "root" in "index.html".
+
+In [[directory structure]] the file under ''src/index.js'' has:
 
 ```
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   &lt;React.StrictMode&gt;
@@ -11140,13 +11236,17 @@ A few things to note here:
 
 *''App'' component is where ''src/[[App.js]]'' is placed
 *This is injected into ''public/[[index.html]]'' at element id = "root"
+* We are using an imported libraries called ReactDOM and React.
+** These together have all React libraries.
 
 ''StrictMode'' means that it will highlight what may be problems in your app. This onbly works in development, not production. It is good to have a few safety checks.
 
 </pre>
 </div>
-<div created="20210316042112719" creator="rtfm" modified="20221018122221348" modifier="rtfm" tags="" title="Introduction">
-<pre>React is Front End (UI or "view") library for making reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps.
+<div created="20210316042112719" creator="rtfm" modified="20221019192439160" modifier="rtfm" tags="" title="Introduction">
+<pre>React is Front End (UI or "view") library for building User Interfaces. It does this via reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps. React uses a [[declarative approach]].
+
+React doesn't have to be used - it just makes it easier to do complex tasks. You can focus more by using React libraries to make [[Component]]s which makes it all easier. Therefore - a web page is HTML+CSS+Javascript. React puts these into a component and give nice shortcuts to ease coding complexity.
 
  It uses a virtual DOM which makes it quick and coder-friendly to work with the real DOM. It works on the front end and server side. It is: 
 
@@ -11206,8 +11306,8 @@ ReactDOM.render(
 
 </pre>
 </div>
-<div created="20210316042506350" modified="20210330052951436" title="JSX">
-<pre>JSX is a syntax extension for JavaScript. It is not javascript, but has to be compiled into javascript. Here are the topics covered at the moment:
+<div created="20210316042506350" creator="rtfm" modified="20221020114154922" modifier="rtfm" title="JSX">
+<pre>JSX is a syntax extension for JavaScript. It is not javascript, but has to be compiled (or transformed) behind the scenes into javascript. It is often called "Javascript XML". Here are the topics covered at the moment:
 
 * See [[JSX Syntax]]
 * There are [[JSX Attributes]]
@@ -11219,6 +11319,10 @@ ReactDOM.render(
 * Write JSX using [[createElement]] method.
 * Finally, a [[Component]].
 * See also [[Multiline JSX]].
+
+You can see the transformed javascript in developer tools in your browser. Check out "sources" tab.
+
+I believe that the JSX transformation code is done via the ''npm start'' command
 
 </pre>
 </div>
@@ -11400,7 +11504,7 @@ And to follow that we'd run [[npm start]] to fire up the react server.
 <div created="20221014183050266" creator="rtfm" modified="20221014183212505" modifier="rtfm" title="props">
 <pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.</pre>
 </div>
-<div created="20221013151242679" creator="rtfm" modified="20221018122513241" modifier="rtfm" title="react tools">
+<div created="20221013151242679" creator="rtfm" modified="20221019191019241" modifier="rtfm" title="react tools">
 <pre>There are great dev tools for react, Check out "React Developer Tools" as an extension for brave/firefox/chrome. React sites will show an icon in top RH corner. Look for a "component" tab. 
 
 React Developer Tools is activated either by clicking on the react icon on top RHS of screen, or running developer tools ( ctrl+shift+i) and selecting "Components". In settings make sure that you have it turned on for "local files". To see if you have react tools and change settings goto:
@@ -11418,7 +11522,9 @@ Other great tools:
 * Putzing around with [[babel]]: https://babeljs.io/
 * Some good [[hook]] resources at https://usehooks.com/
 * Mock up some test APIs using https://mockoon.com/
-** See [[Mock API]]</pre>
+** See [[Mock API]]
+
+See also [[Introduction]].</pre>
 </div>
 <div created="20221014150037780" creator="rtfm" modified="20221014190911575" modifier="rtfm" title="ReactDOM.render">
 <pre>The ''ReactDOM.render()''  takes two arguments:
@@ -11435,8 +11541,12 @@ See this in action in [[example file 1]].
 ** Content is placed between the div tags.
 * See [[render()]].</pre>
 </div>
-<div created="20210323005126170" modified="20210323010910226" tags="" title="render()">
-<pre>The ''render()'' function can have logic in it:
+<div created="20210323005126170" creator="rtfm" modified="20221019200453253" modifier="rtfm" tags="" title="render()">
+<pre>The ''render()'' method is from the library ReactDOM.  In file [[index.js]] we have:
+
+`root.render(  &lt;App /&gt; );`
+
+Also:
 
 ```
 class HelloThere extends React.Component {
@@ -11535,8 +11645,8 @@ See also [[testing]]
 
 """</pre>
 </div>
-<div created="20221014190013730" creator="rtfm" modified="20221015073915985" modifier="rtfm" title="Tutorial">
-<pre>This is like a tutorial, a series of steps to using React that bring in more complex features each step.
+<div created="20221014190013730" creator="rtfm" modified="20221019193149710" modifier="rtfm" title="Tutorial">
+<pre>This is like a tutorial, a series of steps to using React that bring in more complex features each step. If you already have basics, skip right to [[create react app]].
 
 * [[basic start]]
 ** [[example file 1]]
@@ -11559,12 +11669,14 @@ Now the tutorial is done, we will focus on react [[concepts]]. Or go back to [[I
 
 </pre>
 </div>
-<div created="20221015102014243" creator="rtfm" modified="20221015115704601" modifier="rtfm" title="useEffect">
-<pre>This [[hook]] is typically used to manage side effects not related to a components render. These side effects can cause hard to find bugs and are not allowed in the main body of a function component . To run them we use ''useEffect''. It will run after ''render'' has finished loading the screen, or you can choose to run it when a value changes.  It has two parameters that help with this. The side effects include:
+<div created="20221015102014243" creator="rtfm" modified="20221019122101515" modifier="rtfm" title="useEffect">
+<pre>This [[hook]] is typically used to manage side effects not related to a components render. These side effects can cause hard to find bugs and are not allowed in the main body of a function component . To run them we use ''useEffect''. It will run after ''render'' has finished loading the screen, or you can choose to run it when a value changes.  It has two parameters, 
+the format is: `useEffect(&lt;function&gt;, &lt;dependency&gt;)`.  The side effects include:
 
 * console messages
 * timers
 * loading data
+** See [[api and data]]
 * animations
 
 """
@@ -11730,13 +11842,14 @@ Line numbers:
 
 We used state to manage this code. See  [[useRef]].</pre>
 </div>
-<div created="20221015074219914" creator="rtfm" modified="20221015101916595" modifier="rtfm" title="useState">
+<div created="20221015074219914" creator="rtfm" modified="20221019123748483" modifier="rtfm" title="useState">
 <pre>The library ''useState'' is a hook. A [[hook]] is a special function that lets you “hook into” React features without writing classes. In this example ''useState'' is a hook that lets you add state variables to functional components and React will preserve this state between re-renders.
 
 A two parts of: `const [fruit, setDaFruit] = useState("PickOne");`
 
 * setting the variable: ''fruit''
 * the function that will update that state: ''setDaFruit''
+** Not set initial state to null: `useState("");`
 
 Here is the code to do this:
 
