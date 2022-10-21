@@ -217,7 +217,13 @@ Error message and password prompt
 
 <li>custom hook</li>
 
+<li>data passing</li>
+
+<li>date</li>
+
 <li>declarative approach</li>
+
+<li>dependency array</li>
 
 <li>directory structure</li>
 
@@ -300,6 +306,8 @@ Error message and password prompt
 <li>render()</li>
 
 <li>Rendering JSX</li>
+
+<li>splitting components</li>
 
 <li>state</li>
 
@@ -10245,15 +10253,15 @@ JSX
 <div created="20210320012842819" modified="20210322055020846" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210316042108223" modified="20210322055232450" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210316042108223" creator="rtfm" modified="20221021130438986" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221020113620550" creator="rtfm" list="[[Index A-F]] Component [[component css]] [[component conventions]] Introduction concepts JSX" modified="20221020194020008" modifier="rtfm" title="$:/StoryList">
+<div created="20221020113620550" creator="rtfm" list="[[splitting components]] Component [[component conventions]] [[useRef example using useState]] useReducer [[api and data]] [[Index A-F]] date useEffect [[dependency array]] props [[data passing]]" modified="20221021130055007" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10490,7 +10498,7 @@ Final important point. The ''ReactDOM.render'' calls the ''&amp;lt;HelloClass /&
 * See also [[Component Example]].
 * See also [[Component calls Component]]</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221020194005495" modifier="rtfm" tags="" title="Component">
+<div created="20210322054353366" creator="rtfm" modified="20221021125736357" modifier="rtfm" tags="" title="Component">
 <pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
 
 A ''component'' is simply a ''JavaScript'' @@color:red;function@@ that returns [[JSX]]. Double check that. 
@@ -10506,7 +10514,8 @@ See also
 * [[Multiline JSX]].
 * [[Component Example]].
 * [[Component calls Component]]
-* [[component css]]</pre>
+* [[component css]]
+* [[splitting components]]</pre>
 </div>
 <div created="20210330050617960" modified="20210330063152465" title="Component calls Component">
 <pre>A [[Component]] can call a component. Check out the differences of [[import]].
@@ -10553,48 +10562,12 @@ export class NavBar extends React.Component {
 }
 ```</pre>
 </div>
-<div created="20221020120447451" creator="rtfm" modified="20221020194016520" modifier="rtfm" title="component conventions">
-<pre>Here are some good [[Component]] conventions to follow.
+<div created="20221021130101083" creator="rtfm" modified="20221021130427666" modifier="rtfm" title="component conventions">
+<pre>[[Component]]s have some good conventions to follow. Here they are:
 
-* Components should be in their own ''component'' directory
-** See [[directory structure]].
-* naming should be camel case: ''~ThisCoolThing.js''
-* ''components'' are JavaScript functions!
-** So we need a ''function'' keyword
-* You can only return one root element, not sibling elements:
-** It can have elements nested inside it.
-** Wrap sibling divs in a parent div.
-* CSS files should have the same name, but with an extension ".css"
-** If we have "App.js", we'd use "App.css". etc
-** In the ".js" file we need: `import './App.css'; ` 
-** And "class=" becomes "className=". See [[component css]]
-
-
-Example of a component, in the ''/component'' folder:
-
-```
-function ThisCoolThing() {
-   return (&lt;p&gt;This is really cool, so says Kelvin.&lt;/p&gt;);
-}
-
-export default ThisCoolThing;
-```
-
-To use this, in [[App.js]] there are two steps:
-
-* at the top of the file we would use ''import'' 
-* and to use it we use it, it is a custom Element
-** Custom Element - camel case like &amp;lt;~ThisCoolThing&gt;
-** Regular Element - lower case - like &amp;lt;p&gt;, &amp;lt;h2&gt;, &amp;lt;div&gt;, 
-
-```
-// App.js
-import ThisCoolThing from './components/ThisCoolThing';
-...
-&lt;ThisCoolThing&gt;&lt;/ThisCoolThing&gt;
-```
-
-
+* create a ''components'' directory and place them all there.
+* Use PascalCase or CapitalCamelCase to name them: JustLikeThis.
+* Use exact same name for js and css files.
 </pre>
 </div>
 <div created="20221020194024833" creator="rtfm" modified="20221020201803436" modifier="rtfm" title="component css">
@@ -10799,12 +10772,59 @@ const theDiv = React.createElement(
 
 A ''custom hook'' is a function that starts with ''use''.     </pre>
 </div>
+<div created="20221021092505989" creator="rtfm" modified="20221021110918988" modifier="rtfm" title="data passing">
+<pre>There are a couple of ways of passing data to our code. We can set [[props]] aka "properties" of components, meaning we are passing in data.
+
+We have a component named: "Fruits"
+
+* Hard code something: `&lt;Fruits name="apple"&gt;`
+* Pass in dynamic data:  `&lt;Fruits name{basket[0].name}="apple"&gt;`
+
+</pre>
+</div>
+<div created="20221021111438481" creator="rtfm" modified="20221021125648204" modifier="rtfm" title="date">
+<pre>This is more Javascript, just having it handy. Date is a Built-in Object.
+
+```
+const now = new Date();
+now.toDateString();     //  'Fri Oct 21 2022'
+now.getFullYear()       //  2022
+now.toLocaleString('en-US', { month: 'long'});    // October
+now.toLocaleString('en-US', { day: '2-digit'})    // 21
+
+
+```
+
+Built-in objects are "baked" into JavaScript. They come without you doing anything. One such built-in is Arrays, others include Boolean, Date, Error, Math, RegExp, Strings, ...
+
+```
+new Date()
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, ms)
+
+var myBirthDate=new Date();
+myBirthDate.setFullYear(2000,1,29);   // 0=jan, 1=feb, ...
+```</pre>
+</div>
 <div created="20221019192446837" creator="rtfm" modified="20221020115142061" modifier="rtfm" title="declarative approach">
 <pre>React focuses on you defining the desired state and and React will figure out how to do that - modifying javascript DOM instructions. You do not write any DOM modifying instructions - React figures that out! Again, you only need to define the end state (using [[JSX]]).
 
 An ''imperative'' approach (clear instructions)  is you explicitly finding where you want the code to be (~getElementById), create the code (~createElement), and then actually placing (using "append") it where you specify.
 
 See [[Introduction]].</pre>
+</div>
+<div created="20221021091859252" creator="rtfm" modified="20221021092446686" modifier="rtfm" title="dependency array">
+<pre>A ''dependency array'' is used in React [[hook]]s like [[useEffect]] as the second parameter. This dependency array (or 1..n) of variables specifies that if they change value, then the ''useEffect'' fires.
+
+Format: `useEffect(&lt;function&gt;, &lt;dependency&gt;)`
+
+In the following, if the variable "apple" or "banana" changes values, then the ''useEffect'' code is executed.
+
+```
+useEffect(() =&gt; {
+  // some code
+}, [apple, banana]);
+</pre>
 </div>
 <div created="20221015045449898" creator="rtfm" modified="20221020115934575" modifier="rtfm" title="directory structure">
 <pre>Running [[create-react-app]] will generate the following directory structure. Note that I have removed the node libraries of which there are 1000s. Many of these are also just to show the app working and are deleted in an actual project.
@@ -11236,7 +11256,7 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221020193919358" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221021111432500" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[api and data]]
@@ -11244,6 +11264,8 @@ This import/export style is [[ES6]], not React specific.
 * [[component css]]
 * [[controlled component]]
 * [[create react app]]
+* [[data passing]]
+* [[date]]
 * [[dependency array]]
 * [[example file 1]] ... there are many [[more!|example file 2]]
 * [[export]]
@@ -11257,8 +11279,10 @@ This import/export style is [[ES6]], not React specific.
 * [[map]]
 * [[Mock API]]</pre>
 </div>
-<div created="20221014172743267" creator="rtfm" modified="20221014172744994" modifier="rtfm" title="Index N-Q">
-<pre>The [[Index]]:</pre>
+<div created="20221014172743267" creator="rtfm" modified="20221021125818502" modifier="rtfm" title="Index N-Q">
+<pre>The [[Index]]:
+
+* [[splitting components]]</pre>
 </div>
 <div created="20221014172754029" creator="rtfm" modified="20221014190926487" modifier="rtfm" title="Index R-Z">
 <pre>The [[Index]]:
@@ -11562,8 +11586,56 @@ For our case, the two most important areL
 And to follow that we'd run [[npm start]] to fire up the react server.
 </pre>
 </div>
-<div created="20221014183050266" creator="rtfm" modified="20221014183212505" modifier="rtfm" title="props">
-<pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.</pre>
+<div created="20221014183050266" creator="rtfm" modified="20221021110709249" modifier="rtfm" title="props">
+<pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.
+
+Let's say that our main component ''App'' has retrieved some data and we want to pass it to a custom component to handle its display. A single value would look like:
+
+```
+// File: App.js
+...
+  &lt;Fruit name="apple"&gt;&lt;/Fruit&gt;
+...
+```
+Our ''Fruit'' app would need to get this, so we specify a ''props'' parameter:
+
+```
+//File: Fruit.js
+function Fruit(props) {
+  return (&lt;div&gt;{props.name}&lt;/div&gt;);
+}
+```
+
+You can also pass arrays, and objects:
+
+```
+// File: App.js
+...
+  const fruitData = [{id: 42, name: 'Apple', color: 'Red'} ...]
+...
+&lt;Fruit basket={fruitData[0]}&gt;&lt;/Fruit&gt;
+...or...
+&lt;Fruit basket={fruitData}&gt;&lt;/Fruit&gt;
+```
+
+And you'd grab them like:
+
+```
+// File: Fruit.js
+function Fruit(props) {
+
+  return (
+    &lt;div className="basket-item"&gt;
+      &lt;div&gt;We have: {props.basket[0].name}&lt;/div&gt;
+      &lt;div&gt;Color: {props.basket[0].color}&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+```
+
+
+
+See [[data passing]].</pre>
 </div>
 <div created="20221013151242679" creator="rtfm" modified="20221019191019241" modifier="rtfm" title="react tools">
 <pre>There are great dev tools for react, Check out "React Developer Tools" as an extension for brave/firefox/chrome. React sites will show an icon in top RH corner. Look for a "component" tab. 
@@ -11650,6 +11722,80 @@ Breaking this down:
 * The ''render'' has two arguments
 ** ''Hello World'' element - is ''JSX''. This can also be a ''variable''!
 ** ''document'' - this magic will place the compiled jsx in the html at ''id='app' ''
+</pre>
+</div>
+<div created="20221021125835405" creator="rtfm" modified="20221021134022363" modifier="rtfm" title="splitting components">
+<pre>"""
+Sometimes [[Component]]s can get large, we can split them up. 
+Sometimes things are used many places, so splitting that out is good too. 
+"""
+
+The only tricky part is passing data. Let's say:
+
+* We have a container named ''Alpha'' that uses dates.
+* We have many places that use those dates.
+* We split out dates from Alpha and create component ''Beta''.
+* At start we have:
+** Alpha.js
+** Alpha.css
+* After split out, we'll have:
+** Alpha.js
+** Alpha.css
+** BetaDate.js
+** BetaBetaDate.css
+*Careful of how to pass [[props]].
+** Note: `&lt;BetaDate date={props.date} /&gt; `
+** We pass ''props.date'' to component: ''BetaDate''
+** ''BetaDate'' uses ''props.date'' to read.
+
+Here is the after files:
+
+```
+// File: Alpha.js
+import BetaDate from './BetaDate';
+import './Alpha.css';
+
+function Alpha(props) {
+  return (
+    &lt;div className='some-css'&gt;
+      &lt;BetaDate date={props.date} /&gt;  // note!
+      &lt;div &gt;
+        &lt;h2&gt;Alpha Code&lt;/h2&gt;
+        &lt;p&gt;{props.title}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Alpha;
+```
+
+And our new shiny component:
+
+```
+import './BetaDate.css';
+
+function BetaDate(props) {
+  const mon=props.date.toLocaleString('en-US', {month: 'long'});
+  const day=props.date.toLocaleString('en-US', {day: '2-digit'});
+  const year = props.date.getFullYear();
+
+  return (
+    &lt;div className="some-css-date"&gt;
+      &lt;div&gt;{mon}&lt;/div&gt;
+      &lt;div&gt;{year}&lt;/div&gt;
+      &lt;div&gt;{day}&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default BetaDate;
+```
+
+Again: 
+
+* In ''&lt;BetaDate date={props.date} /&gt;'' ''Alpha'' sends ''props.date'' to ''BetaDate'' 
+* which is then referred to as ''props'' in ''BetaDate''.
 </pre>
 </div>
 <div created="20221015074017583" creator="rtfm" modified="20221015074214458" modifier="rtfm" title="state">
