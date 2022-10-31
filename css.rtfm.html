@@ -742,7 +742,7 @@ To move around use cntl-] and cntl-[</pre>
 <div title="DefaultTiddlers" modifier="rvr" created="200906011623" modified="201004022303" changecount="3">
 <pre>[[Introduction]]</pre>
 </div>
-<div title="F-L" modifier="rvr" created="201004051706" modified="202210061541" changecount="96">
+<div title="F-L" modifier="rvr" created="201004051706" modified="202210311248" changecount="97">
 <pre>[[fieldset]]
 [[first-child and last-child]]
 [[first-line]]
@@ -755,6 +755,7 @@ To move around use cntl-] and cntl-[</pre>
 [[Font Awesome]]
 [[form]] aka ''input form''
 [[framework]]
+[[gap]]
 [[Good CSS]]
 [[Grid|CSS Grids]] - CSS Grids
 [[grid properties]] - CSS Grids
@@ -796,16 +797,22 @@ There is an even more shorthand, @@ flex: 1 1 0;@@ is the same as @@ flex: 1; @@
 *flex-basis : 0; - does not have a starting value. Takes up space available evenly.
 </pre>
 </div>
-<div title="Flexbox" modifier="rvr" created="201705190453" modified="202209051159" changecount="52">
+<div title="Flexbox" modifier="rvr" created="201705190453" modified="202210310925" changecount="63">
 <pre>Flexbox is a layout system  that is for building responsive websites. Regardless of screen size, it will adjust to look good based on window size.
 It is like a flexible [[Box Model]].
 There are a few things to know
 *A flexbox is set in css via: @@ [[display]]: flex @@
-** Typically we set a flexbox using a div or section [[tags]]. That element is then a ''flex container''.
+** This element is now the ''flex container''.
+** See [[flexbox properties]] for container properties.
+** Typically we set a flexbox using a div or section [[tags]]. 
+** An old and outdated and not to be used is @@ display: flexbox; @@
+** An old and outdated and not to be used is @@ display: box; @@
+* There is a horizontal (x) called ''Main axis'' and vertical (y) axis called ''Cross axis''.
 *A ''flex container'' contains, surprise: ''flex items''
-** These &quot;flex items&quot; are tags like div, section, etc - all children of the initial tag we call a ''flex container''.
-*When you set the parent container as a ''flexbox'' container, then all its immediate children are automatically ''flex items''.
-**Even if they do not specifically set a ''flex item'' (see [[flexbox properties]]), the default kicks in: @@ flex: 0 1 auto;@@
+** The immediate children of a ''flex container'' are automatically ''flex items''.
+** See [[flexbox properties]] for flex container properties.
+** These &quot;flex items&quot; are tags like div, section, etc - all @@children@@ of the initial tag we call a ''flex container''.
+** If you do not specify a ''flex item'' the default kicks in: @@ flex: 0 1 auto;@@
 *''flex items'' -  can be aligned, stretched, shrunk, ... and they fit the entire ''flex container'' space.
 *You can nest a Flex container in a Flex item!
 A good place to set the flex container is on the [[body]] tag - for setting up an entire page. 
@@ -1317,18 +1324,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210171148">
+<div title="UploadLog" modifier="rvr" created="200905310007" modified="202210312014">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 06/10/2022 17:42:04 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
-| 08/10/2022 20:40:38 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 09/10/2022 12:58:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 11/10/2022 00:02:13 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 11/10/2022 19:52:14 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 11/10/2022 20:19:47 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 12/10/2022 18:25:53 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 13/10/2022 17:07:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
 | 17/10/2022 12:26:24 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 17/10/2022 13:48:51 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 17/10/2022 13:48:51 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 28/10/2022 14:10:20 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |
+| 31/10/2022 13:40:27 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 31/10/2022 21:14:39 | rvr | [[/|http://css.rtfm.tiddlyspot.com/]] | [[store.cgi|http://css.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://css.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="200905302326" tags="systemConfig">
 <pre>/***
@@ -2672,25 +2679,25 @@ That's all folks.
 
 </pre>
 </div>
-<div title="flexbox properties" modifier="rvr" created="201705222042" modified="202209051308" changecount="42">
+<div title="flexbox properties" modifier="rvr" created="201705222042" modified="202210311333" changecount="55">
 <pre>The following [[Flexbox]] tables focus on the ''container'' and ''item'' specific properties
+To &quot;create&quot; a flexbox container: ''display:flex''  ([[block]]) or ''display: inline-flex;'' ([[inline]]).
 !!Flex Container Properties
 |!Property|!Values|!Description|
-|display|flex or inline-flex|To identify a flexbox container.|
-|flex-direction|row(default), row-reverse, column, column-reverse|The direction of flow. &quot;row&quot;: L&amp;rarr;R, &quot;column&quot;: Top&amp;rarr;Bottom.|
-|flex-wrap|nowrap, wrap, wrap-reverse|How wrapping is done when the line limit is reached.|
-|align-content|center, flex-start, flex-end, stretch, space-around|The alignment along the main axis.|
-|justify-content|center, flex-start, flex-end, space-between, space-around|The alignment along the main axis.|
-|align-items|flex-start, flex-end, center, baseline, stretch(default)|How items are aligned along the cross axis. ''flex-start'' starts at top of container.|
-|flex-flow|row wrap|Comines flex-direction &amp; flex-wrap|
+|flex-direction|''row''(default), row-reverse, column, column-reverse|The direction of flow. &quot;row&quot;: L&amp;rarr;R, &quot;column&quot;: Top&amp;rarr;Bottom.|
+|flex-wrap|''nowrap''(default), wrap, wrap-reverse|How wrapping is done when the line limit is reached.|
+|align-content|center, ''flex-start''(default), flex-end, stretch, space-around|The alignment along the main axis.|
+|justify-content|center, ''flex-start''(default), flex-end, space-between, space-around|The alignment along the main axis.|
+|align-items|''flex-start''(default), flex-end, center, baseline, stretch(default)|How items are aligned along the cross axis. ''flex-start'' starts at top of container.|
+|flex-flow|&lt;flex-direction&gt; &lt;flex-wrap&gt;|Combines flex-direction &amp; flex-wrap|
 !!Flex Item Properties
 |!Property|!Values|!Description|
 |order|&lt;integer&gt;|The order of items, from -n to 0 to +n|
 |flex|&lt;flex-grow&gt;&lt;flex-shrink&gt;&lt;flex-basis&gt;|Shortcut for following three.|
 |flex-grow|&lt;integer&gt;,0=default|How items grow inside parent. 0=don't expand, 1=expand equally, 2=expand 2x as fast.|
 |flex-shrink|&lt;integer&gt;,1=default|How items shrink inside parent. 0=no shrink, 1=shrink equally, 2=shrink 2x as fast.|
-|flex-basis|number, auto(default), initial, inherit|How big to start off as. 0=no start size. Take up space allotted by flex-grow, auto=based on content, npx/n%=guarantee that space.|
-|align-self|auto(default), flex-start, flex-end, center, baseline, stretch|Determines size of items before space is distributed and how content is treated. Overrides ''align-items'' on container.|
+|flex-basis|number, auto(default), initial, inherit|Initial start size. 0=no start size. Take up space allotted by flex-grow, auto=based on content, npx/n%=guarantee that space.|
+|align-self|auto(default), flex-start, flex-end, center, baseline, stretch|Overrides default alignment for individual flex items. It works just like the align-items.|
 Notes:
 *Even if you do not specifically set a flex item property, if it is in a flex container, the defaults kick in, which is: @@flex:0 1 auto@@.
 *flex-basis: if set to 25em - it will start that width &amp; keep it.
@@ -2827,6 +2834,27 @@ Some popular ones:
 **Very flexible.
 * ''Bulma'' - CSS Only framework. No javascript like all others.
 A ''framework'' is different from a [[preprocessor]].</pre>
+</div>
+<div title="gap" modifier="rvr" created="202210311258" modified="202210311300" changecount="3">
+<pre>The CSS ''gap'' property can be used between an element's columns.
+
+We can use: ''column-gap'', ''row-gap'', or ''gap'' properties.
+
+Typically used in  [[Flexbox]] and [[CSS Grids]]
+
+&lt;html&gt;&lt;pre&gt;
+.apple-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px 77%;    // row column
+}
+.mango-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 22px;
+}
+&lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="grid alignment" modifier="rvr" created="202210061434" modified="202210131451" changecount="46">
 <pre>This will show [[CSS Grid|CSS Grids]] alignment properties. There are @@three@@ types of alignment.
@@ -3509,10 +3537,11 @@ Popular ones include:
 *''~PostCSS'' - JS, very customizable. Plugin collection.
 This will make CSS easier to write and produce fewer bugs.</pre>
 </div>
-<div title="property" modifier="rvr" created="201407110715" modified="202209151452" changecount="15">
+<div title="property" modifier="rvr" created="201407110715" modified="202210311250" changecount="16">
 <pre>There are many properties that can be used in CSS. To see exactly what a property is see: [[CSS Rules]]. Here are the properties I will cover:
 *[[colors]]
 *[[display]]
+*[[gap]]
 *[[units]]
 *[[font]]
 *[[text]]
