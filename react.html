@@ -191,6 +191,8 @@ Error message and password prompt
 
 <li>basic start</li>
 
+<li>children</li>
+
 <li>class component</li>
 
 <li>Component</li>
@@ -202,6 +204,8 @@ Error message and password prompt
 <li>component css</li>
 
 <li>Component Example</li>
+
+<li>composition</li>
 
 <li>concepts</li>
 
@@ -294,6 +298,10 @@ Error message and password prompt
 <li>Multiline JSX</li>
 
 <li>npm start</li>
+
+<li>onClick</li>
+
+<li>onHover</li>
 
 <li>package.json</li>
 
@@ -10253,15 +10261,15 @@ JSX
 <div created="20210320012842819" modified="20210322055020846" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221021130438986" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210316042108223" creator="rtfm" modified="20221021200145368" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221020113620550" creator="rtfm" list="[[splitting components]] Component [[component conventions]] [[useRef example using useState]] useReducer [[api and data]] [[Index A-F]] date useEffect [[dependency array]] props [[data passing]]" modified="20221021130055007" modifier="rtfm" title="$:/StoryList">
+<div created="20221107200854475" creator="rtfm" list="composition Introduction JSX" modified="20221107200854475" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10386,7 +10394,7 @@ There are two things to do:
 
 See [[example file 2]].  </pre>
 </div>
-<div created="20221018122236522" creator="rtfm" modified="20221019134828135" modifier="rtfm" title="api and data">
+<div created="20221018122236522" creator="rtfm" modified="20221021203617145" modifier="rtfm" title="api and data">
 <pre>React can get data from a database of an API call.  
 Here I'll show how to use API.
 
@@ -10395,7 +10403,7 @@ For this I will use the [[Mock API]]  program. Set up an endpoint by following t
 In our react cook we'll use the [[hook]] called [[useEffect]] and [[useState]] and the basic ''App'' component. An explanation follows:
 
 ```
-1   import "./App.css";
+1   import "./App.css";     // May not be needed in newer apps
 2   import { useState, useEffect } from "react";
 3   
 4   function App() {
@@ -10467,12 +10475,17 @@ This file at the bottom should have an ''export default App;'' so that it can be
 
 We have not covered ''babel'' yet but that is coming up next in [[add babel]].</pre>
 </div>
-<div created="20221019191740069" creator="rtfm" modified="20221019191758733" modifier="rtfm" title="class component">
+<div created="20221107144714569" creator="rtfm" modified="20221107150420810" modifier="rtfm" title="children">
+<pre>When we create custom components, often we will have nested components to utilise their power. In order to use the child components, we need to use ''props.children''
+
+</pre>
+</div>
+<div created="20221019191740069" creator="rtfm" modified="20221021203704514" modifier="rtfm" title="class component">
 <pre>Here is a basic class [[Component]].
 
 
 ```
-import React from 'react';     
+import React from 'react';   // May not be needed in newer apps
 import ReactDOM from 'react-dom';
  
 class HelloClass extends React.Component {
@@ -10517,12 +10530,12 @@ See also
 * [[component css]]
 * [[splitting components]]</pre>
 </div>
-<div created="20210330050617960" modified="20210330063152465" title="Component calls Component">
+<div created="20210330050617960" creator="rtfm" modified="20221021203721548" modifier="rtfm" title="Component calls Component">
 <pre>A [[Component]] can call a component. Check out the differences of [[import]].
 
 ```
 # File: ProfilePage.js
-import React from 'react';
+import React from 'react';   // May not be needed in newer apps
 import ReactDOM from 'react-dom';
 import { NavBar } from './NavBar';
 
@@ -10620,11 +10633,11 @@ export default Apple;
 
 </pre>
 </div>
-<div created="20210323003612480" modified="20210323004017644" title="Component Example">
+<div created="20210323003612480" creator="rtfm" modified="20221021203744799" modifier="rtfm" title="Component Example">
 <pre>Here is a basic outline:
 
 ```
-import React from 'react';     
+import React from 'react';   // May not be needed in newer apps
 import ReactDOM from 'react-dom';
  
 class HelloClass extends React.Component {
@@ -10636,9 +10649,38 @@ class HelloClass extends React.Component {
 ReactDOM.render( &lt;HelloClass /&gt;, document.getElementById('app') );
 ```</pre>
 </div>
-<div created="20221015073940142" creator="rtfm" modified="20221015085041654" modifier="rtfm" title="concepts">
+<div created="20221107142050105" creator="rtfm" modified="20221107200856987" modifier="rtfm" title="composition">
+<pre>Composition is a pattern to help make your code reusable. It allows you to factor out common code (css too) so you don't duplicate code.
+
+For example, lets say you have a system that displays information like hockey cards, pokeman cards and NFTs. The styling elements are exactly the same but the details descriptions are very different. We can easily factor out the css so that we don't duplicate that three times. This will give us a unified look and consistency.
+
+We'll have three components here
+
+* the wrapper named ''Card''
+** key here is [[props]]
+** in it we have to access the classes used inside
+** this is done via: `className=`
+** in it we have to pass in the jsx code
+* component to display the image ''CardImage''
+* component to display info "Information"
+
+Here is ''Card'':
+
+```
+import './Card.css';
+function Card(props) {
+  const classes = 'card ' + props.className;
+  return &lt;div className={classes}&gt;{props.children}&lt;/div&gt;;
+}
+
+export default Card;
+```
+</pre>
+</div>
+<div created="20221015073940142" creator="rtfm" modified="20221107142023638" modifier="rtfm" title="concepts">
 <pre>There are a few to learn. Here are some:
 
+* [[composition]]
 * [[hook]]
 * [[state]]</pre>
 </div>
@@ -10873,30 +10915,31 @@ In the web browser ([[Chrome]]) there are [[dev tools]] which has a ''console'' 
 In React, think of elements are little chunks of HTML code. Often we will group them into chunks that are more than a single element.
 </pre>
 </div>
-<div created="20210323185615978" modified="20210323191317026" tags="" title="Event Listener Examples">
+<div created="20210323185615978" creator="rtfm" modified="20221027213005585" modifier="rtfm" tags="" title="Event Listener Examples">
 <pre>Event handlers are methods on a component class. We have
 
-* [[Event Listeners]] - the ''onHover''
-* Event Handler - the method myCoolFunction
+[[Event Listeners]] 
+
+* [[onHover]]
+* [[onClick]]
 
 ```
-class WatchingYou extends React.Component {
-  myCoolFunction() {
-    alert('Somebodies watching you!.');
-  }
+const ExpenseItem = (props) =&gt; {
+  const clickHandler = () =&gt; {
+    console.log("Doing something important.);
+  };
  
   render() {
     return (
-      &lt;div onHover={this.myCoolFunction}&gt;
+      &lt;div&gt;
+        &lt;button onClick={clickHandler}&gt;Change Something&lt;/button&gt;
       &lt;/div&gt;
     );
   }
 }
-
-ReactDOM.render(&lt; WatchingYou /&gt;, document.getElementById('app'));
 ```</pre>
 </div>
-<div created="20210319050158372" modified="20210323190238639" title="Event Listeners">
+<div created="20210319050158372" creator="rtfm" modified="20221027212450870" modifier="rtfm" title="Event Listeners">
 <pre>Event listeners call event handlers which are methods on a component class. This is often in the ''render()'' method. You make ''EventListeners'' by using attributes. For example ''onClick'' is an Event Listener:
 
 ```
@@ -10908,7 +10951,7 @@ You will see that ''Event Listener Names'' in JSX are camelCase where as javascr
 
 A whole whack of'em here: https://reactjs.org/docs/events.html#generic-events
 
-See a;so [[Event Listener Examples]].</pre>
+See also [[Event Listener Examples]].</pre>
 </div>
 <div created="20221014145357013" creator="rtfm" modified="20221014190801156" modifier="rtfm" title="example file 1">
 <pre>Here is a basic file - HTML with React. Explanations follow.
@@ -11233,16 +11276,17 @@ All hooks have to declared, you can even combine them.
 `import { useState, useEffect } from "react";`
 </pre>
 </div>
-<div created="20210330051259048" modified="20210330061409658" title="import">
+<div created="20210330051259048" creator="rtfm" modified="20221021203520588" modifier="rtfm" title="import">
 <pre>You can import libraries. There are two different methods.
 
 If the import statement has a string that begins with either a dot or a slash, the import will treat that string as a filepath. If no extension is given, then ".js" is assumed
 
-# The React library must in scope, so: ''import React from 'react'; ''
-# The file starts with a dot or slash: ''import { NavBar } from './NavBar';''
-## This gets a variable from a different file.
-## This other file has to have an [[export]] command.
-## This looks like: ''export class NavBar extends React.Component {...''
+* The React library must in scope, so: ''import React from 'react'; ''
+** This is no longer needed in nre React apps, with [[create react app]].
+* The file starts with a dot or slash: ''import { NavBar } from './NavBar';''
+**  This gets a variable from a different file.
+**  This other file has to have an [[export]] command.
+**  This looks like: ''export class NavBar extends React.Component {...''
 
 This import/export style is [[ES6]], not React specific.
 </pre>
@@ -11299,13 +11343,13 @@ The key part of this is: `&lt;div id="root"&gt;&lt;/div&gt;`
 
 </pre>
 </div>
-<div created="20221015053020221" creator="rtfm" modified="20221019200753671" modifier="rtfm" title="index.js">
+<div created="20221015053020221" creator="rtfm" modified="20221021203805040" modifier="rtfm" title="index.js">
 <pre>The first file loaded by a browser is [[index.html]]. It has a ''div'' called "root", where the following code is first executed, and is transformed into javascript as this file obviously is  *not* javascript. It is converted into Javascript and injected at "root" in "index.html".
 
 In [[directory structure]] the file under ''src/index.js'' has:
 
 ```
-import React from 'react';
+import React from 'react';  // May not be needed in newer apps
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -11508,13 +11552,13 @@ const rtfm = (
 ```
 Finally, we we must have the whole thing with an outermost tage = that is if you have two different ''p'' tage you have to wrap them in a ''div'' tag.</pre>
 </div>
-<div created="20210330061620661" modified="20210330062539163" title="map">
+<div created="20210330061620661" creator="rtfm" modified="20221021203817073" modifier="rtfm" title="map">
 <pre>Map() has a returned value of array.
 
 This following example will create an array called ''navLinks''. It will then be called by another program, who will ''export'' the component!
 
 ```
-import React from 'react';
+import React from 'react';   // May not be needed in newer apps
 
 export class NavBar extends React.Component {
   render() {
@@ -11572,6 +11616,63 @@ http://127.0.0.1:3333/apple
 
 If there are problems, it is probably because you don't have all the node modules you need. Running the `npm install` command will look for the file [[package.json]] and run it, installing all we need to run the project.</pre>
 </div>
+<div created="20221027213014886" creator="rtfm" modified="20221027214145162" modifier="rtfm" title="onClick">
+<pre>The ''onClick'' event:
+
+We can use either:
+
+* ''function ~DoSomething(props){''
+* ''const ~DoSomething = (props) =&gt; {''
+
+Same thing in using:
+
+*  ''function clickHandler() {''
+* ''const clickHandler = () =&gt; {''
+
+```
+function DoSomething(props){
+
+  function clickHandler() {
+    console.log("Doing something important.);
+  };
+ 
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;button onClick={clickHandler}&gt;Change Something&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+```
+
+@@color:red;Important@@ In the JSX code we have the line:
+
+`&lt;button onClick={clickHandler}&gt;Change Something&lt;/button&gt;`
+
+And we have ''clickHandler'' without ()s. This is because we don't want to execute it, we want JSX to use the function we made above, Consider that ''clickHandler'' is a pointer to the function.
+</pre>
+</div>
+<div created="20221027212555673" creator="rtfm" modified="20221027212620915" modifier="rtfm" title="onHover">
+<pre>The ''onHover''
+
+```
+class WatchingYou extends React.Component {
+  myCoolFunction() {
+    alert('Somebodies watching you!.');
+  }
+ 
+  render() {
+    return (
+      &lt;div onHover={this.myCoolFunction}&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(&lt; WatchingYou /&gt;, document.getElementById('app'));
+```</pre>
+</div>
 <div created="20221015050645786" creator="rtfm" modified="20221015060509601" modifier="rtfm" title="package.json">
 <pre>The ''package. json'' file is the heart of any Node-React project. It is npm’s configuration file. It is in [[JSON]] format, and contains meta data )descriptions, dependencies, ...) for the project.
 
@@ -11586,8 +11687,12 @@ For our case, the two most important areL
 And to follow that we'd run [[npm start]] to fire up the react server.
 </pre>
 </div>
-<div created="20221014183050266" creator="rtfm" modified="20221021110709249" modifier="rtfm" title="props">
-<pre>This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.
+<div created="20221014183050266" creator="rtfm" modified="20221107144706718" modifier="rtfm" title="props">
+<pre>''props'' are properties. They are arguments passed into React components. Also like ''attributes'' in HTML.
+
+There are things passed in by default, things we don't implicitly specify. One important one is [[children]]. These are custom components we have made.
+
+This is a place that we can place data that we'll use when we render a component. We'll pass the object ''props'' into the component so we can dynamically use that information.
 
 Let's say that our main component ''App'' has retrieved some data and we want to pass it to a custom component to handle its display. A single value would look like:
 
@@ -11697,7 +11802,7 @@ class HelloThere extends React.Component {
 }
 ```</pre>
 </div>
-<div created="20210316050705571" modified="20210316053221084" title="Rendering JSX">
+<div created="20210316050705571" creator="rtfm" modified="20221021203919051" modifier="rtfm" title="Rendering JSX">
 <pre>It's great to write [[jsx]] but at some point you will have to render it, that is, show it on the screen.
 
 ```
@@ -11708,7 +11813,7 @@ And it's like:
 
 
 ```
-import React from 'react';
+import React from 'react';   // May not be needed in newer apps
 import ReactDOM from 'react-dom';
 
 // Copy code here:
@@ -11798,8 +11903,10 @@ Again:
 * which is then referred to as ''props'' in ''BetaDate''.
 </pre>
 </div>
-<div created="20221015074017583" creator="rtfm" modified="20221015074214458" modifier="rtfm" title="state">
+<div created="20221015074017583" creator="rtfm" modified="20221028075801432" modifier="rtfm" title="state">
 <pre>A tricky part of anything to do with a stateless language like HTML is keep state. Here is how we'll do it in React, [[useState]].
+
+React on first load, will go through every component, evaluating JSX, returning HTML, and creating a DOM that will be displayed to the screen. It only does this once. To keep track of something changing, we need to know state.
 </pre>
 </div>
 <div created="20221014192312309" creator="rtfm" modified="20221018120345044" modifier="rtfm" tags="" title="testing">
