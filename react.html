@@ -10261,7 +10261,7 @@ JSX
 <div created="20210320012842819" modified="20210322055020846" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221021200145368" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<div created="20210316042108223" creator="rtfm" modified="20221109111015620" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
@@ -10269,7 +10269,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221107200854475" creator="rtfm" list="composition Introduction JSX" modified="20221107200854475" modifier="rtfm" title="$:/StoryList">
+<div created="20221109111017094" creator="rtfm" list="[[npm start]] composition Introduction" modified="20221109114512598" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -11300,7 +11300,7 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221021111432500" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221109085816625" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[api and data]]
@@ -11611,10 +11611,21 @@ http://127.0.0.1:3333/apple
     );
 ```</pre>
 </div>
-<div created="20221015060516351" creator="rtfm" modified="20221015060744305" modifier="rtfm" title="npm start">
+<div created="20221015060516351" creator="rtfm" modified="20221109114604777" modifier="rtfm" title="npm start">
 <pre>The ''npm start'' will start the react server so that we can code and see the changes right away on the website! This is most excellent for developing.
 
-If there are problems, it is probably because you don't have all the node modules you need. Running the `npm install` command will look for the file [[package.json]] and run it, installing all we need to run the project.</pre>
+If there are problems, it is probably because you don't have all the node modules you need. Running the `npm install` command will look for the file [[package.json]] and run it, installing all we need to run the project.
+
+If you see the @@color:red;error@@: ''Error:0308010c:digital envelope routines::unsupported''
+
+To fix: in file [[package.json]] change the start value to: 
+
+`"start": "react-scripts --openssl-legacy-provider start"`
+
+If this bugs you too much add to system:
+
+`export NODE_OPTIONS=--openssl-legacy-provider`
+</pre>
 </div>
 <div created="20221027213014886" creator="rtfm" modified="20221027214145162" modifier="rtfm" title="onClick">
 <pre>The ''onClick'' event:

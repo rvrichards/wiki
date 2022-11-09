@@ -188,6 +188,8 @@ Error message and password prompt
 
 <li>Create simple Node Program</li>
 
+<li>definitions</li>
+
 <li>event</li>
 
 <li>global object</li>
@@ -214,9 +216,17 @@ Error message and password prompt
 
 <li>npm</li>
 
+<li>npm init</li>
+
+<li>npm install</li>
+
 <li>nvm</li>
 
 <li>PAAS</li>
+
+<li>package.json</li>
+
+<li>package.json example</li>
 
 <li>path</li>
 
@@ -10149,7 +10159,7 @@ Error message and password prompt
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221027192252516" creator="rtfm" list="npm [[install node via nvm]] nvm Introduction" modified="20221027194507813" modifier="rtfm" title="$:/StoryList">
+<div created="20221109082744002" creator="rtfm" list="nvm module [[global object]] package.json definitions [[Index N-S]] Index [[Index G-M]] npm [[npm install]] [[npm init]]" modified="20221109112532284" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10323,6 +10333,21 @@ Hello World!
 * [[Node CLI Program]]
 </pre>
 </div>
+<div created="20221109102326933" creator="rtfm" modified="20221109105147727" modifier="rtfm" title="definitions">
+<pre>Definitions:
+
+* [[module]]
+** 3 kinds: Core Modules, Local Modules, and Third-party Modules
+** think: javascript code in files or libraries
+**  a file or directory in `\node_modules` that can be loaded by the require() function.
+* ''package''
+** The npm registry contains ''packages''
+** A package can contain a node ''module'' or many modules.
+** A package in Node contains all the files you need for a module.
+** A package is a file or directory that is described by a [[package.json]] file.
+
+</pre>
+</div>
 <div created="20210228091959748" creator="rtfm" modified="20220809123555640" modifier="rtfm" title="event">
 <pre>An event-driven runtime means that it is driven by events. When a user does a mouse-click or selects let's say a drop-down - that is an event.  It only responds to events.
 Events are placed on an event queue and processed in the order in which they are received. It is an endless loop: wait for tasks, execute them and then sleeps until it receives more tasks.</pre>
@@ -10362,8 +10387,8 @@ See also [[require]].</pre>
 
 When a request is given, node handles it, but doesn't wait for a response. The response will come sooner or later by sending a message to an [[event queue]].  Node monitors this ''event queue'', and when something is there it will grab it and process it.,</pre>
 </div>
-<div created="20220812191424647" creator="rtfm" modified="20220812191517465" modifier="rtfm" title="Index">
-<pre>The indexes:
+<div created="20220812191424647" creator="rtfm" modified="20221109102152007" modifier="rtfm" title="Index">
+<pre>[[Introduction]] and the indexes:
 
 * [[Index A-F]]
 * [[Index G-M]]
@@ -10371,12 +10396,14 @@ When a request is given, node handles it, but doesn't wait for a response. The r
 * [[Index T-Z]]
 </pre>
 </div>
-<div created="20210228091157794" creator="rtfm" modified="20220812191417314" modifier="rtfm" title="Index A-F">
-<pre>The [[Index]]
+<div created="20210228091157794" creator="rtfm" modified="20221109102318757" modifier="rtfm" title="Index A-F">
+<pre>The [[Index]]:
 
-[[builtin functions]] 
-[[callback]] 
-[[Create simple Node Program]] - with node dependencies</pre>
+* [[builtin functions]] 
+* [[callback]] 
+* [[Create simple Node Program]] - with node dependencies
+* [[definitions]]
+</pre>
 </div>
 <div created="20210306055325598" creator="rtfm" modified="20220809131543157" modifier="rtfm" title="Index G-M">
 <pre>* [[global object]]
@@ -10384,8 +10411,11 @@ When a request is given, node handles it, but doesn't wait for a response. The r
 * [[Install Node]]
 * [[module]]</pre>
 </div>
-<div created="20210306061340976" modified="20210306063540389" title="Index N-S">
-<pre>[[nvm]]</pre>
+<div created="20210306061340976" creator="rtfm" modified="20221109085852984" modifier="rtfm" title="Index N-S">
+<pre>The [[Index]]:
+
+* [[npm]] - init, start, ...
+* [[nvm]]</pre>
 </div>
 <div created="20210306060723773" creator="rtfm" modified="20220909172540796" modifier="rtfm" title="Install Node">
 <pre>Do we already have node installed? What  about [[npm]]? What about the node version manager [[nvm]]?
@@ -10463,7 +10493,7 @@ $ nvm alias default node   // Bonus command
 
 ```</pre>
 </div>
-<div created="20210228090927141" creator="rtfm" modified="20220814140723657" modifier="rtfm" tags="" title="Introduction">
+<div created="20210228090927141" creator="rtfm" modified="20221109104542389" modifier="rtfm" tags="" title="Introduction">
 <pre>Node wiki - basics to intermediate.  
 
 Node is an open source [[asynchronous]]  [[runtime]] environment for executing JavaScript code outside a browser. It is [[event]] driven, single threaded and therefore very efficient. It is not a programming language. It is (repeat after me) ''a runtime environment for executing JavaScript code''. There are many open source libraries to choose from.
@@ -10474,8 +10504,9 @@ Originally node was the JS Engine for the Chrome browser (called v8). He wrapped
 
 Check out: 
 
+* [[definitions]]
 * [[How Node Works]] 
-* [[Install Node]].
+* [[Install Node]]
 * [[Run First Node Program]]
 * [[Create simple Node Program]]
 * [[Simple Node CLI Program ]] - with node dependencies
@@ -10487,10 +10518,21 @@ Index:
 * [[Index N-S]]
 * [[Index T-Z]]</pre>
 </div>
-<div created="20210306063615739" creator="rtfm" modified="20220809133302727" modifier="rtfm" title="module">
-<pre>''Modules'' are important parts of node. THink of a module as something you create or import as a library. It is simple a file of JavaScript code.
+<div created="20210306063615739" creator="rtfm" modified="20221109105025604" modifier="rtfm" title="module">
+<pre>''Modules'' is an important concept of node. Think of a module as something you create or import as a javascript file or library.
 
+Lots of information about modules:
 
+* There are 3 kinds of modules: Core, Local, and Third-party.
+** ''Core Modules:'' these built-in modules that are part of ~NodeJS
+** ''Local Modules:'' these are your own, locally created
+** ''Third-party Modules:'' accessed by ''npm'' command. Like "react"
+* is code that can communicate with an external application
+* think: javascript code and libraries
+*  a file or directory in `\node_modules` that is loaded by the require() function.
+* therefore can be multiple files.
+* has own context, will not pollute global scope. 
+* each module can be placed in a separate .js file under a separate folder.
 
 See [[global object]], and here are some built-in modules to check out:
 
@@ -10564,16 +10606,47 @@ Goodbye cruel world!
 
 ```</pre>
 </div>
-<div created="20220909172034094" creator="rtfm" modified="20221027202932339" modifier="rtfm" title="npm">
+<div created="20220909172034094" creator="rtfm" modified="20221109111954487" modifier="rtfm" title="npm">
 <pre>''npm'' is a package manager for the JavaScript programming language.
 It is the default package manager for the Node.js. Do you have it? Try running `npm -v`. 
 
-When setting up code from Github, you do not save the the ''/node_modules'' directory as it has 1000s of entries. You simply run the ''package.json''  file by executing: 
+When setting up code from Github, you do not save the the ''/node_modules'' directory as it has 1000s of entries. You simply run the [[package.json]]  file by executing: 
 
-* `npm install`
+* [[npm init]] - to create a new project
+* [[npm install]] - install [[module]]s.
+** Will create directory: ''node_modules''
 * `npm start` - if you need the react server running.
+* `npm outdated` - check for outdatedness. haha.
+* `npm home &lt; package-name&gt;` - open website of package
+* `npm repo &lt; package-name&gt;` - open repo of package
+* `npm ls -global --depth 0` - list globally installed modules
 
 To change the version of node, use [[nvm]]
+</pre>
+</div>
+<div created="20221109085926603" creator="rtfm" modified="20221109111530741" modifier="rtfm" title="npm init">
+<pre>This is used to initialize your project. You'll be asked a series of questions and it will construct a [[package.json]] file for. Pretty sweet.
+
+Simply un: `npm init`
+
+See [[npm]].
+
+</pre>
+</div>
+<div created="20221109090207657" creator="rtfm" modified="20221109115931880" modifier="rtfm" title="npm install">
+<pre>The [[npm]] command ''install'' simply installs [[module]]s. There are many variations on installation, here they are:
+
+* Install all from [[package.json]] file: `npm install` 
+*  Format: ''npm install &lt; module-name&gt;'' 
+* Actual:  `npm install react` - will install ~ReactJS
+* Install and save in [[package.json]] file 
+** `npm install react --save`
+** `npm install react --save-dev`
+* `npm install react --global` - will install for your entire system
+
+Node will install modules into: ''/node_modules''
+
+
 </pre>
 </div>
 <div created="20210306061352560" creator="rtfm" modified="20221027203452233" modifier="rtfm" title="nvm">
@@ -10627,6 +10700,48 @@ Full Stack of technology services
     └── Networking
 &lt;/pre&gt;&lt;/html&gt;
 See [[IAAS]]</pre>
+</div>
+<div created="20221109082811549" creator="rtfm" modified="20221109085403770" modifier="rtfm" title="package.json">
+<pre>The heart of *any* node program is ''package.json''. It contains all the information to set up the system with all the libraries, files, and information to be up and running.
+
+It contains (obviously in ''json'' format):
+
+*  ''meta data'' - project name, version, description, license.
+*  ''dependents'' - directs installation of versions of dependant modules.
+** ''dependencies'' for production environment
+** ''devDependencies'' for development
+** done via ''npm install''
+
+See a [[package.json example]]</pre>
+</div>
+<div created="20221109083752834" creator="rtfm" modified="20221109085636573" modifier="rtfm" title="package.json example">
+<pre>Here is a [[package.json]] example. It is an object with name-value pairs. 
+
+```
+{
+  "name": "top-secret-project",
+  "version": "0.0.42",
+  "main": "index.js",
+  "devDependencies": {
+    "react": "^18.0.0",
+    "watch-css-package": "2.4.0—3.0.0"
+  }
+  "dependencies": {
+    "react": "^18.0.0",
+    "some-prod-package": "~4.2.0"
+  }
+}
+```
+
+This is broken down into:
+
+* ''name'' - must be lowercase, can use hypen or underscore and &lt; 214 chars.
+* ''version'' - must follow https://semver.org/ spec.  "MAJOR.MINOR.PATCH"
+* ''main'' - the program entry point
+* ''dependencies'' - object for production-only libraries
+* ''devDependencies'' - object for development-only libraries
+
+There are a couple more, git repo, scripts, etc. Add them if I read this later and remember.</pre>
 </div>
 <div created="20220809132412072" creator="rtfm" modified="20220809132708977" modifier="rtfm" title="path">
 <pre>The ''path'' module is built-in when you install node. It is not a [[global object]], so we have to [[require]] it.
