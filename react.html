@@ -257,6 +257,8 @@ Error message and password prompt
 
 <li>Fragment</li>
 
+<li>function</li>
+
 <li>GettingStarted</li>
 
 <li>hook</li>
@@ -278,6 +280,8 @@ Error message and password prompt
 <li>index.js</li>
 
 <li>Introduction</li>
+
+<li>JavaScript</li>
 
 <li>Javascript in JSX</li>
 
@@ -10269,7 +10273,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221109111017094" creator="rtfm" list="[[npm start]] composition Introduction" modified="20221109114512598" modifier="rtfm" title="$:/StoryList">
+<div created="20221109163923577" creator="rtfm" list="state useState hook" modified="20221110155111437" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10437,7 +10441,7 @@ Breaking the above down:
 
 </pre>
 </div>
-<div created="20221015053715390" creator="rtfm" modified="20221020120019825" modifier="rtfm" title="App.js">
+<div created="20221015053715390" creator="rtfm" modified="20221110145139375" modifier="rtfm" title="App.js">
 <pre>The ''App.js'' is the main react component. All react components should be referenced (nested) in here, and they should be each in their own file with the same name. Since a large project can have many files, it makes sense to place components in their own folder, but leave the ''App.js'' in the ''src'' folder. See [[directory structure]]. 
 
 ''App.js'' is then injected in to the ''App'' component element in ''src/''[[index.js]], which in turn is placed in the ''public/''[[index.html]] file at the element id'd as "root".
@@ -10461,7 +10465,9 @@ export default App;
 ```
 What is curious is what the heck is returned above? It is [[JSX]]. And it's ok.
 
-This file at the bottom should have an ''export default App;'' so that it can be grabbed by the App element in  [[index.js]].</pre>
+This file at the bottom should have an ''export default App;'' so that it can be grabbed by the App element in  [[index.js]].
+
+See also [[function]].</pre>
 </div>
 <div created="20221014144237810" creator="rtfm" modified="20221015034905948" modifier="rtfm" title="basic start">
 <pre>Basic React Program development can be followed in [[Tutorial]]. An [[example file 1]] will get us going. A few points here:
@@ -10511,10 +10517,12 @@ Final important point. The ''ReactDOM.render'' calls the ''&amp;lt;HelloClass /&
 * See also [[Component Example]].
 * See also [[Component calls Component]]</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221021125736357" modifier="rtfm" tags="" title="Component">
+<div created="20210322054353366" creator="rtfm" modified="20221109164938947" modifier="rtfm" tags="" title="Component">
 <pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
 
-A ''component'' is simply a ''JavaScript'' @@color:red;function@@ that returns [[JSX]]. Double check that. 
+A ''component'' is simply a ''~JavaScript'' @@color:red;function@@ that returns [[JSX]]. 
+
+''Components'' really are custom HTML elements where you combine [[JSX]] (kinda HTML code) and css styling and possibly ''~JavaScript''.
 
 You can think of a component as a "custom HTML element". A react component is usually and best kept in their own files of the same name.  This allows re-usability and a separation of concerns. We'll start simple, but there are many ways to create and use a component.
 
@@ -10649,22 +10657,35 @@ class HelloClass extends React.Component {
 ReactDOM.render( &lt;HelloClass /&gt;, document.getElementById('app') );
 ```</pre>
 </div>
-<div created="20221107142050105" creator="rtfm" modified="20221107200856987" modifier="rtfm" title="composition">
+<div created="20221107142050105" creator="rtfm" modified="20221109175352033" modifier="rtfm" title="composition">
 <pre>Composition is a pattern to help make your code reusable. It allows you to factor out common code (css too) so you don't duplicate code.
+
+We can have highly specific components - like an ''~ItemExpense'' which prints out an item expense, it doesn't print out a date, that might be the ''~ItemDate'' component. They are passed [[props]] with very specific data, like a price or a date. 
+
+@@color:red;''But''@@ sometimes you want to pass in actual content. We don't need to worry about built-in elements like  p or div but there is something extra we have to do to pass in to our custom components. In other words, you can't use custom components as wrappers around other content.
 
 For example, lets say you have a system that displays information like hockey cards, pokeman cards and NFTs. The styling elements are exactly the same but the details descriptions are very different. We can easily factor out the css so that we don't duplicate that three times. This will give us a unified look and consistency.
 
-We'll have three components here
+Below, we have ~ExpenseItem and ~ExpenseDate that have common css styling.
 
-* the wrapper named ''Card''
-** key here is [[props]]
-** in it we have to access the classes used inside
-** this is done via: `className=`
-** in it we have to pass in the jsx code
-* component to display the image ''CardImage''
-* component to display info "Information"
+&lt;pre&gt;
+App
+└── Expenses
+    └── ~ExpenseItem
+        └── ~ExpenseDate
+&lt;/pre&gt;
 
-Here is ''Card'':
+After, we can factor out the common styling into a custom element that we'll call ''Card''.
+&lt;pre&gt;
+App
+└── Expenses
+    └── Card
+        └── ~ExpenseItem
+            └── Card
+                └── ~ExpenseDate
+&lt;/pre&gt;
+
+''Card'' is a convention for the look of a typical card - rounded corners and drop shadows. It is a regular custom component so it would look like:
 
 ```
 import './Card.css';
@@ -10672,9 +10693,32 @@ function Card(props) {
   const classes = 'card ' + props.className;
   return &lt;div className={classes}&gt;{props.children}&lt;/div&gt;;
 }
-
 export default Card;
 ```
+This would have the usual css file too. Because we have a custom component, if there is any styling on components inside the card - we won't see them. To include them we need the code (above) that sets ''classes'' - to be the card css and all ''className'' classes of the enclosed components.
+
+@@color:red;Note:@@ `props.children`. This ''children'' is a reserved word and passes in content between the ''opening'' and ''closing'' tag of the custom component. There for in our code all content between `&lt;Card..&gt;` and `&lt;/Card&gt;` will be available on "props.children":
+
+
+```
+    &lt;Card className='expense-item'&gt;
+      &lt;ExpenseDate date={props.date} /&gt;
+      &lt;div className='expense-item__description'&gt;
+        &lt;h2&gt;{props.title}&lt;/h2&gt;
+        &lt;div className='expense-item-price'&gt;${props.amount}&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/Card&gt;
+```
+
+Summing up...
+
+* A wrapper component named ''Card''
+** factors out common css and maybe content
+* Card component needs content passed in
+** Use: `props.children`
+* Card component needs classes also passed in
+** Use: `const classes = 'card ' + props.className;`
+
 </pre>
 </div>
 <div created="20221015073940142" creator="rtfm" modified="20221107142023638" modifier="rtfm" title="concepts">
@@ -10868,7 +10912,7 @@ useEffect(() =&gt; {
 }, [apple, banana]);
 </pre>
 </div>
-<div created="20221015045449898" creator="rtfm" modified="20221020115934575" modifier="rtfm" title="directory structure">
+<div created="20221015045449898" creator="rtfm" modified="20221110142125581" modifier="rtfm" title="directory structure">
 <pre>Running [[create-react-app]] will generate the following directory structure. Note that I have removed the node libraries of which there are 1000s. Many of these are also just to show the app working and are deleted in an actual project.
 
 &lt;pre&gt;
@@ -10915,7 +10959,7 @@ In the web browser ([[Chrome]]) there are [[dev tools]] which has a ''console'' 
 In React, think of elements are little chunks of HTML code. Often we will group them into chunks that are more than a single element.
 </pre>
 </div>
-<div created="20210323185615978" creator="rtfm" modified="20221027213005585" modifier="rtfm" tags="" title="Event Listener Examples">
+<div created="20210323185615978" creator="rtfm" modified="20221110151632973" modifier="rtfm" tags="" title="Event Listener Examples">
 <pre>Event handlers are methods on a component class. We have
 
 [[Event Listeners]] 
@@ -10923,8 +10967,11 @@ In React, think of elements are little chunks of HTML code. Often we will group 
 * [[onHover]]
 * [[onClick]]
 
+Note: see [[function]] for commented out code below
+
 ```
 const ExpenseItem = (props) =&gt; {
+//  function clickHandler() {  &lt;-- same as below line
   const clickHandler = () =&gt; {
     console.log("Doing something important.);
   };
@@ -10937,7 +10984,9 @@ const ExpenseItem = (props) =&gt; {
     );
   }
 }
-```</pre>
+```
+Important: We use `{clickHandler}` instead of `{clickHandler()}` because this is JSX code and when parsed Javascript would run it at that moment and not when we clicked! So we just want to pass a pointer to the function. So when we click it runs then.
+</pre>
 </div>
 <div created="20210319050158372" creator="rtfm" modified="20221027212450870" modifier="rtfm" title="Event Listeners">
 <pre>Event listeners call event handlers which are methods on a component class. This is often in the ''render()'' method. You make ''EventListeners'' by using attributes. For example ''onClick'' is an Event Listener:
@@ -11244,6 +11293,15 @@ To add dynamic content we use [[props]], see [[example file 4]].</pre>
 
 Basically, replace ''div'' with ''React.Fragment''. It will not add anything to the [[DOM]].</pre>
 </div>
+<div created="20221110144405977" creator="rtfm" modified="20221110144905857" modifier="rtfm" title="function">
+<pre>In React there are a couple of ways of writing function. 
+
+This is the way I prefer: `function Card(props) {...`
+
+The way I don't prefer: `const Card = (props) =&gt; {...`
+
+They are functionally the same, the later being a JavaScript arrow function.</pre>
+</div>
 <div created="20210316042055620" modified="20210320011253025" title="GettingStarted">
 <pre>\define lingo-base() $:/language/ControlPanel/Basics/
 Welcome to ~TiddlyWiki and the ~TiddlyWiki community
@@ -11262,7 +11320,7 @@ Before you start storing important information in ~TiddlyWiki it is vital to mak
 See the [[control panel|$:/ControlPanel]] for more options.
 </pre>
 </div>
-<div created="20221015085009977" creator="rtfm" modified="20221019122217300" modifier="rtfm" title="hook">
+<div created="20221015085009977" creator="rtfm" modified="20221110145057286" modifier="rtfm" title="hook">
 <pre>A ''hook'' is a special function that lets you “hook into” React features. Hooks allow function components to have access to state and other React features. You have access to these features ''without'' writing a class. For example, useState is a hook that lets you add state variables to functional components.
 
 * [[useState]] - keep state
@@ -11274,6 +11332,8 @@ See the [[control panel|$:/ControlPanel]] for more options.
 All hooks have to declared, you can even combine them.
 
 `import { useState, useEffect } from "react";`
+
+See also [[function]].
 </pre>
 </div>
 <div created="20210330051259048" creator="rtfm" modified="20221021203520588" modifier="rtfm" title="import">
@@ -11300,7 +11360,7 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221109085816625" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221110144358657" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[api and data]]
@@ -11313,7 +11373,8 @@ This import/export style is [[ES6]], not React specific.
 * [[dependency array]]
 * [[example file 1]] ... there are many [[more!|example file 2]]
 * [[export]]
-* [[form library]]</pre>
+* [[form library]]
+* [[function]]</pre>
 </div>
 <div created="20210330051232694" creator="rtfm" modified="20221018122456689" modifier="rtfm" title="Index G-M">
 <pre>The [[Index]]:
@@ -11395,6 +11456,17 @@ To dig into React, here is a list:
 
 Note: "React Native" is different - it is for mobile apps.</pre>
 </div>
+<div created="20221110142512299" creator="rtfm" modified="20221110143400715" modifier="rtfm" title="JavaScript">
+<pre>JavaScript (aka js) is a programming language of the web along with HTML and CSS. It is:
+
+* lightweight, interpreted, aka just-in-time programming language
+* is on like 95% of all websites.
+* follows ECMAScript standard - currently ECMA-262
+* was intended for client side but now a lot in server side
+* can be procedural and an object oriented language
+* can create objects, but it's ugly
+</pre>
+</div>
 <div created="20210319044843422" modified="20210330061530445" title="Javascript in JSX">
 <pre>To render regular JavaScript simply place between curly brackets:
 
@@ -11435,8 +11507,10 @@ ReactDOM.render(
 
 </pre>
 </div>
-<div created="20210316042506350" creator="rtfm" modified="20221020114154922" modifier="rtfm" title="JSX">
-<pre>JSX is a syntax extension for JavaScript. It is not javascript, but has to be compiled (or transformed) behind the scenes into javascript. It is often called "Javascript XML". Here are the topics covered at the moment:
+<div created="20210316042506350" creator="rtfm" modified="20221110143728037" modifier="rtfm" title="JSX">
+<pre>JSX is a syntax extension for JavaScript. It is not javascript, but has to be compiled (or transformed) behind the scenes into javascript. It is often called "Javascript XML". We could write in pure JavaScript, but that code is ugly when we do the things we are doing with React and components. For example, creating objects in JavaScript is ugly, JSX allows us to use an HTML like syntax that is much more readable.
+
+Here are the topics covered at the moment:
 
 * See [[JSX Syntax]]
 * There are [[JSX Attributes]]
@@ -11684,12 +11758,14 @@ class WatchingYou extends React.Component {
 ReactDOM.render(&lt; WatchingYou /&gt;, document.getElementById('app'));
 ```</pre>
 </div>
-<div created="20221015050645786" creator="rtfm" modified="20221015060509601" modifier="rtfm" title="package.json">
+<div created="20221015050645786" creator="rtfm" modified="20221110144234898" modifier="rtfm" title="package.json">
 <pre>The ''package. json'' file is the heart of any Node-React project. It is npm’s configuration file. It is in [[JSON]] format, and contains meta data )descriptions, dependencies, ...) for the project.
 
 For our case, the two most important areL
 
 * ''react'' - everything we need to create react components.
+* older projects imported this, modern ones don't (sugar)
+** has libraries for [[JSX]]
 * ''react-dom'' - how we add components to the page
 * ''react-scripts'' - how we handle bundling
 
@@ -11698,8 +11774,8 @@ For our case, the two most important areL
 And to follow that we'd run [[npm start]] to fire up the react server.
 </pre>
 </div>
-<div created="20221014183050266" creator="rtfm" modified="20221107144706718" modifier="rtfm" title="props">
-<pre>''props'' are properties. They are arguments passed into React components. Also like ''attributes'' in HTML.
+<div created="20221014183050266" creator="rtfm" modified="20221109164630566" modifier="rtfm" title="props">
+<pre>''props'' are properties. They are arguments passed into React components - props help configure [[components|Component]] - for getting/passing data. Kind of like ''attributes'' in HTML.
 
 There are things passed in by default, things we don't implicitly specify. One important one is [[children]]. These are custom components we have made.
 
@@ -11813,8 +11889,8 @@ class HelloThere extends React.Component {
 }
 ```</pre>
 </div>
-<div created="20210316050705571" creator="rtfm" modified="20221021203919051" modifier="rtfm" title="Rendering JSX">
-<pre>It's great to write [[jsx]] but at some point you will have to render it, that is, show it on the screen.
+<div created="20210316050705571" creator="rtfm" modified="20221110142328026" modifier="rtfm" title="Rendering JSX">
+<pre>It's great to write [[JSX]] but at some point you will have to render it, that is, show it on the screen.
 
 ```
 ReactDOM.render(&lt;h1&gt;Hello world&lt;/h1&gt;, document.getElementById('app'));
@@ -11914,10 +11990,12 @@ Again:
 * which is then referred to as ''props'' in ''BetaDate''.
 </pre>
 </div>
-<div created="20221015074017583" creator="rtfm" modified="20221028075801432" modifier="rtfm" title="state">
-<pre>A tricky part of anything to do with a stateless language like HTML is keep state. Here is how we'll do it in React, [[useState]].
+<div created="20221015074017583" creator="rtfm" modified="20221110152830805" modifier="rtfm" title="state">
+<pre>A tricky part of anything to do with a stateless language like HTML is keep state. Here is how we'll do it in React, using [[hook]] called [[useState]].
 
 React on first load, will go through every component, evaluating JSX, returning HTML, and creating a DOM that will be displayed to the screen. It only does this once. To keep track of something changing, we need to know state.
+
+When we ''useState'' we are letting react know that state is important. 
 </pre>
 </div>
 <div created="20221014192312309" creator="rtfm" modified="20221018120345044" modifier="rtfm" tags="" title="testing">
@@ -12167,7 +12245,7 @@ Line numbers:
 
 We used state to manage this code. See  [[useRef]].</pre>
 </div>
-<div created="20221015074219914" creator="rtfm" modified="20221019123748483" modifier="rtfm" title="useState">
+<div created="20221015074219914" creator="rtfm" modified="20221110210326037" modifier="rtfm" title="useState">
 <pre>The library ''useState'' is a hook. A [[hook]] is a special function that lets you “hook into” React features without writing classes. In this example ''useState'' is a hook that lets you add state variables to functional components and React will preserve this state between re-renders.
 
 A two parts of: `const [fruit, setDaFruit] = useState("PickOne");`
@@ -12183,8 +12261,8 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [fruit, setMeSomeFruit] = useState("PickOne");
-
+  const [fruit, setDaFruit] = useState("PickOne");
+  function onClick() 
   return (
     &lt;div className="App"&gt;
       &lt;h1&gt;Favorite fruit: {fruit}&lt;/h1&gt;
