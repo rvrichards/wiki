@@ -44,9 +44,9 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki
+<title>React Notes
 
-— a non-linear personal web notebook
+— personal wiki
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
@@ -155,6 +155,10 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
+
 <li>$:/state/edit/references--1362073615</li>
 
 <li>$:/state/edit/references-1394467985</li>
@@ -164,6 +168,8 @@ Error message and password prompt
 <li>$:/state/edit/references-1714777777</li>
 
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab/moresidebar-1850697562</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
 
@@ -234,6 +240,8 @@ Error message and password prompt
 <li>DOM</li>
 
 <li>element</li>
+
+<li>event</li>
 
 <li>Event Listener Examples</li>
 
@@ -338,6 +346,8 @@ Error message and password prompt
 <li>useRef example using useState</li>
 
 <li>useState</li>
+
+<li>useState object</li>
 
 <li>Variables in JSX</li>
 
@@ -10250,6 +10260,12 @@ JSX
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
+<div created="20221114092125290" creator="rtfm" modified="20221114092128557" modifier="rtfm" title="$:/SiteSubtitle">
+<pre>personal wiki</pre>
+</div>
+<div created="20221114092102701" creator="rtfm" modified="20221114092106402" modifier="rtfm" title="$:/SiteTitle">
+<pre>React Notes</pre>
+</div>
 <div created="20221014190552608" creator="rtfm" modified="20221014190555160" modifier="rtfm" title="$:/state/edit/references--1362073615">
 <pre>hide</pre>
 </div>
@@ -10265,7 +10281,10 @@ JSX
 <div created="20210320012842819" modified="20210322055020846" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221109111015620" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<div created="20221114092046452" creator="rtfm" modified="20221114092046452" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Orphans</pre>
+</div>
+<div created="20210316042108223" creator="rtfm" modified="20221114094219140" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
@@ -10273,7 +10292,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221109163923577" creator="rtfm" list="state useState hook" modified="20221110155111437" modifier="rtfm" title="$:/StoryList">
+<div created="20221114092052330" creator="rtfm" list="[[Index R-Z]] [[useState object]] [[Index A-F]] useState hook Introduction JSX" modified="20221114103919416" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10942,7 +10961,7 @@ Root
 
 </pre>
 </div>
-<div created="20221015035934752" creator="rtfm" modified="20221015041015196" modifier="rtfm" title="DOM">
+<div created="20221015035934752" creator="rtfm" modified="20221111161944911" modifier="rtfm" title="DOM">
 <pre>The DOM or Document [[Object]] Model is the representation of a web page. JavaScript can be used to modify it, and consequently the web page. React has the power to change this easily. Picture a typical hierarchical "tree" structure. 
 
 * At the root node it will be the element "html". 
@@ -10957,6 +10976,22 @@ In the web browser ([[Chrome]]) there are [[dev tools]] which has a ''console'' 
 <pre>An ''element'' is an HTML element, like `p` -  paragraph, or `div` for a div. An element consists to two tags - opening and closing. Elements and tags are often interchanged, but this is the difference.
 
 In React, think of elements are little chunks of HTML code. Often we will group them into chunks that are more than a single element.
+</pre>
+</div>
+<div created="20221114093352042" creator="rtfm" modified="20221114094156883" modifier="rtfm" title="event">
+<pre>An event is an action that is triggered as a result of the user action or system generated event. A mouse click (onClick) is an event, a field change (onChange) is an event.
+
+When this happens, all data about it is stored in the ''event'' object. This is passed in automatically. For example, we have a function to handle a name change: `nameChangeHandler`
+
+```
+  function nameChangeHandler(event) {
+    console.log(event.target.value);
+  }
+...
+  &lt;input type='text' onChange={nameChangeHandler}/&gt;
+...
+```
+In this case, any change in the input field, will fire off the function `nameChangeHandler` which will automatically pass back to the function the object ''event'' which will contain a metric ton of information. Mostly we'll just want `event.target.value`
 </pre>
 </div>
 <div created="20210323185615978" creator="rtfm" modified="20221110151632973" modifier="rtfm" tags="" title="Event Listener Examples">
@@ -10988,8 +11023,8 @@ const ExpenseItem = (props) =&gt; {
 Important: We use `{clickHandler}` instead of `{clickHandler()}` because this is JSX code and when parsed Javascript would run it at that moment and not when we clicked! So we just want to pass a pointer to the function. So when we click it runs then.
 </pre>
 </div>
-<div created="20210319050158372" creator="rtfm" modified="20221027212450870" modifier="rtfm" title="Event Listeners">
-<pre>Event listeners call event handlers which are methods on a component class. This is often in the ''render()'' method. You make ''EventListeners'' by using attributes. For example ''onClick'' is an Event Listener:
+<div created="20210319050158372" creator="rtfm" modified="20221114093344351" modifier="rtfm" title="Event Listeners">
+<pre>[[Event|event]] listeners call event handlers which are methods on a component class. This is often in the ''render()'' method. You make ''EventListeners'' by using attributes. For example ''onClick'' is an Event Listener:
 
 ```
 &lt;img onClick={myCoolFunction} /&gt;
@@ -11360,7 +11395,7 @@ This import/export style is [[ES6]], not React specific.
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221110144358657" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221114094231085" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[api and data]]
@@ -11371,6 +11406,7 @@ This import/export style is [[ES6]], not React specific.
 * [[data passing]]
 * [[date]]
 * [[dependency array]]
+* [[event]]
 * [[example file 1]] ... there are many [[more!|example file 2]]
 * [[export]]
 * [[form library]]
@@ -11389,12 +11425,14 @@ This import/export style is [[ES6]], not React specific.
 
 * [[splitting components]]</pre>
 </div>
-<div created="20221014172754029" creator="rtfm" modified="20221014190926487" modifier="rtfm" title="Index R-Z">
+<div created="20221014172754029" creator="rtfm" modified="20221114103917968" modifier="rtfm" title="Index R-Z">
 <pre>The [[Index]]:
 
 *[[react tools]]
 *[[ReactDOM.render]]
-*[[Tutorial]]</pre>
+*[[Tutorial]]
+* [[useState]]
+* [[useState object]]</pre>
 </div>
 <div created="20221015053922808" creator="rtfm" modified="20221015054458682" modifier="rtfm" title="index.html">
 <pre>This file, ''src/index.html'' is what is served for a website. In react, it is merely a place where we inject the entire react app. 
@@ -11701,8 +11739,8 @@ If this bugs you too much add to system:
 `export NODE_OPTIONS=--openssl-legacy-provider`
 </pre>
 </div>
-<div created="20221027213014886" creator="rtfm" modified="20221027214145162" modifier="rtfm" title="onClick">
-<pre>The ''onClick'' event:
+<div created="20221027213014886" creator="rtfm" modified="20221114094216373" modifier="rtfm" title="onClick">
+<pre>The ''onClick'' [[event]]:
 
 We can use either:
 
@@ -12245,14 +12283,14 @@ Line numbers:
 
 We used state to manage this code. See  [[useRef]].</pre>
 </div>
-<div created="20221015074219914" creator="rtfm" modified="20221110210326037" modifier="rtfm" title="useState">
-<pre>The library ''useState'' is a hook. A [[hook]] is a special function that lets you “hook into” React features without writing classes. In this example ''useState'' is a hook that lets you add state variables to functional components and React will preserve this state between re-renders.
+<div created="20221015074219914" creator="rtfm" modified="20221114103843664" modifier="rtfm" title="useState">
+<pre>The library ''useState'' is a [[hook]]. It allows you to remember state in a component. The data it holds can be anything, text, boolean, number, or an object. Often when first getting a value it is a string - because things like ''onChange'' will store values as strings. See also [[useState object]].
 
-A two parts of: `const [fruit, setDaFruit] = useState("PickOne");`
+The two parts of: `const [fruit, setDaFruit] = useState("PickOne");`
 
 * setting the variable: ''fruit''
 * the function that will update that state: ''setDaFruit''
-** Not set initial state to null: `useState("");`
+** Need to set initial state to something: `useState("");`
 
 Here is the code to do this:
 
@@ -12276,6 +12314,25 @@ export default App;
 ```
 When we start the app, the favorite fruit will be "~PickOne", when we click either button, an apple or mango will be the new favorite.
 
+Each instance of a component receives it's own state. React will keep track. In order for React to know that a component state has changed we need to use the function. In the above that function is: `setDaFruit`. We can't use the plain `=` because then React would not know that the component had changed and would not refresh the component.
+
+See also [[useState object]].
+</pre>
+</div>
+<div created="20221114103924527" creator="rtfm" modified="20221114121724002" modifier="rtfm" title="useState object">
+<pre>There is a object option to using [[useState]]. A single useState is easy to deal with, but there could be numerous variables that you'd want to keep state for. It is a preference thing too as there is some tricky business to content with.
+
+That is, updating an object, you need to keep track of all values. If you write to the object a single value change, the other values that don't change you have to copy those to the current state
+
+Using objects looks like this.
+
+```
+
+```
+
+When updating state using objects, you should call the ''setUserInput()'' and pass in an anonymous function that will pass in  : ''prevState''
+
+setUserInput( () =&gt; {} );
 </pre>
 </div>
 <div created="20210319044819671" modified="20210323002040579" title="Variables in JSX">
