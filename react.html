@@ -319,6 +319,8 @@ Error message and password prompt
 
 <li>package.json</li>
 
+<li>passing data up</li>
+
 <li>props</li>
 
 <li>react tools</li>
@@ -10290,15 +10292,15 @@ JSX
 <div created="20221114092046452" creator="rtfm" modified="20221114092046452" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Orphans</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221114192510435" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210316042108223" creator="rtfm" modified="20221115211916892" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221114182724195" creator="rtfm" list="useRef [[two way binding]] [[useState object]] [[useState object example]] Introduction JSX" modified="20221115125833537" modifier="rtfm" title="$:/StoryList">
+<div created="20221114182724195" creator="rtfm" list="[[passing data up]] Component" modified="20221115205445615" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10542,10 +10544,12 @@ Final important point. The ''ReactDOM.render'' calls the ''&amp;lt;HelloClass /&
 * See also [[Component Example]].
 * See also [[Component calls Component]]</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221109164938947" modifier="rtfm" tags="" title="Component">
-<pre>A React ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
+<div created="20210322054353366" creator="rtfm" modified="20221115205444119" modifier="rtfm" tags="" title="Component">
+<pre>A ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
 
-A ''component'' is simply a ''~JavaScript'' @@color:red;function@@ that returns [[JSX]]. 
+A ''Built-in component'' can be considered to be an HTML element like ''input''.
+
+A ''React component'' is simply a ''~JavaScript'' @@color:red;function@@ that returns [[JSX]]. 
 
 ''Components'' really are custom HTML elements where you combine [[JSX]] (kinda HTML code) and css styling and possibly ''~JavaScript''.
 
@@ -10561,7 +10565,8 @@ See also
 * [[Component Example]].
 * [[Component calls Component]]
 * [[component css]]
-* [[splitting components]]</pre>
+* [[splitting components]]
+* [[ passing data up]]</pre>
 </div>
 <div created="20210330050617960" creator="rtfm" modified="20221021203721548" modifier="rtfm" title="Component calls Component">
 <pre>A [[Component]] can call a component. Check out the differences of [[import]].
@@ -10984,8 +10989,8 @@ In the web browser ([[Chrome]]) there are [[dev tools]] which has a ''console'' 
 In React, think of elements are little chunks of HTML code. Often we will group them into chunks that are more than a single element.
 </pre>
 </div>
-<div created="20221114093352042" creator="rtfm" modified="20221114094156883" modifier="rtfm" title="event">
-<pre>An event is an action that is triggered as a result of the user action or system generated event. A mouse click (onClick) is an event, a field change (onChange) is an event.
+<div created="20221114093352042" creator="rtfm" modified="20221115211907848" modifier="rtfm" title="event">
+<pre>An event is an action that is triggered as a result of the user action or system generated event. A mouse click (onClick) is an event, a field change (''onChange'') is an event. These are built-in, but we could also have our own custom events. You'd typically start them with "''on''" as the built-in ones also start with that. To indicate that it is an event. An example could be: `onAddExpense`.
 
 When this happens, all data about it is stored in the ''event'' object. This is passed in automatically. For example, we have a function to handle a name change: `nameChangeHandler`
 
@@ -11839,6 +11844,28 @@ For our case, the two most important areL
 
 And to follow that we'd run [[npm start]] to fire up the react server.
 </pre>
+</div>
+<div created="20221115205450522" creator="rtfm" modified="20221115213504163" modifier="rtfm" title="passing data up">
+<pre>We use [[props]] to pass data from a parent to a child [[Component]].
+
+This will cover passing data from the child to a parent. It's a little complicated, but it a pattern that is often used in React. Sit back and relax!
+
+Lets say that we have a parent: ''Alpha'' and a child ''Beta''.  We are adding ''items'', and want to pass info that is *only* available in ''Beta'' up to its parent ''Alpha''. What follows is what is needed to code this:
+
+* The parent component ''Alpha'' needs to:
+** Have a ''prop'' that is a function called ''addItemHandler''
+** It wants data (''item'') that is only in ''Beta''.
+** The function signature: `function addItemHandler(item) {...`
+** Add prop ''onAddItem'' to ''Beta'' component.
+** i.e. `&lt;Beta onAddItem={addItemHandler} /&gt;`
+** The ''on'' part is to indicate this a custom [[event]].
+* The child component ''Beta'' needs to:
+** Update signature to handle props: `function Beta(props){...`
+** Call the ''Alpha'' function: `props.onAddItem(itemData);`
+** ''itemData'' is only found in ''Beta''
+** This function actually runs in ''Alpha'' - passing ''Beta'' data.
+
+That is it. Very common pattern.</pre>
 </div>
 <div created="20221014183050266" creator="rtfm" modified="20221109164630566" modifier="rtfm" title="props">
 <pre>''props'' are properties. They are arguments passed into React components - props help configure [[components|Component]] - for getting/passing data. Kind of like ''attributes'' in HTML.
