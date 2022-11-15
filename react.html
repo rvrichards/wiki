@@ -261,6 +261,8 @@ Error message and password prompt
 
 <li>First Component</li>
 
+<li>form</li>
+
 <li>form library</li>
 
 <li>Fragment</li>
@@ -337,6 +339,8 @@ Error message and password prompt
 
 <li>Tutorial</li>
 
+<li>two way binding</li>
+
 <li>useEffect</li>
 
 <li>useReducer</li>
@@ -348,6 +352,8 @@ Error message and password prompt
 <li>useState</li>
 
 <li>useState object</li>
+
+<li>useState object example</li>
 
 <li>Variables in JSX</li>
 
@@ -10284,15 +10290,15 @@ JSX
 <div created="20221114092046452" creator="rtfm" modified="20221114092046452" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Orphans</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221114094219140" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210316042108223" creator="rtfm" modified="20221114192510435" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221114092052330" creator="rtfm" list="[[Index R-Z]] [[useState object]] [[Index A-F]] useState hook Introduction JSX" modified="20221114103919416" modifier="rtfm" title="$:/StoryList">
+<div created="20221114182724195" creator="rtfm" list="useRef [[two way binding]] [[useState object]] [[useState object example]] Introduction JSX" modified="20221115125833537" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -11307,11 +11313,33 @@ If you find that you are getting too many ''div'' tags, use [[Fragment]].</pre>
 
 To add dynamic content we use [[props]], see [[example file 4]].</pre>
 </div>
-<div created="20221016161045213" creator="rtfm" modified="20221016161342100" modifier="rtfm" title="form library">
-<pre>There are many libraries that React can use for [[forms]]. I don't have a favorite yet, so here are some to check out.
+<div created="20221114185922272" creator="rtfm" modified="20221115124836183" modifier="rtfm" title="form">
+<pre>The HTML element ''form'' is well known. Here we'll show the React use of it. We'll want to act upon a form submission, so it's best done via:
+
+`&lt;form onSubmit={submitHandler}&gt; ... &lt;/form&gt;`
+
+Which of course calls: `function submitHandler() { ... };`
+
+Of concern - when we press the submit button, the browser will send the request back to the server. We actually want to handle this locally. We can disable this default behaviour with basic javascript, via:
+
+```
+function submitHandler() {
+  event.preventDefault();
+  ... // possible reset form input fields
+};
+```
+
+In ''submitHandler'' we often reset the form to blank values. See [[two way binding]].
+
+</pre>
+</div>
+<div created="20221016161045213" creator="rtfm" modified="20221114185915591" modifier="rtfm" title="form library">
+<pre>There are many libraries that React can use for [[forms]]. I don't have a favourite yet, so here are some to check out. Not to be confused with the HTML element [[form]].
 
 * formik.org - a popular open source form library for React 
-* react-hook-form.com - Performant, flexible and extensible forms with validation.</pre>
+* react-hook-form.com - Performant, flexible and extensible forms with validation.
+
+</pre>
 </div>
 <div created="20221015035432248" creator="rtfm" modified="20221015035840574" modifier="rtfm" title="Fragment">
 <pre>If you are creating too many ''div'' tags, use `Fragment`, like this:
@@ -12110,6 +12138,24 @@ Now the tutorial is done, we will focus on react [[concepts]]. Or go back to [[I
 
 </pre>
 </div>
+<div created="20221114192858664" creator="rtfm" modified="20221114194114955" modifier="rtfm" title="two way binding">
+<pre>When we work with [[form]]s, after we submit we'll want to reset the form fields to typically blank. We can listen to changes on an ''input'', but we can also pass back values to these fields. This is ''two way binding''. We can quite easily do this because we have already set up [[state]].
+Here is how we do that. We already have (typically) this input element:
+
+`&lt;input type='text' onChange={ageChangeHandler} /&gt;`
+
+Now just add ''value={theAge}''
+
+`&lt;input type='text' value={theAge} onChange={ageChangeHandler} /&gt;`
+
+We will have function ''ageChangeHandler'' called on a change and it can feed back something to this element. Or we could have the ''submit'' button on the form trigger a function call like:
+
+`&lt;form onSubmit={submitHandler}&gt;`
+
+where `submitHandler` could have called `setEnteredAge('42');`
+
+</pre>
+</div>
 <div created="20221015102014243" creator="rtfm" modified="20221019122101515" modifier="rtfm" title="useEffect">
 <pre>This [[hook]] is typically used to manage side effects not related to a components render. These side effects can cause hard to find bugs and are not allowed in the main body of a function component . To run them we use ''useEffect''. It will run after ''render'' has finished loading the screen, or you can choose to run it when a value changes.  It has two parameters, 
 the format is: `useEffect(&lt;function&gt;, &lt;dependency&gt;)`.  The side effects include:
@@ -12187,7 +12233,7 @@ And of course, at the top of the file we need to declare:
 
 </pre>
 </div>
-<div created="20221015183630219" creator="rtfm" modified="20221016152923148" modifier="rtfm" title="useRef">
+<div created="20221015183630219" creator="rtfm" modified="20221115125920938" modifier="rtfm" title="useRef">
 <pre>The ''useRef'' (reference) [[hook]] is used to check an individual element and get its value. This is done outside of state, so we have an[[uncontrolled component|controlled component]]. We have to reach out to get this value, it is not affected by a render.
 Here is the full code, explain at end:
 
@@ -12222,7 +12268,7 @@ Line numbers:
 ** "txtTitle" object will have a field called "current".
 ** this will be what we type into the input form "input" element.
 * #7 - this is the submit function (from #14).
-* #8 - no page refresh - prevent that default.
+* #8 - no page refresh - ''preventDefault'' = prevent that default.
 * #9 - get the "title" from object "txtTitle", the "current" value.
 * #10 - Print the value from the input text box.
 * #11 - reset title to blank, ready for next click.
@@ -12319,21 +12365,119 @@ Each instance of a component receives it's own state. React will keep track. In 
 See also [[useState object]].
 </pre>
 </div>
-<div created="20221114103924527" creator="rtfm" modified="20221114121724002" modifier="rtfm" title="useState object">
-<pre>There is a object option to using [[useState]]. A single useState is easy to deal with, but there could be numerous variables that you'd want to keep state for. It is a preference thing too as there is some tricky business to content with.
+<div created="20221114103924527" creator="rtfm" modified="20221114183957411" modifier="rtfm" title="useState object" type="* ">
+<pre>There is a ''object'' option to using [[useState]]. A single useState is easy to deal with, but there could be numerous variables that you'd want to keep state for. It is a preference thing too as there is some tricky business to content with.
 
-That is, updating an object, you need to keep track of all values. If you write to the object a single value change, the other values that don't change you have to copy those to the current state
+That is, updating an object, you need to keep track of all values. If you write to the object a single value change, the other values that don't change therefore you have to copy those to the current state. Updating state is &lt;i&gt;''scheduled''&lt;/i&gt;  by React, so its results are not guaranteed. To do this correctly, read on dear reader.
 
-Using objects looks like this.
+The steps:
+
+* Set up an object with the ''useState'' [[hook]].
+** You'll see two vars we track - first and last name
+** You'll see how to update them, function: `setUserInput`
+* Function ''lnameChangeHandler'' has an anon fn
+* It returns the updated object by..
+** ''...prevState'' - the three dots unpack an object - prev state
+** overwritten by:  `enteredLast: event.target.value` (overwrites old)
 
 ```
+...
+function PersonForm(props) {
+  const [userInput, setUserInput] = useState({
+    enteredFirst: '',
+    enteredLast: ''
+  });
 
+  function fnameChangeHandler(event) {
+    // This is the key anon function
+    setUserInput((prevState) =&gt; {   
+      return { ...prevState, enteredLast: event.target.value };
+    });
+  };
+  function lnameChangeHandler(event) { ...
+...
+&lt;input type='text' onChange={fnameChangeHandler}/&gt;
 ```
 
-When updating state using objects, you should call the ''setUserInput()'' and pass in an anonymous function that will pass in  : ''prevState''
-
-setUserInput( () =&gt; {} );
+To see the full of above: [[useState object example]]
 </pre>
+</div>
+<div created="20221114184007203" creator="rtfm" modified="20221115125759088" modifier="rtfm" title="useState object example">
+<pre>In the section [[useState object]] an exerpt of the code was used. There is also [[two way binding]]. Here is the full working code:
+
+```
+import React from 'react';
+import {useState} from 'react';
+
+function PersonForm(props) {
+  const [userInput, setUserInput] = useState({
+    enteredFirst: '',
+    enteredLast: '',
+    enteredAge: '',
+  });
+
+  function fnameChangeHandler(event) {
+    setUserInput((prevState) =&gt; {
+      return { ...prevState, enteredFirst: event.target.value };
+    });
+    console.log("First name: " + event.target.value);
+  };
+
+  function lnameChangeHandler(event) {
+    setUserInput((prevState) =&gt; {
+      return { ...prevState, enteredLast: event.target.value };
+    });
+  };
+
+  function ageChangeHandler(event) {
+    setUserInput((prevState) =&gt; {
+      return { ...prevState, enteredAge: event.target.value };
+    });
+  };
+
+  const submitHandler = (event) =&gt; {
+    event.preventDefault();
+    console.log("Submitted name: " + userInput.enteredFirst);
+    setUserInput(() =&gt; {
+      return { enteredFirst: '',  
+               enteredLast: '',   
+               enteredAge: '' };
+    });
+  };
+
+  return (
+      &lt;form onSubmit={submitHandler}&gt;
+        &lt;div className='new-item-controls'&gt;
+          &lt;h3&gt;Using non-obect useState function&lt;/h3&gt;
+          &lt;div className='new-item-control'&gt;
+            &lt;label&gt;First Name&lt;/label&gt;
+            &lt;input type='text' 
+                   value={userInput.enteredFirst}
+                   onChange={fnameChangeHandler}/&gt;
+          &lt;/div&gt;
+          &lt;div className='new-item-control'&gt;
+            &lt;label&gt;Last Name&lt;/label&gt;
+            &lt;input type='text' 
+                   onChange={lnameChangeHandler}
+                   value={userInput.enteredLast}/&gt;
+          &lt;/div&gt;
+          &lt;div className='new-item-control'&gt;
+            &lt;label&gt;Amount&lt;/label&gt;
+            &lt;input type='number' 
+                   min='1' step='888' 
+                   value={userInput.enteredAge} 
+                   onChange={ageChangeHandler} /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div className='new-item-actions'&gt;
+          &lt;button type='submit'&gt;Add Person&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    );
+}
+
+export default PersonForm;
+```</pre>
 </div>
 <div created="20210319044819671" modified="20210323002040579" title="Variables in JSX">
 <pre>Variables come in handy. Check out:
