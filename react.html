@@ -305,6 +305,8 @@ Error message and password prompt
 
 <li>JSX Syntax</li>
 
+<li>lifting state up</li>
+
 <li>map</li>
 
 <li>Mock API</li>
@@ -10300,7 +10302,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221114182724195" creator="rtfm" list="[[passing data up]] Component" modified="20221115205445615" modifier="rtfm" title="$:/StoryList">
+<div created="20221114182724195" creator="rtfm" list="[[Index G-M]] [[lifting state up]] Component Index Introduction concepts [[Index N-Q]]" modified="20221116142726262" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10544,7 +10546,7 @@ Final important point. The ''ReactDOM.render'' calls the ''&amp;lt;HelloClass /&
 * See also [[Component Example]].
 * See also [[Component calls Component]]</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221115205444119" modifier="rtfm" tags="" title="Component">
+<div created="20210322054353366" creator="rtfm" modified="20221116143327679" modifier="rtfm" tags="" title="Component">
 <pre>A ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
 
 A ''Built-in component'' can be considered to be an HTML element like ''input''.
@@ -10552,6 +10554,8 @@ A ''Built-in component'' can be considered to be an HTML element like ''input''.
 A ''React component'' is simply a ''~JavaScript'' @@color:red;function@@ that returns [[JSX]]. 
 
 ''Components'' really are custom HTML elements where you combine [[JSX]] (kinda HTML code) and css styling and possibly ''~JavaScript''.
+
+''Components'' are also classified as either "stateful" or "stateless". Stateful means that they have state, and are often called "smart". Stateless components do not keep track of state and are known as "presentational". 
 
 You can think of a component as a "custom HTML element". A react component is usually and best kept in their own files of the same name.  This allows re-usability and a separation of concerns. We'll start simple, but there are many ways to create and use a component.
 
@@ -10566,7 +10570,7 @@ See also
 * [[Component calls Component]]
 * [[component css]]
 * [[splitting components]]
-* [[ passing data up]]</pre>
+* [[passing data up]]</pre>
 </div>
 <div created="20210330050617960" creator="rtfm" modified="20221021203721548" modifier="rtfm" title="Component calls Component">
 <pre>A [[Component]] can call a component. Check out the differences of [[import]].
@@ -10751,12 +10755,14 @@ Summing up...
 
 </pre>
 </div>
-<div created="20221015073940142" creator="rtfm" modified="20221107142023638" modifier="rtfm" title="concepts">
+<div created="20221015073940142" creator="rtfm" modified="20221116135119696" modifier="rtfm" title="concepts">
 <pre>There are a few to learn. Here are some:
 
 * [[composition]]
 * [[hook]]
-* [[state]]</pre>
+* [[state]]
+** [[lifting state up]]
+* [[passing data up]]</pre>
 </div>
 <div created="20210319052134620" modified="20210320010810453" title="Conditionals">
 <pre>We'll cover the:
@@ -11445,17 +11451,20 @@ This import/export style is [[ES6]], not React specific.
 * [[form library]]
 * [[function]]</pre>
 </div>
-<div created="20210330051232694" creator="rtfm" modified="20221018122456689" modifier="rtfm" title="Index G-M">
+<div created="20210330051232694" creator="rtfm" modified="20221116134938881" modifier="rtfm" title="Index G-M">
 <pre>The [[Index]]:
 
 * [[hook]]
 * [[import]]
+* [[lifting state up]]
 * [[map]]
-* [[Mock API]]</pre>
+* [[Mock API]]
+</pre>
 </div>
-<div created="20221014172743267" creator="rtfm" modified="20221021125818502" modifier="rtfm" title="Index N-Q">
+<div created="20221014172743267" creator="rtfm" modified="20221116135001072" modifier="rtfm" title="Index N-Q">
 <pre>The [[Index]]:
 
+* [[passing data up]]
 * [[splitting components]]</pre>
 </div>
 <div created="20221014172754029" creator="rtfm" modified="20221114103917968" modifier="rtfm" title="Index R-Z">
@@ -11696,6 +11705,16 @@ const rtfm = (
  );
 ```
 Finally, we we must have the whole thing with an outermost tage = that is if you have two different ''p'' tage you have to wrap them in a ''div'' tag.</pre>
+</div>
+<div created="20221116142241969" creator="rtfm" modified="20221116142724544" modifier="rtfm" title="lifting state up">
+<pre>Components can collect and generate data.
+
+Different [[components|Component]] sometimes need to share the same data.
+
+To share data, we need to find the first common ancestor  and this is where state needs to be "lifted up". See [[passing data up]].
+
+
+</pre>
 </div>
 <div created="20210330061620661" creator="rtfm" modified="20221021203817073" modifier="rtfm" title="map">
 <pre>Map() has a returned value of array.
