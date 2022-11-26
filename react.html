@@ -311,7 +311,11 @@ Error message and password prompt
 
 <li>Mock API</li>
 
+<li>module</li>
+
 <li>Multiline JSX</li>
+
+<li>named import</li>
 
 <li>npm start</li>
 
@@ -10294,7 +10298,7 @@ JSX
 <div created="20221114092046452" creator="rtfm" modified="20221114092046452" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Orphans</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221115211916892" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<div created="20210316042108223" creator="rtfm" modified="20221126144615109" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
@@ -10302,7 +10306,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221114182724195" creator="rtfm" list="[[Index G-M]] [[lifting state up]] Component Index Introduction concepts [[Index N-Q]]" modified="20221116142726262" modifier="rtfm" title="$:/StoryList">
+<div created="20221126133754750" creator="rtfm" list="[[Index G-M]] module import [[named import]] [[splitting components]] composition [[api and data]] state useState [[useState object]] [[useState object example]] hook JSX" modified="20221126144757637" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -11011,7 +11015,7 @@ When this happens, all data about it is stored in the ''event'' object. This is 
 In this case, any change in the input field, will fire off the function `nameChangeHandler` which will automatically pass back to the function the object ''event'' which will contain a metric ton of information. Mostly we'll just want `event.target.value`
 </pre>
 </div>
-<div created="20210323185615978" creator="rtfm" modified="20221110151632973" modifier="rtfm" tags="" title="Event Listener Examples">
+<div created="20210323185615978" creator="rtfm" modified="20221122155951149" modifier="rtfm" tags="" title="Event Listener Examples">
 <pre>Event handlers are methods on a component class. We have
 
 [[Event Listeners]] 
@@ -11026,6 +11030,7 @@ const ExpenseItem = (props) =&gt; {
 //  function clickHandler() {  &lt;-- same as below line
   const clickHandler = () =&gt; {
     console.log("Doing something important.);
+    // any changes must involve state
   };
  
   render() {
@@ -11038,6 +11043,8 @@ const ExpenseItem = (props) =&gt; {
 }
 ```
 Important: We use `{clickHandler}` instead of `{clickHandler()}` because this is JSX code and when parsed Javascript would run it at that moment and not when we clicked! So we just want to pass a pointer to the function. So when we click it runs then.
+
+@@color:red;Note:@@ To get React to know that a change has happened, we need to use [[state]], otherwise the function above ''clickHandler'' will not trigger react to make the DOM change.
 </pre>
 </div>
 <div created="20210319050158372" creator="rtfm" modified="20221114093344351" modifier="rtfm" title="Event Listeners">
@@ -11394,7 +11401,7 @@ Before you start storing important information in ~TiddlyWiki it is vital to mak
 See the [[control panel|$:/ControlPanel]] for more options.
 </pre>
 </div>
-<div created="20221015085009977" creator="rtfm" modified="20221110145057286" modifier="rtfm" title="hook">
+<div created="20221015085009977" creator="rtfm" modified="20221122160940145" modifier="rtfm" title="hook">
 <pre>A ''hook'' is a special function that lets you “hook into” React features. Hooks allow function components to have access to state and other React features. You have access to these features ''without'' writing a class. For example, useState is a hook that lets you add state variables to functional components.
 
 * [[useState]] - keep state
@@ -11403,26 +11410,34 @@ See the [[control panel|$:/ControlPanel]] for more options.
 * [[useRef]]
 * [[custom hook]] - roll your own.
 
-All hooks have to declared, you can even combine them.
+All hooks have to declared, and they can only be used inside [[Component]]s. You can even combine them.
 
 `import { useState, useEffect } from "react";`
 
 See also [[function]].
 </pre>
 </div>
-<div created="20210330051259048" creator="rtfm" modified="20221021203520588" modifier="rtfm" title="import">
-<pre>You can import libraries. There are two different methods.
+<div created="20210330051259048" creator="rtfm" modified="20221126135507714" modifier="rtfm" title="import">
+<pre>You can import libraries. 
 
-If the import statement has a string that begins with either a dot or a slash, the import will treat that string as a filepath. If no extension is given, then ".js" is assumed
+* There are two different kinds of ''import''s.
+** ''Default'', looks like: `import React from 'react';`
+** [[Named|named import]], looks like: `import { useState } from 'react';`
+* There are two different methods of declaring.
+** With or without an extension
+**  If no extension is given, then ".js" is assumed
+** If an extension is given, then its a filepath.
 
-* The React library must in scope, so: ''import React from 'react'; ''
-** This is no longer needed in nre React apps, with [[create react app]].
+If the import statement has a string that begins with either a dot or a slash, the import will treat that string as a filepath.
+
 * The file starts with a dot or slash: ''import { NavBar } from './NavBar';''
 **  This gets a variable from a different file.
 **  This other file has to have an [[export]] command.
 **  This looks like: ''export class NavBar extends React.Component {...''
 
 This import/export style is [[ES6]], not React specific.
+
+See also [[named import]]
 </pre>
 </div>
 <div created="20221014172621944" creator="rtfm" modified="20221014172705713" modifier="rtfm" title="Index">
@@ -11451,7 +11466,7 @@ This import/export style is [[ES6]], not React specific.
 * [[form library]]
 * [[function]]</pre>
 </div>
-<div created="20210330051232694" creator="rtfm" modified="20221116134938881" modifier="rtfm" title="Index G-M">
+<div created="20210330051232694" creator="rtfm" modified="20221126135913228" modifier="rtfm" title="Index G-M">
 <pre>The [[Index]]:
 
 * [[hook]]
@@ -11459,11 +11474,13 @@ This import/export style is [[ES6]], not React specific.
 * [[lifting state up]]
 * [[map]]
 * [[Mock API]]
+* [[module]]
 </pre>
 </div>
-<div created="20221014172743267" creator="rtfm" modified="20221116135001072" modifier="rtfm" title="Index N-Q">
+<div created="20221014172743267" creator="rtfm" modified="20221126135348947" modifier="rtfm" title="Index N-Q">
 <pre>The [[Index]]:
 
+* [[named import]]
 * [[passing data up]]
 * [[splitting components]]</pre>
 </div>
@@ -11764,6 +11781,26 @@ http://127.0.0.1:3333/apple
 }
 ```</pre>
 </div>
+<div created="20221126135934412" creator="rtfm" modified="20221126144624738" modifier="rtfm" title="module">
+<pre>A ''module'' allows you to break up code into smaller pieces. This also allows you to organize your code base logically, and makes it easier to maintain. Here is an example module:
+
+```
+// File: message.js
+const message = () =&gt; {
+  const name = "Fred";
+  const age = 42;
+  return 'Hero ' + name + ' is ' + age + 'years old.';
+};
+
+export default message;
+```
+To use these, we'd need to import them:
+
+* ''Named import:'' `import message from "./message.js"; `
+* ''Default import:'' `import { name, age } from "./message.js";`
+
+See [[useState]] - an example of a [[named import|import]].</pre>
+</div>
 <div created="20210323000604889" modified="20210323003540265" title="Multiline JSX">
 <pre>When working with JSX, if you have to write JSX code over one line long, yo uwill have to wrap it in (brackets)!
 
@@ -11774,6 +11811,13 @@ http://127.0.0.1:3333/apple
         ...
     );
 ```</pre>
+</div>
+<div created="20221126135421738" creator="rtfm" modified="20221126144453232" modifier="rtfm" title="named import">
+<pre>A ''named import'' is named! It also gives better indication of what exactly we are import/export - ing. It's pretty clear what: `import { useState } from 'react';` is giving us from the React module.
+
+A ''default import'' is nameless, we get everything.
+
+See [[useState]].</pre>
 </div>
 <div created="20221015060516351" creator="rtfm" modified="20221109114604777" modifier="rtfm" title="npm start">
 <pre>The ''npm start'' will start the react server so that we can code and see the changes right away on the website! This is most excellent for developing.
@@ -12102,12 +12146,12 @@ Again:
 * which is then referred to as ''props'' in ''BetaDate''.
 </pre>
 </div>
-<div created="20221015074017583" creator="rtfm" modified="20221110152830805" modifier="rtfm" title="state">
+<div created="20221015074017583" creator="rtfm" modified="20221122160517026" modifier="rtfm" title="state">
 <pre>A tricky part of anything to do with a stateless language like HTML is keep state. Here is how we'll do it in React, using [[hook]] called [[useState]].
 
 React on first load, will go through every component, evaluating JSX, returning HTML, and creating a DOM that will be displayed to the screen. It only does this once. To keep track of something changing, we need to know state.
 
-When we ''useState'' we are letting react know that state is important. 
+When we [[useState]] we are letting react know that state is important. 
 </pre>
 </div>
 <div created="20221014192312309" creator="rtfm" modified="20221018120345044" modifier="rtfm" tags="" title="testing">
@@ -12375,14 +12419,14 @@ Line numbers:
 
 We used state to manage this code. See  [[useRef]].</pre>
 </div>
-<div created="20221015074219914" creator="rtfm" modified="20221114103843664" modifier="rtfm" title="useState">
+<div created="20221015074219914" creator="rtfm" modified="20221126150423824" modifier="rtfm" title="useState">
 <pre>The library ''useState'' is a [[hook]]. It allows you to remember state in a component. The data it holds can be anything, text, boolean, number, or an object. Often when first getting a value it is a string - because things like ''onChange'' will store values as strings. See also [[useState object]].
 
-The two parts of: `const [fruit, setDaFruit] = useState("PickOne");`
+''useState()'' will always return an array with two elements. The elements of: `const [fruit, setDaFruit] = useState("PickOne");` are:
 
-* setting the variable: ''fruit''
-* the function that will update that state: ''setDaFruit''
-** Need to set initial state to something: `useState("");`
+# setting the variable: ''fruit''
+# the function that will update that state: ''setDaFruit''
+# Need to set initial state to something: `useState("");`
 
 Here is the code to do this:
 
