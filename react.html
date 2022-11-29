@@ -339,6 +339,8 @@ Error message and password prompt
 
 <li>splitting components</li>
 
+<li>spread operator</li>
+
 <li>state</li>
 
 <li>testing</li>
@@ -358,6 +360,8 @@ Error message and password prompt
 <li>useRef example using useState</li>
 
 <li>useState</li>
+
+<li>useState multiple</li>
 
 <li>useState object</li>
 
@@ -10298,7 +10302,7 @@ JSX
 <div created="20221114092046452" creator="rtfm" modified="20221114092046452" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Orphans</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221126144615109" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<div created="20210316042108223" creator="rtfm" modified="20221129104803875" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
@@ -10306,7 +10310,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221126133754750" creator="rtfm" list="[[Index G-M]] module import [[named import]] [[splitting components]] composition [[api and data]] state useState [[useState object]] [[useState object example]] hook JSX" modified="20221126144757637" modifier="rtfm" title="$:/StoryList">
+<div created="20221128154555245" creator="rtfm" list="[[Index A-F]] [[create react app]] [[example file 1]] state" modified="20221129104832119" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10679,7 +10683,7 @@ export default Apple;
 
 </pre>
 </div>
-<div created="20210323003612480" creator="rtfm" modified="20221021203744799" modifier="rtfm" title="Component Example">
+<div created="20210323003612480" creator="rtfm" modified="20221128161359920" modifier="rtfm" title="Component Example">
 <pre>Here is a basic outline:
 
 ```
@@ -10688,14 +10692,14 @@ import ReactDOM from 'react-dom';
  
 class HelloClass extends React.Component {
   render() {
-    return ( ... );
+    return ( . . . );
   }
 }
  
 ReactDOM.render( &lt;HelloClass /&gt;, document.getElementById('app') );
 ```</pre>
 </div>
-<div created="20221107142050105" creator="rtfm" modified="20221109175352033" modifier="rtfm" title="composition">
+<div created="20221107142050105" creator="rtfm" modified="20221128161433304" modifier="rtfm" title="composition">
 <pre>Composition is a pattern to help make your code reusable. It allows you to factor out common code (css too) so you don't duplicate code.
 
 We can have highly specific components - like an ''~ItemExpense'' which prints out an item expense, it doesn't print out a date, that might be the ''~ItemDate'' component. They are passed [[props]] with very specific data, like a price or a date. 
@@ -10748,7 +10752,7 @@ This would have the usual css file too. Because we have a custom component, if t
     &lt;/Card&gt;
 ```
 
-Summing up...
+Summing up. . .
 
 * A wrapper component named ''Card''
 ** factors out common css and maybe content
@@ -10839,7 +10843,7 @@ Uncontrolled components mean that we manage our form elements outside of state.<
 
 @@color:red;Note@@ If we copy a project, typically we don't have all the node modules and dependencies copied over. The magic of [[package.json]] means that we can install them by simply running: `npm install` which will install them locally for us.</pre>
 </div>
-<div created="20221015044330147" creator="rtfm" modified="20221015045005011" modifier="rtfm" title="create-react-app">
+<div created="20221015044330147" creator="rtfm" modified="20221128161452779" modifier="rtfm" title="create-react-app">
 <pre>In [[create react app]] we showed that there is an app called ''create-react-app'' and here is the edited output:
 
 ```
@@ -10849,9 +10853,9 @@ Need to install the following packages:
 Ok to proceed? (y) y
 Creating a new React app in /home/fred/code/react/my-qwerty.
 Installing packages. This might take a couple of minutes.
-Installing react, react-dom, and react-scripts with cra-template...
+Installing react, react-dom, and react-scripts with cra-template. . .
 Initialized a git repository.
-Installing template dependencies using npm...
+Installing template dependencies using npm. . .
 Created git commit.
 
 Success! Created my-qwerty at /home/fred/code/react/my-qwerty
@@ -10908,7 +10912,7 @@ We have a component named: "Fruits"
 
 </pre>
 </div>
-<div created="20221021111438481" creator="rtfm" modified="20221021125648204" modifier="rtfm" title="date">
+<div created="20221021111438481" creator="rtfm" modified="20221128161510487" modifier="rtfm" title="date">
 <pre>This is more Javascript, just having it handy. Date is a Built-in Object.
 
 ```
@@ -10921,7 +10925,7 @@ now.toLocaleString('en-US', { day: '2-digit'})    // 21
 
 ```
 
-Built-in objects are "baked" into JavaScript. They come without you doing anything. One such built-in is Arrays, others include Boolean, Date, Error, Math, RegExp, Strings, ...
+Built-in objects are "baked" into JavaScript. They come without you doing anything. One such built-in is Arrays, others include Boolean, Date, Error, Math, RegExp, Strings, . . .
 
 ```
 new Date()
@@ -10929,7 +10933,7 @@ new Date(dateString)
 new Date(year, month, day, hours, minutes, seconds, ms)
 
 var myBirthDate=new Date();
-myBirthDate.setFullYear(2000,1,29);   // 0=jan, 1=feb, ...
+myBirthDate.setFullYear(2000,1,29);   // 0=jan, 1=feb, . . .
 ```</pre>
 </div>
 <div created="20221019192446837" creator="rtfm" modified="20221020115142061" modifier="rtfm" title="declarative approach">
@@ -10999,7 +11003,7 @@ In the web browser ([[Chrome]]) there are [[dev tools]] which has a ''console'' 
 In React, think of elements are little chunks of HTML code. Often we will group them into chunks that are more than a single element.
 </pre>
 </div>
-<div created="20221114093352042" creator="rtfm" modified="20221115211907848" modifier="rtfm" title="event">
+<div created="20221114093352042" creator="rtfm" modified="20221128161527399" modifier="rtfm" title="event">
 <pre>An event is an action that is triggered as a result of the user action or system generated event. A mouse click (onClick) is an event, a field change (''onChange'') is an event. These are built-in, but we could also have our own custom events. You'd typically start them with "''on''" as the built-in ones also start with that. To indicate that it is an event. An example could be: `onAddExpense`.
 
 When this happens, all data about it is stored in the ''event'' object. This is passed in automatically. For example, we have a function to handle a name change: `nameChangeHandler`
@@ -11008,11 +11012,14 @@ When this happens, all data about it is stored in the ''event'' object. This is 
   function nameChangeHandler(event) {
     console.log(event.target.value);
   }
-...
+. . .
   &lt;input type='text' onChange={nameChangeHandler}/&gt;
-...
+. . .
 ```
-In this case, any change in the input field, will fire off the function `nameChangeHandler` which will automatically pass back to the function the object ''event'' which will contain a metric ton of information. Mostly we'll just want `event.target.value`
+In this case, any change in the input field, will fire off the function `nameChangeHandler` which will automatically pass back to the function the object ''event'' which will contain a metric ton of information about the ''target'' element. Mostly we'll just want `event.target.value`
+
+See [[two way binding]] and [[useState object example]].
+
 </pre>
 </div>
 <div created="20210323185615978" creator="rtfm" modified="20221122155951149" modifier="rtfm" tags="" title="Event Listener Examples">
@@ -11331,19 +11338,19 @@ If you find that you are getting too many ''div'' tags, use [[Fragment]].</pre>
 
 To add dynamic content we use [[props]], see [[example file 4]].</pre>
 </div>
-<div created="20221114185922272" creator="rtfm" modified="20221115124836183" modifier="rtfm" title="form">
+<div created="20221114185922272" creator="rtfm" modified="20221128171934918" modifier="rtfm" title="form">
 <pre>The HTML element ''form'' is well known. Here we'll show the React use of it. We'll want to act upon a form submission, so it's best done via:
 
-`&lt;form onSubmit={submitHandler}&gt; ... &lt;/form&gt;`
+`&lt;form onSubmit={submitHandler}&gt; . . . &lt;/form&gt;`
 
-Which of course calls: `function submitHandler() { ... };`
+Which of course calls: `function submitHandler() { . . . };`
 
-Of concern - when we press the submit button, the browser will send the request back to the server. We actually want to handle this locally. We can disable this default behaviour with basic javascript, via:
+Of concern - when we press the submit button, the browser will send the request back to the server. We actually want to handle this locally. We can disable this default behaviour with basic javascript, via ''preventDefault()'':
 
 ```
 function submitHandler() {
   event.preventDefault();
-  ... // possible reset form input fields
+  . . . // possible reset form input fields
 };
 ```
 
@@ -11374,12 +11381,12 @@ In ''submitHandler'' we often reset the form to blank values. See [[two way bind
 
 Basically, replace ''div'' with ''React.Fragment''. It will not add anything to the [[DOM]].</pre>
 </div>
-<div created="20221110144405977" creator="rtfm" modified="20221110144905857" modifier="rtfm" title="function">
+<div created="20221110144405977" creator="rtfm" modified="20221128161330978" modifier="rtfm" title="function">
 <pre>In React there are a couple of ways of writing function. 
 
-This is the way I prefer: `function Card(props) {...`
+This is the way I prefer: `function Card(props) {. . .`
 
-The way I don't prefer: `const Card = (props) =&gt; {...`
+The way I don't prefer: `const Card = (props) =&gt; {. . .`
 
 They are functionally the same, the later being a JavaScript arrow function.</pre>
 </div>
@@ -11417,7 +11424,7 @@ All hooks have to declared, and they can only be used inside [[Component]]s. You
 See also [[function]].
 </pre>
 </div>
-<div created="20210330051259048" creator="rtfm" modified="20221126135507714" modifier="rtfm" title="import">
+<div created="20210330051259048" creator="rtfm" modified="20221128161310390" modifier="rtfm" title="import">
 <pre>You can import libraries. 
 
 * There are two different kinds of ''import''s.
@@ -11433,7 +11440,7 @@ If the import statement has a string that begins with either a dot or a slash, t
 * The file starts with a dot or slash: ''import { NavBar } from './NavBar';''
 **  This gets a variable from a different file.
 **  This other file has to have an [[export]] command.
-**  This looks like: ''export class NavBar extends React.Component {...''
+**  This looks like: ''export class NavBar extends React.Component {. . .''
 
 This import/export style is [[ES6]], not React specific.
 
@@ -11449,7 +11456,7 @@ See also [[named import]]
 *[[Index N-Q]]
 *[[Index R-Z]]</pre>
 </div>
-<div created="20210330053038278" creator="rtfm" modified="20221114094231085" modifier="rtfm" title="Index A-F">
+<div created="20210330053038278" creator="rtfm" modified="20221128161603304" modifier="rtfm" title="Index A-F">
 <pre>The [[Index]]:
 
 * [[api and data]]
@@ -11461,7 +11468,7 @@ See also [[named import]]
 * [[date]]
 * [[dependency array]]
 * [[event]]
-* [[example file 1]] ... there are many [[more!|example file 2]]
+* [[example file 1]] . . . there are many [[more!|example file 2]]
 * [[export]]
 * [[form library]]
 * [[function]]</pre>
@@ -11477,20 +11484,22 @@ See also [[named import]]
 * [[module]]
 </pre>
 </div>
-<div created="20221014172743267" creator="rtfm" modified="20221126135348947" modifier="rtfm" title="Index N-Q">
+<div created="20221014172743267" creator="rtfm" modified="20221128163614902" modifier="rtfm" title="Index N-Q">
 <pre>The [[Index]]:
 
 * [[named import]]
 * [[passing data up]]
-* [[splitting components]]</pre>
+* [[splitting components]]
+* [[spread operator]] - aka ''rest parameter''</pre>
 </div>
-<div created="20221014172754029" creator="rtfm" modified="20221114103917968" modifier="rtfm" title="Index R-Z">
+<div created="20221014172754029" creator="rtfm" modified="20221128164535431" modifier="rtfm" title="Index R-Z">
 <pre>The [[Index]]:
 
 *[[react tools]]
 *[[ReactDOM.render]]
 *[[Tutorial]]
 * [[useState]]
+* [[useState multiple]]
 * [[useState object]]</pre>
 </div>
 <div created="20221015053922808" creator="rtfm" modified="20221015054458682" modifier="rtfm" title="index.html">
@@ -11801,14 +11810,14 @@ To use these, we'd need to import them:
 
 See [[useState]] - an example of a [[named import|import]].</pre>
 </div>
-<div created="20210323000604889" modified="20210323003540265" title="Multiline JSX">
+<div created="20210323000604889" creator="rtfm" modified="20221128161347865" modifier="rtfm" title="Multiline JSX">
 <pre>When working with JSX, if you have to write JSX code over one line long, yo uwill have to wrap it in (brackets)!
 
 ```
    return (
         &lt;blockquote&gt;
         &lt;p&gt;
-        ...
+        . . .
     );
 ```</pre>
 </div>
@@ -11892,8 +11901,8 @@ class WatchingYou extends React.Component {
 ReactDOM.render(&lt; WatchingYou /&gt;, document.getElementById('app'));
 ```</pre>
 </div>
-<div created="20221015050645786" creator="rtfm" modified="20221110144234898" modifier="rtfm" title="package.json">
-<pre>The ''package. json'' file is the heart of any Node-React project. It is npm’s configuration file. It is in [[JSON]] format, and contains meta data )descriptions, dependencies, ...) for the project.
+<div created="20221015050645786" creator="rtfm" modified="20221128161627134" modifier="rtfm" title="package.json">
+<pre>The ''package. json'' file is the heart of any Node-React project. It is npm’s configuration file. It is in [[JSON]] format, and contains meta data )descriptions, dependencies, . . .) for the project.
 
 For our case, the two most important areL
 
@@ -11908,7 +11917,7 @@ For our case, the two most important areL
 And to follow that we'd run [[npm start]] to fire up the react server.
 </pre>
 </div>
-<div created="20221115205450522" creator="rtfm" modified="20221115213504163" modifier="rtfm" title="passing data up">
+<div created="20221115205450522" creator="rtfm" modified="20221128161642821" modifier="rtfm" title="passing data up">
 <pre>We use [[props]] to pass data from a parent to a child [[Component]].
 
 This will cover passing data from the child to a parent. It's a little complicated, but it a pattern that is often used in React. Sit back and relax!
@@ -11918,19 +11927,19 @@ Lets say that we have a parent: ''Alpha'' and a child ''Beta''.  We are adding '
 * The parent component ''Alpha'' needs to:
 ** Have a ''prop'' that is a function called ''addItemHandler''
 ** It wants data (''item'') that is only in ''Beta''.
-** The function signature: `function addItemHandler(item) {...`
+** The function signature: `function addItemHandler(item) {. . .`
 ** Add prop ''onAddItem'' to ''Beta'' component.
 ** i.e. `&lt;Beta onAddItem={addItemHandler} /&gt;`
 ** The ''on'' part is to indicate this a custom [[event]].
 * The child component ''Beta'' needs to:
-** Update signature to handle props: `function Beta(props){...`
+** Update signature to handle props: `function Beta(props){. . .`
 ** Call the ''Alpha'' function: `props.onAddItem(itemData);`
 ** ''itemData'' is only found in ''Beta''
 ** This function actually runs in ''Alpha'' - passing ''Beta'' data.
 
 That is it. Very common pattern.</pre>
 </div>
-<div created="20221014183050266" creator="rtfm" modified="20221109164630566" modifier="rtfm" title="props">
+<div created="20221014183050266" creator="rtfm" modified="20221128161723625" modifier="rtfm" title="props">
 <pre>''props'' are properties. They are arguments passed into React components - props help configure [[components|Component]] - for getting/passing data. Kind of like ''attributes'' in HTML.
 
 There are things passed in by default, things we don't implicitly specify. One important one is [[children]]. These are custom components we have made.
@@ -11941,9 +11950,9 @@ Let's say that our main component ''App'' has retrieved some data and we want to
 
 ```
 // File: App.js
-...
+. . .
   &lt;Fruit name="apple"&gt;&lt;/Fruit&gt;
-...
+. . .
 ```
 Our ''Fruit'' app would need to get this, so we specify a ''props'' parameter:
 
@@ -11958,11 +11967,11 @@ You can also pass arrays, and objects:
 
 ```
 // File: App.js
-...
-  const fruitData = [{id: 42, name: 'Apple', color: 'Red'} ...]
-...
+. . .
+  const fruitData = [{id: 42, name: 'Apple', color: 'Red'} . . .]
+. . .
 &lt;Fruit basket={fruitData[0]}&gt;&lt;/Fruit&gt;
-...or...
+. . .or. . .
 &lt;Fruit basket={fruitData}&gt;&lt;/Fruit&gt;
 ```
 
@@ -12146,10 +12155,38 @@ Again:
 * which is then referred to as ''props'' in ''BetaDate''.
 </pre>
 </div>
-<div created="20221015074017583" creator="rtfm" modified="20221122160517026" modifier="rtfm" title="state">
+<div created="20221128161934607" creator="rtfm" modified="20221128163553972" modifier="rtfm" title="spread operator">
+<pre>The ''spread operator'' is three dots: ("..."). It is used on things that can be iterated upon, like an array of strings. It will expand or spread them out. An example:
+
+```
+const things = ['apple', 'banana', 'carrot'];
+const more = [...things, 'donut'];
+
+console.log(things);     // [ 'apple', 'nana', 'carrot']
+console.log(...things);  // apple nana carrot 
+console.log(more);      // [ 'apple', 'nana', 'carrot', 'donut']
+console.log(...more);   // apple nana carrot donut
+```
+
+This operator can also copy instead of clone.
+
+```
+let alpha = [ 1, 2, 3];
+let beta = [...alpha];  // a copy (different)
+let gamma = alpha;      // a clone (same)
+```
+
+Very similar, this is also a ''rest parameter''. Meaning the "rest" of the parameters. A function with an unknown number argments being passed, all parameters go into the ''rest parameter'' - `args`
+
+```
+let func = function(...args) { . . .
+```
+</pre>
+</div>
+<div created="20221015074017583" creator="rtfm" modified="20221128160058505" modifier="rtfm" title="state">
 <pre>A tricky part of anything to do with a stateless language like HTML is keep state. Here is how we'll do it in React, using [[hook]] called [[useState]].
 
-React on first load, will go through every component, evaluating JSX, returning HTML, and creating a DOM that will be displayed to the screen. It only does this once. To keep track of something changing, we need to know state.
+React on first load, will go through every component, evaluating JSX, returning HTML, and creating a DOM that will be displayed to the screen. It only does this once. To keep track of something changing, we need to know state. We will need multiple ''sueState'' hooks to store multiple values.
 
 When we [[useState]] we are letting react know that state is important. 
 </pre>
@@ -12228,8 +12265,8 @@ Now the tutorial is done, we will focus on react [[concepts]]. Or go back to [[I
 
 </pre>
 </div>
-<div created="20221114192858664" creator="rtfm" modified="20221114194114955" modifier="rtfm" title="two way binding">
-<pre>When we work with [[form]]s, after we submit we'll want to reset the form fields to typically blank. We can listen to changes on an ''input'', but we can also pass back values to these fields. This is ''two way binding''. We can quite easily do this because we have already set up [[state]].
+<div created="20221114192858664" creator="rtfm" modified="20221128174550316" modifier="rtfm" title="two way binding">
+<pre>When we work with [[form]]s, after we submit we'll want to reset the form fields to typically blank. We can listen to changes on an ''input'', but we can also pass back values to these fields. This is ''two way binding'' - we get and put user data on the form. We can quite easily do this because we have already set up [[state]].
 Here is how we do that. We already have (typically) this input element:
 
 `&lt;input type='text' onChange={ageChangeHandler} /&gt;`
@@ -12419,8 +12456,8 @@ Line numbers:
 
 We used state to manage this code. See  [[useRef]].</pre>
 </div>
-<div created="20221015074219914" creator="rtfm" modified="20221126150423824" modifier="rtfm" title="useState">
-<pre>The library ''useState'' is a [[hook]]. It allows you to remember state in a component. The data it holds can be anything, text, boolean, number, or an object. Often when first getting a value it is a string - because things like ''onChange'' will store values as strings. See also [[useState object]].
+<div created="20221015074219914" creator="rtfm" modified="20221128155920285" modifier="rtfm" title="useState">
+<pre>The library ''useState'' is a [[hook]]. It allows you to remember state in a component. The data it holds can be anything, text, boolean, number, or an object, but only a single value. To store multiple values, you will need multiple ''useState'' statements. Often when first getting a value it is a string - because things like ''onChange'' will store values as strings. See also [[useState object]].
 
 ''useState()'' will always return an array with two elements. The elements of: `const [fruit, setDaFruit] = useState("PickOne");` are:
 
@@ -12428,7 +12465,7 @@ We used state to manage this code. See  [[useRef]].</pre>
 # the function that will update that state: ''setDaFruit''
 # Need to set initial state to something: `useState("");`
 
-Here is the code to do this:
+Here is the code to do this (only a single state is kept here):
 
 ```
 import "./App.css";
@@ -12453,9 +12490,54 @@ When we start the app, the favorite fruit will be "~PickOne", when we click eith
 Each instance of a component receives it's own state. React will keep track. In order for React to know that a component state has changed we need to use the function. In the above that function is: `setDaFruit`. We can't use the plain `=` because then React would not know that the component had changed and would not refresh the component.
 
 See also [[useState object]].
+
+To handle multiple states see: [[useState object example]].
 </pre>
 </div>
-<div created="20221114103924527" creator="rtfm" modified="20221114183957411" modifier="rtfm" title="useState object" type="* ">
+<div created="20221128164543222" creator="rtfm" modified="20221128174325762" modifier="rtfm" title="useState multiple">
+<pre>To keep track of multiple [[state]]s, we can use [[useState object]]. In the [[useState object example]] we are keeping track of three states using an object. Following is how to do it how I prefer, one declaration per line:
+
+```
+  const [enteredFirst, setEnteredFirst] = useState('');
+  const [enteredLast, setEnteredLast = useState('');
+  const [enteredAge, setEnteredAge] = useState('');
+. . .
+function firstChangeHandler(event) {
+  setEnteredFirst(event.target.value);
+};
+function lastChangeHandler(event) {
+  setEnteredLast(event.target.value);
+};
+function ageChangeHandler(event) {
+  setEnteredAge(event.target.value);
+};
+. . . 
+const submitHandler = (event) =&gt; {
+    event.preventDefault();
+    const ourData = {
+        firstname: enteredFirst,
+        lastname: enteredLast,
+        age: enteredAge,
+    };
+    props.onSaveOurData(ourData);
+    setEnteredFirst('');
+    setEnteredLast('');
+    setEnteredAge('');
+};
+
+...
+&lt;form onSubmit={submitHandler}&gt;
+  First: &lt;input type='text'  value={enteredFirst}
+         onChange={firstChangeHandler}  /&gt;
+  Last: &lt;input type='text'  value={enteredLast}
+         onChange={lastChangeHandler}  /&gt;
+  Age: &lt;input type='text'  value={setEnteredAge}
+         onChange={ageChangeHandler}  /&gt;
+  &lt;button type='submit'&gt;Do it!&lt;/button&gt;
+&lt;/form&gt;
+```</pre>
+</div>
+<div created="20221114103924527" creator="rtfm" modified="20221128163643017" modifier="rtfm" title="useState object" type="* ">
 <pre>There is a ''object'' option to using [[useState]]. A single useState is easy to deal with, but there could be numerous variables that you'd want to keep state for. It is a preference thing too as there is some tricky business to content with.
 
 That is, updating an object, you need to keep track of all values. If you write to the object a single value change, the other values that don't change therefore you have to copy those to the current state. Updating state is &lt;i&gt;''scheduled''&lt;/i&gt;  by React, so its results are not guaranteed. To do this correctly, read on dear reader.
@@ -12467,11 +12549,11 @@ The steps:
 ** You'll see how to update them, function: `setUserInput`
 * Function ''lnameChangeHandler'' has an anon fn
 * It returns the updated object by..
-** ''...prevState'' - the three dots unpack an object - prev state
+** ''. . .prevState'' - the three dots unpack an object - prev state
 ** overwritten by:  `enteredLast: event.target.value` (overwrites old)
 
 ```
-...
+. . .
 function PersonForm(props) {
   const [userInput, setUserInput] = useState({
     enteredFirst: '',
@@ -12481,19 +12563,20 @@ function PersonForm(props) {
   function fnameChangeHandler(event) {
     // This is the key anon function
     setUserInput((prevState) =&gt; {   
-      return { ...prevState, enteredLast: event.target.value };
+      return { . . .prevState, enteredLast: event.target.value };
     });
   };
-  function lnameChangeHandler(event) { ...
-...
+  function lnameChangeHandler(event) { . . .
+. . .
 &lt;input type='text' onChange={fnameChangeHandler}/&gt;
 ```
 
 To see the full of above: [[useState object example]]
-</pre>
+
+See also [[spread operator]].</pre>
 </div>
-<div created="20221114184007203" creator="rtfm" modified="20221115125759088" modifier="rtfm" title="useState object example">
-<pre>In the section [[useState object]] an exerpt of the code was used. There is also [[two way binding]]. Here is the full working code:
+<div created="20221114184007203" creator="rtfm" modified="20221128164509150" modifier="rtfm" title="useState object example">
+<pre>In the section [[useState object]] an exerpt of the code was used. There is also [[two way binding]] as well as multiple [[state]]s. Here is the full working code for having multiple states and using an object: (As a note: I no longer prefer this method - I prefer using one declaration for each state - see [[useState multiple]].
 
 ```
 import React from 'react';
@@ -12502,26 +12585,26 @@ import {useState} from 'react';
 function PersonForm(props) {
   const [userInput, setUserInput] = useState({
     enteredFirst: '',
-    enteredLast: '',
+    enteredLast: '',  
     enteredAge: '',
   });
 
   function fnameChangeHandler(event) {
     setUserInput((prevState) =&gt; {
-      return { ...prevState, enteredFirst: event.target.value };
+      return { . . .prevState, enteredFirst: event.target.value };
     });
     console.log("First name: " + event.target.value);
   };
 
   function lnameChangeHandler(event) {
     setUserInput((prevState) =&gt; {
-      return { ...prevState, enteredLast: event.target.value };
+      return { . . .prevState, enteredLast: event.target.value };
     });
   };
 
   function ageChangeHandler(event) {
     setUserInput((prevState) =&gt; {
-      return { ...prevState, enteredAge: event.target.value };
+      return { . . .prevState, enteredAge: event.target.value };
     });
   };
 
@@ -12567,7 +12650,9 @@ function PersonForm(props) {
 }
 
 export default PersonForm;
-```</pre>
+```
+
+There are 2 ways of handling multiple states. One in a singe [[useState]] where the "state" is an array where all the values are stored. This is seen in the above example. The other is a ''useState'' statement for each state. In the above example, there would be three ''useState'' statements.</pre>
 </div>
 <div created="20210319044819671" modified="20210323002040579" title="Variables in JSX">
 <pre>Variables come in handy. Check out:
