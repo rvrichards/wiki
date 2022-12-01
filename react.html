@@ -305,6 +305,8 @@ Error message and password prompt
 
 <li>JSX Syntax</li>
 
+<li>key</li>
+
 <li>lifting state up</li>
 
 <li>map</li>
@@ -10310,7 +10312,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221128154555245" creator="rtfm" list="[[Index A-F]] [[create react app]] [[example file 1]] state" modified="20221129104832119" modifier="rtfm" title="$:/StoryList">
+<div created="20221130140428918" creator="rtfm" list="Tutorial [[example file 6]] key props map Introduction" modified="20221201182558733" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10554,7 +10556,7 @@ Final important point. The ''ReactDOM.render'' calls the ''&amp;lt;HelloClass /&
 * See also [[Component Example]].
 * See also [[Component calls Component]]</pre>
 </div>
-<div created="20210322054353366" creator="rtfm" modified="20221116143327679" modifier="rtfm" tags="" title="Component">
+<div created="20210322054353366" creator="rtfm" modified="20221130142219417" modifier="rtfm" tags="" title="Component">
 <pre>A ''Component'' is a small reusable chunk of code. It is meant to perform one task, typically to render HTML. Putting these small chunks of code together can create quite complex web pages. Look at a web page and you can see parts that are repeated, a great use of components. Each portion of the web page can be a self contained component.
 
 A ''Built-in component'' can be considered to be an HTML element like ''input''.
@@ -10563,7 +10565,11 @@ A ''React component'' is simply a ''~JavaScript'' @@color:red;function@@ that re
 
 ''Components'' really are custom HTML elements where you combine [[JSX]] (kinda HTML code) and css styling and possibly ''~JavaScript''.
 
-''Components'' are also classified as either "stateful" or "stateless". Stateful means that they have state, and are often called "smart". Stateless components do not keep track of state and are known as "presentational". 
+''Components'' are also classified as either ''stateful'' or ''stateless''. 
+
+* Stateful means that they have state, and are often called "smart". 
+* Stateless components do not keep track of state.
+** aka "dumb" or "presentational" components.
 
 You can think of a component as a "custom HTML element". A react component is usually and best kept in their own files of the same name.  This allows re-usability and a separation of concerns. We'll start simple, but there are many ways to create and use a component.
 
@@ -10821,9 +10827,9 @@ const drinks = (
 );
 ```</pre>
 </div>
-<div created="20221016152312262" creator="rtfm" modified="20221016152529040" modifier="rtfm" title="controlled component">
+<div created="20221016152312262" creator="rtfm" modified="20221130141733667" modifier="rtfm" title="controlled component">
 <pre>A controlled component is one where we're controlling our form by creating state values for these form elements.
-Uncontrolled components mean that we manage our form elements outside of state.</pre>
+Uncontrolled components mean that we manage our form elements outside of state. This  means that the DOM handles it.</pre>
 </div>
 <div created="20221015043137996" creator="rtfm" modified="20221019193407056" modifier="rtfm" title="create react app">
 <pre>There is an app called "Create React App" that creates a React app from scratch. Like [[babel]], file bundling, etc.  Here we go:
@@ -11272,12 +11278,12 @@ However, the browser console gives us a @@color:red;warning:@@
 
 We'll address that in [[example file 6]]</pre>
 </div>
-<div created="20221014192429492" creator="rtfm" modified="20221015035424736" modifier="rtfm" title="example file 6" type=" ">
+<div created="20221014192429492" creator="rtfm" modified="20221201182556352" modifier="rtfm" title="example file 6" type=" ">
 <pre>When we created a list in [[example file 5]], the browser console gives us a warning:
 
 `Warning: Each child in a list should have a unique "key" prop.`
 
-So we'll fix that by adding a key, this is to help keep things in sync. If something was added to middle of list, we might get outta sync. We' use data transformation. We'll create an object..
+So we'll fix that by adding a [[key]], this is to help keep things in sync. If something was added to middle of list, we might get outta sync. We' use data transformation. We'll create an object..
 
 ```
 &lt;body&gt;
@@ -11731,6 +11737,18 @@ const rtfm = (
  );
 ```
 Finally, we we must have the whole thing with an outermost tage = that is if you have two different ''p'' tage you have to wrap them in a ''div'' tag.</pre>
+</div>
+<div created="20221201182603687" creator="rtfm" modified="20221201183055904" modifier="rtfm" title="key">
+<pre>If we have a list of components we should use a key. This is because if we add another component to a list (like another "Person" component) React will not know which one to update and updates them all. There are also other issues, so just add a ''key''. 
+
+This is a prop on any [[component|Component]].
+
+```
+&lt;Person key={employee.id}
+        salary={employee.salary}...
+/&gt;
+
+```</pre>
 </div>
 <div created="20221116142241969" creator="rtfm" modified="20221116142724544" modifier="rtfm" title="lifting state up">
 <pre>Components can collect and generate data.
