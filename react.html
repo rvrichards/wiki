@@ -215,6 +215,8 @@ Error message and password prompt
 
 <li>concepts</li>
 
+<li>conditional content</li>
+
 <li>Conditionals</li>
 
 <li>controlled component</li>
@@ -310,6 +312,8 @@ Error message and password prompt
 <li>lifting state up</li>
 
 <li>map</li>
+
+<li>map example</li>
 
 <li>Mock API</li>
 
@@ -10304,7 +10308,7 @@ JSX
 <div created="20221114092046452" creator="rtfm" modified="20221114092046452" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Orphans</pre>
 </div>
-<div created="20210316042108223" creator="rtfm" modified="20221129104803875" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<div created="20210316042108223" creator="rtfm" modified="20221209195310626" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
@@ -10312,7 +10316,7 @@ JSX
 <pre>no</pre>
 </div>
 <div title="$:/status/UserName"><pre></pre></div>
-<div created="20221130140428918" creator="rtfm" list="Tutorial [[example file 6]] key props map Introduction" modified="20221201182558733" modifier="rtfm" title="$:/StoryList">
+<div created="20221209174420006" creator="rtfm" list="[[conditional content]] key" modified="20221209194656447" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10777,6 +10781,39 @@ Summing up. . .
 * [[state]]
 ** [[lifting state up]]
 * [[passing data up]]</pre>
+</div>
+<div created="20221209194253880" creator="rtfm" modified="20221209200032956" modifier="rtfm" tags="" title="conditional content">
+<pre>Render content under different conditions. We are using a ternary [[conditional|Conditionals]] here:
+
+```
+{selectedPerson.length ===0 ? (
+  &lt;p&gt;Nobody home!&lt;/p&gt;
+) : (
+  &lt;p&gt;How may I help you?&lt;/p&gt;
+)}
+```
+
+These can be hard to use if there is lots of code! One trick is to use the `&amp;&amp;` operator. Which says if the first part of the conditional is true, do the 2nd part. The above could also be split into two parts, written as:
+
+```
+{selectedPerson.length === 0 &amp;&amp;   &lt;p&gt;Nobody home!&lt;/p&gt;}
+{selectedPerson.length &gt; 0 &amp;&amp;  &lt;p&gt;How may I help you?&lt;/p&gt;}
+```
+This is ok and is often done in React.
+
+And yet there is another way! Move the logic before the ''return'' and in the ''return'' logic simply use `{ personContent }`. This keeps our JSX snippet clean.
+
+```
+let personContent = &lt;p&gt;Nobody home!&lt;/p&gt;;
+if (selectedPerson.length &gt; 0) {
+  personContent = &lt;p&gt;How may I help you?&lt;/p&gt;
+}
+. . . 
+   { personContent }
+
+```
+
+</pre>
 </div>
 <div created="20210319052134620" modified="20210320010810453" title="Conditionals">
 <pre>We'll cover the:
@@ -11479,13 +11516,14 @@ See also [[named import]]
 * [[form library]]
 * [[function]]</pre>
 </div>
-<div created="20210330051232694" creator="rtfm" modified="20221126135913228" modifier="rtfm" title="Index G-M">
+<div created="20210330051232694" creator="rtfm" modified="20221209174516636" modifier="rtfm" title="Index G-M">
 <pre>The [[Index]]:
 
 * [[hook]]
 * [[import]]
 * [[lifting state up]]
 * [[map]]
+* [[map example]]
 * [[Mock API]]
 * [[module]]
 </pre>
@@ -11738,14 +11776,16 @@ const rtfm = (
 ```
 Finally, we we must have the whole thing with an outermost tage = that is if you have two different ''p'' tage you have to wrap them in a ''div'' tag.</pre>
 </div>
-<div created="20221201182603687" creator="rtfm" modified="20221201183055904" modifier="rtfm" title="key">
-<pre>If we have a list of components we should use a key. This is because if we add another component to a list (like another "Person" component) React will not know which one to update and updates them all. There are also other issues, so just add a ''key''. 
+<div created="20221201182603687" creator="rtfm" modified="20221209194048021" modifier="rtfm" title="key">
+<pre>If we have a list of components we should use a key. This is because if we add another component to a list (like another "Person" component) React will not know which one to update and updates them all. This is a performance issue. Also chance of bugs, so just add a ''key''. 
+
+This ''key'' prop is @@color:red;not@@ ours, but is available for all props, either built-in or one of yours. This helps react identify these items. Hence, better performance.
 
 This is a prop on any [[component|Component]].
 
 ```
 &lt;Person key={employee.id}
-        salary={employee.salary}...
+        salary={employee.salary}. . .
 /&gt;
 
 ```</pre>
@@ -11760,7 +11800,7 @@ To share data, we need to find the first common ancestor  and this is where stat
 
 </pre>
 </div>
-<div created="20210330061620661" creator="rtfm" modified="20221021203817073" modifier="rtfm" title="map">
+<div created="20210330061620661" creator="rtfm" modified="20221209181033218" modifier="rtfm" title="map">
 <pre>Map() has a returned value of array.
 
 This following example will create an array called ''navLinks''. It will then be called by another program, who will ''export'' the component!
@@ -11782,7 +11822,57 @@ export class NavBar extends React.Component {
     return &lt;nav&gt;{navLinks}&lt;/nav&gt;;
   }
 }
-```</pre>
+```
+
+See [[map example]].</pre>
+</div>
+<div created="20221209174525726" creator="rtfm" modified="20221209182504537" modifier="rtfm" title="map example">
+<pre>Here is a [[map]] example.
+
+* Given an array ''PEOPLE''
+* Two components: ''App'' and  ''People''.
+* Component ''People'' displays people.
+
+
+```
+// App.js
+import React, { useState } from 'react';
+const PEOPLE = [
+  { id:'1', firstName:'Fred', lastName:'Flintstone', year:1961},
+  { id:'2', firstName:'Wilma',lastName:'Flintstone', year:1967},
+  { id:'3', firstName:'Betty', lastName:'Rubble', year:1969}, 
+];
+
+function App() {
+  const [people, setPeople] = useState(PEOPLE);
+. . .
+    &lt;div&gt;
+      &lt;People people={people} /&gt;
+    &lt;/div&gt;
+```
+And the component ''People'' that will display it all:
+
+```
+// People.js
+function People(props) {
+    return (
+        &lt;div&gt;
+            {props.people.map((person) =&gt; (
+                &lt;Person
+                    key={person.id}  // doesn't pass thru?
+                    id={person.id}
+                    firstName={person.firstName}
+                    lastName={person.lastName}
+                    year={person.year}
+                /&gt;
+                ))}
+        &lt;/div&gt;
+
+    )
+}
+
+```
+</pre>
 </div>
 <div created="20221018090250485" creator="rtfm" modified="20221018122430595" modifier="rtfm" title="Mock API">
 <pre>In creating an application before real apis are created, you'll need to mock some. Here are the steps for using mocktoon (https://mockoon.com/).
@@ -12555,19 +12645,19 @@ const submitHandler = (event) =&gt; {
 &lt;/form&gt;
 ```</pre>
 </div>
-<div created="20221114103924527" creator="rtfm" modified="20221128163643017" modifier="rtfm" title="useState object" type="* ">
+<div created="20221114103924527" creator="rtfm" modified="20221209184831632" modifier="rtfm" title="useState object" type="* ">
 <pre>There is a ''object'' option to using [[useState]]. A single useState is easy to deal with, but there could be numerous variables that you'd want to keep state for. It is a preference thing too as there is some tricky business to content with.
 
-That is, updating an object, you need to keep track of all values. If you write to the object a single value change, the other values that don't change therefore you have to copy those to the current state. Updating state is &lt;i&gt;''scheduled''&lt;/i&gt;  by React, so its results are not guaranteed. To do this correctly, read on dear reader.
+That is, updating an object, you need to keep track of all values. If you write to the object a single value change, the other values (that don't change) you have to copy those to the current state. Updating state is &lt;i&gt;''scheduled''&lt;/i&gt;  by React, so its results are @@color:red;not@@ guaranteed. To do this correctly, read on dear reader.
 
 The steps:
 
 * Set up an object with the ''useState'' [[hook]].
 ** You'll see two vars we track - first and last name
 ** You'll see how to update them, function: `setUserInput`
-* Function ''lnameChangeHandler'' has an anon fn
-* It returns the updated object by..
-** ''. . .prevState'' - the three dots unpack an object - prev state
+* Function ''fnameChangeHandler'' has an anon fn
+** It returns the updated object
+** ''. . .prevState'' - the ([[spread operator]]) unpacks prev state object
 ** overwritten by:  `enteredLast: event.target.value` (overwrites old)
 
 ```
@@ -12581,7 +12671,7 @@ function PersonForm(props) {
   function fnameChangeHandler(event) {
     // This is the key anon function
     setUserInput((prevState) =&gt; {   
-      return { . . .prevState, enteredLast: event.target.value };
+      return { ...prevState, enteredLast: event.target.value };
     });
   };
   function lnameChangeHandler(event) { . . .
