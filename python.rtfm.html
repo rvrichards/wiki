@@ -808,7 +808,7 @@ You can launch it from the command line:
 There is also an IDE named [[Eric]].
 </pre>
 </div>
-<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202008190616" changecount="69">
+<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202212131250" changecount="70">
 <pre>[[any]]
 [[storing api keys]] - or passwords
 [[array]]
@@ -842,6 +842,7 @@ There is also an IDE named [[Eric]].
 [[Eric]]
 [[environment|venv]] - venv
 [[error handling]]
+[[errors]]
 [[executable]]</pre>
 </div>
 <div title="Index F-I" creator="rvr" modifier="rvr" created="202008130706" modified="202008260428" changecount="4">
@@ -874,7 +875,7 @@ There is also an IDE named [[Eric]].
 [[iterate a list of dictionary items]]
 [[iterate a list of dictionary items and delete]]</pre>
 </div>
-<div title="Index J-M" creator="rvr" modifier="rvr" created="201012012327" modified="202008230523" changecount="48">
+<div title="Index J-M" creator="rvr" modifier="rvr" created="201012012327" modified="202212131313" changecount="50">
 <pre>[[jsonify]]
 [[JWT]]
 [[JWT Example]]
@@ -884,6 +885,7 @@ There is also an IDE named [[Eric]].
 [[Jupyter]]
 [[keys|items]] - items
 [[keys|storing api keys]] - storing api keys
+[[library]]
 [[linked list]]
 [[list]]
 [[list generation]]
@@ -893,6 +895,7 @@ There is also an IDE named [[Eric]].
 [[map and getattr]]
 [[mapping lists]]
 [[module]] See also [[common modules]]
+[[Modules and Libraries]]
 [[multiline string]]
 [[multiple assignment]]</pre>
 </div>
@@ -935,7 +938,7 @@ There is also an IDE named [[Eric]].
 [[regex]] - regular expressions
 </pre>
 </div>
-<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202008190451" changecount="10">
+<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202212131316" changecount="11">
 <pre>[[scope]]
 [[self]]
 [[set]]
@@ -961,6 +964,7 @@ There is also an IDE named [[Eric]].
 [[unicode]]
 [[values|items]]
 [[variable interpolation]]
+[[variables]]
 [[venv]]
 [[venv use]]
 [[version|basic things to know]] - basic things to know
@@ -1110,9 +1114,59 @@ The algorithm used is
 #Server verifies the token.
 #Server sends a response back to the client.</pre>
 </div>
-<div title="Jupyter" creator="rvr" modifier="rvr" created="201907082054" modified="202212102010" changecount="12">
-<pre>The Jupyter Lab 
-* is newer and preferred over the older jupyter Notebooks.
+<div title="Jupyter Intro" creator="rvr" modifier="rvr" created="202212121154" modified="202212121349" changecount="10">
+<pre>Fire up JupyterLab by entering ''jupyter-lab'' on console.
+You will be presented with a browser pointing to: ''http://localhost:8888/lab''
+The RHS will have a ''launcher'' window. 
+* This is where you start a new notebook, code console, terminal, or text file. 
+* There are tabs along the top that will allow you to have more than one window open.
+The LHS will have a file browser.
+* You can select the files to work from.
+* Click on one and a file will open - like a csv one, and it opens up nicely.
+* Up-arrow to upload a file from another directory to this one.
+* ''+'' to open another launcher window
+
+Right clicking will show a host of options. 
+*A markdown document - you can have a previewer window
+*A cell - you can have an output window
+** &lt;esc&gt; M - to switch a cell to markdown
+** &lt;esc&gt; A - to add a cell after
+** &lt;esc&gt; B - to add a cell before
+** &lt;esc&gt; D + D - delete cell
+** &lt;esc&gt; Y - to switch a cell to code
+
+
+
+Select a &quot;Notebook&quot; from launcher. Enter: ''print (&quot;Hello&quot;)'' and press the run icon (&quot;play&quot; or &amp;#9658; icon.)
+
+See [[Jupyter Terms]].
+See [[Jupyter Notebooks]]</pre>
+</div>
+<div title="Jupyter Notebooks" creator="rvr" modifier="rvr" created="202212121244" modified="202212121319" changecount="3">
+<pre>''Jupyter Notebooks'' are documents that which contain both python code and rich text elements (paragraph, equations, figures, links, etc…). 
+Notebook documents are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
+This allows an important data science feature - being able to quickly reproduce results so that others can easily check.
+
+Terms:
+* cell -  multiline text input field, execute with ''shift-enter'' or &quot;ctrl-enter&quot;. (goto next cell vs stay in cell)
+**Three types: code, markdown, and raw.
+** Code cells are for Python. Start a code cell with &quot;!&quot; to indicate a bash command.</pre>
+</div>
+<div title="Jupyter Terms" creator="rvr" modifier="rvr" created="202212121144" modified="202212121212" changecount="6">
+<pre>Jupyter Lab will be presented with a browser pointing to: ''http://localhost:8888/lab''
+The RHS will have a ''launcher'' window. 
+The LHS will have a file browser.
+
+special urls - will allow you to use URL to point to a file. eg: ''http://localhost:8888/lab/tree/data/freds.data''
+
+
+ See [[Jupyter Intro]].
+</pre>
+</div>
+<div title="JupyterLab" creator="rvr" modifier="rvr" created="201907082054" modified="202212121241" changecount="19">
+<pre>Jupyter - meaning ''JupyterLab''
+* is newer and preferred over just plain [[Jupyter Notebooks]].
+** you can run Jupyter Notebooks in the Jupyter Lab!
 * a open-source web-based interactive computing platform.
 * allows you to create and share documents that contain live code, equations, visualizations, and narrative text.
 * a server-client application that allows editing and running notebook documents via a web browser. 
@@ -1123,8 +1177,10 @@ The algorithm used is
 * understands image formats.
 * understand different formats: csv, json, pdf, html, tex, etc
 * allows use of different [[kernals]].
+* launch via command line: ''jupyter-lab''
+** opens up browser at: ''http://localhost:8888/lab''
 
-See [[install Jupyter]]
+See [[install Jupyter]] or [[Jupyter Terms]] maybe even [[Jupyter Intro]].
 </pre>
 </div>
 <div title="LoadRemoteFileThroughProxy" modifier="YourName" created="200703202229" modified="201011181926" tags="systemConfig">
@@ -1271,8 +1327,8 @@ def login():
         return 'Going to login form!'  
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Panda" creator="rvr" modifier="rvr" created="201907120106" modified="202008110648" changecount="6">
-<pre>Panda is open sourced Python library, used in Python community for high-performance data manipulation and analysis. It had many tools for working with different [[data structures]]. The name Pandas is derived from the word Panel Data – an Econometrics term from Multidimensional data.
+<div title="Panda" creator="rvr" modifier="rvr" created="201907120106" modified="202212131311" changecount="7">
+<pre>Panda is open sourced Python [[library]], used in Python community for high-performance data manipulation and analysis. It had many tools for working with different [[data structures]]. The name Pandas is derived from the word Panel Data – an Econometrics term from Multidimensional data.
 1D - [[Panda Series Example]] 
 2D - [[DataFrame]]s
 3D - General 3D labeled, size-mutable array. This uses the ''Panel'' method.
@@ -1528,18 +1584,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202212102010">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202212131420">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 22/08/2020 18:17:18 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 22/08/2020 23:20:34 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 24/08/2020 20:22:52 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 24/08/2020 23:21:59 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 26/08/2020 18:03:45 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 05/09/2020 20:04:46 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 05/09/2020 23:02:30 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/09/2020 23:13:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/09/2020 23:16:32 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 10/12/2022 21:10:36 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 10/12/2022 21:10:36 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 12/12/2022 13:47:04 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 12/12/2022 14:19:11 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 13/12/2022 14:30:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 13/12/2022 15:20:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -2557,9 +2613,9 @@ wb.get_sheet_names()            # Returns: ['Alpha', 'Sheet2', 'Sheet3']
 
 </pre>
 </div>
-<div title="data" creator="rvr" modifier="rvr" created="201907120059" modified="201907120100" changecount="2">
+<div title="data" creator="rvr" modifier="rvr" created="201907120059" modified="202212131312" changecount="3">
 <pre>Python can handle data in many formats.
-For efficient use of tabular data (that could be a 2D array) we can use the [[Panda]] software library to be able to use efficiencies in processing tabular data.
+For efficient use of tabular data (that could be a 2D array) we can use the [[Panda]] software [[library]] to be able to use efficiencies in processing tabular data.
 It provides software that has statistical, financial, mathematical analytics built in. 
 It has pivoting, data reshaping, column removal, column processing, aggregations, and transformations.
  </pre>
@@ -2675,6 +2731,10 @@ See [[set]] and [[iterable]].</pre>
 <div title="error handling" creator="rvr" modifier="rvr" created="201011260827" modified="202007090619" changecount="3">
 <pre>Python ''error handling'' handling - use the [[try]] to capture error prone code. You can also [[raise]] an error.
 We are looking for exceptions. See also [[assert]].</pre>
+</div>
+<div title="errors" creator="rvr" modifier="rvr" created="202212131251" changecount="1">
+<pre>If you get an error like: @@No module named 'xxx' @@
+It's a simple fix: @@pip install xxx@@</pre>
 </div>
 <div title="executable" creator="rvr" modifier="rvr" created="201012140631" modified="201012140633" changecount="2">
 <pre>In linux, to make the file executable you need the following as the first line in the file:
@@ -3134,8 +3194,8 @@ c[2]                // Gives: '3'
 &lt;/pre&gt;&lt;/html&gt;
 See also [[string methods]] for ''strip()'' method.</pre>
 </div>
-<div title="install Jupyter" creator="rvr" modifier="rvr" created="202212101835" modified="202212101836" changecount="2">
-<pre>To install Jupyter, there are two ways, Anaconda and pip. I will use pip
+<div title="install Jupyter" creator="rvr" modifier="rvr" created="202212101835" modified="202212121241" changecount="4">
+<pre>To install Jupyter aka JupyterLab, there are two ways, Anaconda and pip. I will use pip
 * Run: ''pip install jupyterlab''
 * Launch: ''jupyter-lab'' which opens up: @@color:blue;http://localhost:8888/lab@@
 * You are done!
@@ -3318,6 +3378,11 @@ def index():
 </div>
 <div title="kernals" creator="rvr" modifier="rvr" created="202212101846" changecount="1">
 <pre>The JupyterLab makes use of ''kernals'', that is different programming languages like python, ruby, and many others.</pre>
+</div>
+<div title="library" creator="rvr" modifier="rvr" created="202212131313" changecount="1">
+<pre>A library
+Checkout [[Modules and Libraries]]
+See also [[module]]</pre>
 </div>
 <div title="linked list" creator="rvr" modifier="rvr" created="202008230616" modified="202008230620" changecount="4">
 <pre>Here is my implementation of a linked list. 
@@ -3575,8 +3640,8 @@ spies= { 'james' : '007', 'rob' : '013' }
 [k for k,v in spies.items()]  # This returns: ['james', 'rob']
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="module" creator="rvr" modifier="rvr" created="201011260202" modified="202008190618" changecount="20">
-<pre>A ''module'' is a file with a collection of functions and global variables.
+<div title="module" creator="rvr" modifier="rvr" created="201011260202" modified="202212131330" changecount="21">
+<pre>A ''module'' is a file with a collection of functions and global variables. It can have [[functions]], [[class]]es, or variables.
 You can use the [[import]] keyword to gain access to module functions. So with a module name of ''secret.py'' you would access it like:
 &lt;html&gt;&lt;pre&gt;
   import secret
@@ -3921,10 +3986,14 @@ print (f&quot;Price: {currency}${x}&quot;)                                      
 print (&quot;The price is $ {} and the currency is {}.&quot;.format(x, currency))  # Prints: The price is $ 42 and the currency is CAD.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="quotes" creator="rvr" modifier="rvr" created="201101201903" modified="202007050610" changecount="2">
+<div title="quotes" creator="rvr" modifier="rvr" created="201101201903" modified="202212121417" changecount="5">
 <pre>Can use either single or double quotes to assign strings. Have them properly nested. To delimit, use the backslash.
 &lt;html&gt;&lt;pre&gt;
-  x=&quot;he said \&quot;wham bam\&quot; yesteday.&quot;
+x=&quot;he said \&quot;wham bam\&quot; yesteday.&quot;  // Gives: 'he said &quot;wham bam&quot; yesteday.'
+
+z=&quot;&quot;&quot;This is 
+on many
+lines.&quot;&quot;&quot;        // Gives: 'This is \non many\nlines.'
 &lt;/pre&gt;&lt;/html&gt;
 See also [[multiline string]]s.</pre>
 </div>
@@ -4755,6 +4824,29 @@ for i in range(1,37,5):
   31   37   1F 11111
   36   44   24 100100
 &lt;/pre&gt;&lt;/html&gt;
+</pre>
+</div>
+<div title="variables" creator="rvr" modifier="rvr" created="202212131325" modified="202212131329" changecount="6">
+<pre>Variables must start with a letter or underscore, no numbers.
+Variables are cAsE sEnSiTiVe.
+Variables can only have a-z, ~A-Z, 0-9, and underscore, no other special chars.
+
+And you can do: m, b, a = &quot;Mango&quot;, &quot;Banana&quot;, &quot;Apple&quot;
+As well as: a = b = c = &quot;All The Same&quot;
+Variables in Python do not need to be declared.
+
+&lt;html&gt;&lt;pre&gt;
+x=5
+print(x)        // Gives: 5
+print(type(x))  // Gives: &lt;class 'int'&gt;
+x='mango'
+print(x)        // Gives: mango
+print(type(x))  // Gives: &lt;class 'str'&gt;
+x=float(3)
+print(x)       // Gives 3
+print(type(x)) // Gives: &lt;class 'float'&gt;
+&lt;/pre&gt;&lt;/html&gt;And no repercussions using same variable &quot;x&quot;.
+
 </pre>
 </div>
 <div title="venv" creator="rvr" modifier="rvr" created="201903251758" modified="201908132307" changecount="16">
