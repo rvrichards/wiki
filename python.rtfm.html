@@ -1327,7 +1327,7 @@ def login():
         return 'Going to login form!'  
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Panda" creator="rvr" modifier="rvr" created="201907120106" modified="202212131311" changecount="7">
+<div title="Panda" creator="rvr" modifier="rvr" created="201907120106" modified="202212141323" changecount="9">
 <pre>Panda is open sourced Python [[library]], used in Python community for high-performance data manipulation and analysis. It had many tools for working with different [[data structures]]. The name Pandas is derived from the word Panel Data – an Econometrics term from Multidimensional data.
 1D - [[Panda Series Example]] 
 2D - [[DataFrame]]s
@@ -1336,8 +1336,22 @@ def login():
 Do you have it: @@ pip3 list@@
 Go and get it: @@ pip3 install pandas@@
 
-
+See [[read in data]]
+See [[Panda settings]]
 </pre>
+</div>
+<div title="Panda Excel" creator="rvr" modifier="rvr" created="202212141344" modified="202212141354" changecount="6">
+<pre>Here is how to read Excel files with a base of ''.xls''
+
+&lt;html&gt;&lt;pre&gt;
+df = pd.read_excel('data/qwerty2020.xls',   - the xls file
+        sheet_name='Total',    - If we are using sheets in excel
+        skiprows = 7,          - If we want to skip rows at top of file.
+        skipfooter = 6,        - IF we want to skip rows at bottom
+        header=None,           - No column titles? Use this!
+        usecols=[0,1,2,3,11],  - Pick the columns we want to use
+        names=['City', 'INS Code', 'Count', 'Total' , 'Inhabitants'])   -Name those columns.
+&lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="Panda Series Example" creator="rvr" modifier="rvr" created="201907120723" modified="201907120745" changecount="14">
 <pre>Here is a series, using [[Panda]]
@@ -1374,6 +1388,31 @@ dtype: object       dtype: object  	      dtype: int64
 &lt;/pre&gt;&lt;/html&gt;
 Note that there is an index of 0, 1, ... if we don't specify.
 You can also create a series + index using [[dictionaries]]. Like @@data={ 'a' : 'apple', 'b' : 'banana', 'c' : 'carrot'}@@</pre>
+</div>
+<div title="Panda settings" creator="rvr" modifier="rvr" created="202212141326" modified="202212141354" changecount="12">
+<pre>Panda has lots of settings, we start with: ''import pandas as pd''
+These are all prefaced with: ''pd.option.'' Hence: @@pd.options.displaymax_rows@@
+|!Setting|!Description|
+|max_rows=100|Sets to 100|
+|max_rows|Prints out max_rows in a cell|
+|min_rows=10|Sets minimim # rows to display|
+|min_rows|Prints minimim # rows to display|
+|max_columns=7|Sets maximim # columns to display|
+|describe_option()|A metric tonne of output|
+|set_option('display.max_rows', None)|Sets max_rows to default|
+
+Note: only the last &quot;pd.options.display.xxx&quot; will display in a [[cell]]. To print many things out in a cell use ''print()'' as in ...
+@@print(&quot;Row count: &quot;,pd.options.display.max_rows)@@
+
+Some others:
+
+|!Command|!Description|
+|df=df.drop(labels=[42,666], axis=0)|Drop rows #42 and #666|
+|len(df.index)|Print out how many rows.|
+|print(df.shape)|Print out # rows and columns!|
+|df = df.astype({'Count':'int64'})|Set column &quot;Count&quot; as int64|
+
+See [[Panda Excel]]</pre>
 </div>
 <div title="PasswordOptionsPlugin" modifier="YourName" created="200704220851" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -1584,18 +1623,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202212131420">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202212141354">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 26/08/2020 18:03:45 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 05/09/2020 20:04:46 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 05/09/2020 23:02:30 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 06/09/2020 23:13:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 06/09/2020 23:16:32 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 10/12/2022 21:10:36 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 12/12/2022 13:47:04 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 12/12/2022 14:19:11 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/12/2022 14:30:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 13/12/2022 15:20:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 13/12/2022 15:20:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 13/12/2022 20:29:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 13/12/2022 22:07:52 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 14/12/2022 14:42:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/12/2022 14:54:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -4050,6 +4089,21 @@ raw_input(&quot;Enter something: &quot;)
 input(&quot;Enter something: &quot;)
 &amp;gt; Enter something: 4+4
 8
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="read in data" creator="rvr" modifier="rvr" created="202212131722" modified="202212131725" changecount="6">
+<pre>With [[Panda]] we can read in data.
+Here are some important parts of this:
+
+&lt;html&gt;&lt;pre&gt;
+import pandas as pd
+url_ABC='https://data.interwebs....'
+df = pd.read_excel(url_ABC, 
+        sheet_name='Total',     // If using sheets
+        skiprows = 7,           // Skip rows
+        header=None,            // If there are no column titles
+        usecols=[0,1,2,3],      // Pick columns to capture
+        names=['City', 'INS Code', 'Count', 'Total'])   // Name columns
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="reduce" creator="rvr" modifier="rvr" created="201907190025" changecount="1">
