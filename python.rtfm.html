@@ -1389,20 +1389,26 @@ dtype: object       dtype: object  	      dtype: int64
 Note that there is an index of 0, 1, ... if we don't specify.
 You can also create a series + index using [[dictionaries]]. Like @@data={ 'a' : 'apple', 'b' : 'banana', 'c' : 'carrot'}@@</pre>
 </div>
-<div title="Panda settings" creator="rvr" modifier="rvr" created="202212141326" modified="202212141354" changecount="12">
+<div title="Panda settings" creator="rvr" modifier="rvr" created="202212141326" modified="202212141921" changecount="25">
 <pre>Panda has lots of settings, we start with: ''import pandas as pd''
 These are all prefaced with: ''pd.option.'' Hence: @@pd.options.displaymax_rows@@
 |!Setting|!Description|
+|max_rows=0|Sets to &quot;none&quot; - the default, so system decides.|
 |max_rows=100|Sets to 100|
 |max_rows|Prints out max_rows in a cell|
 |min_rows=10|Sets minimim # rows to display|
 |min_rows|Prints minimim # rows to display|
+|max_columns=0|Sets to &quot;none&quot; - the default, so system decides.|
 |max_columns=7|Sets maximim # columns to display|
 |describe_option()|A metric tonne of output|
+|get_option('display.max_rows')|Gets the max_rows number.|
 |set_option('display.max_rows', None)|Sets max_rows to default|
 
 Note: only the last &quot;pd.options.display.xxx&quot; will display in a [[cell]]. To print many things out in a cell use ''print()'' as in ...
-@@print(&quot;Row count: &quot;,pd.options.display.max_rows)@@
+&lt;html&gt;&lt;pre&gt;
+print(&quot;Row count: &quot;, pd.options.display.max_rows)
+print(&quot;Row count: &quot;, pd.get_option('display.max_rows'))
+&lt;/pre&gt;&lt;/html&gt;These both produce the exact same answer: @@Row count:  None@@
 
 Some others:
 
@@ -1411,6 +1417,12 @@ Some others:
 |len(df.index)|Print out how many rows.|
 |print(df.shape)|Print out # rows and columns!|
 |df = df.astype({'Count':'int64'})|Set column &quot;Count&quot; as int64|
+|pd.loc[7:22, :]|Get - rows 7-22, all columns|
+|pd.loc[:, 'City':'Country']|Get - all rows and all columns between 'City' and 'Country'|
+|pd.loc[:, ['City', 'Country']]|Get - all rows and 2 columns 'City' and 'Country'|
+|pd.loc[pd.City=='Victoria', :]|Get all rows where city=&quot;Victoria&quot; and all columns.|
+|pd.loc[pd.City=='Victoria', 'Country']|Get all rows where city=&quot;Victoria&quot; and only show Country|
+|pd.ix['Vancouver':'Victoria', 0:2]|With column titles and index! Get all rows between Van and Vic, index + 2 columns.|
 
 See [[Panda Excel]]</pre>
 </div>
@@ -1623,18 +1635,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202212141354">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202212141921">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 06/09/2020 23:16:32 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 10/12/2022 21:10:36 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 12/12/2022 13:47:04 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 12/12/2022 14:19:11 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/12/2022 14:30:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/12/2022 15:20:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/12/2022 20:29:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/12/2022 22:07:52 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 14/12/2022 14:42:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 14/12/2022 14:54:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 14/12/2022 14:54:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/12/2022 15:16:05 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/12/2022 15:50:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/12/2022 15:53:19 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/12/2022 20:21:35 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -3418,8 +3430,12 @@ def index():
 <div title="kernals" creator="rvr" modifier="rvr" created="202212101846" changecount="1">
 <pre>The JupyterLab makes use of ''kernals'', that is different programming languages like python, ruby, and many others.</pre>
 </div>
-<div title="library" creator="rvr" modifier="rvr" created="202212131313" changecount="1">
-<pre>A library
+<div title="library" creator="rvr" modifier="rvr" created="202212131313" modified="202212141453" changecount="4">
+<pre>A library is generally means that it has a reusable set of Python code. Often it can be a collection of related [[module]]s bundled together under a single name, typically for a certain theme/domain.
+It is used to share reusable code with the community, it can often be used by non-developers to do certain tasks more simply like machine learning and statistics.
+Standard libraries come already bundled with Python when it is installed. These are often written in ''C''.
+Some common examples of Python libraries are: Pandas, NumPy, Pytorch, Requests, etc.
+
 Checkout [[Modules and Libraries]]
 See also [[module]]</pre>
 </div>
@@ -3679,8 +3695,11 @@ spies= { 'james' : '007', 'rob' : '013' }
 [k for k,v in spies.items()]  # This returns: ['james', 'rob']
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="module" creator="rvr" modifier="rvr" created="201011260202" modified="202212131330" changecount="21">
+<div title="module" creator="rvr" modifier="rvr" created="201011260202" modified="202212141453" changecount="24">
 <pre>A ''module'' is a file with a collection of functions and global variables. It can have [[functions]], [[class]]es, or variables.
+Python as built-in modules like ''Math'', &quot;sys&quot;, and &quot;random&quot;, that come with installation.
+Python also allows user defined modules, these are mostly written in Python. They can be written in ''C''.
+If you collect related ''modules'' together, you will create a [[library]] that can be easily be used by non-developers.
 You can use the [[import]] keyword to gain access to module functions. So with a module name of ''secret.py'' you would access it like:
 &lt;html&gt;&lt;pre&gt;
   import secret
