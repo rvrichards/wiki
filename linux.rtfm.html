@@ -617,7 +617,7 @@ adm:x:4:syslog,ubuntu
 #''group ID (GID)'' - each user is assigned a group ID like in [[/etc/passwd]].
 #''group list (users)'' - a list of comma separated user names of group members.</pre>
 </div>
-<div title="/etc/passwd" creator="rvr" modifier="rvr" created="201102020018" modified="201612160243" changecount="14">
+<div title="/etc/passwd" creator="rvr" modifier="rvr" created="201102020018" modified="202301021848" changecount="42">
 <pre>The  ''/etc/passwd'' file lists user, groups, ...
 &lt;html&gt;&lt;pre&gt;
 # cat /etc/passwd
@@ -625,8 +625,6 @@ root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/bin/sh
 bin:x:2:2:bin:/bin:/bin/sh
 postgres:x:106:112:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
-
-
 &lt;/pre&gt;&lt;/html&gt;Here is the breakdown:
 #''Username'' - between 1 and 32 chars.
 #''Password'' - ''x'' indicates that encrypted password is stored in /etc/shadow file.
@@ -635,9 +633,19 @@ postgres:x:106:112:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
 ##UID's 1-99 are reserved for predefined accounts.
 ##UID's 100-999 are reserved for administrative and [[system accounts]] and groups.
 #''Group ID (GID)'' - the primary group ID (stored in [[/etc/group]] file)
-#''User ID Info'' - the comment field. It allow you to add extra information about the users such as user's full name, phone number etc. This field use by finger command.
+#''User ID Info (GECOS)'' - comment field. Extra info like user's full name, phone # etc. Used by finger command.
 #''Home directory'' - the absolute path to the [[home]] directory when user logs in. Default is ''/''
 #''Command/shell'' - the absolute path of a command or most often a shell (/bin/sh). 
+&lt;html&gt;&lt;pre&gt;
+Username    Pw  UID       GID    GECOS        Home                  Shell
+---------   --  ----     ---     -----        ---------             ---------
+root        x     0         0    root         /root                 /bin/bash
+daemon      x     1         1    daemon       /usr/sbin             /bin/sh
+bin         x     2         2    bin          /bin                  /bin/sh
+hello       x  1001      1003    hello...     /home/hello           /bin/bash
+postgres    x   106       112    Pg admin...  /var/lib/postgresql   /bin/bash
+&lt;/pre&gt;&lt;/html&gt;
+
 We can create a password using [[openssl]].</pre>
 </div>
 <div title="/etc/profile" creator="rvr" modifier="rvr" created="201102051808" changecount="1">
@@ -1668,9 +1676,8 @@ Linux kernel deals only with UID.</pre>
 <div title="Ubuntu" creator="rvr" modifier="rvr" created="201501221841" changecount="1">
 <pre>The ''Ubuntu'' [[distribution]] is ...</pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201012090524" modified="202211091138">
+<div title="UploadLog" modifier="rvr" created="201012090524" modified="202301021848">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 04/07/2020 23:41:26 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 04/07/2020 23:57:39 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 18/07/2020 16:43:55 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 10/08/2020 22:05:21 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
@@ -1679,7 +1686,8 @@ Linux kernel deals only with UID.</pre>
 | 08/10/2020 13:07:53 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 28/06/2022 17:21:38 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 07/07/2022 22:25:56 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 09/11/2022 12:38:47 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 09/11/2022 12:38:47 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 02/01/2023 19:48:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201012090514" tags="systemConfig">
 <pre>/***
