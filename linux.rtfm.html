@@ -521,7 +521,7 @@ Also see [[AdvancedOptions]]</pre>
 
 <!--TCEJNI_TOPSYLDDIT-->
 <div id="storeArea">
-<div title="/bin" creator="rvr" modifier="rvr" created="201102080534" modified="201904080058" changecount="10">
+<div title="/bin" creator="rvr" modifier="rvr" created="201102080534" modified="202301031316" changecount="12">
 <pre>The ''/bin'' directory is off the root directory in a [[typical filesystem]]. 
 It contains the [[bash]] shell.
 It has essential user command binaries for all users. There are no subdirectories here. Here are some of the commands:
@@ -532,7 +532,7 @@ It has essential user command binaries for all users. There are no subdirectorie
 *[[chown]]
 *[[login]]
 *[[ps|process]]
-*[[pwd]]
+*''pwd'' - print working directory
 *sh
 *[[su]]</pre>
 </div>
@@ -567,12 +567,12 @@ To see the devices you can:
 *@@cat /proc/devices@@ - list all devices
 See [[typical filesystem]].</pre>
 </div>
-<div title="/etc" creator="rvr" modifier="rvr" created="201012091620" modified="201904080055" changecount="26">
+<div title="/etc" creator="rvr" modifier="rvr" created="201012091620" modified="202301031212" changecount="27">
 <pre>''/etc'' contains numerous text based configuration files. Notable there is the defaults for login called: @@login.defs@@. Some /etc directories to know:
 *''/etc/aliases'' - contains a table to redirect local users.
 *''/etc/default'' - contains some defaults, notably for [[useradd]].
 *''/etc/environment'' . . . this file will be used to set [[environment variables]].
-*[[/etc/exports]] - contains the directories and permissions that a host is willing to share
+*''/etc/exports'' - contains the directories and permissions that a host is willing to share
 *[[/etc/fstab]] - lists partitions and filesystems mounted when system boots up
 *''/etc/ftpusers'' - Controls user access to ftp
 *[[/etc/group]] - where group info is stored.
@@ -617,14 +617,15 @@ adm:x:4:syslog,ubuntu
 #''group ID (GID)'' - each user is assigned a group ID like in [[/etc/passwd]].
 #''group list (users)'' - a list of comma separated user names of group members.</pre>
 </div>
-<div title="/etc/passwd" creator="rvr" modifier="rvr" created="201102020018" modified="202301021848" changecount="42">
+<div title="/etc/passwd" creator="rvr" modifier="rvr" created="201102020018" modified="202301031042" changecount="46">
 <pre>The  ''/etc/passwd'' file lists user, groups, ...
 &lt;html&gt;&lt;pre&gt;
 # cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/bin/sh
 bin:x:2:2:bin:/bin:/bin/sh
-postgres:x:106:112:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+hello:x:1001:1003:hello,,,:/home/hello:/bin/bash
+postgres:x:128:138:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
 &lt;/pre&gt;&lt;/html&gt;Here is the breakdown:
 #''Username'' - between 1 and 32 chars.
 #''Password'' - ''x'' indicates that encrypted password is stored in /etc/shadow file.
@@ -643,9 +644,8 @@ root        x     0         0    root         /root                 /bin/bash
 daemon      x     1         1    daemon       /usr/sbin             /bin/sh
 bin         x     2         2    bin          /bin                  /bin/sh
 hello       x  1001      1003    hello...     /home/hello           /bin/bash
-postgres    x   106       112    Pg admin...  /var/lib/postgresql   /bin/bash
+postgres    x   128       138    Pg admin...  /var/lib/postgresql   /bin/bash
 &lt;/pre&gt;&lt;/html&gt;
-
 We can create a password using [[openssl]].</pre>
 </div>
 <div title="/etc/profile" creator="rvr" modifier="rvr" created="201102051808" changecount="1">
@@ -670,12 +670,12 @@ Broken down:
 #Days since Jan 1, 1970 that account is expired -  not set
 </pre>
 </div>
-<div title="/home" creator="rvr" modifier="rvr" created="201408230938" modified="201904080223" changecount="13">
+<div title="/home" creator="rvr" modifier="rvr" created="201408230938" modified="202301031308" changecount="14">
 <pre>When you first [[login]] you are placed in your home directory, aka $HOME. You can see the path by typing ''pwd'' right away or from anywhere ''echo $HOME''.
 The ''/home'' directory is where user accounts are typically located. Like ''/home/rob'' or yet another directory of users like: ''/home/~BCusers''. It is typically in its own [[partition]].
 Applications and things stored here are meant for individual users as opposed to system-wide applications.
 The ''/home/&lt;usr&gt;'' directory has many directories under it that are important. 
-*''/.local'' - often application [[config]] files will be here.
+*''/.local'' - often application config files will be here.
 **''/bin'' - programs like python, aws, etc store local binaries here.
 **''/lib'' - programs like python for virtual environment use will be here.
 **''/share'' - progams data, logs, and config can be stored here. They can be stored elsewhere too.
@@ -696,13 +696,13 @@ There will be no files that executable files need outside of here.
 There are also device drivers here.
 It is used by binaries in the [[/bin]] and [[/sbin]] directories. See [[filesystem|typical filesystem]].</pre>
 </div>
-<div title="/media" creator="rvr" modifier="rvr" created="201501311923" modified="201502010703" changecount="3">
+<div title="/media" creator="rvr" modifier="rvr" created="201501311923" modified="202301031244" changecount="4">
 <pre>The ''/media'' folder. For ~CDs, ~USBs and ~DVDs. Devices are automatically found and mounted.</pre>
 </div>
-<div title="/proc" creator="rvr" modifier="rvr" created="201501311708" modified="201612081842" changecount="12">
+<div title="/proc" creator="rvr" modifier="rvr" created="201501311708" modified="202301031251" changecount="13">
 <pre>The [[filesystem]]s mounted at ''/proc'' is a pseudo or virtual filesystem, it is created dynamically. It is used to provide system information at run time. This would include things like system memory, hardware configuration, etc.  If you list the directory, you'll see a pile of &quot;number&quot; folders.. These correspond to a process or [[PID]]. There is a &quot;file&quot; for every system [[process]].
 Some files include:
-*/proc/cpuinfo - cpu info like MHz, cache, # of cores, model, etc .
+*/proc/cpuinfo - cpu info like ~MHz, cache, # of cores, model, etc .
 */proc/meminfo - tons of [[memory]] info.
 */proc/interrupts - yes, those.
 */proc/mounts - yes, [[mount]]s.
@@ -769,10 +769,10 @@ It is a compressed image with all it's needs in one spot.
 #Now it will run!
 Often this will end up in the @@~/Applications' 'directory. See [[/home]]</pre>
 </div>
-<div title="Boot Loader" creator="rvr" modifier="rvr" created="201501131435" modified="201612131747" changecount="12">
+<div title="Boot Loader" creator="rvr" modifier="rvr" created="201501131435" modified="202301031306" changecount="15">
 <pre>This is the big part of the  [[boot process]].
 
-Boot Loader&amp;rArr; RAM &amp;rArr; [[init]]&amp;rArr; Shell&amp;rArr; ~X-Windows
+Boot Loader&amp;rArr; RAM &amp;rArr; [[Init]]&amp;rArr; Shell&amp;rArr; ~X-Windows
 
 Boot Loader - These pgms are either GRUB or ISOLINUX
 #The software to run (ie GRUB) is in either:
@@ -797,7 +797,7 @@ Boot Loader - These pgms are either GRUB or ISOLINUX
 ##Calls User Device (udev) to hook up the right drivers to the right devices.
 ##After loaded, it is checked for errors and then it mounts the [[filesystem]], and associated a &quot;mount point&quot; 
 ##Once initramfs is cleared from RAM, then /sbin/init is called.
-##[[init]] passes over the mounting of the filesystem to the final root.
+##[[Init]] passes over the mounting of the filesystem to the final root.
 #/sbin/init and Services
 ##Everything else gets started by init.
 ##Start system and network [[service]]s.
@@ -807,7 +807,7 @@ Boot Loader - These pgms are either GRUB or ISOLINUX
 ##At end of init, the program ''getty'' fires up text-mode login prompts. 
 ##Typically six text shells are started and one GUI shell.
 ##Typical shell is 'bash' 
-#[[X Windows]] - usually the final step
+#[[X Window System]] - usually the final step
 ##A [[display manager]] keeps track of displays and logins &amp; [[desktop environment]].
 ##There is a [[session manager]], a [[window manager]], and a set of utilities.##An X server provides the GUI to you.</pre>
 </div>
@@ -821,6 +821,11 @@ To use a CLI in a GUI environment, you use a terminal-emulator like:
 *Konsole
 See also [[virtual terminal]]s as well as [[basic commands]].</pre>
 </div>
+<div title="DNS" creator="rvr" modifier="rvr" created="201612142251" modified="202301031245" changecount="3">
+<pre>DNS - Domain Name Server - translates a domain name into an IP address.
+When we have a domain name, we'll need an [[IP Address]] to actually get the web site.
+When a DNS gets a request, it'll take as input the domain name and return an IP address.</pre>
+</div>
 <div title="Debian" creator="rvr" modifier="rvr" created="201501222003" changecount="1">
 <pre>Debian systems are used by Ubuntu. In turn, Ubuntu is used by Mint.</pre>
 </div>
@@ -833,12 +838,12 @@ It is built with the GTK [[widgets]].
 Gedit is the default editor.
 See [[KDE]].</pre>
 </div>
-<div title="Graphical Desktop" creator="rvr" modifier="rvr" created="201408180514" modified="201612011802" changecount="9">
+<div title="Graphical Desktop" creator="rvr" modifier="rvr" created="201408180514" modified="202301031311" changecount="11">
 <pre>The ''Graphical Desktop'' is the fancy GUI you see, It can be turned off by the [[desktop manager]].  The desktop manager runs a [[service]] that can be stopped.
 Different systems require different methods for doing this,
 *Use ''sudo service gdm stop'' or ''sudo service lightdm stop''  commands, to stop the graphical user interface in Debian-based systems. 
-*Use ''sudo telinit 3'' on RPM-based systems - may have the same effect of killing the GUI.
-*For RPM-based systems, the Desktop Manager is run by [[init]] when set to run level 5; switching to a different runlevel stops the desktop. (ie ''sudo telinit 3'')
+*Use ''sudo telinit 3'' on ~RPM-based systems - may have the same effect of killing the GUI.
+*For ~RPM-based systems, the Desktop Manager is run by [[Init]] when set to run level 5; switching to a different runlevel stops the desktop. (ie ''sudo telinit 3'')
 All desktops come with a selection of desktop backgrounds or wallpaper. You can also pick just a colour. You can also change the [[theme]] which will change the look and feel of the system.</pre>
 </div>
 <div title="ICMP" creator="rvr" modifier="rvr" created="201612141923" modified="201612141924" changecount="2">
@@ -915,11 +920,15 @@ These addresses are for small networks.
 *The remaining 8 bits (last octet) represent the host ID. 
 This allows for 2,097,152 networks and 254 hosts per network.</pre>
 </div>
-<div title="IPv4" creator="rvr" modifier="rvr" created="201612142210" changecount="1">
+<div title="IPv4" creator="rvr" modifier="rvr" created="201612142210" modified="202301031250" changecount="2">
 <pre>IPv4 is [[IP]] version 4
 </pre>
 </div>
-<div title="Index A-E" creator="rvr" modifier="rvr" created="201408290614" modified="202007182340" changecount="49">
+<div title="IPv6" creator="rvr" modifier="rvr" created="202301031250" changecount="1">
+<pre>IPv6 is [[IP]] version 6
+</pre>
+</div>
+<div title="Index A-E" creator="rvr" modifier="rvr" created="201408290614" modified="202301031302" changecount="52">
 <pre>[[absolute|path]]
 [[adduser]]
 [[alias]]
@@ -955,17 +964,16 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[desktop manager]]
 [[determine hardware]]
 [[detemine machine]]
-[[device node]]
 [[df]]
 [[diff]]
 [[display manager]]
 [[display server]]
 [[distribution]]
-[[dns]]
+[[DNS]]
 [[documentation]]
 [[echo]]
 [[environment variables]]
-[[EUID|RUID]] 
+[[EUID|UID]] 
 [[examples]]
 [[export]]</pre>
 </div>
@@ -1013,7 +1021,7 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[Mint]]
 [[mount]]</pre>
 </div>
-<div title="Index N-R" creator="rvr" modifier="rvr" created="201412131002" modified="202005260441" changecount="30">
+<div title="Index N-R" creator="rvr" modifier="rvr" created="201412131002" modified="202301031300" changecount="33">
 <pre>[[nano]]
 [[netstat]]
 [[network configuration]]
@@ -1045,9 +1053,9 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[redirect]]
 [[regex]]
 [[relative|path]]
-[[rename]]
 [[rm|file commands]]
 [[root]]
+[[RPM]]
 [[RUID|UID]]
 [[rsync]]</pre>
 </div>
@@ -1072,7 +1080,7 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[~]]
 [[2&gt;&amp;1|redirect]] - redirect</pre>
 </div>
-<div title="Index S" creator="rvr" modifier="rvr" created="201412131003" modified="202005260138" changecount="42">
+<div title="Index S" creator="rvr" modifier="rvr" created="201412131003" modified="202301031304" changecount="43">
 <pre>[[scp]]
 [[script]]
 [[script example 1]]
@@ -1105,7 +1113,7 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[stdout|Standard File Streams]]
 [[sticky bit]]
 [[su]]
-[[Subnet mask]]
+[[subnet mask]]
 [[sudo]]
 [[suspend]]
 [[symbolic|link]]
@@ -1117,13 +1125,12 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 
 </pre>
 </div>
-<div title="Index T-Z" creator="rvr" modifier="rvr" created="201501290513" modified="202005280423" changecount="14">
+<div title="Index T-Z" creator="rvr" modifier="rvr" created="201501290513" modified="202301031318" changecount="17">
 <pre>[[tail]]
 [[tar]]
 [[TCP]]
 [[theme]]
 [[terminal]]
-[[time]]
 [[top]]
 [[Tunneling|SSH]] - SSH
 [[type]]
@@ -1146,10 +1153,27 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[window manager]]
 [[write to file]]
 [[X server]]
-[[X Windows]]
+[[X Window System]]
 [[xinput]]
 [[xz]]
+[[yum]]
 [[zip]]</pre>
+</div>
+<div title="Init" creator="rvr" modifier="rvr" created="201501131450" modified="202301031207" changecount="8">
+<pre>''Init'' is started by the [[kernel]].
+The ''init'' process controls shutting down or rebooting the system. 
+''Init'' is a daemon process that continues running until the system is shut down.
+
+The directory: ''/usr/lib/systemd/system'' contains init scripts. These must  be linked to  ''/etc/systemd/system'' to start a service at boot time.
+To display the status of all installed services that have init scripts: @@''systemctl list-unit-files -&amp;#45;type=service''@@.
+There are three states for this command: 
+*''enabled'' -  means it has a symlink in a .wants directory.
+*''disabled'' - means it does NOT have a symlink in a .wants directory.
+*''static'' -  means the service is missing the [Install] section in its init script, so you cannot enable or disable it.
+**Typically they are dependencies of other services
+
+
+</pre>
 </div>
 <div title="Introduction" creator="rvr" modifier="rvr" created="201012090515" modified="202207072025" changecount="59">
 <pre>This covers Linux [[commands|shell commands]] and concepts as well as shell [[script]]ing and loads of other stuff.
@@ -1171,9 +1195,9 @@ It uses the Qt [[widgets]]. The Qt toolset has GUI features like creating window
 See [[Gnome]].
  </pre>
 </div>
-<div title="LXC" creator="rvr" modifier="rvr" created="201703240409" changecount="1">
+<div title="LXC" creator="rvr" modifier="rvr" created="201703240409" modified="202301031247" changecount="2">
 <pre>LXC (Linux Containers) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a control host using a single Linux kernel.
-The Linux kernel provides the ''cgroups'' functionality that allows limitation and prioritization of resources (CPU, memory, block I/O, network, etc.) without the need for starting any virtual machines, and also namespace isolation functionality that allows complete isolation of an applications' view of the operating environment, including process trees, networking, user IDs and mounted file systems.</pre>
+The Linux kernel provides the ''cgroups'' functionality that allows limitation and prioritization of resources (CPU, memory, block I/O, network, etc.) without the need for starting any virtual machines, and also namespace isolation functionality that allows complete isolation of an applications' view of the operating environment, including process trees, networking, user ~IDs and mounted file systems.</pre>
 </div>
 <div title="LoadRemoteFileThroughProxy" modifier="YourName" created="200703202229" modified="201012090514" tags="systemConfig">
 <pre>/***
@@ -1231,10 +1255,10 @@ loadRemoteFile = function(url,callback,params)
 <pre>The Mint [[distribution]] is derived from [[Ubuntu]].
 Mint 17.1 code name ''Rebecca'' comes with 3 [[desktop environment]]s : Cinnamon, Mate and Xfce.</pre>
 </div>
-<div title="NFS" creator="rvr" modifier="rvr" created="201501310505" modified="201501311644" changecount="10">
+<div title="NFS" creator="rvr" modifier="rvr" created="201501310505" modified="202301031211" changecount="11">
 <pre>The ''NFS'' or Network Filesystem is used to share data across physical systems. This allows the admin to use a server to store data so when users log in from any machine they have access to their data.
 To fire up NFS, on the server issue the command: @@sudo service nfs start@@
-The file [[/etc/exports]] contains the directories and permissions that a host is willing to share.
+The file /etc/exports contains the directories and permissions that a host is willing to share.
 The parameters in this file will look like: 
 @@/projects *.rtfm.ca(rw)@@
 *''/projects'' - the directory to be mounted.
@@ -1242,7 +1266,7 @@ The parameters in this file will look like:
 *with read+write permissions.
 If you modifed the ''/etc/exports'' file, issue the command: @@exportfs -av@@</pre>
 </div>
-<div title="Networking" creator="rvr" modifier="rvr" created="201612141836" modified="201612152214" changecount="16">
+<div title="Networking" creator="rvr" modifier="rvr" created="201612141836" modified="202301031246" changecount="17">
 <pre>Linux has great networking capabilities.
 The internet, or any network, use protocols to communicate. It is like a language. The following follow the [[OSI Reference Model]]:
 *[[IP]] - Intenet Protocol
@@ -1311,10 +1335,10 @@ PERSISTENT_DHCLIENT=&quot;1&quot;
 #Presentation - responsible for info passing is formatted correctly.
 #Application - responsible for providing applications with a way to access the network. </pre>
 </div>
-<div title="PCI" creator="rvr" modifier="rvr" created="201606120107" modified="201606120110" changecount="2">
+<div title="PCI" creator="rvr" modifier="rvr" created="201606120107" modified="202301031251" changecount="3">
 <pre>''PCI'' is short for Peripheral Component Interconnect, a local bus standard developed by Intel. 
 A bus is a communications system between a computer and an external device, such as a router, video equipment or a sound system. A bus could also be USB, but we are talking about ''PCI'' here.
-Most PCs include a PCI bus and a more general ISA expansion bus. These a connections typically at the back or side of a computer.
+Most ~PCs include a PCI bus and a more general ISA expansion bus. These a connections typically at the back or side of a computer.
 PCI is a 64-bit bus, though it is usually implemented as a 32-bit bus.</pre>
 </div>
 <div title="PID" creator="rvr" modifier="rvr" created="201102042039" modified="201612131817" changecount="2">
@@ -1415,6 +1439,13 @@ merge(config.optionsDesc,{
 */
 //}}}</pre>
 </div>
+<div title="RPM" creator="rvr" modifier="rvr" created="202301031259" changecount="1">
+<pre>RPM Package Manager (RPM).
+Used by Red Hat Linux and its derivatives
+RPM also refers to the rpm command and .rpm file format. 
+You should always prefer using [[yum]] or dnf over rpm when installing, updating, and removing packages.
+An RPM Package consists of an archive of files and metadata for installing software.</pre>
+</div>
 <div title="SIGTERM" creator="rvr" modifier="rvr" created="201904080325" modified="201904080326" changecount="2">
 <pre>The SIGTERM signal is a generic signal used to terminate a program.
 pgrep &lt;name&gt;
@@ -1453,7 +1484,7 @@ The tricky thing is the ''127.0.0.1'' is needed, because it's the remote machine
 If you wanted the remote machine to access you computer, you would use ''-R''.
 This is very handy when it comes to debugging. It's like the resource was local and you have cli access to debug.</pre>
 </div>
-<div title="SSH Basics" creator="rvr" modifier="rvr" created="201707050523" modified="201707050528" changecount="3">
+<div title="SSH Basics" creator="rvr" modifier="rvr" created="201707050523" modified="202301031318" changecount="4">
 <pre>SSH is a protocol allowing secure remote login to a computer on a network using public-key cryptography. 
 You may need [[SSH setup]].
 To create a public &amp; private key, use: @@ssh-keygen@@
@@ -1463,7 +1494,7 @@ To see if already have some keys: @@ls ~/.ssh@@
 Typically a system has just one key, there are two files:
 *id_rsa.pub - this is like a lock, anyone can use to lock something &amp; send it to you.
 *id_rsa - this is the key, only you have it. it can unlock the above. Can have a password tired to it.
-SSH typically looks for the private key in a file in the home directory (''~/.ssh/id_rsa '').  This is stored in an encrypted form, so we have to enter the passphrase which is used to get the encryption key when we are accessing a encrypted resource. To avoid typing it in all the time, we can use [[ssh-agent]], which for the duration of a login session, keeps the unencrypted key in memory.
+SSH typically looks for the private key in a file in the home directory (''~/.ssh/id_rsa '').  This is stored in an encrypted form, so we have to enter the passphrase which is used to get the encryption key when we are accessing a encrypted resource. To avoid typing it in all the time, we can use ssh-agent, which for the duration of a login session, keeps the unencrypted key in memory.
 Need to set up ssh.
 Check if you got some keys already. Go to the directory and look for id_ files
 &lt;html&gt;&lt;pre&gt;
@@ -1676,18 +1707,18 @@ Linux kernel deals only with UID.</pre>
 <div title="Ubuntu" creator="rvr" modifier="rvr" created="201501221841" changecount="1">
 <pre>The ''Ubuntu'' [[distribution]] is ...</pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201012090524" modified="202301021848">
+<div title="UploadLog" modifier="rvr" created="201012090524" modified="202301031319">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 04/07/2020 23:57:39 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 18/07/2020 16:43:55 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 10/08/2020 22:05:21 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 18/08/2020 21:57:44 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 30/08/2020 22:44:53 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 08/10/2020 13:07:53 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 28/06/2022 17:21:38 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 07/07/2022 22:25:56 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 09/11/2022 12:38:47 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 02/01/2023 19:48:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 02/01/2023 19:48:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 02/01/2023 22:43:54 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 03/01/2023 12:34:56 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 03/01/2023 13:27:49 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 03/01/2023 13:43:16 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 03/01/2023 14:19:54 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201012090514" tags="systemConfig">
 <pre>/***
@@ -2374,9 +2405,9 @@ $ jobs %4
 $ fg 4      #Now the program will be in the foreground
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="bash" creator="rvr" modifier="rvr" created="201510052001" modified="201612051915" changecount="12">
+<div title="bash" creator="rvr" modifier="rvr" created="201510052001" modified="202301031309" changecount="13">
 <pre>The Bash shell or ''~Bourne-Again Shell'' is a unix shell and a command language. Bash has two types of variables:
-*''Global variables'' or ''system variables'' or [[environment variable]] - available in all shells.  
+*''Global variables'' or ''system variables'' or [[environment variables]] - available in all shells.  
 *''Local variables'' or [[shell variables]] - are only available in that shell.
 Variables are traditionally all uppercase and can be displayed with ''env'' or ''printenv''. Variables can be categorized as: String, Integer, Constant, or Array.
 How to [[create variables]].
@@ -2385,7 +2416,7 @@ $ echo $SHELL
 /bin/bash
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="basic commands" creator="rvr" modifier="rvr" created="201501290357" modified="201908192155" changecount="98">
+<div title="basic commands" creator="rvr" modifier="rvr" created="201501290357" modified="202301031247" changecount="100">
 <pre>Here is a list, see also [[builtin]].
 
 |!Command|!Description|!Example|
@@ -2394,7 +2425,7 @@ $ echo $SHELL
 |&amp;#33;ca|Repeat last time command starting with &quot;ca&quot; was called. |&amp;#33;cat|
 |&amp;#124;|The  [[pipe]], used to take results from one command to another.|cat file.txt &amp;#124; wc|
 |[[bzip2|compression]]|Compress files, bz2 extension.|bzip2 *|
-|[[bunzip2|compression]]|Unzip BZ2 files.|bunzip2  *.bz2|
+|[[bunzip2|compression]]|Unzip ~BZ2 files.|bunzip2  *.bz2|
 |''cat''|Catalog - used to view small files.|cat some-file|
 |''ctrl-r''|Search through cli history. aka reverse-i-search|ctrl-r ...|
 |[[cp|file commands]]|Copy files.|cp file1 file2|
@@ -2427,7 +2458,7 @@ $ echo $SHELL
 |[[tar]]|Used for archival reasons, called a tarball.| |
 |''touch''|To create an empty file. Use ''-d'' or ''-t'' to set timestamp. Format for ''-t'': [&amp;#91;CC]YY]~MMDDhhmm[.ss].|touch bite.me -d &quot;June 9, 1961&quot; |
 |''tree -d''|View of filesystem (directories only) in a fancy tree format.|tree -d|
-|''wc''|Word count - count the lines-words-bytes in a file. |wc RomeoAndJuliet.txt|
+|''wc''|Word count - count the lines-words-bytes in a file. |wc ~RomeoAndJuliet.txt|
 |''which''|To locate a program.|which rails|
 |''whereis''|To also locate a program.|whereis rails|
 |''w''|List users on system.||
@@ -2473,7 +2504,7 @@ Here are some common ones:
 
 See also [[basic commands]].</pre>
 </div>
-<div title="bus" creator="rvr" modifier="rvr" created="201606120135" modified="201606120136" changecount="4">
+<div title="bus" creator="rvr" modifier="rvr" created="201606120135" modified="202301031251" changecount="5">
 <pre>Computer architecture utilizes a ''bus'' - which describes a communication system that transfers data between components in a computer.
 With the advent of ~PCs, there have been various busses. Older ones are kept for backward compatibility. Here they are:
 *''ISA'' (Industry Standard Architecture ), the first for 1980s IBM ~PCs, 4.77MHz at 16 bits wide, up to 9 ~MBps. (Megabytes per second)
@@ -2686,8 +2717,8 @@ Also, [[tar]] is used to group files in an archive, which is then compress.</pre
 Today linux systems have virtual consoles or [[virtual terminal]]s. These are accessed through key combinations (e.g. Alt+F1 or Ctrl+Alt+F1; ...) and are basic OS services so come ready out of the box to use. 
 Interacting with the console is also done using a shell program.</pre>
 </div>
-<div title="create variables" creator="rvr" modifier="rvr" created="201510052022" modified="201612061826" changecount="9">
-<pre>Both [[shell variables]] and [[environment variable]]s can be created on the fly.
+<div title="create variables" creator="rvr" modifier="rvr" created="201510052022" modified="202301031309" changecount="11">
+<pre>Both [[shell variables]] and [[environment variables]] can be created on the fly.
 Typically environment variables are all UPPER case and shell variables are often lowercase. This is convention only.
 VARNAME=&quot;value&quot; - to create a shell variable.
 
@@ -2698,11 +2729,11 @@ Rob
 $ export USER             # Now this variable is available to all child shells
 $ export secret=&quot;Shhhh&quot;   # Can create and export in one step
 &lt;/pre&gt;&lt;/html&gt;
-There are reserved names you cannot use: HOME, MAIL, PATH, PS1, PS2, UID, BASH, ...</pre>
+There are reserved names you cannot use: HOME, MAIL, PATH, ~PS1, ~PS2, UID, BASH, ...</pre>
 </div>
-<div title="cron" creator="rvr" modifier="rvr" created="201605191814" modified="202005260137" changecount="55">
+<div title="cron" creator="rvr" modifier="rvr" created="201605191814" modified="202301031312" changecount="58">
 <pre>''cron'' is a time based scheduling service (daemon). 
-Check out [[https://crontab.guru/]]
+Check out https://crontab.guru/
 *Used to preform automated jobs and routine maintenance.
 *Individual users can have their own ''crontabs''.
 *Anticipated to be running 24/7
@@ -2716,7 +2747,7 @@ The format has 5 fields + command:
 |Minute |Hour |Day of month |Month of year |Day-of-week|shell cmd|
 |0-59|0-23|1-31|1-12|0-6,  0 is Sunday.|shell cmd|
 *A &quot;''*''&quot;  - means all
-*There are shortcuts, read [[man]]. Can be ''@yearly'', ''@daily'', ''@weekly''
+*There are shortcuts, read man pages. Can be ''@yearly'', ''@daily'', ''@weekly''
 *You can separate multiple values with a comma
 *@@* * * * /some/test/job@@ - Runs every minute - good to test with, don't panic.
 *@@0 * * * * fred /some/hourly/job@@ - As user ''Fred'' - runs hourly at top of hour(0), could also use ''@hourly''.
@@ -2808,9 +2839,9 @@ $ cut -d&quot; &quot; -f3 omega.text
   not                                                                              
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="daemon" creator="rvr" modifier="rvr" created="201605250939" modified="202005252255" changecount="10">
+<div title="daemon" creator="rvr" modifier="rvr" created="201605250939" modified="202301031310" changecount="11">
 <pre>A daemon is a process that runs in the background, but not just anything in the background. It should not be attached to a terminal. 
-There should be a parent [[PID]] as the [[init]], often a PID of 1.
+There should be a parent [[PID]] as the [[Init]], often a PID of 1.
 It is not interactive or under the direct control of a user.
 It is activated by the occurrence of a specific event or condition.
 You can often differentiate them by name because most daemons end in the letter &quot;''d''&quot; - like [[systemd]] or ''journald'', see [[journalctl]].
@@ -2831,11 +2862,11 @@ echo date  # Some shell commands
 set +x     # Turn debugging off
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="definitions" creator="rvr" modifier="rvr" created="201408180536" modified="201907220431" changecount="57">
+<div title="definitions" creator="rvr" modifier="rvr" created="201408180536" modified="202301031250" changecount="60">
 <pre>|!Word|!Description|
 |[[kernel]]|the glue between hardware and applications.|
 |[[distribution]]|There are 4 basic families: debian, Fedora, SUSE, and Other.]]|
-||There are many individual distros, [[Ubuntu]], [[Mint]], CentOS, OpenSUSE|
+||There are many individual distros, [[Ubuntu]], [[Mint]], ~CentOS, ~OpenSUSE|
 |[[Boot Loader]]|The program that loads the OS, ie Grub or ISOLINUX.|
 ||See also [[boot process]]|
 |[[typical filesystem]]|How the directory structure looks.|
@@ -2843,7 +2874,7 @@ set +x     # Turn debugging off
 ||Examples are httpd, nfsd, ftpd, ...|
 |[[filesystem]]|how the files are stored.|
 ||ie ext3, ext4, FAT, NTFS, JFS, Btrfs, ...|
-||Flash storage filesystems - ubifs, JFFS2, YAFFS, ...|
+||Flash storage filesystems - ubifs, ~JFFS2, YAFFS, ...|
 |[[shell]]|Is the CLI that interprets what you type for OS instructions.|
 ||ie.e bash, zsh, tsch, ...]]|
 |[[CLI]]|Command-line-interface. Accessed by shell via ALT+Fn key.|
@@ -2856,7 +2887,7 @@ set +x     # Turn debugging off
 |[[desktop environment]]|A bunch of programs that run under a specific GUI. Runs on top of a [[window manager]]. Consists of a [[window manager]] and a [[session manager]].|
 |[[window manager]]|Part of [[desktop environment]]. Controls window placement and appearance.|
 |[[session manager]]|Part of [[desktop environment]]. State of your desktop.|
-|[[X Window System]]|Is a windowing system that gives a basic framework for GUIs on most Linux systems. aka ''X'' or ''X11''. Communicates via [[display server]].|
+|[[X Window System]]|Is a windowing system that gives a basic framework for ~GUIs on most Linux systems. aka ''X'' or ''X11''. Communicates via [[display server]].|
 |[[display server]]|This sits between the GUI and the [[kernel]]. Serves the graphical environment. Part of [[X Window System]].|
 |[[display manager]]|Starts up the graphical system, and can ask you to login. Keeps track of graphical environment. Starts the [[desktop environment]]. Last part of [[boot process]].|
 |[[kernel]]|Ya, the ''kernel''.|
@@ -2952,7 +2983,7 @@ $ inxi -F
 Tons of info: ''@@sudo lshw@@''
 Basic info: ''@@sudo lshw -short@@''</pre>
 </div>
-<div title="device" creator="rvr" modifier="rvr" created="201606120146" modified="201606120241" changecount="14">
+<div title="device" creator="rvr" modifier="rvr" created="201606120146" modified="202301031303" changecount="16">
 <pre>To see all your devices:
 &lt;html&gt;&lt;pre&gt;
 $ ls -la /sys/bus/pci/devices      # Just show last 5
@@ -2988,9 +3019,9 @@ $ lspci -n | tail -5      # -n - Show PCI vendor and device codes as numbers ins
 &lt;/pre&gt;&lt;/html&gt;
 Examining the same entry as above: ''00:1f.3 0c05: 8086:1e22 (rev 04)'', it tells us:
 *''00:1f.3 0c05'' = bus number (00), device number (1f) and function (0)
-*''0c05'' - device class  (Class 0c05 is SMBus Serial Controller)
+*''0c05'' - device class  (Class 0c05 is ~SMBus Serial Controller)
 *''8086'' - vendor ID   (See: http://pci-ids.ucw.cz/read/PC?restrict=8 - you get Intel)
-*''1e22'' - device ID  (See: http://pcidatabase.com/search.php?device_search_str=1e22 - SM-Bus Controller of the Intel Z77 Chipset)
+*''1e22'' - device ID  (See: http://pcidatabase.com/search.php?device_search_str=1e22 - ~SM-Bus Controller of the Intel Z77 Chipset)
 
 To further drill down, we ''cd'' into ''0000:00:1f.3'' and display one or more pseudo-device entries:
 &lt;html&gt;&lt;pre&gt;
@@ -3080,11 +3111,6 @@ This software can be:
 *server (eg, RHEL, ...)
 *desktop (eg. [[Ubuntu]], [[Mint]], ...)
 Distributions often come with code names, like [[Mint]] 17.1 is code named &quot;Rebecca&quot;.</pre>
-</div>
-<div title="dns" creator="rvr" modifier="rvr" created="201612142251" modified="201612142253" changecount="2">
-<pre>DNS - Domain Name Server - translates a domain name into an IP address.
-When we have a domain name, we'll need an [[IP Address]] to actually get the web site.
-When a DNS gets a request, it'll take as input the domain name and return an IP address.</pre>
 </div>
 <div title="documentation" creator="rvr" modifier="rvr" created="201501260619" modified="201612071833" changecount="11">
 <pre>There are a few places to get documentation
@@ -3204,9 +3230,9 @@ You can also:
 $ echo &quot;export SOMETHING=$HOME/something&quot; &gt;&gt; ~/.bash_profile
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="ffmpeg" creator="rvr" modifier="rvr" created="201804091514" modified="201903111607" changecount="6">
+<div title="ffmpeg" creator="rvr" modifier="rvr" created="201804091514" modified="202301031304" changecount="8">
 <pre>We use ''ffmpeg'' to convert video files.
-@@ffmpeg -i~ SomeBigVideoFile.mp4 -s 640x480 -c:a copy ~SmallerVideoFile.mp4@@
+@@ffmpeg -i ~SomeBigVideoFile.mp4 -s 640x480 -c:a copy ~SmallerVideoFile.mp4@@
 
 mp4 -&gt; mp3: @@ffmpeg -i a2z.qwerty.mp4 qwerty.mp3@@
 
@@ -3294,7 +3320,7 @@ rename 's/.html$/.txt/' *.html    # Rename all &quot;html&quot; files to &quot;t
 *c - character (unbuffered) device file special
 *b - block (buffered) device file special</pre>
 </div>
-<div title="filesystem" creator="rvr" modifier="rvr" created="201408180540" modified="201612081856" changecount="23">
+<div title="filesystem" creator="rvr" modifier="rvr" created="201408180540" modified="202301031250" changecount="24">
 <pre>A filesystem is used to store information on a device in a certain way. it
 *organizes data to be easily located
 *preserves integrity (the same when saved and retrieved)
@@ -3313,7 +3339,7 @@ The linux filesystem can handle many different types of filesystems:
 *ext4 - circa 2008, backward compatible, volumes to 1exobyte, 4B files, files to 16TB
 *Reiser, XFS, Btrfs, JFS, etc
 *other ~OSs like: vfat, ntfs, hfs.
-*flash storage filesystems like: ubifs, JFFS2, YAFFS, etc
+*flash storage filesystems like: ubifs, ~JFFS2, YAFFS, etc
 *database filesystems
 *special purpose filesystems like: procfs, sysfs, tmpfs, debugfs, etc..
 Linux uses the FHS or Filesystem Hierarchy Standard. Check out [[typical filesystem]].
@@ -3442,11 +3468,11 @@ rob webservers
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="groupdel" creator="rvr" modifier="rvr" created="201102080342" changecount="1">
+<div title="groupdel" creator="rvr" modifier="rvr" created="201102080342" modified="202301031308" changecount="2">
 <pre>To delete a group:
 &lt;html&gt;&lt;pre&gt;
 delgroup &amp;lt;groupname&amp;gt;
-&lt;/pre&gt;&lt;/html&gt;See also [[adduser]] and [[addgroup]]</pre>
+&lt;/pre&gt;&lt;/html&gt;See also [[adduser]] and [[addgroup|adduser]]</pre>
 </div>
 <div title="grub" creator="rvr" modifier="rvr" created="202005260159" modified="202005260207" changecount="3">
 <pre>''grub'' is a bootloader for when you have a partitioned drive. 
@@ -3494,6 +3520,13 @@ You can also use the ''fc'' command to print out a range of history
 &lt;html&gt;&lt;pre&gt;
 fc -l 24 42   # List history commands from #24 to #42
 &lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="home" creator="rvr" modifier="rvr" created="202301031033" modified="202301031041" changecount="4">
+<pre>The home directory is where the files are kept that are processed during login. The directory is specified in the [[/etc/passwd]] file.
+These files include [[profile]] and ''.bashrc''
+Each user on the system will have a ''home'' directory off of [[root]]. For user ''wilma'' there will be a ''/home/wilma''
+
+See [[typical filesystem]].</pre>
 </div>
 <div title="id" creator="rvr" modifier="rvr" created="201012091807" modified="201012091808" changecount="3">
 <pre>Use the ''id'' command to find out information about a user:
@@ -3580,22 +3613,6 @@ Or go ''info &lt;topic-name&gt;''. Topics are called nodes.
 *''?'' for help
 *''d'' to goto main menu
 This is a newer or updated [[man pages]].</pre>
-</div>
-<div title="init" creator="rvr" modifier="rvr" created="201501131450" modified="201612131749" changecount="7">
-<pre>''Init'' is started by the [[kernel]].
-The ''init'' process controls shutting down or rebooting the system. 
-''Init'' is a daemon process that continues running until the system is shut down.
-
-The directory: ''/usr/lib/systemd/system'' contains init scripts. These must  be linked to  ''/etc/systemd/system'' to start a service at boot time.
-To display the status of all installed services that have init scripts: @@''systemctl list-unit-files -&amp;#45;type=service''@@.
-There are three states for this command: 
-*''enabled'' -  means it has a symlink in a .wants directory.
-*''disabled'' - means it does NOT have a symlink in a .wants directory.
-*''static'' -  means the service is missing the [Install] section in its init script, so you cannot enable or disable it.
-**Typically they are dependencies of other services
-
-
-</pre>
 </div>
 <div title="inode" creator="rvr" modifier="rvr" created="201408290604" modified="201501290658" changecount="8">
 <pre>The ''inode'' (aka index node) is a fundamental concept in the Linux and UNIX filesystem. It is a data structure to hold information about the file, date, size, permissions, etc. The information an inode has is listed below, note that a ''filename'' is not included.
@@ -3850,7 +3867,7 @@ With a specific [[PID]]  @@''lsof -p &lt;pid&gt;''@@
 With a specific PID from previous command@@''lsof -p $!''@@
 What? That last one uses [[magic vars]].</pre>
 </div>
-<div title="lspci" creator="rvr" modifier="rvr" created="201606120059" modified="201606120243" changecount="15">
+<div title="lspci" creator="rvr" modifier="rvr" created="201606120059" modified="202301031303" changecount="17">
 <pre>The command ''lspci'' (part of pciutils package) lists information about the [[PCI]] [[bus]] and all [[device]]s in the system. (''PCI'' = Peripheral Component Interconnect, see [[bus]].)  This includes video cards as well as ether net cards. The following are the different switches you can run for the ''lspci'' command:
 &lt;html&gt;&lt;pre&gt;
 $ lspci
@@ -3897,9 +3914,9 @@ $ lspci -n   # Only list last 5
 &lt;/pre&gt;&lt;/html&gt;
 Examining the same entry as above: ''00:1f.3 0c05: 8086:1e22 (rev 04)'', it tells us:
 *''00:1f.3 0c05'' = bus number (00), device number (1f) and function (0)
-*''0c05'' - device class  (Class 0c05 is SMBus Serial Controller)
+*''0c05'' - device class  (Class 0c05 is ~SMBus Serial Controller)
 *''8086'' - vendor ID   (See: http://pci-ids.ucw.cz/read/PC?restrict=8 - you get Intel)
-*''1e22'' - device ID  (See: http://pcidatabase.com/search.php?device_search_str=1e22 - SM-Bus Controller of the Intel Z77 Chipset)
+*''1e22'' - device ID  (See: http://pcidatabase.com/search.php?device_search_str=1e22 - ~SM-Bus Controller of the Intel Z77 Chipset)
 To verify the above descriptions, try using the ''-nn'' switch:
 &lt;html&gt;&lt;pre&gt;
 $ lspci -nn
@@ -3912,11 +3929,14 @@ $ lspci -nn
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="magic vars" creator="rvr" modifier="rvr" created="201104280545" modified="201605181110" changecount="12">
-<pre>Magic variables:
-|!Variable|!Meaning|
+<div title="magic vars" creator="rvr" modifier="rvr" created="201104280545" modified="202301031243" changecount="19">
+<pre>Magic variables and parameters - bash shell.
+This will need cleaning up if I need to do more work in this area.
+Am mixing ''bash parameters'' @@color:red;vs@@ ''bash characters''
+|!Variable|!Meaning|!Example|!Description|
 |$!|PID of last background process|
-|$#|Number of command line arguments (params)|
+|$#|Number of command line arguments (params)|$# -lt 2|Less than 2 options?|
+|$- |used to get current option flags.|$- == *i*|Is there an &quot;-i&quot; option?|
 |$0|script name|
 |$1|first argument, $2 = 2nd etc ...|
 |$*|all command line arguments|
@@ -4018,35 +4038,60 @@ Check out [[lsof]]
 
 </pre>
 </div>
-<div title="network configuration" creator="rvr" modifier="rvr" created="201501221927" modified="201501221943" changecount="3">
-<pre>Network configuration is done through network configuration files. These vary from [[distro|distribution]] to distro, so there is a network manager utility. It will list all wired and wireless connections. It will also handle passwords and setting up VPNs.
+<div title="network configuration" creator="rvr" modifier="rvr" created="201501221927" modified="202301031249" changecount="5">
+<pre>Network configuration is done through network configuration files. These vary from [[distro|distribution]] to distro, so there is a network manager utility. It will list all wired and wireless connections. It will also handle passwords and setting up ~VPNs.
 For wired connections, the manager will use DHCP (Dynamic Host Control Protocol) to setup network settings. If it is static and doesn't use DHCP, you can setup the network settings up using the manager. You can also manage the MAC address. For wireless, it does not hook up automatically, but allows you to select and manage them.
-Network manager can also setup mobile broadband connection and VPNs (OpenVPN Cisco OpenConnect IPSec)</pre>
+Network manager can also setup mobile broadband connection and ~VPNs (~OpenVPN Cisco ~OpenConnect ~IPSec)</pre>
 </div>
 <div title="nobody" creator="rvr" modifier="rvr" created="201012091615" modified="201012091705" changecount="4">
 <pre>When a web client connects to a server, the web server assigns it the user ''nobody''. Since this does not belong to any group, it therefore inherits the [[permissions]] that [[other]] (aka world) has.</pre>
 </div>
-<div title="openssl" creator="rvr" modifier="rvr" created="201611250426" modified="201611250427" changecount="2">
-<pre>We can use ''openssl'' to create a hashed password:
+<div title="openssl" creator="rvr" modifier="rvr" created="201611250426" modified="202301031134" changecount="16">
+<pre>We can use ''openssl'' to create a hashed password. We are salting the password. 
+* we use the ''-1'' switch = ~MD5 based BSD password algorithm 1
+* the ''-5'' switch is the more secure ~SHA256 algorithm
+* the ''-6'' switch is the more secure ~SHA512 algorithm
+* that same password gives different hash if salt changes.
+* the salt is in the hashed password
+* we can include the password on the command line
 &lt;html&gt;&lt;pre&gt;
-$ openssl passwd -1
+// password = 'qwerty'
+
+$ openssl passwd -1 -salt xxx
   Password: 
-  Verifying - Password: 
-  $1$S77lL6tu$mNzjWZeing8Pxc3sPeHA5/
-&lt;/pre&gt;&lt;/html&gt; (note: it's a dash and number one, ie -1)</pre>
+  $1$xxx$RhVx/IygzUHHIrES.bHKl0
+
+$ openssl passwd -1 -salt zzz
+  Password: 
+  $1$zzz$Y88DD0SUQqdthOx1o644F.
+
+$ openssl passwd -1 -salt zzz
+  Password: 
+  $1$zzz$Y88DD0SUQqdthOx1o644F.
+
+$ openssl passwd -1 -salt zzz qwerty
+  $1$zzz$Y88DD0SUQqdthOx1o644F.
+
+$ openssl passwd -5 -salt zzz qwerty
+ $5$zzz$uwYJEmmCsbsaX9Z0qfhjxOvav8/qXdube.ZZkVVw4bA
+
+$ openssl passwd -6 -salt zzz qwerty
+  $6$zzz$Gm6VhQytwdf2sF2BTDcfcXYO5SS/4SfbgZ17sR3ZvADrAik0sX5KWdlMkrViGm4lKMo/t5X2zvCCbwUn57IXi0
+
+&lt;/pre&gt;&lt;/html&gt; </pre>
 </div>
-<div title="other" creator="rvr" modifier="rvr" created="201012091635" modified="201012091806" changecount="3">
-<pre>A file belongs to a [[user]] and a [[group]]. If someone belongs to neither of these then it is an ''other''. This is often referred to as [[world]] as it means everyone else in the world.</pre>
+<div title="other" creator="rvr" modifier="rvr" created="201012091635" modified="202301031319" changecount="4">
+<pre>A file belongs to a [[user]] and a [[group]]. If someone belongs to neither of these then it is an ''other''. This is often referred to as ''world'' as it means everyone else in the world.</pre>
 </div>
 <div title="owner" creator="rvr" modifier="rvr" created="201607092348" modified="201607092348" changecount="2">
 <pre>In order for dropbox to be able to upload a file from your system, it has to have the ''owner'' as yourself (your logged-in id), not ''root''.</pre>
 </div>
-<div title="package management commands" creator="rvr" modifier="rvr" created="201501301912" modified="201705172326" changecount="55">
+<div title="package management commands" creator="rvr" modifier="rvr" created="201501301912" modified="202301031319" changecount="57">
 <pre>Here are some [[Package Management]] command examples. Note that you'll install as root, so use ''sudo''.
-*''rpm'' - used for when we have downloaded packages and want to install
+*[[rpm|RPM]] - used for when we have downloaded packages and want to install
 *[[apt-get]] - used to install on Ubuntu
 *[[yum]] - uses online repositories to get packages.
-**use ''dpkg'' to install packages that you have locally, they are @@*.deb@@ files. (see [[wget]])
+**use ''dpkg'' to install packages that you have locally, they are @@*.deb@@ files.
 **&quot;yum update&quot; - updates all packages, and &quot;yum upgrade&quot; does that PLUS removes obsolute packages.
 |!Operation|!RPM|!Debian|
 |Install a package|rpm -i foo.rpm |dpkg &amp;dash;&amp;dash;install foo.deb|
@@ -4088,7 +4133,7 @@ To check for a specific package:@@dpkg &amp;dash;-get-selections | grep &lt;pack
 Some [[package management examples]].
 </pre>
 </div>
-<div title="package management examples" creator="rvr" modifier="rvr" created="201611292114" modified="201611292231" changecount="4">
+<div title="package management examples" creator="rvr" modifier="rvr" created="201611292114" modified="202301031259" changecount="5">
 <pre>Here are some package management examples.
 &lt;html&gt;&lt;pre&gt;
 # rpm -qi yum
@@ -4107,13 +4152,7 @@ Some [[package management examples]].
   Loaded plugins: fastestmirror
   ...
 
-&lt;/pre&gt;&lt;/html&gt;
-
-&lt;html&gt;&lt;pre&gt;
-&lt;/pre&gt;&lt;/html&gt;
-&lt;html&gt;&lt;pre&gt;
-&lt;/pre&gt;&lt;/html&gt;
-</pre>
+&lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="partition" creator="rvr" modifier="rvr" created="201501131048" modified="201501311748" changecount="16">
 <pre>A ''partition'' is a logical division on a hard disk drive (HDD). There is a [[mount]] point, like a windows Drive letter. The base directory where linux is stored is a forward slash ''/'', whereas windows uses the drive letter like ''c:''.
@@ -4165,7 +4204,7 @@ $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/some/new/path
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="permissions" creator="rvr" modifier="rvr" created="201012091631" modified="201612110551" changecount="52">
+<div title="permissions" creator="rvr" modifier="rvr" created="201012091631" modified="202301031318" changecount="53">
 <pre>Linux uses permissions to determine who has access to what resources. These resources could be directories, files or executables.	There are three types of permissions:
 *''r''ead
 *''w''rite
@@ -4191,7 +4230,7 @@ They are also represented by an alternative 3-digit numeric method:
 1 = --x   4 = r--  7 = rwx       7   6   5      6  6  5
 2 = -w-   5 = r-x
 &lt;/pre&gt;&lt;/html&gt;So the first digit is for the user permissions, followed by group &amp; other permissions.
-In the e''x''ecute column an ''s'' indicates a [[setuid]].
+In the e''x''ecute column an ''s'' indicates a [[setuid|SUID]].
 To check all permissions on a path: '' namei -om /path/to/check''
 &lt;html&gt;&lt;pre&gt;
 $ namei /home/user/www -om   
@@ -4293,8 +4332,9 @@ To see a terminal-graphical view: @@pstree@@
 To see a real time system usage: @@[[top]]@@ or @@htop@@
 </pre>
 </div>
-<div title="profile" creator="rvr" modifier="rvr" created="201102051827" modified="201605200913" changecount="8">
-<pre>There are profiles that run automatically when you [[login]]. If you make a change to your profile (''$HOME/.profile'') you will need to source it to see the changes you have made.
+<div title="profile" creator="rvr" modifier="rvr" created="201102051827" modified="202301031035" changecount="10">
+<pre>The ''profile'' is a hidden file and is in the [[home]] directory. It is: ''~/.profile''
+There are profiles that run automatically when you [[login]]. If you make a change to your profile (''$HOME/.profile'') you will need to source it to see the changes you have made.
 Note that different distros will use different profile. Ubuntu uses ''~/.profile'' and many other distros use ''~/.bash_profile''.
 On my Ubuntu system my ''~/.profile'' calls ''~/.bashrc''  </pre>
 </div>
@@ -4358,7 +4398,7 @@ $ sort &lt; bat.files &gt; sorted.bats   # Sort the file and then places results
 &lt;/pre&gt;&lt;/html&gt;
 For reference: http://www.catonmat.net/blog/bash-one-liners-explained-part-three/</pre>
 </div>
-<div title="regex" creator="rvr" modifier="rvr" created="201211200526" modified="202007050657" changecount="35">
+<div title="regex" creator="rvr" modifier="rvr" created="201211200526" modified="202301031248" changecount="37">
 <pre>Regular expressions or ''regex'' is a pattern used to search for text. 
 
 I will move this to http://misc.rtfm.tiddlyspot.com/
@@ -4395,8 +4435,8 @@ Another table:
 |\D|[^0-9]|Nondigit|
 |\s|[\s\t\r\n\f]|Whitespace character|
 |\S|[^\s\t\r\n\f]|Nonwhitespace character|
-|\w|[A-Za-z0-9_]|Word character|
-|\W|[^A-Za-z0-9_]|Nonword character|
+|\w|[~A-Za-z0-9_]|Word character|
+|\W|[^~A-Za-z0-9_]|Nonword character|
 How about some examples? Go [[here|regex examples]] or [[there|regex email example]].
 
 !This needs cleaning up.
@@ -4439,8 +4479,8 @@ You can check out: http://www.rubular.com/
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="regex examples" creator="rvr" modifier="rvr" created="201509281544" modified="202007050652" changecount="5">
-<pre>Here are some examples of [[regular expressions]].
+<div title="regex examples" creator="rvr" modifier="rvr" created="201509281544" modified="202301031210" changecount="6">
+<pre>Here are some examples of [[regex]].
 &lt;html&gt;&lt;pre&gt;
 abc=&quot;Madam, I'm Adam. 1 2 3&quot;
 
@@ -4591,10 +4631,10 @@ It is the program that actually controls your session. It runs under your accoun
 Linux uses Coordinated Universal Time (''UTC'') for its own internal time keeping.
 Setting local time using Internet servers, done auto at setup: Network Time Protocol (NTP), this is at ''/etc/ntp.conf''</pre>
 </div>
-<div title="setup machine" creator="rvr" modifier="rvr" created="201102262217" modified="201501221944" changecount="8">
+<div title="setup machine" creator="rvr" modifier="rvr" created="201102262217" modified="202301031307" changecount="9">
 <pre>Here are the basic steps:
-#Figure out what type of users you will have and create groups using [[addgroup]].
-#Next add users to these groups using [[useradd]] or [[adduser]].
+#Figure out what type of users you will have and create groups using [[addgroup|adduser]].
+#Next add users to these groups using [[useradd]] or [[addgroup|adduser]].
 &lt;html&gt;&lt;pre&gt;
 $ groupadd webuser
 $ useradd -g webuser rob
@@ -4604,10 +4644,16 @@ You may also want to check out:
 *[[settings]]
 *[[software]]</pre>
 </div>
-<div title="shell" creator="rvr" modifier="rvr" created="201102050237" modified="201612131750" changecount="16">
-<pre>The ''shell'' is the command line interface for linux. Often it is the [[bash]] shell that is used. It is configured in a [[startup]] sequence. It stands between you and the linux [[kernel]]. Shells can manage foreground and [[background]] processes, and keep a history of commands. The [[bash]] shell is one of the more common shells. To see what shells are available on your system, enter @@cat /etc/shells@@
-To see what shell you have enter @@echo $SHELL@@
-The shell will have a [[command prompt]] to accept your [[commands]].
+<div title="shell" creator="rvr" modifier="rvr" created="201102050237" modified="202301031205" changecount="18">
+<pre>The ''shell'' is the command line interface for linux. Often it is the [[bash]] shell that is used. It is configured in a [[startup]] sequence. It stands between you and the linux [[kernel]]. 
+*A shell is either ''interactive'' or ''non-interactive''
+** ''interactive shell '' - reads user input typed on a keyboard, runs in the current shell and waits for further instructions.
+** ''non-interactive shell '' - executes commands read from a file in a new subshell. Also runs [[Init]] and [[startup]].
+*Shells can manage foreground and [[background]] processes, and keep a history of commands. 
+*The [[bash]] shell is one of the more common shells. 
+*To see what shells are available on your system, enter @@cat /etc/shells@@
+*To see what shell you have enter @@echo $SHELL@@
+*The shell will have a [[command prompt]] to accept your [[commands]].
 See also:
 *[[console]] and [[terminal]]
 *[[shell commands]]
@@ -4788,7 +4834,7 @@ $ ./rob.sh rob
 
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="shutdown" creator="rvr" modifier="rvr" created="201102022228" modified="201612052010" changecount="10">
+<div title="shutdown" creator="rvr" modifier="rvr" created="201102022228" modified="202301031207" changecount="11">
 <pre>There are many ways to shutdown from the command line. Or you can use the GUI. You can also [[suspend]].
 
 |!Command|!Description|
@@ -4806,15 +4852,15 @@ $ ./rob.sh rob
 |init 0|Shutdown, like halt.|
 
 These require root access.
-The [[init]] process will then control shutting down or rebooting the system. </pre>
+The [[Init]] process will then control shutting down or rebooting the system. </pre>
 </div>
 <div title="snap" creator="rvr" modifier="rvr" created="202005260141" changecount="1">
 <pre>''Snap'' is like a docker for linux.
 They are packaged up to run on any system.</pre>
 </div>
-<div title="software" creator="rvr" modifier="rvr" created="201501221949" changecount="1">
+<div title="software" creator="rvr" modifier="rvr" created="201501221949" modified="202301031313" changecount="2">
 <pre>Installing and updating software.
-A [[package]] in Linux provides a piece of the system. Packages rely on other packages and these dependencies must be met. There is a utility that handles the unpacking and checking of these packages. See [[Package Management]].
+A ''package'' in Linux provides a piece of the system. Packages rely on other packages and these dependencies must be met. There is a utility that handles the unpacking and checking of these packages. See [[Package Management]].
 </pre>
 </div>
 <div title="sort" creator="rvr" modifier="rvr" created="201605111241" changecount="1">
@@ -4888,13 +4934,13 @@ drwxrwxrwt. 2 biteme biteme 6 Dec 19 04:20 jupiter
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="su" creator="rvr" modifier="rvr" created="201102042138" modified="201612052011" changecount="10">
+<div title="su" creator="rvr" modifier="rvr" created="201102042138" modified="202301022003" changecount="12">
 <pre>Substitute user or substitute user - to become someone else. See also [[sudo]].
 &lt;html&gt;&lt;pre&gt;
 rvr@adam$ su rob      # You become rob, keeping your environment as is.
 rvr@adam$ su - rob    # You become rob, the dash means &quot;gimme the environment that rob would see''
 
-rob@adam$ su          # You become root
+rob@adam$ su          # You become root - some distros don't allow this...use &quot;sudo su&quot;
 rob@adam$ whoami      # If you forget who who are
 &lt;/pre&gt;&lt;/html&gt;To exit this shell, enter ''exit''.</pre>
 </div>
@@ -4987,11 +5033,11 @@ There are also places you need to know like:
 System state via [[systemctl]] 
 The [[shell]] and [[environment variables]] and [[shell variables]]. Also [[redirect]].</pre>
 </div>
-<div title="systemctl" creator="rvr" modifier="rvr" created="201612011817" modified="202005250320" changecount="27">
+<div title="systemctl" creator="rvr" modifier="rvr" created="201612011817" modified="202301031208" changecount="29">
 <pre>''systemctl'' handles the [[systemd]] system and is the system manager that is the new standard for Linux. 
-The ''systemctl'' command is the central management tool for controlling the [[init]] system.
+The ''systemctl'' command is the central management tool for controlling the [[Init]] system.
 An ''init'' system is to initialize the components that must be started after the Linux kernel is booted. 
-The [[init]] system is also used to manage services and daemons for the server at any point while the system is running.
+The [[Init]] system is also used to manage services and daemons for the server at any point while the system is running.
 In ''systemd'', the target of most actions are &quot;units&quot;, which are resources that systemd knows how to manage. Units are categorized by the type of resource they represent and they are defined with files known as unit files. The type of each unit can be inferred from the suffix on the end of the file.
 Any output generated goes into the [[journal]].
 
@@ -5050,8 +5096,8 @@ Dec 01 17:45:41 secret.biteme.com sshd[3278]: Accepted password for user from 42
 
 </pre>
 </div>
-<div title="systemd" creator="rvr" modifier="rvr" created="201611131724" modified="202005250306" changecount="32">
-<pre>Systemd is the [[init]] daemon as well it handles daemons journald, logind and networkd, and many other low-level components.
+<div title="systemd" creator="rvr" modifier="rvr" created="201611131724" modified="202301031208" changecount="33">
+<pre>Systemd is the [[Init]] daemon as well it handles daemons journald, logind and networkd, and many other low-level components.
 It used for centralized management to log all kernel and other processes (like puppet) and ''systemctl'' is how we access this info.
 A system that collects and manages these logs is known as the journal. See [[journalctl]].
 !!Start Programs
@@ -5112,7 +5158,7 @@ pwd is a shell builtin
 pwd is /bin/pwd
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="typical filesystem" creator="rvr" modifier="rvr" created="201501311617" modified="201904241848" changecount="39">
+<div title="typical filesystem" creator="rvr" modifier="rvr" created="201501311617" modified="202301031244" changecount="40">
 <pre>Here is a typical Linux [[filesystem]] layout. Note that the root is a single forward slash ''/''.
 Use the ''tree -d'' command to see the top-down view of the filesystem.
 *''/'' (root)
@@ -5128,7 +5174,7 @@ Use the ''tree -d'' command to see the top-down view of the filesystem.
 ***''/profile''     . . . system startup programs. 
 **''/[[home]]''     . . . Home directories, where users store personal data
 **''[[/lib]]''      . . . Essential system libraries, contains library files that supports the binaries located under /bin and /sbin
-**''[[/media]]''    . . . Removeable media, usb, CDs, etc
+**''[[/media]]''    . . . Removeable media, usb, ~CDs, etc
 **''/mnt''      . . . Mount directory. Temporary mount directory where sysadmins can mount filesystems.
 **''/opt''      . . . Optional. No set use, but often it is installed software like adobe, google, brave, xnconvert, sublime text.
 **''[[/proc]]''     . . . System information, process information (see ps command)
@@ -5257,9 +5303,9 @@ These operators are for line mode, that is they are not prefaced with a colon ''
 |:%s/containers/container_types/g|change very occurance on every line|
 |:#,#s/containers/container_types/g|change betweens line # and #.|</pre>
 </div>
-<div title="virtual terminal" creator="rvr" modifier="rvr" created="201408180438" modified="201501290232" changecount="11">
-<pre>Virtual Terminals (VT) are console sessions that use the entire display of a graphical environment. That is - they do not use [[X Windows]]. Such terminals are considered &quot;virtual&quot; because although there can be multiple active terminals, only one terminal remains visible at a time. A VT is not quite the same as a command line terminal window; you can have many of those visible at once on a graphical desktop.
-VT1 &amp; VT7 are used for GUI environments. Use ''~Cntl-Alt-&lt;~FnKey&gt;'' to change to different ~VTs. Function Key 1 is Fn1 to get to ~VT1.</pre>
+<div title="virtual terminal" creator="rvr" modifier="rvr" created="201408180438" modified="202301031306" changecount="13">
+<pre>Virtual Terminals (VT) are console sessions that use the entire display of a graphical environment. That is - they do not use [[X Window System]]. Such terminals are considered &quot;virtual&quot; because although there can be multiple active terminals, only one terminal remains visible at a time. A VT is not quite the same as a command line terminal window; you can have many of those visible at once on a graphical desktop.
+~VT1 &amp; ~VT7 are used for GUI environments. Use ''~Cntl-Alt-&lt;~FnKey&gt;'' to change to different ~VTs. Function Key 1 is Fn1 to get to ~VT1.</pre>
 </div>
 <div title="web permissions" creator="rvr" modifier="rvr" created="201012091602" modified="201502120330" changecount="13">
 <pre>Typical settings for [[home]] directory - you have complete access to the directory and the world can only execute this file.: &lt;html&gt;&lt;pre&gt;chmod 701 public_html     # which would be rwx --- --x&lt;/pre&gt;&lt;/html&gt;
@@ -5275,17 +5321,16 @@ The two most popular are Qt and GTK+.  GTK+ aka gimp toolset.
 [[KDE]] use the Qt.
 [[Gnome]] use the GTK+.</pre>
 </div>
-<div title="wifi" creator="rvr" modifier="rvr" created="201606120028" modified="201606120603" changecount="7">
+<div title="wifi" creator="rvr" modifier="rvr" created="201606120028" modified="202301031317" changecount="8">
 <pre>Having ''wifi'' connections problems at one location.
 To see what wifi I have conenction to: @@sudo iwlist wlan0 scan | grep ESSID@@
 To see : @@iw wlan0 scan@@
 To see wifi connection status : @@iw wlan0 link@@
 To reboot the [[service]]: @@sudo service network-manager restart@@
-Need to learn a little more.
-See [[router]]</pre>
+Need to learn a little more.</pre>
 </div>
-<div title="wildcards" creator="rvr" modifier="rvr" created="201408280936" modified="201612101745" changecount="12">
-<pre>These are used to find things incommands like ls, rm, and cp.
+<div title="wildcards" creator="rvr" modifier="rvr" created="201408280936" modified="202301031227" changecount="18">
+<pre>These are used to find things in commands like ls, rm, and cp.
 |!Character|!Description|
 |?|Matches a single character.|
 |*|Matches any sequence of characters.|
@@ -5298,11 +5343,11 @@ Match a single character that is a vowel: ''[aeiouy]''
 Match any word ending in a vowel: ''*[aeiouy]''
 Match any word starting in a vowel: ''[aeiouy]*''
 
-Can also use named character classes:
+Can also use named character classes, in format: ''[&amp;#91;:xxxx:]&amp;#93;''
 '':lower:'' - lowercase letters
 '':upper:'' - uppercase letters
-'':alpha:'' - a-z A-Z
-'':digit:'' - ''ls *[[:digit:]]'' - list everything that ends in a number.
+'':alpha:'' - ''ls *[&amp;#91;:alpha:]&amp;#93;''  - looks for a-z ~A-Z
+'':digit:'' - ''ls *[&amp;#91;:digit:]&amp;#93;'' - list everything that ends in a number.
 '':alnum:'' - alphanumeric meaning alpha+digits 
 '':punct:'' - punctuation characters
 
