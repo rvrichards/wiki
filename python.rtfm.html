@@ -672,11 +672,13 @@ Everything else is true. So when evaluating an expression, if its true, you will
 &lt;/pre&gt;&lt;/html&gt;
 Not that ''False'' is case sensitive, and has to begin with a capital letter. ''True'' likewise.</pre>
 </div>
-<div title="Flask" creator="rvr" modifier="rvr" created="201903220038" modified="201904011520" changecount="8">
+<div title="Flask" creator="rvr" modifier="rvr" created="201903220038" modified="202301031405" changecount="13">
 <pre>''Flask'' is a microframework, aka web framework. Micro means that it is not full stack, so it has the minimal libraries that are needed.
 It does not have an ORM (Object Relational Model - for ~DBs) but these are easily added and used by Flask.
 Install it using [[pip]].
-To see if you have it - run @@python3@@ and type @@import flask@@. Should produce no errors.
+To see if you have it 
+*run ''python3'' and type @@import flask@@ and then @@flask._&amp;#95;version_&amp;#95;@@ - will give version
+*run ''pip show flask'' - will give version
 See [[Flask REST]]
 More Flask stuff:
 *[[Flask Endpoint]]
@@ -985,8 +987,8 @@ There is also an IDE named [[Eric]].
 [[%|string formatting]]
 [[*]] - unpack</pre>
 </div>
-<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202007031842" changecount="26">
-<pre>My Python notes, inspired by google app engine.
+<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202301041122" changecount="27">
+<pre>My Python and [[JupyterLab]] notes.
 Some key points about Python:
 *It is strongly &amp; dynamically typed. Meaning no type checking prior to running (unlike Java of c++).
 *Follow typical [[naming conventions]].
@@ -1142,34 +1144,40 @@ Select a &quot;Notebook&quot; from launcher. Enter: ''print (&quot;Hello&quot;)'
 See [[Jupyter Terms]].
 See [[Jupyter Notebooks]]</pre>
 </div>
-<div title="Jupyter Notebooks" creator="rvr" modifier="rvr" created="202212121244" modified="202212121319" changecount="3">
+<div title="Jupyter Notebooks" creator="rvr" modifier="rvr" created="202212121244" modified="202301041222" changecount="7">
 <pre>''Jupyter Notebooks'' are documents that which contain both python code and rich text elements (paragraph, equations, figures, links, etc…). 
-Notebook documents are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
-This allows an important data science feature - being able to quickly reproduce results so that others can easily check.
-
-Terms:
-* cell -  multiline text input field, execute with ''shift-enter'' or &quot;ctrl-enter&quot;. (goto next cell vs stay in cell)
-**Three types: code, markdown, and raw.
-** Code cells are for Python. Start a code cell with &quot;!&quot; to indicate a bash command.</pre>
+''Jupyter Notebooks'' is superseded by JupyterLab - that has all the notebook functionality plus even more.
+</pre>
 </div>
-<div title="Jupyter Terms" creator="rvr" modifier="rvr" created="202212121144" modified="202212121212" changecount="6">
+<div title="Jupyter Terms" creator="rvr" modifier="rvr" created="202212121144" modified="202301041227" changecount="18">
+<pre>Some Terms for [[JupyterLab]]:
+''cell'' -  multiline text input field, execute with ''shift-enter'' or &quot;ctrl-enter&quot;. (goto next cell vs stay in cell)
+*Three types: code, markdown, and raw.
+*Code cells are for Python. Start a code cell with &quot;!&quot; to indicate a bash command.
+
+See [[Jupyter Intro]].
+
+</pre>
+</div>
+<div title="Jupyter Tips" creator="rvr" modifier="rvr" created="202301041226" changecount="1">
 <pre>Jupyter Lab will be presented with a browser pointing to: ''http://localhost:8888/lab''
 The RHS will have a ''launcher'' window. 
 The LHS will have a file browser.
+There are [[checkpoints]] so you can go back to prior versions.
 
-special urls - will allow you to use URL to point to a file. eg: ''http://localhost:8888/lab/tree/data/freds.data''
-
-
- See [[Jupyter Intro]].
-</pre>
+special urls - will allow you to use URL to point to a file. eg: ''http://localhost:8888/lab/tree/data/freds.data''</pre>
 </div>
-<div title="JupyterLab" creator="rvr" modifier="rvr" created="201907082054" modified="202212121241" changecount="19">
+<div title="JupyterLab" creator="rvr" modifier="rvr" created="201907082054" modified="202301041226" changecount="23">
 <pre>Jupyter - meaning ''JupyterLab''
 * is newer and preferred over just plain [[Jupyter Notebooks]].
 ** you can run Jupyter Notebooks in the Jupyter Lab!
-* a open-source web-based interactive computing platform.
+** all Jupyter Notebooks functionality is in the Jupyter Lab!
+* an open-source web-based interactive computing platform.
+* you are able to quickly reproduce results so that others can easily check.
 * allows you to create and share documents that contain live code, equations, visualizations, and narrative text.
+* human-readable documents containing the analysis description and the results (figures, tables, etc..) 
 * a server-client application that allows editing and running notebook documents via a web browser. 
+* executable documents which can be run to perform data analysis.
 * an App can be executed on a local desktop requiring no internet access
 ** or can be installed on a remote server and accessed through the internet
 * allows viewing and handling numerous data formats.
@@ -1180,7 +1188,7 @@ special urls - will allow you to use URL to point to a file. eg: ''http://localh
 * launch via command line: ''jupyter-lab''
 ** opens up browser at: ''http://localhost:8888/lab''
 
-See [[install Jupyter]] or [[Jupyter Terms]] maybe even [[Jupyter Intro]].
+See [[install Jupyter]] or [[Jupyter Terms]] or [[Jupyter Tips]] maybe even [[Jupyter Intro]].
 </pre>
 </div>
 <div title="LoadRemoteFileThroughProxy" modifier="YourName" created="200703202229" modified="201011181926" tags="systemConfig">
@@ -1530,7 +1538,7 @@ pyautogui.hotkey('ctrl','o')
 <pre>''PyCharm'' is an IDE.
 Installed in Ubuntu via: @@sudo snap install pycharm-community -&amp;dash;classic@@</pre>
 </div>
-<div title="Set Python3" creator="rvr" modifier="rvr" created="201908142304" modified="202212101822" changecount="10">
+<div title="Set Python3" creator="rvr" modifier="rvr" created="201908142304" modified="202212251400" changecount="16">
 <pre>How to set ''Python3'' as default.
 
 &lt;html&gt;&lt;pre&gt;
@@ -1538,18 +1546,19 @@ $ python2 --version    # See if we have Python 2
 $ update-alternatives --install /usr/bin/python python /usr/bin/python3 1
   update-alternatives: using /usr/bin/python3 to provide /usr/bin/python (python) in auto mode
 $ python --version   # Check again for v3
-$ python3 -V     # Gives:  Python 3.6.8
+$ python3 -V         # Gives:  Python 3.6.8
 &lt;/pre&gt;&lt;/html&gt;
-Updating Python from v3.6 to v3.7:
+Updating Python to v3.11
 &lt;html&gt;&lt;pre&gt;
-$ sudo apt-get install python3.7
-  Reading package lists... 
-
-$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
-$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
-$ sudo update-alternatives --config python3    # Pick option 2 - manual.
+$ sudo apt update                # Make sure you have python PPA repo.
+$ apt list | grep python3.11     # Check out if there is v3.11
+$ sudo apt install python3.11
+...
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
+$ sudo update-alternatives --config python3
 $ python3 -V
-  Python 3.7.3
+  Python 3.11.0rc1
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="Setup Faker" creator="rvr" modifier="rvr" created="201902260040" modified="201902260113" changecount="3">
@@ -1635,18 +1644,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202212141921">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202301041230">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 13/12/2022 14:30:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 13/12/2022 15:20:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 13/12/2022 20:29:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 13/12/2022 22:07:52 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 14/12/2022 14:42:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 14/12/2022 14:54:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 14/12/2022 15:16:05 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 14/12/2022 15:50:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 14/12/2022 15:53:19 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 14/12/2022 20:21:35 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 14/12/2022 20:21:35 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 25/12/2022 08:39:20 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 25/12/2022 15:00:46 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 02/01/2023 23:44:10 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 03/01/2023 15:40:21 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 04/01/2023 13:30:08 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -2530,6 +2539,14 @@ See also [[any]] and [[getattr]]  [[functions]].
 </div>
 <div title="callable" creator="rvr" modifier="rvr" created="201012012306" modified="201012012316" changecount="2">
 <pre>The ''callable'' method will return a boolean - if the method can be called.</pre>
+</div>
+<div title="checkpoints" creator="rvr" modifier="rvr" created="202301041214" modified="202301041221" changecount="8">
+<pre>There are ''checkpoints'' so you can revert back to just 1 prior version on Jupyter Notebook.
+Folder is hidden (''/.ipynb_checkpoints'') and in same directory as the working ''.ipynb'' file.
+To save a checkpoint you must press the &quot;Save and Checkpoint button&quot;  (looks like 💾).
+Pressing @@ctrl+s@@ and ''autosave'' do NOT save checkpoints.
+For more safety (checkpoints!), use GIT.
+There is a ''revert to checkpoint'' under the ''File'' tab.</pre>
 </div>
 <div title="class" creator="rvr" modifier="rvr" created="201011260844" modified="202008230112" changecount="47">
 <pre>A python ''class'' is used to encapsulate data (attributes) and behaviour (methods). An instance of a class is an object, so a class is a blueprint. It is defined like:
