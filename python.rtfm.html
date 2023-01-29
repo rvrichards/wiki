@@ -535,6 +535,23 @@ Also see [[AdvancedOptions]]</pre>
 5
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
+<div title="BeautifulSoup" creator="rvr" modifier="rvr" created="202007100428" modified="202301251953" changecount="7">
+<pre>To parse HTML &amp; XML use ''BeautifulSoup''.
+It is a third party install: @@''sudo apt-get install python3-bs4''@@
+
+&lt;html&gt;&lt;pre&gt;
+import bs4
+import requests
+
+r=requests.get('https://www.usedvictoria.com/classified-ad/Sleeping-bag_36062116')
+r.status_code
+
+soup=bs4.BeautifulSoup(r.text, 'html.parser')
+elem=soup.select('#ad &gt; div.section-content &gt; div.adshead &gt; h1')   # This is the CSS Selector. Inspect the webpage.
+elem[0].text
+
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
 <div title="Counter" creator="rvr" modifier="rvr" created="202008180551" modified="202008250621" changecount="15">
 <pre>To use ''Counter'' we have to import. @@from collections import Counter@@
 
@@ -561,6 +578,26 @@ print(inventory)
 Counter({'mango': 3, 'carrot': 2, 'apple': 1})
 Counter({'apple': 11, 'mango': 2, 'carrot': 2})
 &lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="Data Science" creator="rvr" modifier="rvr" created="202301251958" modified="202301252111" changecount="10">
+<pre>Combined with JupyterLab, Python has great ''Data Science'' capabilities.
+There are great [[libraries|library]] out there, like s: BeautifulSoup, NumPy, Matplotlib, SciPy, ...
+
+There are also basic statistic functionality as provided also in  the &quot;R&quot; language.
+
+Progression
+# Data exploration &amp; preparation (finding, cleaning)
+# Data representation &amp; transformation (tabular, graph, text)
+# Computing with data (R, Python, pipe-lining)
+# Data Modeling (predicting)
+# Data Visualization &amp; presentation (charting, graphing, 3D)
+# Science about Data Science. (How we can leverage)
+
+There are three kinds of collections to cover
+* [[tuple]] - immutable, iterable
+* [[list]] - mutable, iterable
+* [[dictionary|dictionaries]] - mutable, iterable
+</pre>
 </div>
 <div title="DataFrame" creator="rvr" modifier="rvr" created="201905230059" modified="201907120758" changecount="8">
 <pre>Using [[Panda]], a 2D object is a ~DataFrame.
@@ -787,12 +824,6 @@ if __name__ == &quot;__main__&quot;:
 app.run(host='0.0.0.0', port=4000)
 &lt;/pre&gt;&lt;/html&gt;You then run it via: @@''$ python hello.py''@@</pre>
 </div>
-<div title="GAE Packages" creator="rvr" modifier="rvr" created="201902282201" changecount="1">
-<pre>GAE organizes by packages. For example:
-&lt;html&gt;&lt;pre&gt;
-   google.appengine.ext
-&lt;/pre&gt;&lt;/html&gt;This package is in the SDK and comes builtin to the runtime. This package contains the webapp framework. Its reference is: http://code.google.com/appengine/docs/python/tools/webapp/</pre>
-</div>
 <div title="GUI Automation" creator="rvr" modifier="rvr" created="202007120435" modified="202007120453" changecount="2">
 <pre>This is essentially controlling the mouse and keyboard, so you can get python to simulate a user.</pre>
 </div>
@@ -801,16 +832,21 @@ app.run(host='0.0.0.0', port=4000)
 Here are some I am trying:
 #[[Faker]]</pre>
 </div>
-<div title="IDLE" creator="rvr" modifier="rvr" created="201012140545" modified="202007030942" changecount="6">
+<div title="IDLE" creator="rvr" modifier="rvr" created="201012140545" modified="202301231844" changecount="7">
 <pre>IDLE is the IDE for python. It comes with python.
 You can launch it from the command line: 
 *@@idle-python3.6 @@ to bring up a window. Or maybe @@idle3@@ - systems vary.
 *@@python@@ to run it in the current window.
 **Note that I have config'd it to be &quot;python&quot; but you may need &quot;python3&quot; on other systems.
 There is also an IDE named [[Eric]].
+
+An example: Enter the following in [[IDLE]]
+&lt;html&gt;&lt;pre&gt;
+print 'hello, world'
+&lt;/pre&gt;&lt;/html&gt;It should print out &quot;hello world&quot;. 
 </pre>
 </div>
-<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202212131250" changecount="70">
+<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202301251933" changecount="71">
 <pre>[[any]]
 [[storing api keys]] - or passwords
 [[array]]
@@ -832,6 +868,7 @@ There is also an IDE named [[Eric]].
 [[configuration file]]
 [[control statements]]
 [[data]]
+[[Data Science]] 
 [[data structures]]
 [[DataFrame]]
 [[debug]]
@@ -901,28 +938,27 @@ There is also an IDE named [[Eric]].
 [[multiline string]]
 [[multiple assignment]]</pre>
 </div>
-<div title="Index Modules" creator="rvr" modifier="rvr" created="201905230057" modified="201907182337" changecount="5">
+<div title="Index Modules" creator="rvr" modifier="rvr" created="201905230057" modified="202301251937" changecount="6">
 <pre>What is a [[module]]?
 
 [[OpenCV]]
 [[pandas_datareader]]
 [[plotly]]
-[[numpy]]</pre>
+[[NumPy]]</pre>
 </div>
-<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202008260429" changecount="13">
+<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202301251937" changecount="15">
 <pre>[[namespace]]
 [[naming conventions]]
 [[nested lists]]
 [[new Flask project]]
 [[None]]
 [[numbers]]
-[[numpy]]
+[[NumPy]]
 [[object]]
 [[open()]]
 [[operator]]
 [[OrderedDict]]
 [[packages]] - Python
-[[packages|GAE Packages]] - GAE Packages.
 [[Panda]]
 [[pass]]
 [[pip]]
@@ -940,9 +976,10 @@ There is also an IDE named [[Eric]].
 [[regex]] - regular expressions
 </pre>
 </div>
-<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202212131316" changecount="11">
+<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202301231852" changecount="12">
 <pre>[[scope]]
 [[self]]
+[[server]]
 [[set]]
 [[shelve]]
 [[shortcuts]]
@@ -987,10 +1024,11 @@ There is also an IDE named [[Eric]].
 [[%|string formatting]]
 [[*]] - unpack</pre>
 </div>
-<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202301041122" changecount="27">
-<pre>My Python and [[JupyterLab]] notes.
+<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202301252019" changecount="33">
+<pre>My Python and [[JupyterLab]] notes. There is also a [[Data Science]] section.
 Some key points about Python:
-*It is strongly &amp; dynamically typed. Meaning no type checking prior to running (unlike Java of c++).
+*Python is dynamically typed. Meaning no type checking prior to running (unlike Java of c++).
+** This is great for [[Data Science]]
 *Follow typical [[naming conventions]].
 *Does not use brackets or begin-end to mark a function.
 **[[Blocks|block]] of code are ''indented''.
@@ -1000,9 +1038,9 @@ Some key points about Python:
 *A [[module]] is a single file (or files) that are imported under one [[import]] and used.
 *Use http://pythontutor.com/ to see what is going on interactively.
 
-Python comes with an IDE called IDLE which can be used to run python programs, or you can use the command line.
+Python comes with an IDE called [[IDLE]] which can be used to run python programs, or you can use the command line.
 Here are some places to get started:
-*[[hello world]] - basic way to run Python program.
+*[[hello world]] - other ways to run Python program.
 *[[storing api keys]] or username &amp; password.
 *[[interpreter]] - to run Python by command line interpreter.
 *[[new project]] - to create and run in virtual environment ([[venv]] ).
@@ -1123,14 +1161,15 @@ The algorithm used is
 *[[Jupyter Terms]]
 *[[Jupyter Tips]]</pre>
 </div>
-<div title="Jupyter Intro" creator="rvr" modifier="rvr" created="202212121154" modified="202301041546" changecount="18">
-<pre>Fire up JupyterLab by entering ''jupyter-lab'' on console or if you setup a launch icon, click that.
-You will be presented with a browser open to: ''http://localhost:8888/lab'' This is @@Jupyter Lab@@ 
+<div title="Jupyter Intro" creator="rvr" modifier="rvr" created="202212121154" modified="202301281944" changecount="23">
+<pre>Fire up JupyterLab by entering ''jupyter-lab'' on console and it will open a browser window and start you off in the directory you launch from,
+The browser opens to: ''http://localhost:8888/lab''
 If you open ''http://localhost:8888/tree'' - you will get a directory listing based on where you launched ''jupyter-lab''.
 
 The RHS will have a ''launcher'' window. 
 * This is where you start a new notebook, code console, terminal, or text file. 
 * There are tabs along the top that will allow you to have more than one window open.
+*Each window will have a @@menu bar@@ at the top. It lists icons like run, cut, copy, etc. 
 The LHS will have a file browser.
 * You can select the files to work from.
 * Click on one and a file will open - like a csv one, and it opens up nicely.
@@ -1146,9 +1185,13 @@ Right clicking will show a host of options.
 ** &lt;esc&gt; D + D - delete cell
 ** &lt;esc&gt; Y - to switch a cell to code
 
-
-
-Select a &quot;Notebook&quot; from launcher. Enter: ''print (&quot;Hello&quot;)'' and press the run icon (&quot;play&quot; or &amp;#9658; icon.)
+First program:
+* Open JupyterLab
+* On the RHS there should be a window named &quot;Launcher&quot;
+* Under &quot;Notebook&quot; click the Python3 icon.   
+* Make sure that the file extension is ''ipynb'' 
+* Make sure that the menu bar has &quot;code&quot; chosen, not &quot;raw&quot; or any other option.
+* Enter ''print(&quot;Hello&quot;)'' and select run icon. (&quot;play&quot; or &amp;#9658; icon.)
 
 See [[Jupyter Terms]].
 See [[Jupyter Notebooks]]</pre>
@@ -1176,8 +1219,9 @@ There are [[checkpoints]] so you can go back to prior versions.
 
 special urls - will allow you to use URL to point to a file. eg: ''http://localhost:8888/lab/tree/data/freds.data''</pre>
 </div>
-<div title="JupyterLab" creator="rvr" modifier="rvr" created="201907082054" modified="202301041230" changecount="24">
+<div title="JupyterLab" creator="rvr" modifier="rvr" created="201907082054" modified="202301281921" changecount="25">
 <pre>Jupyter - meaning ''JupyterLab''
+To fire it up, info is at: [[Jupyter Intro]].
 * is newer and preferred over just plain [[Jupyter Notebooks]].
 ** you can run Jupyter Notebooks in the Jupyter Lab!
 ** all Jupyter Notebooks functionality is in the Jupyter Lab!
@@ -1254,6 +1298,28 @@ loadRemoteFile = function(url,callback,params)
 [[Stats|http://stats.rtfm.tiddlyspot.com/]]
 [[SQL|http://sql.rtfm.tiddlyspot.com/]]</pre>
 </div>
+<div title="Modules and Libraries" creator="rvr" modifier="rvr" created="202301251944" modified="202301251956" changecount="5">
+<pre>Module:
+* where we group related code
+* in one file with a ''py'' extension
+* will have functions, classes, and variable.
+* can also have executable code
+Package:
+* can contain many different modules
+* allow use of namespaces (to prevent ambiguity)
+* must contain an [[__init__]].py file.
+Library
+* should be a collection of ''packages''
+* refers to a reusable chunk of code
+* can contain related modules and packages
+* a ''library'' is often the same as a ''package'' in common language use
+* Often a ''library'' is used to share ''reusable'' code with the community
+* Useful libraries: BeautifulSoup, NumPy, Matplotlib, SciPy, ...
+See:
+* [[module]]
+* [[library]]
+* [[packages]]</pre>
+</div>
 <div title="None" creator="rvr" modifier="rvr" created="201011252116" modified="202007032125" changecount="13">
 <pre>The ''None'' value is like nil.  
 It is a data type, with only one value.
@@ -1275,7 +1341,20 @@ if spies.get('qwerty') is None:
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="OpenCV" creator="rvr" modifier="rvr" created="201907052327" modified="201907060401" changecount="4">
+<div title="NumPy" creator="rvr" modifier="rvr" created="201907182348" modified="202301251936" changecount="6">
+<pre>The library NumPy is a numerical or scientific computing [[package|packages]].
+It can do many things, like 2D arrays.
+&lt;html&gt;&lt;pre&gt;
+import numpy as np
+
+x=np.array([[1,2,3],[4,5,6],[7,8,9]])
+y=np.array([[1,2,3],[1,2,3],[1,2,3]])
+print ( np.add(x,y) )
+print ( np.subtract(x,y))    # Ya, it works.
+print ( np.multiply(x,y))
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="OpenCV" creator="rvr" modifier="rvr" created="201907052327" modified="202301251937" changecount="5">
 <pre>''OpenCV'' has algorithms related to Computer Vision and Machine Learning. There is a Python version as well as other programming languages.
 
 Install
@@ -1284,7 +1363,7 @@ $ pip3 install opencv-python
   ...
   Successfully installed numpy-1.16.4 opencv-python-4.1.0.25
 &lt;/pre&gt;&lt;/html&gt;
-This has problems when installed in [[venv]]. Throws numerous @@QObject::moveToThread:@@ errors.
+This has problems when installed in [[venv]]. Throws numerous @@~QObject::moveToThread:@@ errors.
 Solution from online to install:
 &lt;html&gt;&lt;pre&gt;
 $ pip3 uninstall opencv-python
@@ -1343,8 +1422,10 @@ def login():
         return 'Going to login form!'  
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Panda" creator="rvr" modifier="rvr" created="201907120106" modified="202212141323" changecount="9">
-<pre>Panda is open sourced Python [[library]], used in Python community for high-performance data manipulation and analysis. It had many tools for working with different [[data structures]]. The name Pandas is derived from the word Panel Data – an Econometrics term from Multidimensional data.
+<div title="Panda" creator="rvr" modifier="rvr" created="201907120106" modified="202301282023" changecount="12">
+<pre>Panda is open sourced Python [[library]], used in Python community for high-performance data manipulation and analysis. It is also widely used for [[Data Science]].
+It is often called a [[package]], but semantically it is not.
+Panda has many tools for working with different [[data structures]]. It provides tools for thinking about data in tabular forms. The name Pandas is derived from the word Panel Data – an Econometrics term from Multidimensional data.
 1D - [[Panda Series Example]] 
 2D - [[DataFrame]]s
 3D - General 3D labeled, size-mutable array. This uses the ''Panel'' method.
@@ -1369,8 +1450,8 @@ df = pd.read_excel('data/qwerty2020.xls',   - the xls file
         names=['City', 'INS Code', 'Count', 'Total' , 'Inhabitants'])   -Name those columns.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Panda Series Example" creator="rvr" modifier="rvr" created="201907120723" modified="201907120745" changecount="14">
-<pre>Here is a series, using [[Panda]]
+<div title="Panda Series Example" creator="rvr" modifier="rvr" created="201907120723" modified="202301251938" changecount="15">
+<pre>Here is a series, using [[Panda]] and NumPy.
 
 &lt;html&gt;&lt;pre&gt;
 import pandas as pd 
@@ -1522,6 +1603,14 @@ merge(config.optionsDesc,{
 */
 //}}}</pre>
 </div>
+<div title="Popular Python Libraries" creator="rvr" modifier="rvr" created="202301282026" modified="202301282026" changecount="2">
+<pre>Here are some popular libraries:
+*os - operating system
+** path=os.''getcwd''() - gets current working directory
+* panda
+** ''read_csv''(...) - to read in a csv file
+** ''read_excel''(...) - see [[read in data]]</pre>
+</div>
 <div title="PyAutoGUI" creator="rvr" modifier="rvr" created="202007120446" modified="202007120503" changecount="9">
 <pre>''PyAutoGUI'' - is a third party module. So [[pip]] may not work, you have to use ''apt-get''.
 It's pretty cool.
@@ -1652,18 +1741,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202301042134">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202301282026">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 14/12/2022 15:16:05 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 14/12/2022 15:50:22 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 14/12/2022 15:53:19 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 14/12/2022 20:21:35 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 25/12/2022 08:39:20 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 25/12/2022 15:00:46 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 02/01/2023 23:44:10 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 03/01/2023 15:40:21 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 04/01/2023 13:30:08 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 04/01/2023 22:34:06 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 04/01/2023 22:34:06 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 23/01/2023 19:20:28 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 23/01/2023 19:47:04 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 24/01/2023 15:22:34 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 25/01/2023 20:59:52 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 25/01/2023 21:19:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 26/01/2023 11:30:49 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 28/01/2023 20:45:01 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 28/01/2023 21:16:45 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 28/01/2023 21:26:51 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -2441,23 +2530,6 @@ $ python3
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="beautifulsoup" creator="rvr" modifier="rvr" created="202007100428" modified="202007100536" changecount="5">
-<pre>To parse HTML &amp; XML use ''beautifulsoup''.
-It is a third party install: @@''sudo apt-get install python3-bs4''@@
-
-&lt;html&gt;&lt;pre&gt;
-import bs4
-import requests
-
-r=requests.get('https://www.usedvictoria.com/classified-ad/Sleeping-bag_36062116')
-r.status_code
-
-soup=bs4.BeautifulSoup(r.text, 'html.parser')
-elem=soup.select('#ad &gt; div.section-content &gt; div.adshead &gt; h1')   # This is the CSS Selector. Inspect the webpage.
-elem[0].text
-
-&lt;/pre&gt;&lt;/html&gt;</pre>
-</div>
 <div title="block" creator="rvr" modifier="rvr" created="202007031850" modified="202007032137" changecount="3">
 <pre>A block (also called a ''clause'') of code is code that is in [[scope]]. 
 *A block only starts off after statements that end in a colon
@@ -2619,7 +2691,7 @@ There are also more specialised collections called ''Container datatypes'' that 
   # This is a single line comment.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="common modules" creator="rvr" modifier="rvr" created="201012020158" modified="202008190618" changecount="25">
+<div title="common modules" creator="rvr" modifier="rvr" created="201012020158" modified="202301251953" changecount="26">
 <pre>Here are some popular modules:
 |!Module|!Description|
 |[[os]]|Functions for accessing the operating system|
@@ -2636,7 +2708,7 @@ There are also more specialised collections called ''Container datatypes'' that 
 |[[logging]]|Logging!|
 |[[webbrowser]]|Web browser.|
 |[[requests]]|Web requests, file downloads.|
-|[[beautifulsoup]]|Library for parsing HTML &amp; XML. 3rd party.|
+|[[BeautifulSoup]]|Library for parsing HTML &amp; XML. 3rd party.|
 |[[selenium]]|Launches browser and allows controlling it - login etc. 3rd party.|
 |[[openpyxl]]|Work with excel spreadsheets. 3rd party.|
 |''python-docx''|Work with Word documents. 3rd party.|
@@ -2696,7 +2768,7 @@ It provides software that has statistical, financial, mathematical analytics bui
 It has pivoting, data reshaping, column removal, column processing, aggregations, and transformations.
  </pre>
 </div>
-<div title="data structures" creator="rvr" modifier="rvr" created="201906222137" modified="202009060616" changecount="30">
+<div title="data structures" creator="rvr" modifier="rvr" created="201906222137" modified="202301252056" changecount="33">
 <pre>Python data structures.
 *[[dictionaries]] - (aka hash) uses squiggly brackets and colons. Format @@a={ &quot;B&quot; : &quot;Bee&quot;, &quot;Z&quot; : &quot;Zoo&quot;}@@
 **An empty dict: @@x={}@@
@@ -2710,8 +2782,9 @@ It has pivoting, data reshaping, column removal, column processing, aggregations
 **Declare an empty set: @@colour=set()@@ 
 **Assign using @@{...}@@ gives a set: @@colour={'red','blue'}@@ - &quot;colour&quot; is still a set
 **Assign using @@(...)@@ gives a tuple: @@colour=('red','blue')@@ - &quot;colour&quot; turns it to a [[tuple]].
-**Output looks like: 
+**Output looks like: ?nothing here?
 *[[tuple]] - an immutable list.
+**used to store multiple items in a single variable
 **An empty tuple: @@x=()@@
 *[[string]] - similar to lists, but are immutable.
 *numeric
@@ -2808,9 +2881,12 @@ See [[set]] and [[iterable]].</pre>
 <pre>Python ''error handling'' handling - use the [[try]] to capture error prone code. You can also [[raise]] an error.
 We are looking for exceptions. See also [[assert]].</pre>
 </div>
-<div title="errors" creator="rvr" modifier="rvr" created="202212131251" changecount="1">
+<div title="errors" creator="rvr" modifier="rvr" created="202212131251" modified="202301282003" changecount="6">
 <pre>If you get an error like: @@No module named 'xxx' @@
-It's a simple fix: @@pip install xxx@@</pre>
+It's a simple fix: @@pip install xxx@@
+Getting unicode errors? Maybe your single quote is the wrong kind.  Should be this @@font-size:2em;'@@ and not that @@font-size:2em;‘@@
+Error: @@~UnicodeDecodeError: 'utf-8' codec can't decode @@ - reading in a csv file, needed to add: ''encoding='latin1'''
+Example:    ''read_csv('/first.csv',encoding='latin1')''</pre>
 </div>
 <div title="executable" creator="rvr" modifier="rvr" created="201012140631" modified="201012140633" changecount="2">
 <pre>In linux, to make the file executable you need the following as the first line in the file:
@@ -2994,8 +3070,9 @@ bee('biteme')    # Prints: A is biteme
 print (forty2)   # Prints: 42
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="functions" creator="rvr" modifier="rvr" created="201011252048" modified="202008190618" changecount="21">
+<div title="functions" creator="rvr" modifier="rvr" created="201011252048" modified="202301252024" changecount="22">
 <pre>Functions are declared by the ''def'' keyword. 
+You can assign a variable to a function!
 Use ''return'' to return a value otherwise [[None]] is returned. Positional arguments must come before keyword arguments. 
 You can have default ''keywords = value'' pairs too:
 &lt;html&gt;&lt;pre&gt;
@@ -3114,11 +3191,19 @@ Returning the value: None
 &lt;/pre&gt;&lt;/html&gt;
  </pre>
 </div>
-<div title="hello world" creator="rvr" modifier="rvr" created="201012140525" modified="201101081919" changecount="33">
-<pre>Enter the following in [[IDLE]]
-&lt;html&gt;&lt;pre&gt;
-print 'hello, world'
-&lt;/pre&gt;&lt;/html&gt;It should print out &quot;hello world&quot;. There are two ways to go from here, a typical python program and one that uses a [[web framework]]. For the standard python file named &quot;helloworld.py&quot;:
+<div title="hello world" creator="rvr" modifier="rvr" created="201012140525" modified="202301231846" changecount="42">
+<pre>Some basic ways of running a python program.
+* Simply execute it by calling ''python''.javascript:;
+** Example: If we have a file ''hello.py'' then we can run: @@python3 hello.py@@ to run the file.
+* Make the ''hello.py'' executable
+** First line to be: ''#! /usr/bin/python3''
+** Then make file executable: ''chmod +x hello.py''
+** Run program via: ''./hello.py''
+* Using an IDE like [[Jupyter Intro]]. 
+* Another IDE is called [[IDLE]]
+
+!!Yet Another Way
+For the standard python file named &quot;helloworld.py&quot;:
 &lt;html&gt;&lt;pre&gt;
 #!/usr/bin/python    # Need this header
 import sys           # Import module
@@ -3130,31 +3215,7 @@ def main():    # This is defining a function.
 # Standard boilerplate - don't worry just add it, its runs main.
 if __name__ == '__main__':
   main()
-&lt;/pre&gt;&lt;/html&gt;See [[__name__]] for an explanation of the bottom of the above code.
-
-For GAE we'll need a little more, like this:
-&lt;html&gt;&lt;pre&gt;
-from google.appengine.ext import webapp
-from google.appengine.ext.webapp.util import run_wsgi_app
-
-class MainPage(webapp.RequestHandler):
-    def get(self):
-	name = self.request.get(&quot;name&quot;)
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello, webapp World!  ==&gt;' + name)
-
-application = webapp.WSGIApplication(
-                                     [('/', MainPage)],
-                                     debug=True)
-def main():
-    run_wsgi_app(application)
-
-if __name__ == &quot;__main__&quot;:
-    main()
-&lt;/pre&gt;&lt;/html&gt;with the appropriate [[configuration file]], you should be able to run it many ways:&lt;html&gt;&lt;pre&gt;python helloworld.py    # This file is in the directory we are in.
-helloworld.py           # this works in windows7
-python c:\gae\helloworld\helloworld.py    # Use this to run python programs in different directories &lt;/pre&gt;&lt;/html&gt; You'd have to be in the directory with that file and the PATH variable should be set to point to python. If we were running in linux, we need a header that is [[executable]].
-Of course, this is a little painful, so we will be mostly using a [[web framework]].
+&lt;/pre&gt;&lt;/html&gt;See [[__name__]] for more info.
 </pre>
 </div>
 <div title="if" creator="rvr" modifier="rvr" created="201011251938" modified="202008170142" changecount="33">
@@ -3270,7 +3331,7 @@ c[2]                // Gives: '3'
 &lt;/pre&gt;&lt;/html&gt;
 See also [[string methods]] for ''strip()'' method.</pre>
 </div>
-<div title="install Jupyter" creator="rvr" modifier="rvr" created="202212101835" modified="202301041529" changecount="7">
+<div title="install Jupyter" creator="rvr" modifier="rvr" created="202212101835" modified="202301282003" changecount="8">
 <pre>To install Jupyter aka JupyterLab, there are two ways, Anaconda and pip. I will use pip
 * Run: ''pip install jupyterlab''
 * Launch: ''jupyter-lab'' which opens up: @@color:blue;http://localhost:8888/lab@@
@@ -3456,14 +3517,15 @@ def index():
 <div title="kernals" creator="rvr" modifier="rvr" created="202212101846" changecount="1">
 <pre>The JupyterLab makes use of ''kernals'', that is different programming languages like python, ruby, and many others.</pre>
 </div>
-<div title="library" creator="rvr" modifier="rvr" created="202212131313" modified="202212141453" changecount="4">
+<div title="library" creator="rvr" modifier="rvr" created="202212131313" modified="202301282023" changecount="6">
 <pre>A library is generally means that it has a reusable set of Python code. Often it can be a collection of related [[module]]s bundled together under a single name, typically for a certain theme/domain.
 It is used to share reusable code with the community, it can often be used by non-developers to do certain tasks more simply like machine learning and statistics.
 Standard libraries come already bundled with Python when it is installed. These are often written in ''C''.
 Some common examples of Python libraries are: Pandas, NumPy, Pytorch, Requests, etc.
 
 Checkout [[Modules and Libraries]]
-See also [[module]]</pre>
+See also [[module]]
+Finally, here are [[Popular Python Libraries]]</pre>
 </div>
 <div title="linked list" creator="rvr" modifier="rvr" created="202008230616" modified="202008230620" changecount="4">
 <pre>Here is my implementation of a linked list. 
@@ -3856,19 +3918,6 @@ To concatenate strings and numbers you have to:
   text = &quot;The secret number is &quot; + str(x)    // Any other way is wrong.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="numpy" creator="rvr" modifier="rvr" created="201907182348" modified="201907190034" changecount="5">
-<pre>The library ''numpy'' is a numerical or scientific computing [[package|packages]].
-It can do many things, like 2D arrays.
-&lt;html&gt;&lt;pre&gt;
-import numpy as np
-
-x=np.array([[1,2,3],[4,5,6],[7,8,9]])
-y=np.array([[1,2,3],[1,2,3],[1,2,3]])
-print ( np.add(x,y) )
-print ( np.subtract(x,y))    # Ya, it works.
-print ( np.multiply(x,y))
-&lt;/pre&gt;&lt;/html&gt;</pre>
-</div>
 <div title="open()" creator="rvr" modifier="rvr" created="201011260338" modified="201101081840" changecount="14">
 <pre>Use ''open()'' to open a file. Format is ''open(filename, mode)''. Some parameters are:
 *r - read only  
@@ -3956,8 +4005,9 @@ import os
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="packages" creator="rvr" modifier="rvr" created="201012142246" modified="201907182352" changecount="32">
+<div title="packages" creator="rvr" modifier="rvr" created="201012142246" modified="202301251949" changecount="34">
 <pre>Python uses packages to handle multiple [[module]]s and allows for a namespace.
+A ''library'' and a ''package'' are often mixed up terminology wise. See [[Modules and Libraries]].
 A library is a collection of various packages. Essentially they are the same thing. Often a &quot;library&quot; refers to the Standard Library.
 Can also contain a ''package''.
 There is a special file called: @@ &amp;lowbar;_init_&amp;lowbar;.py@@  See below.
@@ -3980,8 +4030,7 @@ canada/           # This is the package name
 |import canada.bc.swim|canada.bc.swim.pickspot('Thetis Lake')|
 |from canada.bc import echo|swim.pickspot('Thetis Lake')|
 |from canada.bc.pickspot import pickspot|pickspot('Thetis Lake')|
-
-See [[GAE Packages]]</pre>
+</pre>
 </div>
 <div title="pass" creator="rvr" modifier="rvr" created="201012051808" changecount="1">
 <pre>This is a placeholder that does nothing. Like noop.</pre>
@@ -4136,10 +4185,24 @@ input(&quot;Enter something: &quot;)
 8
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="read in data" creator="rvr" modifier="rvr" created="202212131722" modified="202212131725" changecount="6">
+<div title="read in data" creator="rvr" modifier="rvr" created="202212131722" modified="202301282011" changecount="7">
 <pre>With [[Panda]] we can read in data.
-Here are some important parts of this:
-
+Here are two ways:
+* [[read_excel]]
+* [[read_csv]]
+</pre>
+</div>
+<div title="read_csv" creator="rvr" modifier="rvr" created="202301282014" modified="202301282016" changecount="4">
+<pre>To read in a csv file:
+&lt;html&gt;&lt;pre&gt;
+import pandas as pd
+data = pd.read_csv('First.csv', header=None, encoding= 'unicode_escape') 
+&lt;/pre&gt;&lt;/html&gt;There are many parameters to set, like ''skip_blank_lines'' to skip empty lines.
+See also [[read_excel]]</pre>
+</div>
+<div title="read_excel" creator="rvr" modifier="rvr" created="202301282012" modified="202301282013" changecount="2">
+<pre>Using the Python library [[Panda]] let's read in an excel file.
+There are many parameters available:
 &lt;html&gt;&lt;pre&gt;
 import pandas as pd
 url_ABC='https://data.interwebs....'
@@ -4391,6 +4454,10 @@ browser.quit()
 </div>
 <div title="self" creator="rvr" modifier="rvr" created="201101072317" changecount="1">
 <pre>The word ''self'' is not a reserved word but it is a word that is often used and you should follow this convention. It is the first argument of a method and is used to refer to that instance, or itself!</pre>
+</div>
+<div title="server" creator="rvr" modifier="rvr" created="202301231853" modified="202301231854" changecount="2">
+<pre>We can run a local server for testing. It's simply: @@python3 -m http.server &lt;port&gt;@@ If port is omitted then ''8000'' is used.
+Opening @@localhost:8000@@ will grab the contents of the directory you issued the server command from.</pre>
 </div>
 <div title="set" creator="rvr" modifier="rvr" created="201011260058" modified="202009060642" changecount="38">
 <pre>Python ''sets'' are an unordered collection of elements with no duplicate entries. 
@@ -4828,18 +4895,22 @@ The ''except'' can have keywords to catch a specific exception. Like ''~ZeroDivi
 
 See [[assert]].</pre>
 </div>
-<div title="tuple" creator="rvr" modifier="rvr" created="201011260045" modified="202008170137" changecount="40">
-<pre>The ''tuple'' is like a [[list]], it is a [[data structures]] that is:
+<div title="tuple" creator="rvr" modifier="rvr" created="201011260045" modified="202301252102" changecount="46">
+<pre>The ''tuple'' is like a [[list]], it is a [[data structures]] :
+*a tuple is a sequence of variables
+*you can mix types
 *immutable - ''cannot'' change, add, or delete data once created.
 **but you can change nested lists. (Why this is? I don't know).
 *surrounded by round brackets &quot;()&quot; not square ones &quot;[]&quot; - they can be omitted.
+*are used to store multiple items in a single variable (see below)
 *they can be nested. 
 &lt;html&gt;&lt;pre&gt;
   e=()          # This is an empty tuple
   f=tuple()     # This is an empty tuple
   s=&quot;juice&quot;,    # This is a singleton tuple - notice trailing comma!
 
-  y=&quot;apple&quot;,2,&quot;banana&quot;    # Can be surrounded by round brackets &quot;()&quot; or omitted.
+  w=(&quot;apple&quot;,2,&quot;banana&quot;)  # &quot;w&quot; is a tuple. Tuples are surrounded by round brackets &quot;()&quot;.
+  y=&quot;apple&quot;,2,&quot;banana&quot;    # &quot;y&quot; is a tuple. The round brackets &quot;()&quot; can be omitted.
   y[2]                    # 'banana'
   y[2][3]                 # 'a' - the [3] index pulls out the 4th letter in banana
 
@@ -4991,31 +5062,6 @@ $ which python3
   /usr/bin/python3
 $
 &lt;/pre&gt;&lt;/html&gt;And @@''deactivate''@@ to turn it off.</pre>
-</div>
-<div title="web framework" creator="rvr" modifier="rvr" created="201012142221" modified="201908142215" changecount="6">
-<pre>GAE supports any python framework that is [[WSGI]] compliant, like [[Django]] and webpy. GAE comes with a simple framework [[webapp]] that is in the [[google.appengine.ext]] [[package]].</pre>
-</div>
-<div title="webapp" creator="rvr" modifier="rvr" created="201012142319" modified="201012142332" changecount="8">
-<pre>Here is the guts of a basic webapp application.
-&lt;html&gt;&lt;pre&gt;
-from google.appengine.ext import webapp                    # This is the import needed to use the webapp framework.
-from google.appengine.ext.webapp.util import run_wsgi_app  # This utility 
-
-class MainPage(webapp.RequestHandler):                           # This is our code - needed to handle HTML requests
-    def get(self):                                               # Define a get method
-        self.response.headers['Content-Type'] = 'text/plain'     # This header has to be sent first.
-        self.response.out.write('Hello, webapp World!')          # This is the response that is sent back. Typically for human eyes.
-
-application = webapp.WSGIApplication(            # If webapp gets a request to the root url (&quot;/&quot;) then instantiate MainPage.
-                           [('/', MainPage)],
-                           debug=True)
-
-def main():
-    run_wsgi_app(application)        # This runs a WSGI application in GAE. This can determine if we are using a dev or app server.
-
-if __name__ == &quot;__main__&quot;:
-    main()
-&lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="webbrowser" creator="rvr" modifier="rvr" created="202007100337" changecount="1">
 <pre>The ''webbrowser'' module is for launching browser.
