@@ -599,7 +599,7 @@ There are three kinds of collections to cover
 * [[dictionary|dictionaries]] - mutable, iterable
 </pre>
 </div>
-<div title="DataFrame" creator="rvr" modifier="rvr" created="201905230059" modified="202301301549" changecount="19">
+<div title="DataFrame" creator="rvr" modifier="rvr" created="201905230059" modified="202302012108" changecount="20">
 <pre>Using [[Panda]], a 2D object is a ~DataFrame. We'll cover:
 *create a df (rows and columns)
 *index
@@ -873,8 +873,9 @@ print 'hello, world'
 &lt;/pre&gt;&lt;/html&gt;It should print out &quot;hello world&quot;. 
 </pre>
 </div>
-<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202301251933" changecount="71">
-<pre>[[any]]
+<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202302010540" changecount="72">
+<pre>[[annotation]]
+[[any]]
 [[storing api keys]] - or passwords
 [[array]]
 [[assert]]
@@ -973,7 +974,7 @@ print 'hello, world'
 [[plotly]]
 [[NumPy]]</pre>
 </div>
-<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202301251937" changecount="15">
+<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202302012108" changecount="17">
 <pre>[[namespace]]
 [[naming conventions]]
 [[nested lists]]
@@ -986,7 +987,7 @@ print 'hello, world'
 [[operator]]
 [[OrderedDict]]
 [[packages]] - Python
-[[Panda]]
+[[Pandas]]
 [[pass]]
 [[pip]]
 [[postgresql]]
@@ -1449,11 +1450,11 @@ def login():
         return 'Going to login form!'  
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Panda" creator="rvr" modifier="rvr" created="201907120106" modified="202301282023" changecount="12">
+<div title="Pandas" creator="rvr" modifier="YourName" created="201907120106" modified="202302012108" changecount="14">
 <pre>Panda is open sourced Python [[library]], used in Python community for high-performance data manipulation and analysis. It is also widely used for [[Data Science]].
 It is often called a [[package]], but semantically it is not.
 Panda has many tools for working with different [[data structures]]. It provides tools for thinking about data in tabular forms. The name Pandas is derived from the word Panel Data – an Econometrics term from Multidimensional data.
-1D - [[Panda Series Example]] 
+1D - [[Pandas Series Example]] 
 2D - [[DataFrame]]s
 3D - General 3D labeled, size-mutable array. This uses the ''Panel'' method.
 
@@ -1464,8 +1465,8 @@ See [[read in data]]
 See [[Panda settings]]
 </pre>
 </div>
-<div title="Panda Series Example" creator="rvr" modifier="rvr" created="201907120723" modified="202301251938" changecount="15">
-<pre>Here is a series, using [[Panda]] and NumPy.
+<div title="Pandas Series Example" creator="rvr" modifier="YourName" created="201907120723" modified="202302012108" changecount="17">
+<pre>Here is a series, using [[Pandas]] and NumPy.
 
 &lt;html&gt;&lt;pre&gt;
 import pandas as pd 
@@ -1500,7 +1501,7 @@ dtype: object       dtype: object  	      dtype: int64
 Note that there is an index of 0, 1, ... if we don't specify.
 You can also create a series + index using [[dictionaries]]. Like @@data={ 'a' : 'apple', 'b' : 'banana', 'c' : 'carrot'}@@</pre>
 </div>
-<div title="Panda settings" creator="rvr" modifier="rvr" created="202212141326" modified="202301301043" changecount="26">
+<div title="Pandas settings" creator="rvr" modifier="rvr" created="202212141326" modified="202302012109" changecount="27">
 <pre>Panda has lots of settings, we start with: ''import pandas as pd''
 These are all prefaced with: ''pd.option.'' Hence: @@pd.options.displaymax_rows@@
 |!Setting|!Description|
@@ -1617,11 +1618,11 @@ merge(config.optionsDesc,{
 */
 //}}}</pre>
 </div>
-<div title="Popular Python Libraries" creator="rvr" modifier="rvr" created="202301282026" modified="202301282026" changecount="2">
+<div title="Popular Python Libraries" creator="rvr" modifier="rvr" created="202301282026" modified="202302012109" changecount="3">
 <pre>Here are some popular libraries:
 *os - operating system
 ** path=os.''getcwd''() - gets current working directory
-* panda
+* [[Pandas]]
 ** ''read_csv''(...) - to read in a csv file
 ** ''read_excel''(...) - see [[read in data]]</pre>
 </div>
@@ -1755,10 +1756,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202301301553">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202302022016">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 24/01/2023 15:22:34 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 25/01/2023 20:59:52 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 25/01/2023 21:19:42 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 26/01/2023 11:30:49 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 28/01/2023 20:45:01 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1766,7 +1765,9 @@ merge(config.shadowTiddlers,{
 | 28/01/2023 21:26:51 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 30/01/2023 13:44:32 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 30/01/2023 16:36:28 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 30/01/2023 16:53:53 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 30/01/2023 16:53:53 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 01/02/2023 06:55:01 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 02/02/2023 21:16:09 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -2449,6 +2450,21 @@ if __name__ == '__main__':
 See [[__main__]].
 </pre>
 </div>
+<div title="annotation" creator="rvr" modifier="rvr" created="202302010551" modified="202302010554" changecount="2">
+<pre>Annotations are a way to associate arbitrary expressions to function arguments and return values.
+They are mainly reserved for type hints used by thrid party software and have no meaning in runtime code.
+When you inspect the function, you will see annotation info there.
+Format: ''def function_name(param1: param1_type, param2: param2_type) -&gt; return_type:''
+An example:
+&lt;html&gt;&lt;pre&gt;
+def get_some_stuff() -&gt; float:
+  . . . some code
+  return some_stuff
+
+&gt;&gt;&gt; get_some_stuff_df.__annotations__
+{'get_some_stuff': &lt;class 'float'&gt;, 'return': &lt;class 'float'&gt;}
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
 <div title="any" creator="rvr" modifier="rvr" created="202008040740" modified="202008190617" changecount="4">
 <pre>''any'' is a [[builtin]].
 The any() function tests if any item in the list evaluates to True to not. 
@@ -2775,9 +2791,9 @@ wb.get_sheet_names()            # Returns: ['Alpha', 'Sheet2', 'Sheet3']
 
 </pre>
 </div>
-<div title="data" creator="rvr" modifier="rvr" created="201907120059" modified="202212131312" changecount="3">
+<div title="data" creator="rvr" modifier="rvr" created="201907120059" modified="202302012109" changecount="4">
 <pre>Python can handle data in many formats.
-For efficient use of tabular data (that could be a 2D array) we can use the [[Panda]] software [[library]] to be able to use efficiencies in processing tabular data.
+For efficient use of tabular data (that could be a 2D array) we can use the [[Pandas]] software [[library]] to be able to use efficiencies in processing tabular data.
 It provides software that has statistical, financial, mathematical analytics built in. 
 It has pivoting, data reshaping, column removal, column processing, aggregations, and transformations.
  </pre>
@@ -3840,7 +3856,39 @@ pie, loaf, cake = 'apple', 'banana', 'coconut'
 See also [[shortcuts]].
 Also [[list]].</pre>
 </div>
-<div title="multiple sheets" creator="rvr" modifier="rvr" created="202301301108" modified="202301301546" changecount="14">
+<div title="multiple sheet aggregate" creator="rvr" modifier="rvr" created="202302012137" changecount="1">
+<pre>An xlsx spreadsheet has many (unknown number) named sheets. 
+Each sheet has a column called SOME_ID with ID values as well as many other columns of random other data. 
+Merge the sheets into a new xlsx spreadsheet that has the SOME_ID rows and  all the other columns matched up.
+&lt;html&gt;&lt;pre&gt;
+import pandas as pd
+
+# Read in the data from the XLSX file
+url = &quot;https://example.com/file.xlsx&quot;
+
+# Create a list to store the data from each sheet
+sheets = []
+
+# Read in the data from each sheet in the XLSX file
+with pd.ExcelFile(url) as xlsx:
+    for sheet_name in xlsx.sheet_names:
+        sheet = pd.read_excel(xlsx, sheet_name=sheet_name)
+        sheets.append(sheet)
+
+# Concatenate the data from each sheet into a single DataFrame
+df = pd.concat(sheets, sort=False)
+
+# Group the data by the SOME_ID column
+grouped = df.groupby(&quot;SOME_ID&quot;)
+
+# Aggregate the data for each group by combining the columns from all sheets
+aggregated = grouped.agg(&quot;first&quot;)
+
+# Write the aggregated data to a new XLSX file
+aggregated.to_excel(&quot;aggregated_data.xlsx&quot;, index=False)
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="multiple sheets" creator="rvr" modifier="rvr" created="202301301108" modified="202302012134" changecount="16">
 <pre>When with excel spreadsheets with multiple &quot;sheets&quot;, there are a few differences compared to just one sheet.
 Typically when you read in an excel file, it goes into a [[DataFrame]] - a 2-d object.
 When you read in an excel file with multiple sheets, it is actually a [[dictionary|dictionaries]].
@@ -3857,8 +3905,7 @@ sheets = pd.read_excel('Qwerty.xlsx', sheet_name=None)
 print(&quot;Sheets type:&quot;, type(sheets))        # Sheets type: &amp;lt;class 'dict'&gt;
 print(&quot;Keys: &quot;, sheets.keys())        # Keys:  dict_keys(['Alpha', 'Beta', 'Gamma'])
 print(&quot;Items: &quot;, sheets.values())     # Items:  dict_values([   ID  Year    Name  Amout   Color  0   7 ...
-&lt;/pre&gt;&lt;/html&gt;
-
+&lt;/pre&gt;&lt;/html&gt;Another [[multiple sheet aggregate]] example.
 </pre>
 </div>
 <div title="namespace" creator="rvr" modifier="rvr" created="201011260843" modified="201907182349" changecount="3">
@@ -4220,8 +4267,8 @@ input(&quot;Enter something: &quot;)
 8
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="read in data" creator="rvr" modifier="rvr" created="202212131722" modified="202301282011" changecount="7">
-<pre>With [[Panda]] we can read in data.
+<div title="read in data" creator="rvr" modifier="rvr" created="202212131722" modified="202302012109" changecount="8">
+<pre>With [[Pandas]] we can read in data.
 Here are two ways:
 * [[read_excel]]
 * [[read_csv]]
@@ -4235,8 +4282,9 @@ data = pd.read_csv('First.csv', header=None, encoding= 'unicode_escape')
 &lt;/pre&gt;&lt;/html&gt;There are many parameters to set, like ''skip_blank_lines'' to skip empty lines.
 See also [[read_excel]]</pre>
 </div>
-<div title="read_excel" creator="rvr" modifier="rvr" created="202301282012" modified="202301301102" changecount="4">
-<pre>Using the Python library [[Panda]] let's read in an excel file.
+<div title="read_excel" creator="rvr" modifier="rvr" created="202301282012" modified="202302012122" changecount="7">
+<pre>Using the Python library [[Pandas]] let's read in an excel file.
+Note that we are actually grabbing the file from the internet. There is another library that can do thisL [[requests]] 
 There are many parameters available. In the below example we are reading from a URL, but it could also be a local file.
 &lt;html&gt;&lt;pre&gt;
 import pandas as pd
@@ -4400,8 +4448,9 @@ Look for 3 different words: &quot;canary&quot;, or &quot;cat&quot; or &quot;car&
 &gt;&gt;&gt; r.group(1)    # Returns: 'nary'
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="requests" creator="rvr" modifier="rvr" created="202007100402" modified="202007100416" changecount="8">
-<pre>The ''requests'' [[module]].
+<div title="requests" creator="rvr" modifier="rvr" created="202007100402" modified="202302012113" changecount="9">
+<pre>The ''requests'' [[module]]. To open an HTTP request.
+Note that [[Pandas]] can also do this.
 Writes to local directory.
 &lt;html&gt;&lt;pre&gt;
 import requests
