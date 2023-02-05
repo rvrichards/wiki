@@ -1707,9 +1707,8 @@ Linux kernel deals only with UID.</pre>
 <div title="Ubuntu" creator="rvr" modifier="rvr" created="201501221841" changecount="1">
 <pre>The ''Ubuntu'' [[distribution]] is ...</pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201012090524" modified="202301231814">
+<div title="UploadLog" modifier="rvr" created="201012090524" modified="202302051845">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 02/01/2023 19:48:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 02/01/2023 22:43:54 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 03/01/2023 12:34:56 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 03/01/2023 13:27:49 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1718,7 +1717,8 @@ Linux kernel deals only with UID.</pre>
 | 04/01/2023 22:33:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 23/01/2023 18:39:49 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/01/2023 18:42:11 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 23/01/2023 19:14:01 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 23/01/2023 19:14:01 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 05/02/2023 19:45:04 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201012090514" tags="systemConfig">
 <pre>/***
@@ -3783,7 +3783,7 @@ Here are the commands:
 *''h'' - for help
 *''q'' - to quit</pre>
 </div>
-<div title="link" creator="rvr" modifier="rvr" created="201101211825" modified="202010082007" changecount="15">
+<div title="link" creator="rvr" modifier="YourName" created="201101211825" modified="202302051844" changecount="18">
 <pre>A ''soft link'' aka ''symbolic link'' contains a reference to another file or directory. Soft links can also be created pointing to directories, avoid this for hard links.
 A ''hard link'' associates a name with the actual data ([[inode]] - see [[file]]). Many different files (links) can point to the same file (data), so deleting one file (meaning the filename+pointer to data)  means that you still have the original data with the other link. Picture a file meaning: a filename + pointer to data in another location - so deleting a file only deletes the data if no other pointers are pointing to that data!
 &lt;html&gt;&lt;pre&gt;
@@ -3791,6 +3791,7 @@ A ''hard link'' associates a name with the actual data ([[inode]] - see [[file]]
   $ ln more.txt hlink.txt        # hard link
 
   $ ln -s /home/fred/projects/bite goto    # soft link to directory &quot;.../bite&quot;. Just type &quot;goto&quot;
+  $ ln -s /home/fred/bookproj ./bookproj   # a link to a directory. Just type &quot;bookproj&quot;
 
 &lt;/pre&gt;&lt;/html&gt;If you delete the original file - the soft link will be broken but the hard link will still have a link to the data.
 
