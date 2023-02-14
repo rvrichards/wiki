@@ -579,9 +579,9 @@ Counter({'mango': 3, 'carrot': 2, 'apple': 1})
 Counter({'apple': 11, 'mango': 2, 'carrot': 2})
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Data Science" creator="rvr" modifier="rvr" created="202301251958" modified="202301252111" changecount="10">
+<div title="Data Science" creator="rvr" modifier="rvr" created="202301251958" modified="202302141457" changecount="11">
 <pre>Combined with JupyterLab, Python has great ''Data Science'' capabilities.
-There are great [[libraries|library]] out there, like s: BeautifulSoup, NumPy, Matplotlib, SciPy, ...
+There are great [[libraries|library]] out there, like s: BeautifulSoup, NumPy, Matplotlib, ~SciPy, ...
 
 There are also basic statistic functionality as provided also in  the &quot;R&quot; language.
 
@@ -599,8 +599,8 @@ There are three kinds of collections to cover
 * [[dictionary|dictionaries]] - mutable, iterable
 </pre>
 </div>
-<div title="DataFrame" creator="rvr" modifier="rvr" created="201905230059" modified="202302012108" changecount="20">
-<pre>Using [[Panda]], a 2D object is a ~DataFrame. We'll cover:
+<div title="DataFrame" creator="rvr" modifier="rvr" created="201905230059" modified="202302141456" changecount="21">
+<pre>Using [[Pandas]], a 2D object is a ~DataFrame. We'll cover:
 *create a df (rows and columns)
 *index
 *info
@@ -653,8 +653,8 @@ single_df.drop(single_df[single_df['Year'] != 2020].index, inplace = True)
 <div title="DefaultTiddlers" creator="rvr" modifier="rvr" created="201011291919" changecount="1">
 <pre>[[Introduction]]</pre>
 </div>
-<div title="Django" creator="rvr" modifier="rvr" created="201908142215" modified="201908142219" changecount="3">
-<pre>''Django'' is an open source [[web framework]], similar to [[Flask]], excpet ''Django'' is heavyweight while [[Flask]] is lightweight.
+<div title="Django" creator="rvr" modifier="rvr" created="201908142215" modified="202302141458" changecount="4">
+<pre>''Django'' is an open source web framework, similar to [[Flask]], excpet ''Django'' is heavyweight while [[Flask]] is lightweight.
 It follows a model-template-view (MTV) architectural format.
 To install: [[Django install]].
 </pre>
@@ -967,15 +967,15 @@ print 'hello, world'
 [[multiline string]]
 [[multiple assignment]]</pre>
 </div>
-<div title="Index Modules" creator="rvr" modifier="rvr" created="201905230057" modified="202301251937" changecount="6">
+<div title="Index Modules" creator="rvr" modifier="rvr" created="201905230057" modified="202302141501" changecount="7">
 <pre>What is a [[module]]?
 
 [[OpenCV]]
-[[pandas_datareader]]
+pandas_datareader
 [[plotly]]
 [[NumPy]]</pre>
 </div>
-<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202302131022" changecount="19">
+<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202302141446" changecount="20">
 <pre>[[namespace]]
 [[naming conventions]]
 [[nested lists]]
@@ -983,7 +983,6 @@ print 'hello, world'
 [[None]]
 [[numbers]]
 [[NumPy]]
-[[object]]
 [[open()]]
 [[operator]]
 [[OrderedDict]]
@@ -1007,7 +1006,7 @@ print 'hello, world'
 [[regex]] - regular expressions
 </pre>
 </div>
-<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202301231852" changecount="12">
+<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202302141447" changecount="14">
 <pre>[[scope]]
 [[self]]
 [[server]]
@@ -1035,27 +1034,26 @@ print 'hello, world'
 [[values|items]]
 [[variable interpolation]]
 [[variables]]
+[[Vehicle and Bike Class]]
 [[venv]]
 [[venv use]]
 [[version|basic things to know]] - basic things to know
-[[web framework]]
-[[webapp]]
 [[while]]
 [[WSGI]]</pre>
 </div>
-<div title="Index other" creator="rvr" modifier="rvr" created="201011260220" modified="202008250649" changecount="15">
+<div title="Index other" creator="rvr" modifier="rvr" created="201011260220" modified="202302141502" changecount="17">
 <pre>[[__builtin__]]
 [[__class__]]
 [[__del__]]
 [[__doc__]]
-[[__file__]]
+_ _file_ _
 [[__init__]]
 [[__main__]]
 [[__name__]]
 [[%|string formatting]]
 [[*]] - unpack</pre>
 </div>
-<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202302131128" changecount="34">
+<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202302141503" changecount="35">
 <pre>My Python and [[JupyterLab]] notes. There is also a [[Data Science]] section.
 Some key points about Python:
 *Python is dynamically typed. Meaning no type checking prior to running (unlike Java of c++).
@@ -1078,10 +1076,10 @@ Here are some places to get started:
 *[[interpreter]] - to run Python by command line interpreter.
 *[[new project]] - to create and run in virtual environment ([[venv]] ).
 *[[install module]] - to add modules
-*[[objects]] - understand conventions about return objects.
+*''objects'' - understand conventions about return objects.
 Check out [[basic things to know]]</pre>
 </div>
-<div title="JWT" creator="rvr" modifier="rvr" created="201903181557" modified="201903182240" changecount="25">
+<div title="JWT" creator="rvr" modifier="rvr" created="201903181557" modified="202302141456" changecount="26">
 <pre>JSON Web Tokens aka JWT.
 JWT is an open industry standard (RFC 7519) for representing claims securely between two parties. 
 @@NOTE:@@ Securely means that each party can guarantee that they are talking to each other and sent data is from an authentic source.
@@ -1096,7 +1094,7 @@ When tokens are signed using public/private key pairs, the signature also certif
 A session is when we &quot;log in&quot; (create a token) to when we &quot;log out&quot; (removal of a token).
 JWT uses tokens to authenticate. It has these tokens stored in your web browser for the duration of the session.
 
-The format of a JWT is: @@font-size:2em;color:MidnightBlue;header.payload.signature@@ 
+The format of a JWT is: @@font-size:2em;color:Blue;header.payload.signature@@ 
 *[[JWT Header]]
 *[[JWT Payload]]
 *[[JWT Signature]] - Signing data allows the data receiver to verify the authenticity of the source of the data.
@@ -1150,7 +1148,7 @@ Here is an example:
 This payload is then ~Base64Url encoded.
 See [[JWT Header]],  [[JWT Signature]] and [[JWT Example]].</pre>
 </div>
-<div title="JWT Signature" creator="rvr" modifier="rvr" created="201903181923" modified="201903182236" changecount="13">
+<div title="JWT Signature" creator="rvr" modifier="rvr" created="201903181923" modified="202302141457" changecount="14">
 <pre>We wrap up the [[JWT]] with a signature. Below is ''encoded'' followed by ''encrypted''.
 !!Encoded
 This signature requires you to do a little math, this signature is ''encoded'': 
@@ -1162,20 +1160,20 @@ The ''signature'' is then the third part of the [[JWT]] token.
 The signature is used to guarantee that nothing was changed along the way from you to the server.
 See [[JWT Header]],  [[JWT Payload]] and [[JWT Example]].
 !!Encrypted
-To create the signature with the HMAC SHA256 algorithm, that is ''encrypted''. This *does* not encrypt the payload!
+To create the signature with the HMAC ~SHA256 algorithm, that is ''encrypted''. This *does* not encrypt the payload!
 #data = base64UrlEncode(header) + &quot;.&quot; +  base64UrlEncode(payload)
 #signature = ~HMACSHA256(data, secret)
 </pre>
 </div>
-<div title="JWT security" creator="rvr" modifier="rvr" created="201903182243" modified="201903182250" changecount="4">
+<div title="JWT security" creator="rvr" modifier="rvr" created="201903182243" modified="202302141453" changecount="5">
 <pre>JWT is RFC 7519.
 It is meant to securely send information between two parties that know each other.
 It does not rely on encryption but encoding.
 
 The ''signing'' part of JWT is the cryptographic part called the signature. This is to ''ensure'' that the JWT has not been tampered with
 The algorithm used is 
-*''RS256'' - [[asymmetric algorithm]] - one secret key
-*''HS256'' - [[symmetric algorithmn]] - two secret keys</pre>
+*''~RS256'' - [[asymmetric algorithm]] - one secret key
+*''~HS256'' - [[symmetric algorithmn]] - two secret keys</pre>
 </div>
 <div title="JWT steps" creator="rvr" modifier="rvr" created="201903181637" modified="201903182021" changecount="3">
 <pre>Here are the steps using a [[JWT]].
@@ -1331,7 +1329,7 @@ loadRemoteFile = function(url,callback,params)
 [[Stats|http://stats.rtfm.tiddlyspot.com/]]
 [[SQL|http://sql.rtfm.tiddlyspot.com/]]</pre>
 </div>
-<div title="Modules and Libraries" creator="rvr" modifier="rvr" created="202301251944" modified="202301251956" changecount="5">
+<div title="Modules and Libraries" creator="rvr" modifier="rvr" created="202301251944" modified="202302141457" changecount="6">
 <pre>Module:
 * where we group related code
 * in one file with a ''py'' extension
@@ -1347,7 +1345,7 @@ Library
 * can contain related modules and packages
 * a ''library'' is often the same as a ''package'' in common language use
 * Often a ''library'' is used to share ''reusable'' code with the community
-* Useful libraries: BeautifulSoup, NumPy, Matplotlib, SciPy, ...
+* Useful libraries: BeautifulSoup, NumPy, Matplotlib, ~SciPy, ...
 See:
 * [[module]]
 * [[library]]
@@ -1455,9 +1453,9 @@ def login():
         return 'Going to login form!'  
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="Pandas" creator="rvr" modifier="YourName" created="201907120106" modified="202302012108" changecount="14">
+<div title="Pandas" creator="rvr" modifier="rvr" created="201907120106" modified="202302141504" changecount="17">
 <pre>Panda is open sourced Python [[library]], used in Python community for high-performance data manipulation and analysis. It is also widely used for [[Data Science]].
-It is often called a [[package]], but semantically it is not.
+It is often called a [[package|packages]], but semantically it is not.
 Panda has many tools for working with different [[data structures]]. It provides tools for thinking about data in tabular forms. The name Pandas is derived from the word Panel Data – an Econometrics term from Multidimensional data.
 1D - [[Pandas Series Example]] 
 2D - [[DataFrame]]s
@@ -1467,7 +1465,7 @@ Do you have it: @@ pip3 list@@
 Go and get it: @@ pip3 install pandas@@
 
 See [[read in data]]
-See [[Panda settings]]
+See [[Pandas settings]] 
 </pre>
 </div>
 <div title="Pandas Series Example" creator="rvr" modifier="YourName" created="201907120723" modified="202302012108" changecount="17">
@@ -1506,7 +1504,7 @@ dtype: object       dtype: object  	      dtype: int64
 Note that there is an index of 0, 1, ... if we don't specify.
 You can also create a series + index using [[dictionaries]]. Like @@data={ 'a' : 'apple', 'b' : 'banana', 'c' : 'carrot'}@@</pre>
 </div>
-<div title="Pandas settings" creator="rvr" modifier="rvr" created="202212141326" modified="202302012109" changecount="27">
+<div title="Pandas settings" creator="rvr" modifier="rvr" created="202212141326" modified="202302141459" changecount="28">
 <pre>Panda has lots of settings, we start with: ''import pandas as pd''
 These are all prefaced with: ''pd.option.'' Hence: @@pd.options.displaymax_rows@@
 |!Setting|!Description|
@@ -1521,7 +1519,7 @@ These are all prefaced with: ''pd.option.'' Hence: @@pd.options.displaymax_rows@
 |get_option('display.max_rows')|Gets the max_rows number.|
 |set_option('display.max_rows', None)|Sets max_rows to default|
 
-Note: only the last &quot;pd.options.display.xxx&quot; will display in a [[cell]]. To print many things out in a cell use ''print()'' as in ...
+Note: only the last &quot;pd.options.display.xxx&quot; will display in a cell. To print many things out in a cell use ''print()'' as in ...
 &lt;html&gt;&lt;pre&gt;
 print(&quot;Row count: &quot;, pd.options.display.max_rows)
 print(&quot;Row count: &quot;, pd.get_option('display.max_rows'))
@@ -1678,9 +1676,9 @@ pyautogui.hotkey('ctrl','o')
 <pre>''PyCharm'' is an IDE.
 Installed in Ubuntu via: @@sudo snap install pycharm-community -&amp;dash;classic@@</pre>
 </div>
-<div title="Pypi" creator="rvr" modifier="rvr" created="202302131017" changecount="1">
-<pre>PyPI helps you find and install software developed and shared by the Python community.
-You will need to set up a Pypi account at: https://pypi.org/</pre>
+<div title="Pypi" creator="rvr" modifier="rvr" created="202302131017" modified="202302141457" changecount="2">
+<pre>~PyPI helps you find and install software developed and shared by the Python community.
+You will need to set up a ~PyPI account at: https://pypi.org/</pre>
 </div>
 <div title="Set Python3" creator="rvr" modifier="rvr" created="201908142304" modified="202212251400" changecount="16">
 <pre>How to set ''Python3'' as default.
@@ -1788,10 +1786,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202302131640">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202302141504">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 30/01/2023 16:36:28 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 30/01/2023 16:53:53 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 01/02/2023 06:55:01 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 02/02/2023 21:16:09 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 03/02/2023 22:53:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1799,7 +1795,9 @@ merge(config.shadowTiddlers,{
 | 06/02/2023 18:20:20 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 13/02/2023 12:21:30 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/02/2023 16:28:58 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 13/02/2023 17:40:21 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 13/02/2023 17:40:21 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 14/02/2023 11:59:55 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 14/02/2023 16:04:59 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -2427,10 +2425,9 @@ We have a purple bike. It has 5 gears.
 <div title="WSGI" creator="rvr" modifier="rvr" created="201012142346" modified="201101072248" changecount="4">
 <pre>WSGI is the python standard for interactions between servers and googles webapps. There are others but this is basic and thats good enough for now.</pre>
 </div>
-<div title="WelcomeToTiddlyspot" creator="rvr" modifier="rvr" created="201011181928" modified="201011181929" changecount="2">
+<div title="WelcomeToTiddlyspot" creator="rvr" modifier="rvr" created="201011181928" modified="202302141454" changecount="3">
 <pre>[[Introduction]]
-[[Index A-M]]
-[[Index N-Z]]</pre>
+[[MainMenu]]</pre>
 </div>
 <div title="__builtin__" creator="rvr" modifier="rvr" created="201012012315" modified="202008190617" changecount="5">
 <pre>__builtin__ is a special module that has all Pythons functions and attributes that are available for you to use. If you can list them all:
@@ -2529,12 +2526,12 @@ This will terminate the program - you have to fix something.</pre>
   a,b = 2,3
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="asymmetric algorithm" creator="rvr" modifier="rvr" created="201903182051" modified="201903182250" changecount="3">
+<div title="asymmetric algorithm" creator="rvr" modifier="rvr" created="201903182051" modified="202302141451" changecount="4">
 <pre>An asymmetric algorithm,  (~RS256) uses a public/private key pair. 
 The identity provider has a private (secret) key used to generate the signature, and the consumer of the JWT gets a public key to validate the signature.
 Since the public key doesn't need to be kept secure, it's easily available to obtain and use.
 
-~RS256 is an RSA Signature with SHA-256
+~RS256 is an RSA Signature with ~SHA-256
 
 See [[symmetric algorithmn]]</pre>
 </div>
@@ -2697,7 +2694,7 @@ Pressing @@ctrl+s@@ and ''autosave'' do NOT save checkpoints.
 For more safety (checkpoints!), use GIT.
 There is a ''revert to checkpoint'' under the ''File'' tab.</pre>
 </div>
-<div title="class" creator="rvr" modifier="rvr" created="201011260844" modified="202008230112" changecount="47">
+<div title="class" creator="rvr" modifier="rvr" created="201011260844" modified="202302141449" changecount="49">
 <pre>A python ''class'' is used to encapsulate data (attributes) and behaviour (methods). An instance of a class is an object, so a class is a blueprint. It is defined like:
 &lt;html&gt;&lt;pre&gt;
   class ClassName(SomeAncestor):     # Note: SomeAncestor is optional
@@ -2726,7 +2723,7 @@ class Bossy:
 
   def getamount(self,random):
     return random*Bossy.special
-&lt;/pre&gt;&lt;/html&gt;See also [[multiline string]].
+&lt;/pre&gt;&lt;/html&gt;See also [[Vehicle and Bike Class]].
 Here is the implementation:&lt;html&gt;&lt;pre&gt;
 $ c = Bossy('Fred')	       
 $ print (c.name)            # Gives: Fred
@@ -2736,7 +2733,7 @@ $ print (c.getamount(10))   # Gives 420
 By convention private class variables begin with an underscore, like  ''_count''.
 See also [[return objects]].</pre>
 </div>
-<div title="collections" creator="rvr" modifier="rvr" created="201905252040" modified="202008250648" changecount="21">
+<div title="collections" creator="rvr" modifier="rvr" created="201905252040" modified="202302141459" changecount="23">
 <pre>Python has great [[builtin]] ''collections''. There are even special ''collections'' that provide high-performance container data structures - but you must import.
 In Python we often use [[list]]s instead or [[array]]s. They have the same look, except that lists have more functions associated with them. These are &quot;general purpose&quot; collections.
 *[[array]]
@@ -2748,9 +2745,9 @@ In Python we often use [[list]]s instead or [[array]]s. They have the same look,
 
 There are also more specialised collections called ''Container datatypes'' that must be imported. These include:
 *[[Counter]] - A [[dict|dictionaries]] subclass for counting hashable objects.
-*[[ChainMap]] - A [[dict|dictionaries]]-like class for creating a single view of multiple mappings.
+*~ChainMap - A [[dict|dictionaries]]-like class for creating a single view of multiple mappings.
 *[[OrderedDict]] - A [[dict|dictionaries]]-like class for remembering order.
-*[[defaultDict]] -  A [[dict|dictionaries]]-like class that will set a default value if that key has not been set yet. SO you don't have to check.</pre>
+*defaultDict -  A [[dict|dictionaries]]-like class that will set a default value if that key has not been set yet. SO you don't have to check.</pre>
 </div>
 <div title="comment" creator="rvr" modifier="rvr" created="201011260922" modified="201101072349" changecount="2">
 <pre>There are a few ways to ''comment''. Triple quotes and hash mark..
@@ -2760,7 +2757,7 @@ There are also more specialised collections called ''Container datatypes'' that 
   # This is a single line comment.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="common modules" creator="rvr" modifier="rvr" created="201012020158" modified="202301251953" changecount="26">
+<div title="common modules" creator="rvr" modifier="rvr" created="201012020158" modified="202302141501" changecount="27">
 <pre>Here are some popular modules:
 |!Module|!Description|
 |[[os]]|Functions for accessing the operating system|
@@ -2770,7 +2767,7 @@ There are also more specialised collections called ''Container datatypes'' that 
 |re|[[Regular expressions|regex]].|
 |random|Random functions.|
 |math|Math functions, cos, ...|
-|urllib2|Retrieve data from URLs.|
+|urllib2|Retrieve data from ~URLs.|
 |userDict|Class wrapper for dictionary objects.|
 |smtplib|Accessing mail functions.|
 |datetime|Dates &amp; time.|
@@ -2830,12 +2827,12 @@ wb.get_sheet_names()            # Returns: ['Alpha', 'Sheet2', 'Sheet3']
 
 </pre>
 </div>
-<div title="data" creator="rvr" modifier="rvr" created="201907120059" modified="202302012109" changecount="4">
+<div title="data" creator="rvr" modifier="rvr" created="201907120059" modified="202302141449" changecount="5">
 <pre>Python can handle data in many formats.
 For efficient use of tabular data (that could be a 2D array) we can use the [[Pandas]] software [[library]] to be able to use efficiencies in processing tabular data.
 It provides software that has statistical, financial, mathematical analytics built in. 
 It has pivoting, data reshaping, column removal, column processing, aggregations, and transformations.
- </pre>
+See also [[Generate Data]].</pre>
 </div>
 <div title="data structures" creator="rvr" modifier="rvr" created="201906222137" modified="202302061216" changecount="34">
 <pre>Python data structures.
@@ -2886,7 +2883,7 @@ To decorate our var @@app@@ for web use, the format: @@@app.route@@</pre>
 &gt;&gt;&gt; re.findall(r'\d\d\d','Call me at: (250) 888-8888')     # &amp;lt; ['250', '888', '888'] &gt;
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="dictionaries" creator="rvr" modifier="rvr" created="201011260121" modified="202008190607" changecount="57">
+<div title="dictionaries" creator="rvr" modifier="rvr" created="201011260121" modified="202302141454" changecount="59">
 <pre>One of Python's [[data structures]] is ''dictionary'' (aka ''dict'') is an associative array (aka ''hash'') and it uses @@squiggly brackets &quot;{}&quot; @@ for creation and listing. This means we use keys and can have duplicate values but of course not keys. It is unordered and you can add and delete from it any time. Here we go:
 &lt;html&gt;&lt;pre&gt;
 students = {}         # Create an empty dict.
@@ -2899,11 +2896,11 @@ spies.keys()          # Returns: ['rob', 'barb']
 spies.values()        # Returns: ['013', '099']
 spies.items()         # Returns: [('rob', '013'), ('barb', '099')}   - returns tuples
 'barb' in spies       # Returns: True
-spies['Bob']          # Will give: KeyError: 'Bob'
+spies['Bob']          # Will give: ~KeyError: 'Bob'
 spies.get('Bob', 0)   # Will return 0
 &lt;/pre&gt;&lt;/html&gt;Note that there is no concept of order and keys are case-sensitive. 
 This is considered ''True'': @@{'age': 42, 'name': 'wilma'} == { 'name': 'wilma', 'age': 42}@@
-See [[None]] to solve @@ KeyError: 'barney'@@ or use ''setdefault'' - whiuch makes sure a key exists.
+See [[None]] to solve @@ ~KeyError: 'barney'@@ or use ''setdefault'' - whiuch makes sure a key exists.
 &lt;html&gt;&lt;pre&gt;
 spies= { 'james' : '007', 'rob' : '001' }
 spies.setdefault('color', 'red')
@@ -3318,9 +3315,9 @@ else:
 See [[while]].
 See also [[in]].</pre>
 </div>
-<div title="import" creator="rvr" modifier="rvr" created="201011292116" modified="201907172225" changecount="22">
+<div title="import" creator="rvr" modifier="rvr" created="201011292116" modified="202302141038" changecount="23">
 <pre>When you use ''import'' (ie on file: @@fred.py@@) you access all strings, variables, methods and classes defined in it.
-See [[import *]]
+See [[import *]] and [[from]].
 It is accessed like:
 &lt;html&gt;&lt;pre&gt;
 #File fred.py
@@ -3495,10 +3492,10 @@ james 007
 rob 013
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="iterable" creator="rvr" modifier="rvr" created="202008170231" modified="202008170258" changecount="12">
+<div title="iterable" creator="rvr" modifier="rvr" created="202008170231" modified="202302141501" changecount="14">
 <pre>An iterable is any Python object capable of returning its members one at a time, permitting it to be iterated over in a for-loop.
-This would include [[tuple]], [[string]], [[list]], and [[dict]].
-There are also non-sequential collections, like [[dictionaries]] and [[set]]s. These have [[generators]] that will provide its members on iteration, but do not keep all members in memory at once.
+This would include [[tuple]], [[string]], [[list]], and dict.
+There are also non-sequential collections, like [[dictionaries]] and [[set]]s. These have generators that will provide its members on iteration, but do not keep all members in memory at once.
 Some examples of:
 &lt;html&gt;&lt;pre&gt;
  
@@ -4807,9 +4804,9 @@ Popping from an empty list gives: @@font-size:1.4em;bgcolor(#ff0000):color(#ffff
 *[[control statements]] - effect the flow of a program. Like: Continue, Break And Pass
 *''looping statements'' - Loop da loop. Like: [[while]] and [[for]]</pre>
 </div>
-<div title="store via ENV" creator="rvr" modifier="rvr" created="201905242124" modified="201905242130" changecount="5">
+<div title="store via ENV" creator="rvr" modifier="rvr" created="201905242124" modified="202302141504" changecount="6">
 <pre>There are two parts to this. First, store the 2 variables as linux ''environment'' variables, typically in ''.bash_profile''.
-Next call those variables using the ''os'' python [[package]].
+Next call those variables using the ''os'' python package.
 &lt;html&gt;&lt;pre&gt;
 export BINANCE_KEY=&quot;BuFtmaMf4n2xEjBG8D5KXUQ1pu4lRLNd9IjKgSqOcIqGk5LOhfQkFtBoOzeKSUa6&quot;
 export BINANCE_SECRET=&quot;youwishihadputsomethingherelol&quot;
@@ -4916,15 +4913,15 @@ v='rob'
 There are also symbols for octal, hex, exponents, unsigned...see [[variable interpolation]].
 </pre>
 </div>
-<div title="string methods" creator="rvr" modifier="rvr" created="201101080714" modified="202008130359" changecount="54">
+<div title="string methods" creator="rvr" modifier="rvr" created="201101080714" modified="202302141452" changecount="55">
 <pre>Here are some common [[string]] methods:
 |!Method|!Description|!Example|!Return|
 |lower()|Returns lowercase of string|&quot;Qwerty&quot;.lower() |qwerty|
 |upper()|Returns uppercase of string|&quot;Qwerty&quot;.upper()|QWERTY|
 |isupper()|Returns True or False|&quot;Hello&quot;.isupper()|False|
 |islower()|Returns True or False|&quot;hello&quot;.islower()|True|
-|isalpha()|If its a-z and A-Z.|&quot;Hello&quot;.isalpha()|True|
-|isalnum()|If it's a-z, A-Z or 0-9.|&quot;Hello123&quot;.isalnum()|True|
+|isalpha()|If its a-z and ~A-Z.|&quot;Hello&quot;.isalpha()|True|
+|isalnum()|If it's a-z, ~A-Z or 0-9.|&quot;Hello123&quot;.isalnum()|True|
 |isdigit()|If it's  0-9.|&quot;Hello123&quot;.isdigit()|False|
 |isdecimal()|Returns true or False (only numbers)|&quot;3.14&quot;.isdecimal()|False - there is a decimal &quot;.&quot;|
 |isspace()|Returns true or False (whitespace only)|&quot;  \n  &quot;.isspace()|True|
@@ -5068,7 +5065,7 @@ The ''except'' can have keywords to catch a specific exception. Like ''~ZeroDivi
 
 See [[assert]].</pre>
 </div>
-<div title="tuple" creator="rvr" modifier="rvr" created="201011260045" modified="202301301243" changecount="47">
+<div title="tuple" creator="rvr" modifier="rvr" created="201011260045" modified="202302141504" changecount="48">
 <pre>The ''tuple'' is like a [[list]], it is a [[data structures]] :
 *a tuple is a sequence of variables
 *you can mix [[types]]
@@ -5096,7 +5093,7 @@ Some more examples:
 a= (&quot;hello&quot;)     // type: 'str'
 b= (&quot;hello&quot;,)    // type: 'tuple'
 &lt;/pre&gt;&lt;/html&gt;
-Tuples are useful for things like database query results or x,y coordinated. You can turn a tuple into a [[list]] See also [[sets]] and [[dictionaries]].
+Tuples are useful for things like database query results or x,y coordinated. You can turn a tuple into a [[list]] See also [[set]]s and [[dictionaries]].
 Last example:
 &lt;html&gt;&lt;pre&gt;
 y=&quot;apple&quot;,2,&quot;banana&quot;
@@ -5169,7 +5166,7 @@ for i in range(1,37,5):
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="variables" creator="rvr" modifier="rvr" created="202212131325" modified="202212131329" changecount="6">
+<div title="variables" creator="rvr" modifier="rvr" created="202212131325" modified="202302141451" changecount="7">
 <pre>Variables must start with a letter or underscore, no numbers.
 Variables are cAsE sEnSiTiVe.
 Variables can only have a-z, ~A-Z, 0-9, and underscore, no other special chars.
