@@ -535,6 +535,14 @@ Also see [[AdvancedOptions]]</pre>
 5
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
+<div title=":" creator="rvr" modifier="rvr" created="202302141552" modified="202302141601" changecount="9">
+<pre>The colon '':'' is used for a few things in Python.
+* indentation in [[if]] statements
+* in [[string]]s for slicing
+* in [[dictionaries]] to identify key : value format.
+* to set [[annotation]]s
+</pre>
+</div>
 <div title="BeautifulSoup" creator="rvr" modifier="rvr" created="202007100428" modified="202301251953" changecount="7">
 <pre>To parse HTML &amp; XML use ''BeautifulSoup''.
 It is a third party install: @@''sudo apt-get install python3-bs4''@@
@@ -873,7 +881,7 @@ print 'hello, world'
 &lt;/pre&gt;&lt;/html&gt;It should print out &quot;hello world&quot;. 
 </pre>
 </div>
-<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202302010540" changecount="72">
+<div title="Index A-E" creator="rvr" modifier="rvr" created="201011251910" modified="202302141619" changecount="73">
 <pre>[[annotation]]
 [[any]]
 [[storing api keys]] - or passwords
@@ -906,14 +914,16 @@ print 'hello, world'
 [[Django]]
 [[Django basics]]
 [[dir]]
+[[dynamically typed]]
 [[Eric]]
 [[environment|venv]] - venv
 [[error handling]]
 [[errors]]
 [[executable]]</pre>
 </div>
-<div title="Index F-I" creator="rvr" modifier="rvr" created="202008130706" modified="202008260428" changecount="4">
-<pre>[[False]]
+<div title="Index F-I" creator="rvr" modifier="rvr" created="202008130706" modified="202302150804" changecount="6">
+<pre>[[f-strings]]
+[[False]]
 [[file]]
 [[filter]]
 [[filtering lists]]
@@ -942,7 +952,7 @@ print 'hello, world'
 [[iterate a list of dictionary items]]
 [[iterate a list of dictionary items and delete]]</pre>
 </div>
-<div title="Index J-M" creator="rvr" modifier="rvr" created="201012012327" modified="202302131123" changecount="52">
+<div title="Index J-M" creator="rvr" modifier="rvr" created="201012012327" modified="202302141614" changecount="53">
 <pre>[[jsonify]]
 [[JWT]]
 [[JWT Example]]
@@ -965,7 +975,8 @@ print 'hello, world'
 [[module]] See also [[common modules]]
 [[Modules and Libraries]]
 [[multiline string]]
-[[multiple assignment]]</pre>
+[[multiple assignment]]
+[[Mypy]]</pre>
 </div>
 <div title="Index Modules" creator="rvr" modifier="rvr" created="201905230057" modified="202302141501" changecount="7">
 <pre>What is a [[module]]?
@@ -1006,7 +1017,7 @@ pandas_datareader
 [[regex]] - regular expressions
 </pre>
 </div>
-<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202302141447" changecount="14">
+<div title="Index S-Z" creator="rvr" modifier="rvr" created="202007031046" modified="202302141620" changecount="15">
 <pre>[[scope]]
 [[self]]
 [[server]]
@@ -1018,6 +1029,7 @@ pandas_datareader
 [[shutil]]
 [[stack]]
 [[statements]]
+[[statically typed|dynamically typed]] - dynamically typed
 [[str()]]
 [[string]]
 [[string methods]]
@@ -1041,7 +1053,7 @@ pandas_datareader
 [[while]]
 [[WSGI]]</pre>
 </div>
-<div title="Index other" creator="rvr" modifier="rvr" created="201011260220" modified="202302141502" changecount="17">
+<div title="Index other" creator="rvr" modifier="rvr" created="201011260220" modified="202302141551" changecount="18">
 <pre>[[__builtin__]]
 [[__class__]]
 [[__del__]]
@@ -1051,12 +1063,13 @@ _ _file_ _
 [[__main__]]
 [[__name__]]
 [[%|string formatting]]
-[[*]] - unpack</pre>
+[[*]] - unpack
+[[:]] - colon</pre>
 </div>
-<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202302141503" changecount="35">
+<div title="Introduction" creator="rvr" modifier="rvr" created="201011181928" modified="202302141618" changecount="36">
 <pre>My Python and [[JupyterLab]] notes. There is also a [[Data Science]] section.
 Some key points about Python:
-*Python is dynamically typed. Meaning no type checking prior to running (unlike Java of c++).
+*Python is [[dynamically typed]]. Meaning no type checking prior to running (unlike Java of c++).
 ** This is great for [[Data Science]]
 *Python is an interpreted language - one line at a time is read and executed.
 **Behind the scenes the code is compiled to [[bytecode]] for a VM to run
@@ -1350,6 +1363,13 @@ See:
 * [[module]]
 * [[library]]
 * [[packages]]</pre>
+</div>
+<div title="Mypy" creator="rvr" modifier="rvr" created="202302141620" changecount="1">
+<pre>Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or &quot;duck&quot;) typing and static typing. 
+It has:
+* Compile-time type checking
+*
+</pre>
 </div>
 <div title="None" creator="rvr" modifier="rvr" created="201011252116" modified="202007032125" changecount="13">
 <pre>The ''None'' value is like nil.  
@@ -1786,10 +1806,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202302141504">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202302152031">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 01/02/2023 06:55:01 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 02/02/2023 21:16:09 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 03/02/2023 22:53:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 03/02/2023 22:53:24 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/02/2023 18:20:20 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
@@ -1797,7 +1815,9 @@ merge(config.shadowTiddlers,{
 | 13/02/2023 16:28:58 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/02/2023 17:40:21 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 14/02/2023 11:59:55 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 14/02/2023 16:04:59 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 14/02/2023 16:04:59 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/02/2023 17:33:38 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 15/02/2023 21:31:55 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -2479,7 +2499,7 @@ if __name__ == '__main__':
 See [[__main__]].
 </pre>
 </div>
-<div title="annotation" creator="rvr" modifier="rvr" created="202302010551" modified="202302010554" changecount="2">
+<div title="annotation" creator="rvr" modifier="rvr" created="202302010551" modified="202302141614" changecount="5">
 <pre>Annotations are a way to associate arbitrary expressions to function arguments and return values.
 They are mainly reserved for type hints used by thrid party software and have no meaning in runtime code.
 When you inspect the function, you will see annotation info there.
@@ -2492,7 +2512,13 @@ def get_some_stuff() -&gt; float:
 
 &gt;&gt;&gt; get_some_stuff_df.__annotations__
 {'get_some_stuff': &lt;class 'float'&gt;, 'return': &lt;class 'float'&gt;}
-&lt;/pre&gt;&lt;/html&gt;</pre>
+&lt;/pre&gt;&lt;/html&gt;
+!!Variable annotations
+Sometimes we may need variable annotations
+&lt;html&gt;&lt;pre&gt;
+pi: float = 3.14159265359
+&lt;/pre&gt;&lt;/html&gt;
+See also [[Mypy]].</pre>
 </div>
 <div title="any" creator="rvr" modifier="rvr" created="202008040740" modified="202008190617" changecount="4">
 <pre>''any'' is a [[builtin]].
@@ -2928,6 +2954,26 @@ dir(sys)     # lists the functions and variables a module defines.
 
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
+<div title="dynamically typed" creator="rvr" modifier="rvr" created="202302141620" modified="202302141633" changecount="18">
+<pre>Python, ruby, php, and javascript are ''dynamically'' typed.
+Languages like Java, c, and c++ are ''statically'' typed.
+
+!!Dynamically typed languages:
+*perform type checking at runtime.
+*can compile even if they contain errors that will prevent the script from running properly. 
+*you do ''not have'' to declare the data types of your variables before you use them.
+** Python: pie=3.14
+** Python: pi = pie *2   # This is ok. It will compile
+* ''dynamic'' - because once set, doesn't matter, type can change.
+
+!!Statically typed languages:
+*perform type checking at compile time. 
+*will not compile if there are errors
+*you ''have'' to declare the data types of your variables before you use them.
+** Java: int pie=3.14;
+** Java: pi = pie *2   # This is will NOT &quot;compile&quot;. &quot;pi&quot; is not declared.
+* ''static'' - because once set, stay the same type.</pre>
+</div>
 <div title="enumerate" creator="rvr" modifier="rvr" created="202008170138" modified="202008170304" changecount="7">
 <pre>''Enumerate'' format: @@enumerate(iterable, start=0)@@
 The enumerate() method adds counter to an [[iterable]] and returns it (the enumerate object).
@@ -2970,6 +3016,26 @@ See [[make]]
 &lt;/ptre&gt;&lt;/html&gt;You can also use the env trick:
 &lt;html&gt;&lt;pre&gt;
 #!/usr/bin/env python
+&lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="f-strings" creator="rvr" modifier="rvr" created="202302151429" modified="202302152031" changecount="4">
+<pre>''f-strings'' are formatted string literals. They are new-ish to Python.
+The &quot;f&quot; indicates that the following string will be formatted according to some rules. 
+&lt;html&gt;&lt;pre&gt;
+a=42
+b=&quot;mango&quot;
+print (  f&quot;My favorite fruit is {b}. And my favorite number is {a}.&quot;  )
+
+My favorite fruit is mango. And my favorite number is 42.
+&lt;/pre&gt;&lt;/html&gt;
+What about dates?
+&lt;html&gt;&lt;pre&gt;
+import datetime
+ 
+today = datetime.datetime.today()
+print(f&quot;Today is {today:%B %d, %Y}&quot;)
+
+Today is February 14, 2023
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="file" creator="rvr" modifier="rvr" created="201101102243" modified="202007090501" changecount="12">
@@ -3086,7 +3152,7 @@ for i in reversed(range(10)):
 &gt;&gt; 9 8 7 6 5 4 3 2 1 0
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="format" creator="rvr" modifier="rvr" created="201903042131" modified="202008170141" changecount="7">
+<div title="format" creator="rvr" modifier="rvr" created="201903042131" modified="202302150805" changecount="8">
 <pre>An example of [[format]]:
 &lt;html&gt;&lt;pre&gt;
 $ print (&quot;Firstname={} middlename={} lastname={} sex={} sin={}&quot;.format(fname, mname, lname, sex, sin))
@@ -3098,11 +3164,12 @@ $ &quot;{0:b}&quot;.format(15)    // Is: '1111'
 $ &quot;{0:x}&quot;.format(15)    // Is: 'f'     - which is x=hexidecimal
 $ &quot;{0:c}&quot;.format(15)    // Is: '\x0f'  - which is c=unicode
 &lt;/pre&gt;&lt;/html&gt;
-See [[formatting output]].</pre>
+See [[formatting output]] and [[f-strings]].</pre>
 </div>
-<div title="formatting output" creator="rvr" modifier="rvr" created="201011260324" modified="201905260350" changecount="4">
+<div title="formatting output" creator="rvr" modifier="rvr" created="201011260324" modified="202302150805" changecount="5">
 <pre>There are a few ways of formatting output.
 *[[print]] - print
+*[[f-strings]]
 *repr() - can use .center(x) or .rjust(x) ie repr(a).rjust(5) 
 *[[str()]] -
 *zfill(x) - pad numerics on the left with zeros
@@ -3731,12 +3798,19 @@ print(s)             // Prints:  ['Q', 'w', 'e', 'r', 't', 'y']
 print(&amp;apos;&amp;apos;.join(s))    // Prints:  Qwerty
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="literal" creator="rvr" modifier="rvr" created="201906241718" modified="201906241726" changecount="7">
+<div title="literal" creator="rvr" modifier="rvr" created="201906241718" modified="202302152031" changecount="10">
 <pre>A ''literal'' is a value, it is data (see [[types]]). It can be assigned to a variable, or it can be assigned to a constant.
 The number 42 a literal. It also happens to be data.
 Some literals are quite common, like 42 is a &quot;number literal&quot;, There are &quot;string literals&quot;, and &quot;byte literals&quot;.
 Boolean literals are only two: ''True'' and ''False''.
 There are ''Collection literals'' like [[dictionaries]] and [[list]].
+
+''literal'' vs ''value''
+*a string literal is what you type into your source code. 
+**a string literal of &quot;\n&quot; has meaning - newline
+*a string value is what you get as output when you print it. 
+**a string value of &quot;\n&quot; has no other meaning than &quot;\n&quot;
+
 More info: https://docs.python.org/3.3/reference/lexical_analysis.html#literals
 
 </pre>
