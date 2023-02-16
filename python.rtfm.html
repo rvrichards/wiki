@@ -986,7 +986,7 @@ pandas_datareader
 [[plotly]]
 [[NumPy]]</pre>
 </div>
-<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202302141446" changecount="20">
+<div title="Index N-R" creator="rvr" modifier="rvr" created="202007031046" modified="202302162000" changecount="21">
 <pre>[[namespace]]
 [[naming conventions]]
 [[nested lists]]
@@ -994,6 +994,7 @@ pandas_datareader
 [[None]]
 [[numbers]]
 [[NumPy]]
+[[object]]
 [[open()]]
 [[operator]]
 [[OrderedDict]]
@@ -1053,8 +1054,9 @@ pandas_datareader
 [[while]]
 [[WSGI]]</pre>
 </div>
-<div title="Index other" creator="rvr" modifier="rvr" created="201011260220" modified="202302141551" changecount="18">
-<pre>[[__builtin__]]
+<div title="Index other" creator="rvr" modifier="rvr" created="201011260220" modified="202302162006" changecount="23">
+<pre>Note: Double underscore: are known as [[dunder]] methods
+[[__builtin__]]
 [[__class__]]
 [[__del__]]
 [[__doc__]]
@@ -1062,6 +1064,7 @@ _ _file_ _
 [[__init__]]
 [[__main__]]
 [[__name__]]
+[[__str__]]  - ''repr''
 [[%|string formatting]]
 [[*]] - unpack
 [[:]] - colon</pre>
@@ -1806,10 +1809,8 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201011181926" modified="202302152031">
+<div title="UploadLog" modifier="rvr" created="201011181926" modified="202302162036">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 03/02/2023 22:53:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 03/02/2023 22:53:24 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/02/2023 18:20:20 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 13/02/2023 12:21:30 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 13/02/2023 16:28:58 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1817,7 +1818,9 @@ merge(config.shadowTiddlers,{
 | 14/02/2023 11:59:55 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
 | 14/02/2023 16:04:59 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 14/02/2023 17:33:38 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
-| 15/02/2023 21:31:55 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 15/02/2023 21:31:55 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |
+| 16/02/2023 21:25:02 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 16/02/2023 21:36:34 | rvr | [[/|http://python.rtfm.tiddlyspot.com/]] | [[store.cgi|http://python.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://python.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201011181926" tags="systemConfig">
 <pre>/***
@@ -2471,14 +2474,30 @@ dir(__builtin__)      # lists built in functions &amp; variables
 print &amp;lt;module-name&amp;gt;.__doc__
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="__init__" creator="rvr" modifier="rvr" created="201011260836" modified="201012080014" changecount="9">
-<pre>The ''__init__'' method is called when an object is created, like a constructor, except that the object is already created by the time __init__  is called. Here is a default implementation, you need to include ''self'' to refer to itself:&lt;html&gt;&lt;pre&gt;
-def __init__(self):
-    self.data = []  
-&lt;/pre&gt;&lt;/html&gt;and&lt;html&gt;&lt;pre&gt;
+<div title="__init__" creator="rvr" modifier="rvr" created="201011260836" modified="202302162018" changecount="16">
+<pre>The ''_&amp;#95;init_&amp;#95;'' method is called when an object is created, like a constructor, except that the object is already created by the time __init__  is called. 
+To rephrase - the act of creating an instance of a class (ie @@whoami = Flintstone(&quot;Wlima&quot;, &quot;Flintstone&quot;, 42)@@) will implicitly call   ''_&amp;#95;init_&amp;#95;'' 
+Here is a default implementation, you need to include ''self'' to refer to itself:&lt;html&gt;&lt;pre&gt;
 def __init__(self, data):
    self.data = data
-&lt;/pre&gt;&lt;/html&gt;If you use an ancestor method you ''have'' to explicitly call the init method of the ancestor.</pre>
+&lt;/pre&gt;&lt;/html&gt;
+And a bigger example:&lt;html&gt;&lt;pre&gt;
+class Flintstone:
+    def __init__(self, first_name, last_name, age):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.age = age
+            print(&quot;Who called me?!&quot;)
+            
+    def __str__(self):
+        return f&quot;{self.first_name} {self.last_name} is {self.age}.&quot;
+    
+whoami = Flintstone(&quot;Wlima&quot;, &quot;Flintstone&quot;, 42)
+print( f&quot;{whoami}&quot;)
+&gt;&gt; Who called me?!
+&gt;&gt; Wilma Flintstone is 42.
+&lt;/pre&gt;&lt;/html&gt;and If you use an ancestor method you ''have'' to explicitly call the init method of the ancestor.
+Note: the double underscore is just to prevent name collision.</pre>
 </div>
 <div title="__main__" creator="rvr" modifier="rvr" created="201903310618" modified="201903310624" changecount="7">
 <pre>The main Python program running is identified by the special variable name ''&amp;#95;_main_&amp;#95;''.
@@ -2498,6 +2517,16 @@ if __name__ == '__main__':
 &lt;/pre&gt;&lt;/html&gt;means that if the python program is imported, then __name__ will be the actual filename and this will be false. If the code is run as a standalone program, then it is called __main __ and the above stmt is true and will execute.
 See [[__main__]].
 </pre>
+</div>
+<div title="__str__" creator="rvr" modifier="rvr" created="202302161958" modified="202302162028" changecount="6">
+<pre>There are 2 special methods that are defined in the Python data model. They are helpful in debugging, logging or printing useful information about an ''object''.
+*_&amp;#95;str_&amp;#95;() 
+*_&amp;#95;repr_&amp;#95;() 
+The ''&amp;#95;_str&amp;#95;_()'' method returns a human-readable aka a string representation of an object. 
+If we don't define it, the system defaults to the The ''_&amp;#95;repr&amp;#95;_()'' method - which returns the official string representation of an object. Or one that only a programmer would love.
+
+Python has special methods that begin and end with a double underscore. These are [[dunder]] methods. 
+Dunder methods are used by built-in operators and functions. Avoid calling dunder methods directly.</pre>
 </div>
 <div title="annotation" creator="rvr" modifier="rvr" created="202302010551" modified="202302141614" changecount="5">
 <pre>Annotations are a way to associate arbitrary expressions to function arguments and return values.
@@ -2954,6 +2983,20 @@ dir(sys)     # lists the functions and variables a module defines.
 
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
+<div title="dunder" creator="rvr" modifier="rvr" created="202302162006" modified="202302162024" changecount="4">
+<pre>The word “dunder” means “double underscore”. ''Dunder methods'':
+*are methods start and end with two underscores.
+*allow instances of a class to interact with the built-in functions and operators of the language. 
+*are not invoked directly by the programmer! To the newly minted Pyhton programmer - it looks like magic. 
+**but they are not - they are called implicitly by the language
+*examples include  _&amp;#95;str&amp;#95;_ or &amp;#95;_add&amp;#95;_. 
+
+Explain more please:
+*The dunder method [[__init__]] is responsible for initialising an instance of the class.
+*The dunder method [[__str__]] is responsible for printing object so you can read about it.
+*The dunder method [[__new__]] to create an object.
+</pre>
+</div>
 <div title="dynamically typed" creator="rvr" modifier="rvr" created="202302141620" modified="202302141633" changecount="18">
 <pre>Python, ruby, php, and javascript are ''dynamically'' typed.
 Languages like Java, c, and c++ are ''statically'' typed.
@@ -3018,13 +3061,17 @@ See [[make]]
 #!/usr/bin/env python
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="f-strings" creator="rvr" modifier="rvr" created="202302151429" modified="202302152031" changecount="4">
+<div title="f-strings" creator="rvr" modifier="rvr" created="202302151429" modified="202302162035" changecount="8">
 <pre>''f-strings'' are formatted string literals. They are new-ish to Python.
 The &quot;f&quot; indicates that the following string will be formatted according to some rules. 
+It can be multi-line. They are fast.
+*Single or double quotes are fine - they have to match up and not conflict. 
+*Delimit quotes with a backslash.
+*If you want ''{'' in the outout, use ''&amp;#123;{''
 &lt;html&gt;&lt;pre&gt;
 a=42
 b=&quot;mango&quot;
-print (  f&quot;My favorite fruit is {b}. And my favorite number is {a}.&quot;  )
+f&quot;My favorite fruit is {b}. And my favorite number is {a}.&quot;  
 
 My favorite fruit is mango. And my favorite number is 42.
 &lt;/pre&gt;&lt;/html&gt;
@@ -4152,6 +4199,9 @@ To concatenate strings and numbers you have to:
   x=42
   text = &quot;The secret number is &quot; + str(x)    // Any other way is wrong.
 &lt;/pre&gt;&lt;/html&gt;</pre>
+</div>
+<div title="object" creator="rvr" modifier="rvr" created="202302162000" changecount="1">
+<pre>''Object'' info here.</pre>
 </div>
 <div title="open()" creator="rvr" modifier="rvr" created="201011260338" modified="201101081840" changecount="14">
 <pre>Use ''open()'' to open a file. Format is ''open(filename, mode)''. Some parameters are:
