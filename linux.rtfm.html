@@ -734,9 +734,6 @@ See [[typical filesystem]].</pre>
 
 To look for info in these places, use [[grep]]: @@grep sshd /var/log/* @@</pre>
 </div>
-<div title="9 November 2016" creator="rvr" modifier="rvr" created="201611100632" modified="202005241539" changecount="2">
-<pre>Type the text for '9 November 2016'</pre>
-</div>
 <div title="&gt; and &gt;&gt;" creator="rvr" modifier="rvr" created="201511151423" modified="201709302111" changecount="3">
 <pre>These are the ''redirect'' and ''append'' operators.
 &lt;html&gt;&lt;pre&gt;
@@ -977,7 +974,7 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[examples]]
 [[export]]</pre>
 </div>
-<div title="Index F-M" creator="rvr" modifier="rvr" created="201408290614" modified="202005250626" changecount="30">
+<div title="Index F-M" creator="rvr" modifier="rvr" created="201408290614" modified="202302141520" changecount="31">
 <pre>[[ffmpeg]]
 [[file]]
 [[file type]]
@@ -1003,6 +1000,7 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[installation]]
 [[IP]]
 [[iptables]]
+[[lspci]]
 [[journal]]
 [[kernel]]
 [[less]]
@@ -1080,13 +1078,14 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[~]]
 [[2&gt;&amp;1|redirect]] - redirect</pre>
 </div>
-<div title="Index S" creator="rvr" modifier="rvr" created="201412131003" modified="202301031304" changecount="43">
+<div title="Index S" creator="rvr" modifier="rvr" created="201412131003" modified="202302141520" changecount="44">
 <pre>[[scp]]
 [[script]]
 [[script example 1]]
 [[SSH]]
 [[SSH setup]]
 [[search|grep]] - grep
+[[sendmail]]
 [[session manager]]
 [[service]]
 [[service user]]
@@ -1454,9 +1453,10 @@ kill #
 
 A nasty way: SIGKILL is kill -9</pre>
 </div>
-<div title="SSH" creator="rvr" modifier="rvr" created="201408230914" modified="202005280426" changecount="19">
+<div title="SSH" creator="rvr" modifier="rvr" created="201408230914" modified="202302141115" changecount="20">
 <pre>Secure Shell (SSH) setup - goto [[SSH setup]].
 Secure Shell (SSH) basics - goto [[SSH Basics]].
+See also [[ssh-agent]].
 Test your private key, format: @@ssh-keygen -y -f path/to/&lt;private-key-filename@@  (often id_rsa)
 To login to a remote machine securely, use SSH: &lt;html&gt;&lt;pre&gt;ssh username@remote-server-name.com&lt;/pre&gt;&lt;/html&gt;
 In a shell, you will connect to a remote box using [[SSH]]. 
@@ -1484,11 +1484,11 @@ The tricky thing is the ''127.0.0.1'' is needed, because it's the remote machine
 If you wanted the remote machine to access you computer, you would use ''-R''.
 This is very handy when it comes to debugging. It's like the resource was local and you have cli access to debug.</pre>
 </div>
-<div title="SSH Basics" creator="rvr" modifier="rvr" created="201707050523" modified="202301031318" changecount="4">
+<div title="SSH Basics" creator="rvr" modifier="rvr" created="201707050523" modified="202302141114" changecount="6">
 <pre>SSH is a protocol allowing secure remote login to a computer on a network using public-key cryptography. 
 You may need [[SSH setup]].
 To create a public &amp; private key, use: @@ssh-keygen@@
-To provide keys to remote servers use: @@ssh-agent@@
+To provide keys to remote servers use: [[ssh-agent]]
 To add keys to the above sshagent use: @@ssh-add@@
 To see if already have some keys: @@ls ~/.ssh@@
 Typically a system has just one key, there are two files:
@@ -1707,18 +1707,18 @@ Linux kernel deals only with UID.</pre>
 <div title="Ubuntu" creator="rvr" modifier="rvr" created="201501221841" changecount="1">
 <pre>The ''Ubuntu'' [[distribution]] is ...</pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201012090524" modified="202302051845">
+<div title="UploadLog" modifier="rvr" created="201012090524" modified="202302191607">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 02/01/2023 22:43:54 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 03/01/2023 12:34:56 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 03/01/2023 13:27:49 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 03/01/2023 13:43:16 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 03/01/2023 14:19:54 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 04/01/2023 22:33:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 23/01/2023 18:39:49 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/01/2023 18:42:11 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/01/2023 19:14:01 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 05/02/2023 19:45:04 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 05/02/2023 19:45:04 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 13/02/2023 17:40:58 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 14/02/2023 12:15:34 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 14/02/2023 16:21:22 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 19/02/2023 17:07:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201012090514" tags="systemConfig">
 <pre>/***
@@ -2416,8 +2416,10 @@ $ echo $SHELL
 /bin/bash
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="basic commands" creator="rvr" modifier="rvr" created="201501290357" modified="202301231740" changecount="110">
-<pre>Here is a list of linux commands, see also [[event designator]] and [[builtin]].
+<div title="basic commands" creator="rvr" modifier="rvr" created="201501290357" modified="202302191556" changecount="111">
+<pre>Here is a list of linux commands, see also 
+* [[event designator]]
+* [[builtin]]
 
 |!Command|!Description|!Example|
 |&amp;#33;&amp;#33;|Repeat last command. See [[event designator]].|&amp;#33;&amp;#33;|
@@ -2482,9 +2484,10 @@ On &amp;rArr; BIOS &amp;rArr; Boot Loader
 Check out [[settings]], as well as [[/boot]]
 </pre>
 </div>
-<div title="builtin" creator="rvr" modifier="rvr" created="201102051724" modified="202301041603" changecount="28">
-<pre>A ''builtin'' is a command that is literally built in in the shell. For performance reasons (forking) or because it needs direct access to shell internals.
+<div title="builtin" creator="rvr" modifier="rvr" created="201102051724" modified="202302191603" changecount="31">
+<pre>A ''builtin'' is a command that is literally built in in the shell. The shell runs it. For performance reasons (forking) or because it needs direct access to shell internals.
 You can see which commands are builtin by using the [[type]] command.
+Commands (see [[basic commands]])  that are not builtin have to be loaded and run, and that takes time.
 
 Here are some common ones (Bash shell):
 |!Command|!Description|!Example|
@@ -2493,6 +2496,7 @@ Here are some common ones (Bash shell):
 |cd|Change directory|cd /etc|
 |echo|To print out stuff|echo $PATH|
 |exit|Leave shell|exit 1|
+|help|Help|HELP|
 |jobs|List all running or stopped jobs|jobs -s|
 |[[history]]|List history of commands|history 10|
 |kill|kill|kill -9 &lt;[[PID]]&gt;|
@@ -2503,7 +2507,7 @@ Here are some common ones (Bash shell):
 |read|Read from standard input|read -p &quot;Name:&quot; name|
 |[[set]]|Set shell attributes.|set -x|
 |[[type]]|Determine what type of command something is|type -a ll|
-See also [[basic commands]].</pre>
+Want to see more? Check out https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html</pre>
 </div>
 <div title="bus" creator="rvr" modifier="rvr" created="201606120135" modified="202301031251" changecount="5">
 <pre>Computer architecture utilizes a ''bus'' - which describes a communication system that transfers data between components in a computer.
@@ -3510,8 +3514,9 @@ To list first 7 bytes, try: @@head -c 7 read.me@@</pre>
 *Trash -  ''.local/share/Trash/files/''
 </pre>
 </div>
-<div title="history" creator="Rob" modifier="rvr" created="201511211803" modified="201902282048" changecount="24">
+<div title="history" creator="Rob" modifier="rvr" created="201511211803" modified="202302191607" changecount="29">
 <pre>The ''history'' command shows the commands entered in the terminal. They will be numbered so you can recall them.
+If setup properly in .bashrc - placing a space before the command will render it invisible to ''history''. This is good for entering passwords etc.
 Running ''&quot;history | less&quot;'' allows you to easily look thru them.
 
 |!Command|!Description|
@@ -3519,6 +3524,7 @@ Running ''&quot;history | less&quot;'' allows you to easily look thru them.
 |HISTFILESIZE|Number of lines stored at end of your session.|
 |history|Lists every command done.|
 |history n|Lists the last &quot;n&quot; commands.|
+|history -d x|Deletes the ''x-th'' history command.|
 |history &amp;#124; grep xinput|Lists the &quot;xinput&quot; commands.|
 |history -c|Clear out all commands|
 |cntl-p|Run previous command.|
@@ -3853,13 +3859,17 @@ We also have flags:
 *-amin
 *-mmin</pre>
 </div>
-<div title="ls examples" creator="rvr" modifier="rvr" created="201501311811" modified="201908192156" changecount="14">
+<div title="ls examples" creator="rvr" modifier="rvr" created="201501311811" modified="202302131638" changecount="24">
 <pre>Some [[ls]] examples:
 |!Command|!Description|!Explanation|
 |ls -la|List all files including hidden ones|The &quot;l&quot; switch means in a one-per-line list and &quot;a&quot; means all aka gimme hidden files.|
 |ls -d */|List only directories|The -d means only list directory names not contents, but to exclude files use the ''*/''.|
 |ls -d */ .*/|List all directories|This is like above but also listing hidden directories.|
 |ls -rtl|List (r) by (t)ime and (l) format.|List entries in reverse time long format.|
+|ls -a &amp;#124; [[grep]] &quot;^\.&quot;|List files starting^^1^^ with a dot. (Hidden)|The &quot;^&quot; means first character, and we have to delimit the [[regex]] dot with a &quot;\&quot;.|
+|ls -a &amp;#124; grep &quot;rc$&quot;|List all files ending in &quot;rc&quot;|Using the &quot;$&quot; is [[regex]] for matching the end of a string.|
+^^1^^ If we had listed using @@-la@@ then the first character is not a dot but a file description! Not what we want.
+
 To list showing ''octal'' permissions: @@stat -c &quot;%A %a %n&quot; *@@
 *%A Access rights in human readable form
 *%a Access rights in octal
@@ -3888,7 +3898,7 @@ With a specific [[PID]]  @@''lsof -p &lt;pid&gt;''@@
 With a specific PID from previous command@@''lsof -p $!''@@
 What? That last one uses [[magic vars]].</pre>
 </div>
-<div title="lspci" creator="rvr" modifier="rvr" created="201606120059" modified="202301031303" changecount="17">
+<div title="lspci" creator="rvr" modifier="rvr" created="201606120059" modified="202302141520" changecount="18">
 <pre>The command ''lspci'' (part of pciutils package) lists information about the [[PCI]] [[bus]] and all [[device]]s in the system. (''PCI'' = Peripheral Component Interconnect, see [[bus]].)  This includes video cards as well as ether net cards. The following are the different switches you can run for the ''lspci'' command:
 &lt;html&gt;&lt;pre&gt;
 $ lspci
@@ -4263,7 +4273,7 @@ f: /home/user/www
 
 </pre>
 </div>
-<div title="pipe" creator="rvr" modifier="rvr" created="201408250705" modified="202005250605" changecount="25">
+<div title="pipe" creator="rvr" modifier="rvr" created="201408250705" modified="202302141519" changecount="26">
 <pre>A ''pipe'' is used to send the standard output (''stdout'') of one program or command as the input of another program or command.
 &lt;html&gt;&lt;pre&gt;$ programA | ProgramB | programC&lt;/pre&gt;&lt;/html&gt;The cool thing is that programB does not have to wait for programA to finish before getting any data. Very efficient.
 Do a list of all files pipe output (''stdout'') to input (''stdin'') of grep which outputs (''stdout'') all files with secret in the filename.&lt;html&gt;&lt;pre&gt;
@@ -4911,6 +4921,24 @@ Omit duplicates: @@sort -u some.file@@
 Reverse order: @@sort -r some.file@@
 Sort on 2nd field: @@sort -k2 some.file@@</pre>
 </div>
+<div title="ssh-agent" creator="YourName" modifier="rvr" created="202302141104" modified="202302141115" changecount="5">
+<pre>''ssh-agent'' is a key manager for [[SSH]]. It performs many tasks:
+* it holds keys and certificates in memory, unencrypted.
+* it is used by ssh.
+* when ssh first runs, ''ssh-agent'' fires up and runs in background.
+* it is separate from [ssh]].
+* it does ''not'' write key info to disk.
+* all it does is: '' sign a message''
+
+When an ssh session fires up, there is a handshake. Here are the steps:
+* Your machine (client) sends over its public key to another machine (server).
+* The machine (server) generates and returns a brief message for the client for it to sign using its private key.
+* The client asks the ''ssh-agent'' to sign the message and forwards the result back to the server.
+* The server checks the signature using the client's public key.
+* The server now has proof that the client is in possession of their private key.
+
+The ''ssh-agent'' makes it so we don't have to enter the private key to sign a message.</pre>
+</div>
 <div title="startup" creator="rvr" modifier="rvr" created="201502120326" modified="201612060624" changecount="30">
 <pre>There is a ''startup'' routine when a [[shell]] is invoked. 
 We can have a combo of either: (login OR non-login) AND (interactive OR non-interactive) :
@@ -4939,9 +4967,6 @@ Bash will find and process the first of the above files and then ignore the rest
 The above is done on initial ''startup''. Invoking a shell once you are up and running wil only use the ''~/.bashrc'' profile.
 See also [[environment variables]].
 .</pre>
-</div>
-<div title="stdin" creator="rvr" modifier="rvr" created="201408250705" modified="201408250706" changecount="2">
-<pre>Type the text for 'stdin'</pre>
 </div>
 <div title="sticky bit" creator="rvr" modifier="rvr" created="201612190415" modified="201612190434" changecount="11">
 <pre>The ''sticky bit'' means that only the creator can delete the file in a 777 directory.
