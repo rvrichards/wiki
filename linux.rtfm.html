@@ -1438,6 +1438,36 @@ merge(config.optionsDesc,{
 */
 //}}}</pre>
 </div>
+<div title="Port Tunneling" creator="rvr" modifier="rvr" created="202302271325" changecount="1">
+<pre>Tunneling &amp; Port Forwarding: This is 
+* to establish a secure [[SSH]] tunnel between your local machine and a remote server 
+* forward traffic from a specified local port to a specified destination host and port through that tunnel.
+
+Format: @@ssh -L [local_address:]local_port:remote_address:remote_port user@remote_host@@
+* ''[local_address:]'' is optional and specifies the local network interface to use for the forwarding
+* ''local_port'' is the local port number to bind to
+* ''remote_address'' is the address of the remote server to forward traffic to
+* ''remote_port'' is the port number on the remote server to forward traffic to
+
+Example: ''ssh -L 3307:localhost:3306 user@192.168.1.100''
+* traffic sent to port 3307
+* on your local (''localhost'') machine traffic 
+* is sent to port 3306
+* on the remote machine at IP address ''192.168.1.100''
+* with a username of ''user''
+* which happens to be a ~MySQL database server
+
+Another example real example:
+Example: ''ssh -L 6543:127.0.0.1:6543 fredf@51.151.181.41 ''
+* first ''6543'' is your local postgres port
+* the ''127.0.0.1'' is your local machine aka &quot;localhost&quot;
+* the second ''6543'' is the remote port of the postgres server
+* the remote postgres is at IP: 51.151.181.41
+* the username of that postgres is ''fredf''
+
+If you wanted the remote machine to access you computer, you would use ''-R''.
+This is very handy when it comes to debugging. It's like the resource was local and you have cli access to debug.</pre>
+</div>
 <div title="RPM" creator="rvr" modifier="rvr" created="202301031259" changecount="1">
 <pre>RPM Package Manager (RPM).
 Used by Red Hat Linux and its derivatives
@@ -1453,36 +1483,27 @@ kill #
 
 A nasty way: SIGKILL is kill -9</pre>
 </div>
-<div title="SSH" creator="rvr" modifier="rvr" created="201408230914" modified="202302141115" changecount="20">
-<pre>Secure Shell (SSH) setup - goto [[SSH setup]].
-Secure Shell (SSH) basics - goto [[SSH Basics]].
-See also [[ssh-agent]].
-Test your private key, format: @@ssh-keygen -y -f path/to/&lt;private-key-filename@@  (often id_rsa)
-To login to a remote machine securely, use SSH: &lt;html&gt;&lt;pre&gt;ssh username@remote-server-name.com&lt;/pre&gt;&lt;/html&gt;
-In a shell, you will connect to a remote box using [[SSH]]. 
+<div title="SSH" creator="rvr" modifier="rvr" created="201408230914" modified="202302271327" changecount="47">
+<pre>Secure Shell (SSH) is a protocol to access remote servers through a command-line interface. 
+To connect to a remote box:
 &lt;html&gt;&lt;pre&gt;
 $ ssh server-name    # Unix assumes you'll use your local username for credentials
 ******               # type in your password and you're in.
 CNTRL-D to exit
 
-$ ssh username@server-name           # To log in as a different user.
-$ ssh -p port username@server-name   # If a different port 
+$ ssh username@server-name               # To log in as a different user.
+$ ssh username@server-name -p &amp;lt;port-#&gt;   # If a different port 
 
 $ ssh -i ~/.ssh/whf/id_rsa username@ip-address -p8888     # If id_rsa is in a different location or filename. Bonus port!
+$ ssh -L 6543:127.0.0.1:6543 fredf@51.151.181.41          # Port tunneling
 &lt;/pre&gt;&lt;/html&gt;
-Tunneling:
-&lt;html&gt;&lt;pre&gt;
-$ ssh -L     # binds a local port to a remote ip:port combo
-$ ssh -R     # binds a remote port to a local ip:port combo
-&lt;/pre&gt;&lt;/html&gt;
-With tunneling, you can access a remote resource, like a mysql db, like it's a local resource, all over ssh. There is no port to expose!
-&lt;html&gt;&lt;pre&gt;
-ssh -L 3306:127.0.0.1:3306 example.com
-ssh -L &amp;lt;local port&gt;:&amp;lt;remote host&gt;:&amp;lt;remote host port&gt; &amp;lt;credentials&gt;&lt;/pre&gt;&lt;/html&gt;
-You have to have ssh on that machine for this to work.
-The tricky thing is the ''127.0.0.1'' is needed, because it's the remote machines IP if you were on it.
-If you wanted the remote machine to access you computer, you would use ''-R''.
-This is very handy when it comes to debugging. It's like the resource was local and you have cli access to debug.</pre>
+Test your private key, format: @@ssh-keygen -y -f path/to/&lt;private-key-filename@@  (often id_rsa)
+See also:
+* [[Port Tunneling]] - Uses the ''-L'' option.
+* [[SSH setup]]
+* [[SSH Basics]]
+* [[ssh-agent]].
+</pre>
 </div>
 <div title="SSH Basics" creator="rvr" modifier="rvr" created="201707050523" modified="202302141114" changecount="6">
 <pre>SSH is a protocol allowing secure remote login to a computer on a network using public-key cryptography. 
@@ -1707,18 +1728,18 @@ Linux kernel deals only with UID.</pre>
 <div title="Ubuntu" creator="rvr" modifier="rvr" created="201501221841" changecount="1">
 <pre>The ''Ubuntu'' [[distribution]] is ...</pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201012090524" modified="202302191607">
+<div title="UploadLog" modifier="rvr" created="201012090524" modified="202302272105">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 03/01/2023 14:19:54 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 04/01/2023 22:33:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 23/01/2023 18:39:49 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/01/2023 18:42:11 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/01/2023 19:14:01 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 05/02/2023 19:45:04 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 13/02/2023 17:40:58 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 14/02/2023 12:15:34 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 14/02/2023 16:21:22 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
-| 19/02/2023 17:07:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 19/02/2023 17:07:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 20/02/2023 09:44:43 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 27/02/2023 14:18:43 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 27/02/2023 22:05:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201012090514" tags="systemConfig">
 <pre>/***
