@@ -612,15 +612,33 @@ Not in this case, but in a case where you are working off of a common repo, you'
 Issue:  ''git pull origin master''.
 </pre>
 </div>
-<div title="Github" creator="rvr" modifier="rvr" created="201501131631" modified="202009102225" changecount="17">
-<pre>''Github'' is an online git repository where you can collaborate with others as well as host your own projects online.
-You push and pull from your local directory to Github.
-Also acts like a backup.
-See [[remove from Github]]
-See [[github ssh setup]]
+<div title="GitHub" creator="rvr" modifier="rvr" created="201501131631" modified="202304021221" changecount="23">
+<pre>There are many websites that help with maintaining a git repo. ~GitLab and GitHub are two such sites, there are others.
+Consider these as &quot;servers&quot; and your local machine as the &quot;client&quot;.
+There are two ways to access the server - a desktop or the terminal. 
+You'll need to log into the server and push and pull code.
+I don't cover the desktop here, as I use the command line, see [[gh cli]]. 
 
-!!Github Commit Identity
-If you have multiple Github identities (work vs personal) then an important thing is under what User does Github commit under?
+''~GitHub'' is an online git repository where you can collaborate with others as well as host your own projects online.
+You push and pull from your local directory to Github. It also acts like a backup.
+See [[remove from Github]].
+See [[github ssh setup]].
+See [[Github Commit Identity]].
+See [[gh cli]].
+See [[GitHub webpage]] to create a free web site.</pre>
+</div>
+<div title="GitHub webpage" creator="rvr" modifier="rvr" created="202304021204" modified="202304021205" changecount="3">
+<pre>You can create a free website using GitHub. Here are the steps.
+# Create a GitHub repo using your GitHub username. Let's say ''csnord''
+## It would be: ''csnord/csnord.github.io''
+# Clone it locally: ''git clone https://github.com/csnord/csnord.github.io''
+# In that directory add an ''index.html'' file with &quot;Hello, World!&quot; as its only content.
+# Save, add, commit, and push to GitHub.
+# It can be viewed at: https://csnord.github.io/
+</pre>
+</div>
+<div title="Github Commit Identity" creator="rvr" modifier="rvr" created="202304021056" changecount="1">
+<pre>If you have multiple Github identities (work vs personal) then an important thing is under what User does Github commit under?
 When we [[setup]] Git, we typically specify a ''user.name'' and a ''user.email'' in the global [[.gitconfig]] file.
 Git will first use a local config setting first, if it finds none, then it will default use to the global settings ([[.gitconfig]]).
 The ''user.email'' setting is used to ''determine'' under what Github account to commit as, *if* you have multiple accounts. You have to set local ones each time you clone a repo, or create a repo. 
@@ -751,8 +769,8 @@ You can see from initial checkin - we branch off into 2 branches: hash  0a45c9e 
 [[file example]]
 [[fork]]</pre>
 </div>
-<div title="Index G-M" creator="rvr" modifier="rvr" created="201205010050" modified="202208242016" changecount="50">
-<pre>[[Github]]
+<div title="Index G-M" creator="rvr" modifier="rvr" created="201205010050" modified="202304021054" changecount="51">
+<pre>[[GitHub]]
 [[gh cli]]
 [[git fetch and git merge example]]
 [[git reset &lt;commit&gt;]]
@@ -816,20 +834,18 @@ You can see from initial checkin - we branch off into 2 branches: hash  0a45c9e 
 [[update-index|ignore tracked files]]
 [[working directory]]</pre>
 </div>
-<div title="Introduction" creator="rvr" modifier="rvr" created="201205010053" modified="202208242016" changecount="46">
+<div title="Introduction" creator="rvr" modifier="rvr" created="201205010053" modified="202304021231" changecount="52">
 <pre>Git is a free &amp; open source, distributed version control system. 
-Git is compact &amp; fast &amp; distributed.
-Git excels at working with remote repositories.
-It also has a full copy of the repository, so if copied from a remote, you don't have to be online to make changes,
-Git also works super fast locally - its most common use anyway.
-The repository contains versions of the code.
-Other references: http://book.git-scm.com/index.html
+Git excels at working with remote repositories, and of course locally,
+It also has a full copy of the repository (all versions of the code), so if copied from a remote, you don't have to be online to make changes.
+There are sites that help maintain your code - [[GitLab|GitHub]] and GitHub are just two examples.
+@@Note:@@ Git has since changed using ''master'' branch terminology to ''main''. So these notes depending upon age will have both.
 You may want to
 #More details of [[what git is]].
 #Understand git [[definitions]].
 #[[setup]] git on your computer.
 #Make sure that you have [[ssh]] setup.
-#Use Github cli, see [[gh cli]]
+#Use GitHub cli, see [[gh cli]]
 #Do your [[First Git Session]]
 #See changes that are made: [[diff]]
 #Something you want to [[do]]?
@@ -1050,18 +1066,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201110302240" modified="202302131502">
+<div title="UploadLog" modifier="rvr" created="201110302240" modified="202304021349">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 02/10/2020 08:34:26 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
-| 16/12/2021 15:03:51 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 16/12/2021 15:05:01 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
 | 21/08/2022 14:33:25 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
 | 22/08/2022 17:10:25 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
 | 24/08/2022 22:20:10 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 24/08/2022 22:25:51 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
 | 01/09/2022 18:34:11 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
 | 06/09/2022 14:34:51 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
-| 13/02/2023 16:02:30 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 13/02/2023 16:02:30 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |
+| 02/04/2023 13:45:35 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 02/04/2023 15:36:44 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 02/04/2023 15:49:12 | rvr | [[/|http://git.rtfm.tiddlyspot.com/]] | [[store.cgi|http://git.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://git.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201110302232" tags="systemConfig">
 <pre>/***
@@ -1686,6 +1702,28 @@ git commit --amend  # Will drop you in editor to change message.&lt;/pre&gt;&lt;
 If you have pushed to remote, you will need to run
 &lt;html&gt;&lt;pre&gt;git push &amp;lt;remote&gt; &amp;lt;branch&gt; -f&lt;/pre&gt;&lt;/html&gt;to force the change there.</pre>
 </div>
+<div title="auth login" creator="rvr" modifier="rvr" created="202304021127" modified="202304021139" changecount="5">
+<pre>You can connect to any GitHub account because it'll prompt you with questions and then ask you to login via a web browser that it'll open up. Here is a typical login session:
+&lt;html&gt;&lt;pre&gt;
+$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 0EF4-4DAD
+Press Enter to open github.com in your browser... 
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as &amp;lt;yer-account-name&gt;
+
+... do stuff
+
+$ gh auth logout
+✓ Logged out of github.com account '&amp;lt;yer-account-name&gt;'&lt;/pre&gt;&lt;/html&gt;
+To find out other login option: ''gh auth login -&amp;#45;help''
+</pre>
+</div>
 <div title="basic example" creator="rvr" modifier="rvr" created="201408182247" modified="201408182316" changecount="23">
 <pre>This is a basic working example of using GIT. Start with a blank directory.
 #The base directory is our [[working directory]].
@@ -2023,18 +2061,18 @@ Ha, entire code-base went up.
 &lt;/pre&gt;&lt;/html&gt;
 </pre>
 </div>
-<div title="definitions" creator="rvr" modifier="rvr" created="201205010051" modified="202302131501" changecount="42">
+<div title="definitions" creator="rvr" modifier="rvr" created="201205010051" modified="202304021328" changecount="44">
 <pre>Definitions - The first three are the 4 different states that a file can be in. Learn'em.
 |!Term|!Definition|
 |[[working directory]]|This is where you work, it is your root directory. Files here are not saved/committed.|
 |[[staging]] area|This is {~RAILS_ROOT}.git/index. Aka as ''index''. These are modified files ready for commit. |
-|[[repository]]|Contains the commit objects and pointers to them. Data is safe and in the ''.git'' directory.|
+|[[repository]]|Contains the commit objects and pointers to them. Data is safe and in the ''.git'' directory. HEAD points to last commit.|
 In your working directory, there are two types of files: tracked and untracked. Untracked files you will need to [[add]] or remove! A ''git status'' will show you the details. 
 
 |!Term|!Definition|
 |[[remotes]]|A remote repository. Example: ~GitHub's server is remote.|
 |[[commit object]]|A set of files at a given point in time|
-|[[head]]|This is a reference to a commit object.|
+|[[head]]|This is a reference to the latest commit object.|
 |[[master]]|	This should always be the production-ready code.|
 |git directory|This is one directory: ''.git'' in the root directory|
 |[[origin]]|This is the HEAD of a remote repository. It is a shorthand to that URL, from which you cloned to your local machine |
@@ -2219,12 +2257,13 @@ So we are saying:
 In file &quot;a&quot; starting at line #1 show 3 lines
 In file &quot;b&quot; starting at line #1 show 2 lines</pre>
 </div>
-<div title="diff/merge tools" creator="rvr" modifier="rvr" created="201601071610" modified="201601071752" changecount="31">
+<div title="diff/merge tools" creator="rvr" modifier="rvr" created="201601071610" modified="202304021336" changecount="32">
 <pre>There are some visual ''diff/merge tools'' tools out there.
 *kdiff3
 *p4merge
 *meld ...
 See [[tool config]],where I have set my ''difftool'' to ''meld'' on my local ubuntu machine.
+Note that the tool ''gitk'' is useful for exploring the repo.
 
 List of commands and what they do:
 *Command ''git difftool'' checks whats in ''.gitconfig'' 
@@ -2272,14 +2311,14 @@ $ git pull &amp;#45;&amp;#45;rebase origin master
 &lt;/pre&gt;&lt;/html&gt;
 Now we'll have the remotes code and we'll be ''ahead'' by 1 commit. Good.</pre>
 </div>
-<div title="do" creator="rvr" modifier="rvr" created="201507291120" modified="201906150501" changecount="23">
+<div title="do" creator="rvr" modifier="rvr" created="201507291120" modified="202304021233" changecount="25">
 <pre>There are many different cases where you have done something and want to undo it.
 *A changed or new file/folder in working directory you want to undo? You want  [[undo local changes]] then.
 *You've staged changes. Oops, you want to [[undo staged changes]].
 *You did the commit. Now you want to undo committed changes, see [[reset vs revert]].
 You want to:
 *Get code from a remote repo: use [[fetch]].
-*Use 2 different [[Github]] identies/accounts. (Hint: don't use global config)
+*Use 2 different [[GitHub]] identies/accounts. (Hint: don't use global config)
 *Change a typo in a commit message: [[amend]].
 *Delete an untracked file or directory: [[undo local changes]]
 *Changes in [[working directory]] and want to stage them: [[add]]
@@ -2290,6 +2329,7 @@ You want to:
 *You want to overwrite changes in [[working directory]] you'll [[undo local changes]], that is aka [[checkout]].
 *You want to work on an idea in [[working directory]], but want a separate [[branch]].
 *You want to grab branch updates from [[remote]], command to run: ''git remote -v update'' Follow up with a ''git status''
+* You want to see if the ''remote'' has been updated, see [[origin]] for details.
 </pre>
 </div>
 <div title="errors" creator="rvr" modifier="rvr" created="201501211907" modified="201906160709" changecount="30">
@@ -2369,9 +2409,12 @@ The scenario is, we are developing and are interested in a certain feature, but 
 #Remove feature branch: @@git branch -d newFeatBranch@@
 Also, check out [[release branch]].</pre>
 </div>
-<div title="fetch" creator="rvr" modifier="rvr" created="201501131708" modified="201906150632" changecount="12">
-<pre>The ''git fetch'' command will pull data from the [[remote repository]] to the [[local repository]].
-It is non destructive, only updating objects and references, not code.
+<div title="fetch" creator="rvr" modifier="rvr" created="201501131708" modified="202304021315" changecount="16">
+<pre>The ''git fetch'' command will contact the remote and pull (NOT merge or add) down data from the [[remote repository]] that the [[local repository]] does not have.
+It is ''non destructive'', only updating objects and references, not code.
+This is @@important@@ to keep your local repo in sync with the remote repo. You should do it often.
+If you want to incorporate those changes, then issue a git [[merge]].
+
 A ''git pull'' will pull code from the remote repo into your [[working directory]]. You will lose whatever you had there.
 ''git pull'' =  ''git fetch'' plus ''git [[merge]]''
 
@@ -2418,16 +2461,32 @@ $ git clone git@github.com:rvrichards/some_project.git
   Checking connectivity... done.
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="gh cli" creator="rvr" modifier="rvr" created="202208242017" modified="202208242025" changecount="5">
-<pre>Github has a new cli to help with working for command line and for more security.
+<div title="gh basics" creator="rvr" modifier="rvr" created="202304021111" modified="202304021145" changecount="9">
+<pre>From the terminal we can access GitHub command line tool ''gh''. For some commands to work, you have to be in a directory that has a repo.
+Format: ''gh [command] [subcommand] [-&amp;#45;flags]''
+|!Command|!Description|
+|(blank)|Help|
+|-&amp;#45;version|Gives the version number|
+|[[auth login]]|Authenticate and login to a GitHub host.|
+|auth logout|Logout of a GitHub host.|
+|auth status|Show logged in stats.|
+|repo list|See your repos.|
+|repo list kernighan|See anybodies repos.|
 
+</pre>
+</div>
+<div title="gh cli" creator="rvr" modifier="rvr" created="202208242017" modified="202304021220" changecount="12">
+<pre>GitHub has a new cli to help with working for command line and for more security. You have to install it.
 *You will need to download and install. See site for Linux instructions
 *Check if you have it: ''gh -&amp;#45;version''
 *To keep updated: ''sudo apt install gh''
 *You login using: ''gh auth login''
-*Once that is done, here are steps to push a local repo to Github: [[gh repo create]]</pre>
+*Once that is done, here are steps to push a local repo to ~GitHub: [[gh repo create]]
+
+I am running two different GitHub repos, so have to split time between them, so check out [[gh basics]].
+</pre>
 </div>
-<div title="gh repo create" creator="rvr" modifier="rvr" created="202208242018" modified="202209061116" changecount="6">
+<div title="gh repo create" creator="rvr" modifier="rvr" created="202208242018" modified="202304021155" changecount="7">
 <pre>Once we have set up a local repo and committed changes we can upload it to Githhub. Here are the steps:
 &lt;html&gt;&lt;pre&gt;
 $ gh repo create
@@ -2753,8 +2812,9 @@ Of course you can also use HTML. Anyways, here is the list:
 
 </pre>
 </div>
-<div title="master" creator="rvr" modifier="rvr" created="201205010113" modified="201506031027" changecount="4">
+<div title="master" creator="rvr" modifier="rvr" created="201205010113" modified="202304021233" changecount="5">
 <pre>The name of the default branch that git creates for you when first creating a repo. In most cases, &quot;master&quot; means &quot;the main branch&quot;. 
+@@Note:@@ Git now prefers to use the word ''main'' instead of ''master''.
 Your local Git repository will have one as will the remote repository you push/pull from.  A series of commits create a sequence of [[commit]] objects. The last commit is typically pointed to by the master [[branch]].</pre>
 </div>
 <div title="merge" creator="rvr" modifier="rvr" created="201408211633" modified="201709302154" changecount="18">
@@ -2933,24 +2993,26 @@ $ git log --oneline --decorate --graph
 
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="origin" creator="rvr" modifier="rvr" created="201408190631" modified="202302131500" changecount="10">
+<div title="origin" creator="rvr" modifier="rvr" created="201408190631" modified="202304021234" changecount="14">
 <pre>When you [[clone]] a repo, the original repo is given a tag/name called, ''origin''. This is simply a shorthand name for the remote repository, so you don't have to use the real URL.
 The [[origin]] is a name commonly given to the main remote repository that you can pull from and push to. 
+This is ''useful'' to see if the remote has had some changes.
 Here is the detail for ''origin'', which is hosted at bitbucket:
 &lt;html&gt;&lt;pre&gt;
-git remote show origin
+$ git remote show origin
 Enter passphrase for key '.../.ssh/bb_id_rsa':
 * remote origin
   Fetch URL: git@bitbucket.org:username/libation.git
   Push  URL: git@bitbucket.org:username/libation.git
-  HEAD branch: master
+  HEAD branch: main
   Remote branch:
-    master tracked
+    main tracked
   Local branch configured for 'git pull':
-    master merges with remote master
+    main merges with remote main
   Local ref configured for 'git push':
-    master pushes to master (up to date)
-&lt;/pre&gt;&lt;/html&gt;</pre>
+    main pushes to main (up to date)
+&lt;/pre&gt;&lt;/html&gt;
+To see the differences between that remote (origin) and your local: ''git diff origin/main''</pre>
 </div>
 <div title="propose changes" creator="rob" modifier="rob" created="201504280927" modified="201504280929" changecount="3">
 <pre>You can ''propose changes'' to an [[repository]] by:
@@ -3206,14 +3268,14 @@ $ git status     # Will shore the file in working directory
 ##@@git merge &amp;ndash;&amp;ndash;no-ff release-1.99@@
 #And delete release branch: @@git branch -d release-1.99@@</pre>
 </div>
-<div title="remote" creator="rvr" modifier="rvr" created="201501071206" modified="201906150501" changecount="17">
+<div title="remote" creator="rvr" modifier="rvr" created="201501071206" modified="202304021318" changecount="18">
 <pre>A remote [[repository]] is called a ''remote''. 
 You can have a remote repository associated with a local repository.
 In order to push to it, you net to set up some links.
 &lt;html&gt;&lt;pre&gt;
 # Check out first what you have
 $ git remote -v          # See if we have any remotes
-$ git remote -v update   # To see which branches got updated (followed by a git status to see.
+$ git remote -v update   # To see which branches got updated - not the code 
 $ git config -l          # See what config has to say
 
 # To add a remote
@@ -3400,11 +3462,12 @@ $ git status
 
 &lt;/pre&gt;&lt;/html&gt;And carry on.</pre>
 </div>
-<div title="repository" creator="rvr" modifier="rvr" created="201205010110" modified="201501131659" changecount="4">
+<div title="repository" creator="rvr" modifier="rvr" created="201205010110" modified="202304021331" changecount="5">
 <pre>The ''repository'' is:
 *contains the commit objects and pointers to them.|
 *is in {~RAILS_ROOT}.git
-There is a [[local repository]] and a [[remote repository]].</pre>
+There is a [[local repository]] and a [[remote repository]].
+You can explore the repo locally using ''gitk''.</pre>
 </div>
 <div title="reset" creator="rvr" modifier="rvr" created="201408192344" modified="201709302144" changecount="90">
 <pre>The ''reset'' command. See also [[reset vs revert]] and [[rebase]].
