@@ -516,17 +516,77 @@ Also see [[AdvancedOptions]]</pre>
 
 <!--TCEJNI_TOPSYLDDIT-->
 <div id="storeArea">
-<div title="AI" modifier="rvr" created="201902032210" modified="202302032129" changecount="4">
-<pre>Artifical Intelligence is a computer or machine that is used to mimic human behaviour.
+<div title="AI" modifier="RVR" created="201902032210" modified="202304221623" changecount="8">
+<pre>In Computer Science we have a wide field called Artificial Intelligence. AI is a computer or machine that is used to mimic human behaviour. A systems that can function and reason independently and intelligently.
+There are many fields within AI, see [[AI Fields]]
 It is used to replace humans and the work they do. To be more accurate and efficient.
 A subset of AI is [[Machine Learning]], and within that [[Deep Learning]].
 I asked [[ChatGPT]] to explain [[what AI is]], and it did a good job:
 Some great AI resources:
 *[[ChatGPT]]
+*[[Bing Chat]]
 </pre>
 </div>
-<div title="Arguments vs Parameters" modifier="rvr" created="202210151051" modified="202210151058" changecount="9">
-<pre>We have a function definition: ''function biteMe (strength, where ) { ...''
+<div title="AI Fields" modifier="RVR" created="202304221548" modified="202304221717" changecount="18">
+<pre>Here is a chart of where things fit in AI.
+
+&lt;html&gt;&lt;pre&gt;
+                       Computer Science
+                              |
+                      Artificial Intelligence
+ Image Processing     |                     |
+                |     |                     |
+                ↓     |                     |
+                Symbolic Learning           Machine Learning ←--(Pattern Recognition)
+                 |            |             |               \
+                 |            |             |                \
+          Robotics    Computer Vision  Statistical Learning   ML types
+                                            |        |            
+                                            |        |      
+                                           NLP   Deep Learning    
+                                                (Neural Networks)
+                                                   |     |     |
+                                                   |     |     |
+                                                Speech  CNN   RNN
+                                                 Recog   |
+                                                         |
+                                                     Computer Vision
+                                                         |
+                                                         |
+                                                   Object Recognition
+&lt;/pre&gt;&lt;/html&gt;
+Check them out:
+* [[Image Processing]]
+* [[Pattern Recognition]]
+* [[Symbolic Learning]]  (Symbolic based.)
+** [[Computer Vision]]
+** [[Robotics]]
+* [[Machine Learning]]  (Data based)
+** [[ML types]]- Un/supervised Learning
+** [[Statistical Learning]]
+*** [[NLP]]
+*** [[Deep Learning]]
+*** [[Speech Recognition]]
+*** [[CNN]]
+*** [[RNN]]
+*** [[Computer Vision]]
+*** [[Object Recognition]]
+</pre>
+</div>
+<div title="AI background" modifier="rvr" created="202304011921" modified="202304011936" changecount="5">
+<pre>As more information is put into AI it becomes smarter, or more accurate. Currently we have:
+
+!!~ChatGPT - By ~OpenAI
+The ~OpenAI chatbot means that it will engage in a &quot;chat&quot; with you, and it will respond to your [[prompts]]. The &quot;prompts&quot; have to be very specific as it uses this to generate a response. It is a Language model (LLM) and uses generative AI meaning it predicts the next words to to generate and may not produce correct responses. 
+Therefore uses the Human Reinforcement Learning with Human Feedback (RLHF) to get more accurate. It uses NLP (Natural Language Processor) to understand what you are asking. Be sure to check the output for accuracy, as it can &quot;make things up&quot;.
+
+*~ChatGPT3.5 - 175 billion parameters, 570 GB data
+*~ChatGPT4 - xxx billion parameters
+</pre>
+</div>
+<div title="Arguments vs Parameters" modifier="rvr" created="202210151051" modified="202302061109" changecount="11">
+<pre>Often these are synonymous, meaning not everyone follows the below definition and people use them to mean the same thing.
+We have a function definition: ''function biteMe (strength, where ) { ...''
 * A parameter is the formal name defined by the function.
 * The function ''biteMe'' has two parameters.
 
@@ -555,10 +615,23 @@ Here are common Asymptotic Notations: (''asymptotic'' means approaching a value 
 *O(2^^N^^) - time doubles with each addition to the input data set. Exponential time, not [[polynomial time]].
 </pre>
 </div>
-<div title="ChatGPT" modifier="rvr" created="202302032114" modified="202302042148" changecount="12">
+<div title="Bing Chat" modifier="rvr" created="202303290912" modified="202304011921" changecount="2">
+<pre>Currently you have to use the Edge browser to get access to the Chat AI, but there is an extension so you can use it in Chrome.
+To access with extension, just go to the bing.com website. Worked fine.
+Okay...I actually got an email saying I'm able to use bing? Went to the site, and it sent me to basically the same spot as the extension did. Not sure it's the extension that released my email or the fact that when I went to bing the first time I got one of those prove-you-are-you screens and that is how privacy is compromised and you get access to bing. Anyways, I don't care at this point to find out, onwards.
+
+See also [[AI background]].</pre>
+</div>
+<div title="CNN" modifier="RVR" created="202304221624" modified="202304221627" changecount="2">
+<pre>CNN - Convolution Neural Network
+If we scan an image from top to bottom and left to right it is a CNN.
+It is used to recognise objects in a scene. This is another path to [[Computer Vision]].</pre>
+</div>
+<div title="ChatGPT" modifier="rvr" created="202302032114" modified="202304011920" changecount="14">
 <pre>Link for user friendly UI: https://chat.openai.com/chat
 Playground with more options: https://platform.openai.com/playground
 Examples: https://platform.openai.com/examples
+See [[AI background]].
 A key thing with ChatGPT is providing prompts and adding more info. See:
 *[[summarize anything]]
 *[[story example]]
@@ -595,6 +668,10 @@ merge(config.commands.cancelTiddler,{
 //}}}
 </pre>
 </div>
+<div title="Computer Vision" modifier="RVR" created="202304221601" modified="202304221626" changecount="2">
+<pre>Computer vision covers seeing things and understanding. This is under [[Symbolic Learning]] but also using [[CNN]] as another approach for [[Image Processing]].
+</pre>
+</div>
 <div title="Data" modifier="rvr" created="202009072300" changecount="1">
 <pre>When working with big data, it is a good idea to explore the data first. Exploratory data analysis is detective work.
 When presented with a load of data, some ideas:
@@ -612,9 +689,10 @@ To import the ''Decision Tree'' algorithm, we'll need to:
 *import into the file: ''main.py''
 *the line: ''from sklearn import tree''</pre>
 </div>
-<div title="Deep Learning" modifier="rvr" created="201902032213" modified="201902032213" changecount="2">
+<div title="Deep Learning" modifier="RVR" created="201902032213" modified="202304221627" changecount="3">
 <pre>Deep learning is a subset of [[Machine Learning]]. 
-This includes things like neural networks and speech recognition. It trains itself.</pre>
+This includes things like neural networks and speech recognition. It trains itself.
+This is trying to do what the brain does.</pre>
 </div>
 <div title="DefaultTiddlers" modifier="rvr" created="201902021959" changecount="1">
 <pre>[[Introduction]]</pre>
@@ -741,6 +819,9 @@ merge(config.macros,{
 //}}}
 </pre>
 </div>
+<div title="Image Processing" modifier="RVR" created="202304221601" modified="202304221626" changecount="2">
+<pre>Image processing is not really a field of AI, but it is needed for [[Symbolic Learning]], specifically [[Computer Vision]].</pre>
+</div>
 <div title="Index" modifier="rvr" created="202301252030" changecount="1">
 <pre>After perusing the [[Introduction]] its time for the index:
 [[Index A-M]]
@@ -763,9 +844,10 @@ merge(config.macros,{
 [[Machine Learning]]
 </pre>
 </div>
-<div title="Index N-Z" modifier="rvr" created="201902030024" modified="202301252031" changecount="9">
+<div title="Index N-Z" modifier="rvr" created="201902030024" modified="202304211041" changecount="11">
 <pre>[[NP Problem]]
 [[NP completeness]]
+[[Ontology]]
 [[polynomial time]]
 [[recursion]]
 [[reinforcement learning]]
@@ -874,14 +956,15 @@ First is [[Machine Learning]]
 Second is [[AI]]
 Try out the [[Index]]</pre>
 </div>
-<div title="Introduction to ML" modifier="rvr" created="201902032203" modified="201902041947" changecount="5">
-<pre>Machine Learning, is for a system to programmatically learn from data. It can use data from the past and new incoming data.
+<div title="Introduction to ML" modifier="RVR" created="201902032203" modified="202304221643" changecount="10">
+<pre>Machine Learning, is for a system to programmatically learn from data. It is ''data-based''. It needs data to learn. Data from the past and new incoming data.
 In essence, it is to try to have the computer find best solutions instead of being directly programmed by a human.
 It is an application of [[AI]], or a subset. It's the computer learning from data.
 There are iterations or steps the computer takes to try and learn from data.
 Humans learn from past experiences, and computers can also learn, but much quicker.
 As new data comes in machine learning will adapt to it.
-It will apply mathematical models or some statistical analysis to gain understanding. Such 
+Humans are good at working in two or three dimensions when anaylzing data, but machines can see patterns in 100s of dimensions. 
+It will apply mathematical models or some statistical analysis to gain understanding. Once it finds a pattern, it can use this information to make assessments. These fall into two categories:  [[Classification]] or [[Prediction]].
 This is a great tool for volumes of data, or big data - to analyse it and learn. See [[ML examples]]. 
 In a sense predicting. The more data the better the [[model]].
 There are many types of machine learning, see [[ML types]].</pre>
@@ -1061,7 +1144,7 @@ Uses machine learning to know more about what will ask and want. Learns each tim
 *[[reinforcement learning]]
 See [[labeled data]].</pre>
 </div>
-<div title="Machine Learning" modifier="YourName" created="201902022002" modified="201902042151" changecount="12">
+<div title="Machine Learning" modifier="RVR" created="201902022002" modified="202304221634" changecount="13">
 <pre>[[Introduction to ML]]
 [[ML Using Python]]
 
@@ -1681,6 +1764,9 @@ See http://www.tiddlywiki.org/wiki/Configuration_Options for other options you c
 //}}}
 </pre>
 </div>
+<div title="NLP" modifier="RVR" created="202304221559" changecount="1">
+<pre>Natural Language Processing (NLP) is the field that covers writing and reading human language text.</pre>
+</div>
 <div title="NP Problem" modifier="rvr" created="202003130400" modified="202003140334" changecount="3">
 <pre>The ''NP Problem'' or ''nondeterministic [[polynomial time]]'' is well studied.
 As the number of inputs increase so does the computational power needed to solve. The higher the number, the more iterations a computer needs to solve. This can be done. A question arises, how to do this efficiently. 
@@ -1797,6 +1883,17 @@ config.macros.newTiddler.onClickNewTiddler = function()
 
 //}}}
 </pre>
+</div>
+<div title="Ontology" modifier="rvr" created="202304211100" modified="202304211102" changecount="2">
+<pre>An ontology refers to a formal specification of concepts and relationships in a particular domain, like computer science, languages, or metaphysics. The meaning varies depending on domain. 
+
+Computer Science has a certain semantic meaning different from philosophy. In CS, it is a model of a world that is based around explaining the relationship between data or concepts and the relationships between them. It is usually hierarchical. This could include:
+* Atomic level: the basic data
+* Class level: sets, collections, or classes
+* Attributes: properties, features, or parameters of objects
+* Methods: ways that objects can be related to one another
+* Events: the changing of attributes or methods
+A Python ontology is a representation of the Python programming language. It is a way of organizing and structuring knowledge about a particular domain in a systematic and logical way.</pre>
 </div>
 <div title="PasswordOptionsPlugin" modifier="YourName" created="200704220851" modified="201902021957" tags="systemConfig">
 <pre>/***
@@ -2037,6 +2134,9 @@ config.quickOpenTag.init();
 //}}}
 </pre>
 </div>
+<div title="RNN" modifier="RVR" created="202304221633" changecount="1">
+<pre>Recurrent Neural Network - remember a limited past.</pre>
+</div>
 <div title="RenameTagsPlugin" modifier="MPTW" created="201306162243" modified="201306162244" tags="systemConfig">
 <pre>/***
 |Name:|RenameTagsPlugin|
@@ -2118,6 +2218,9 @@ config.renameTags.init();
 
 //}}}
 </pre>
+</div>
+<div title="Robotics" modifier="RVR" created="202304221627" changecount="1">
+<pre>Robotics is the field where an object can move around an environment, like a human navigating a forest or a city.</pre>
 </div>
 <div title="SaveCloseTiddlerPlugin" modifier="MPTW" created="201306162218" modified="201306162244" tags="systemConfig">
 <pre>/***
@@ -2277,6 +2380,29 @@ config.macros.refreshAll = { handler: function(place,macroName,params,wikifier,p
 </div>
 <div title="SiteTitle" modifier="rvr" created="201902021958" modified="201902021958" changecount="2">
 <pre>Machine Learning, AI, Other</pre>
+</div>
+<div title="Speech Recognition" modifier="RVR" created="202304221601" changecount="1">
+<pre>Speech recognition is mostly statistically based, see [[Statistical Learning]].</pre>
+</div>
+<div title="Statistical Learning" modifier="RVR" created="202304221717" modified="202304221722" changecount="3">
+<pre>This is not a hard and fast field from other ML fields. There are overlaps in these definitions.
+
+I have statistical learning under [[Machine Learning]]. Again, focusing on data, it focuses on the development of statistical models and algorithms for analysing and making predictions. It is closely related to supervised learning and unsupervised learning (see [[ML types]].
+
+In statistical learning, the goal is to develop models that can accurately predict outcomes or estimate relationships between variables based on data. This can involve techniques using many different statistical models as possible.
+
+Statistical learning is particularly useful when the relationship between the input variables and the output variable is complex or nonlinear. It can also be used for feature selection, where the goal is to identify the most important variables for predicting the outcome.
+
+There are many applications, such as finance, marketing, and healthcare.</pre>
+</div>
+<div title="Symbolic Learning" modifier="RVR" created="202304221731" changecount="1">
+<pre>Symbolic Learning is at the same graph level as [[Machine Learning]].
+
+This focuses on more abstract concepts and relationships. Trying to understand them and figure out rules and structures. Humans can make useful decisions based on images, and this is an attempt to process those in an AI way. This is similar to how the brain works in recognizing things. 
+
+Neural networks may be more applicable to this kind of work, AI is still evolving in its definitions.
+
+It does have crossover to [[NLP]].</pre>
 </div>
 <div title="TagglyTaggingPlugin" modifier="MPTW" created="201306162218" modified="201306162244" tags="systemConfig">
 <pre>/***
@@ -3069,18 +3195,18 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201902021959" modified="202302051229">
+<div title="UploadLog" modifier="RVR" created="201902021959" modified="202304221731">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 13/03/2020 21:11:34 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 13/03/2020 21:18:01 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 30/08/2020 22:42:39 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 30/08/2020 22:44:29 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 07/09/2020 16:01:00 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 15/10/2022 12:58:53 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 25/01/2023 21:49:37 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 03/02/2023 22:48:30 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 04/02/2023 22:30:53 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 05/02/2023 13:29:07 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 05/02/2023 13:29:07 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 06/02/2023 12:09:51 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 31/03/2023 23:15:32 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 01/04/2023 21:41:01 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 21/04/2023 13:02:45 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 22/04/2023 18:43:19 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
+| 22/04/2023 18:47:11 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
+| 22/04/2023 18:47:27 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 22/04/2023 19:31:51 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201902021957" tags="systemConfig">
 <pre>/***
@@ -3736,6 +3862,14 @@ Exponential: O(k^^n^^)</pre>
 
 It will not know some details, but you can add then when you cut and paste with real actual experience etc. But the outline will be well written.</pre>
 </div>
+<div title="prompts" modifier="rvr" created="202304011940" changecount="1">
+<pre>Prompts are the heart of communicating with the AI. You have to be very specific, and often there will be a back and forth to fine tune what you really want. Surprises await you during this phase.
+You can do things like summarize a book:
+* into the top 10 pints
+* a 500 word summary covering the main themes
+* a tabular form highlighting the characters in the novel and what they are like
+* Critique the book based on Jungian psychology and the 4 archetypes.</pre>
+</div>
 <div title="recursion" modifier="rvr" created="202003130357" changecount="1">
 <pre>Recursion is a procedure that has a function that calls it self to solve a problem. 
 A great example is traversing a tree. You traverse the tree calling the next node using the same same function call. The function only completes when there is no more nodes on that path. The function calls are stored on a stack.
@@ -3782,7 +3916,7 @@ Here is the flow of ''supervised learning'':
 #Now put unknown data into trained model
 #Get a response</pre>
 </div>
-<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.excerpts="descr" taggly.sortby="created" taggly.sortorder="desc">
+<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.sortorder="desc" taggly.sortby="created" taggly.excerpts="descr">
 <pre></pre>
 </div>
 <div title="typing" modifier="rvr" created="202301252034" modified="202301252048" changecount="3">
