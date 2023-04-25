@@ -533,51 +533,58 @@ Some great AI resources:
 *[[Bing Chat]]
 </pre>
 </div>
-<div title="AI Fields" modifier="rvr" created="202304221548" modified="202304231531" changecount="19">
-<pre>Here is a chart of where things fit in AI.
-
-&lt;html&gt;&lt;pre&gt;
-                       Computer Science
-                              |
-                      Artificial Intelligence
- Image Processing     |                     |
-                |     |                     |
-                ↓     |                     |
-                Symbolic Learning           Machine Learning ←--(Pattern Recognition)
-                 |            |             |               \
-                 |            |             |                \
-          Robotics    Computer Vision  Statistical Learning   ML types
-                                            |        |            
-                                            |        |      
-                                           NLP   Deep Learning    
-                                                (Neural Networks)
-                                                   |     |     |
-                                                   |     |     |
-                                                Speech  CNN   RNN
-                                                 Recog   |
-                                                         |
-                                                     Computer Vision
-                                                         |
-                                                         |
-                                                   Object Recognition
-&lt;/pre&gt;&lt;/html&gt;
-Check them out:
-* [[Image Processing]]
-* [[Pattern Recognition]]
-* [[Symbolic Learning]]  (Symbolic based.)
-** [[Computer Vision]]
-** [[Robotics]]
-* [[Machine Learning]]  (Data based)
-** [[ML types]]- Un/supervised Learning
-** [[Statistical Learning]]
-*** [[NLP]]
+<div title="AI Fields" modifier="rvr" created="202304221548" modified="202304241947" changecount="24">
+<pre>A bulleted list of some of the main disciplines within the field of AI:
+* Artificial Intelligence
+** [[Machine Learning]]
+*** [[Pattern Recognition]] - not really AI but needed for ML
+*** [[Supervised Learning]] - see [[ML types]]
+*** Classification
+*** Regression
+*** Time Series Analysis
+** [[Unsupervised Learning]] - see [[ML types]]
+*** Clustering
+*** Dimensionality Reduction
+** Reinforcement Learning
+*** Markov Decision Processes
+*** Policy Gradients
+*** Q-Learning
+** [[Statistical Learning]] - this can also fit under &quot;Data Science&quot;
+*** Regression
+*** Clustering ...
+** [[Deep Learning]] 
 *** [[Neural Networks]]
-*** [[Deep Learning]]
-*** [[Speech Recognition]]
-*** [[CNN]]
-*** [[RNN]]
-*** [[Computer Vision]]
-*** [[Object Recognition]]
+*** [[Convolutional Neural Networks|CNN]]
+*** [[Recurrent Neural Networks|RNN]]
+*** Generative Adversarial Networks
+** Transfer Learning
+** Semi-Supervised Learning
+** Active Learning
+** Ensemble Methods
+* [[Natural Language Processing|NLP]]
+** Text Classification
+** Sentiment Analysis
+** Named Entity Recognition
+** Topic Modeling
+** Language Translation
+** [[Speech Recognition]]
+* [[Computer Vision]] - need [[Image Processing]]
+** Image Classification
+** Object Detection
+** Image Segmentation
+** Pose Estimation
+** Video Analysis
+* [[Robotics]] - need [[Image Processing]]
+** Perception
+** Motion Planning
+** Control
+*** Human-Robot Interaction
+* Expert Systems - [[Symbolic Learning]]  (Symbolic based.)
+* Knowledge Representation and Reasoning
+* Planning and Scheduling
+* Decision Support System
+* Search and Optimization
+
 </pre>
 </div>
 <div title="AI background" modifier="rvr" created="202304011921" modified="202304011936" changecount="5">
@@ -829,7 +836,7 @@ merge(config.macros,{
 //}}}
 </pre>
 </div>
-<div title="Image Processing" modifier="RVR" created="202304221601" modified="202304221626" changecount="2">
+<div title="Image Processing" modifier="rvr" created="202304221601" modified="202304241947" changecount="3">
 <pre>Image processing is not really a field of AI, but it is needed for [[Symbolic Learning]], specifically [[Computer Vision]].</pre>
 </div>
 <div title="Index" modifier="rvr" created="202301252030" changecount="1">
@@ -1151,14 +1158,14 @@ A machine will use web-site visits, or queries to change the price.
 !!Amazon Echo
 Uses machine learning to know more about what will ask and want. Learns each time you talk to it. In other words with more data it becomes more accurate.</pre>
 </div>
-<div title="ML types" modifier="rvr" created="201902030020" modified="202304221800" changecount="5">
+<div title="ML types" modifier="YourName" created="201902030020" modified="202304241944" changecount="6">
 <pre>Machine learning can be divided into 3 types.
-*[[supervised learning]] - known labels
-*[[unsupervised learning]] - no labels
-*[[reinforcement learning]]
+*[[Supervised Learning]] - known labels
+*[[Unsupervised Learning]] - no labels
+*[[Reinforcement Learning]]
 See [[labeled data]].</pre>
 </div>
-<div title="Machine Learning" modifier="RVR" created="201902022002" modified="202304221634" changecount="13">
+<div title="Machine Learning" modifier="YourName" created="201902022002" modified="202304241945" changecount="15">
 <pre>[[Introduction to ML]]
 [[ML Using Python]]
 
@@ -1172,10 +1179,10 @@ See [[labeled data]].</pre>
 [[ML examples]]
 [[ML types]]
 [[model]]
-[[reinforcement learning]]
-[[supervised learning]]
+[[Reinforcement Learning]]
+[[Supervised Learning]]
 [[unlabeled data]]
-[[unsupervised learning]]
+[[Unsupervised Learning]]
 </pre>
 </div>
 <div title="MainMenu" modifier="rvr" created="201902021959" modified="202008310544" changecount="4">
@@ -2186,6 +2193,12 @@ config.quickOpenTag.init();
 <div title="RNN" modifier="RVR" created="202304221633" changecount="1">
 <pre>Recurrent Neural Network - remember a limited past.</pre>
 </div>
+<div title="Reinforcement Learning" modifier="rvr" created="201902030041" modified="202304241948" changecount="5">
+<pre>Reinforcement learning is done via feedback.
+Give the machine a book and let it identify it. That is will the person like or dislike the book. Tell the machine if the choice was right or wrong and hopefully next time it'll take a better guess if mistaken.
+
+Computer shows a picture and give a description. A picture of a dog - and it says &quot;cat&quot;. You give that a &quot;nope&quot; or &quot;incorrect&quot; and that it is a &quot;dog&quot;,  the machine learns.</pre>
+</div>
 <div title="RenameTagsPlugin" modifier="MPTW" created="201306162243" modified="201306162244" tags="systemConfig">
 <pre>/***
 |Name:|RenameTagsPlugin|
@@ -2443,6 +2456,23 @@ In statistical learning, the goal is to develop models that can accurately predi
 Statistical learning is particularly useful when the relationship between the input variables and the output variable is complex or nonlinear. It can also be used for feature selection, where the goal is to identify the most important variables for predicting the outcome.
 
 There are many applications, such as finance, marketing, and healthcare.</pre>
+</div>
+<div title="Supervised Learning" modifier="rvr" created="201902030030" modified="202304241947" changecount="15">
+<pre>Supervised learning uses labelled data to train the model. See also [[Unsupervised Learning]].
+You have in our book example...(see [[ML examples]]).
+*[[feature]] - size of the book, an input. There will be many features, like author, pages, cost...
+*[[label]] - is if we like the book or not. This is an output, final result. Could be a book, a magazine, a pamphlet, ...
+Once a machine understands the feature of data, it can apply a [[label]].
+If it knows you like large sized books, it'll know that it should label the book as &quot;liked&quot;.
+Here is the flow of ''supervised learning'':
+#You have known data
+#You apply a ML (machine learning) [[ML Algorithm]].
+#Processes (program runs)
+#Uses a trained model to go thru data
+#Now put unknown data into trained model
+#Get a response
+
+Other examples could be what kind of coin, depending upon weight and dimensions. You train it on coins that are known. Now when you are counting 1000s of coins, a machine can easily sort them, and keep accounting data.</pre>
 </div>
 <div title="Symbolic Learning" modifier="RVR" created="202304221731" changecount="1">
 <pre>Symbolic Learning is at the same graph level as [[Machine Learning]].
@@ -3244,10 +3274,23 @@ merge(config.shadowTiddlers,{
 //}}}
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201902021959" modified="202304231639">
+<div title="Unsupervised Learning" modifier="rvr" created="201902030038" modified="202304241947" changecount="4">
+<pre>Let's say we have a group of people. These people have an age and a number of sick days taken.
+We plot the data and see a cluster of older people taking more sick days and a cluster of younger people taking fewer.
+We &quot;label&quot; one group &quot;healthy&quot; and the other group &quot;unlucky&quot;. These two labels were not assigned at the start, 
+Therefore, we have unsupervised learning because we have unlabelled data.
+
+Here is the flow of ''unsupervised learning'':
+#You have unknown data
+#You apply a ML (machine learning) [[ML Algorithm]].
+#Processes (program runs)
+#Uses a trained model to go thru data - looks for a pattern
+#Now put unknown data into trained model
+#Get a response
+</pre>
+</div>
+<div title="UploadLog" modifier="rvr" created="201902021959" modified="202304241949">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 31/03/2023 23:15:32 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 01/04/2023 21:41:01 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 21/04/2023 13:02:45 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 22/04/2023 18:43:19 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
 | 22/04/2023 18:47:11 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
@@ -3255,7 +3298,9 @@ merge(config.shadowTiddlers,{
 | 22/04/2023 19:31:51 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 22/04/2023 22:49:11 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/04/2023 18:28:07 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 23/04/2023 18:39:48 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 23/04/2023 18:39:48 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 24/04/2023 21:48:22 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 24/04/2023 21:49:09 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201902021957" tags="systemConfig">
 <pre>/***
@@ -3935,12 +3980,6 @@ Example. You want to add up the first 4 numbers (or traverse a graph of 4 nodes)
 #This gets passed back to our first call of ''addup{1, {2,3,4} )'' which adds ''1'' to the recursed answer of ''9'', which returns ''10''.
 There are efficiencies that can be introduced into more complex calculations like the [[knapsack problem]], if a node has a value exceeding some parameter, you can ignore the rest of that path.</pre>
 </div>
-<div title="reinforcement learning" modifier="rvr" created="201902030041" modified="202304221805" changecount="3">
-<pre>Reinforcement learning is done via feedback.
-Give the machine a book and let it identify it. That is will the person like or dislike the book. Tell the machine if the choice was right or wrong and hopefully next time it'll take a better guess if mistaken.
-
-Computer shows a picture and give a description. A picture of a dog - and it says &quot;cat&quot;. You give that a &quot;nope&quot; or &quot;incorrect&quot; and that it is a &quot;dog&quot;,  the machine learns.</pre>
-</div>
 <div title="story example" modifier="YourName" created="202302042053" modified="202302042056" changecount="2">
 <pre>Start off by giving info, like &quot;Tell me a story about three old animals, that escape from a farm.&quot;
 ChatGPT will give a story, it'll probably include a moral.
@@ -3954,23 +3993,6 @@ The more info you give, the more the story will become interesting and more deta
 <div title="summarize anything" modifier="rvr" created="202302042116" modified="202302042117" changecount="2">
 <pre>Ask it to summarize the Canadian Constitution, WW2, the Yukon Gold rush. You can get an article and copy it into ChatGPT and ask it to summarize. Even after the summary you can ask for the top 3 ideas as bullet points, or the top 5 keywords.
 Ask them to explain it like I'm 5 (~ELI5). Or ask it to explain in 30 words, or &quot;Make it simpler.&quot; </pre>
-</div>
-<div title="supervised learning" modifier="rvr" created="201902030030" modified="202304221758" changecount="12">
-<pre>Supervised learning uses labelled data to train the model. See also [[unsupervised learning]].
-You have in our book example...(see [[ML examples]]).
-*[[feature]] - size of the book, an input. There will be many features, like author, pages, cost...
-*[[label]] - is if we like the book or not. This is an output, final result. Could be a book, a magazine, a pamphlet, ...
-Once a machine understands the feature of data, it can apply a [[label]].
-If it knows you like large sized books, it'll know that it should label the book as &quot;liked&quot;.
-Here is the flow of ''supervised learning'':
-#You have known data
-#You apply a ML (machine learning) [[ML Algorithm]].
-#Processes (program runs)
-#Uses a trained model to go thru data
-#Now put unknown data into trained model
-#Get a response
-
-Other examples could be what kind of coin, depending upon weight and dimensions. You train it on coins that are known. Now when you are counting 1000s of coins, a machine can easily sort them, and keep accounting data.</pre>
 </div>
 <div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.sortorder="desc" taggly.sortby="created" taggly.excerpts="descr">
 <pre></pre>
@@ -4006,21 +4028,6 @@ Statically-typed languages
 </div>
 <div title="unlabeled data" modifier="rvr" created="201902030033" modified="201902030038" changecount="2">
 <pre>As opposed to [[labelled data]], unlabelled data is waiting for a label. This is found by analysing the data. See [[unsupervised learning]].</pre>
-</div>
-<div title="unsupervised learning" modifier="rvr" created="201902030038" modified="201902032323" changecount="2">
-<pre>Let's say we have a group of people. These people have an age and a number of sick days taken.
-We plot the data and see a cluster of older people taking more sick days and a cluster of younger people taking fewer.
-We &quot;label&quot; one group &quot;healthy&quot; and the other group &quot;unlucky&quot;. These two labels were not assigned at the start, 
-Therefore, we have unsupervised learning because we have unlabelled data.
-
-Here is the flow of ''unsupervised learning'':
-#You have unknown data
-#You apply a ML (machine learning) [[ML Algorithm]].
-#Processes (program runs)
-#Uses a trained model to go thru data - looks for a pattern
-#Now put unknown data into trained model
-#Get a response
-</pre>
 </div>
 <div title="what AI is" modifier="rvr" created="202302032129" changecount="1">
 <pre>From ChatGPT when asked what AI is:
