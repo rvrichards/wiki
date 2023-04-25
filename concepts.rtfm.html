@@ -533,57 +533,58 @@ Some great AI resources:
 *[[Bing Chat]]
 </pre>
 </div>
-<div title="AI Fields" modifier="rvr" created="202304221548" modified="202304241947" changecount="24">
+<div title="AI Fields" modifier="rvr" created="202304221548" modified="202304251210" changecount="27">
 <pre>A bulleted list of some of the main disciplines within the field of AI:
 * Artificial Intelligence
 ** [[Machine Learning]]
 *** [[Pattern Recognition]] - not really AI but needed for ML
 *** [[Supervised Learning]] - see [[ML types]]
-*** Classification
-*** Regression
-*** Time Series Analysis
-** [[Unsupervised Learning]] - see [[ML types]]
-*** Clustering
-*** Dimensionality Reduction
-** Reinforcement Learning
-*** Markov Decision Processes
-*** Policy Gradients
-*** Q-Learning
-** [[Statistical Learning]] - this can also fit under &quot;Data Science&quot;
-*** Regression
-*** Clustering ...
-** [[Deep Learning]] 
-*** [[Neural Networks]]
-*** [[Convolutional Neural Networks|CNN]]
-*** [[Recurrent Neural Networks|RNN]]
-*** Generative Adversarial Networks
-** Transfer Learning
-** Semi-Supervised Learning
-** Active Learning
-** Ensemble Methods
-* [[Natural Language Processing|NLP]]
-** Text Classification
-** Sentiment Analysis
-** Named Entity Recognition
-** Topic Modeling
-** Language Translation
-** [[Speech Recognition]]
-* [[Computer Vision]] - need [[Image Processing]]
-** Image Classification
-** Object Detection
-** Image Segmentation
-** Pose Estimation
-** Video Analysis
-* [[Robotics]] - need [[Image Processing]]
-** Perception
-** Motion Planning
-** Control
+**** Classification
+**** Regression
+**** Time Series Analysis
+*** [[Unsupervised Learning]] - see [[ML types]]
+**** Clustering
+**** Dimensionality Reduction
+*** Reinforcement Learning
+**** Markov Decision Processes
+**** Policy Gradients
+**** Q-Learning
+*** [[Statistical Learning]] - this can also fit under &quot;Data Science&quot;
+**** Regression
+**** Clustering ...
+*** [[Deep Learning]] 
+**** [[Neural Networks]]
+**** [[Convolutional Neural Networks|CNN]]
+**** [[Recurrent Neural Networks|RNN]]
+**** Generative Adversarial Networks
+**** [[Generative Pre-trained Transformer]] - this is where chatGPT fits.
+*** Transfer Learning
+*** Semi-Supervised Learning
+*** Active Learning
+*** Ensemble Methods
+** [[Natural Language Processing|NLP]]
+*** Text Classification
+*** Sentiment Analysis
+*** Named Entity Recognition
+*** Topic Modeling
+*** Language Translation
+*** [[Speech Recognition]]
+** [[Computer Vision]] - need [[Image Processing]]
+*** Image Classification
+*** Object Detection
+*** Image Segmentation
+*** Pose Estimation
+*** Video Analysis
+** [[Robotics]] - need [[Image Processing]]
+*** Perception
+*** Motion Planning
+*** Control
 *** Human-Robot Interaction
-* Expert Systems - [[Symbolic Learning]]  (Symbolic based.)
-* Knowledge Representation and Reasoning
-* Planning and Scheduling
-* Decision Support System
-* Search and Optimization
+** Expert Systems - [[Symbolic Learning]]  (Symbolic based.)
+** Knowledge Representation and Reasoning
+** Planning and Scheduling
+** Decision Support System
+** Search and Optimization
 
 </pre>
 </div>
@@ -706,10 +707,14 @@ To import the ''Decision Tree'' algorithm, we'll need to:
 *import into the file: ''main.py''
 *the line: ''from sklearn import tree''</pre>
 </div>
-<div title="Deep Learning" modifier="RVR" created="201902032213" modified="202304221627" changecount="3">
+<div title="Deep Learning" modifier="rvr" created="201902032213" modified="202304251227" changecount="5">
 <pre>Deep learning is a subset of [[Machine Learning]]. 
 This includes things like neural networks and speech recognition. It trains itself.
-This is trying to do what the brain does.</pre>
+This is trying to do what the brain does.
+
+For example, we'd recognize a picture of Albert Einstein. But how would a computer recognize that. There are many different ways, essentially we'd have to train to understand what a face is - what is it made up of, etc. As you guess, this can be very complicated. We'd need many images of Albert for the computer to look for patterns in what would make up a picture of Einstein. 
+
+To train a computer we can use [[Neural Networks]]</pre>
 </div>
 <div title="DefaultTiddlers" modifier="rvr" created="201902021959" changecount="1">
 <pre>[[Introduction]]</pre>
@@ -740,6 +745,10 @@ window.onClickTag = function(e) {
 
 //}}}
 </pre>
+</div>
+<div title="Generative Pre-trained Transformer" modifier="rvr" created="202304251156" changecount="1">
+<pre>ChatGTP falls under Comp Sci -&gt; AI -&gt; Deep Learning and uses [[Language Model]] that uses [[Deep Learning]] generate a natural language like text. It is trained on large amounts of text and learns pattersn and relationships between words, phrases, and sentences.
+This makes it useful for chat bots, language translation, and summarization (think books, theses, etc)</pre>
 </div>
 <div title="Greedy Algorithm" modifier="rvr" created="202003130359" modified="202003130544" changecount="4">
 <pre>A ''greedy algorithm'' is one where at each sep (or iteration) you pick some data the is the best choice at that step and stick with it. At subsequent stages, you pick the optimum value at that step.
@@ -973,8 +982,9 @@ First is [[Machine Learning]]
 Second is [[AI]]
 Try out the [[Index]]</pre>
 </div>
-<div title="Introduction to ML" modifier="rvr" created="201902032203" modified="202304221752" changecount="11">
+<div title="Introduction to ML" modifier="rvr" created="201902032203" modified="202304251204" changecount="13">
 <pre>Machine Learning, is for a system to programmatically learn from data. It is ''data-based''. It needs data to learn. Data from the past and new incoming data.
+How does it learn? It uses [[Neural Networks]]
 In essence, it is to try to have the computer find best solutions instead of being directly programmed by a human.
 It is an application of [[AI]], or a subset. It's the computer learning from data.
 There are iterations or steps the computer takes to try and learn from data.
@@ -1800,8 +1810,9 @@ See [[NP completeness]].</pre>
 <div title="NP completeness" modifier="rvr" created="202003130401" changecount="1">
 <pre>The ''traveling salesman'' problem is an NP complete. This is like calculating the best route for trucks to deliver goods to different locations. Add in another dimension, elevation (hills) and maximizing MPG and you can see that things can get complex fast. (Add in toll booths, highway speeds, gas prices in different cities, speed limits...yikes!)</pre>
 </div>
-<div title="Neural Networks" modifier="rvr" created="202304231533" modified="202304231639" changecount="6">
-<pre>Neural Networks are inspired by the human brain. There are many variants [[CNN]], [[LSTMN]], and [[RNN]].
+<div title="Neural Networks" modifier="rvr" created="202304231533" modified="202304251227" changecount="8">
+<pre>Neural Networks fall under [[Deep Learning]] in AI. It is inspired by the human brain. There are many variants [[CNN]], [[LSTMN]], and [[RNN]].
+There will be three general layers. First the input layer and lastly an output layer, which has the answer. In between are many hidden layers as the computer tries to find patterns in the data.
 In the brain a ''neuron'' holds info. In AI a &quot;neuron&quot; holds data 0-&gt;1. 
 Connections in the brain between neurons are called &quot;synapses&quot;, and in AI-NN we call these pathways &quot;functions&quot;.
 We train this system by feeding the model input data and labelling the output. The network can then adjust as it learns by changing the parameters of the system. See example below.
@@ -1824,14 +1835,17 @@ Example: a 12x12 grid of pixels - that displays a number (think medium resolutio
 ** or a &quot;4&quot; has 1 long vertical line and smaller horizontal line and a smaller horiz. line 1/2 way up.
 * when a pattern is identified, this activates a neuron in the 2nd layer.
 * there is also a &quot;weight&quot; assigned from a pixel in one layer to the next.
+* the &quot;weight&quot; is how important that neuron is
 * This weight will be greater than 1, so we need to compress it to fit in each neuron: Sigmoid (σ) function.  
 ** Sigma is old school. Newer methods are easier to train, see ReLU.
 * There is a &quot;bias&quot; parameter which tells the function how large the &quot;activator&quot; is before being meaningful.
+* it allows shifting of sigma (σ) to left or right
 * Each neuron on one layer is connected to every neuron on the next layer!
 * Imagine doing this by hand! Go ahead!
 * Linear algebra comes into play here in calculations. Vectors and matrices and matrix multiplication. 
 * As we feed it data, and label the output, the network can adjust the parameters: weight and bias.
 * This is &quot;back-propagation&quot; and it allows the system to improve.
+* &quot;back-propagation&quot; is used to fine tune the weights and bias to get a right answer. 
 
 See [[CNN]], [[RNN]], and [[LSTMN]]</pre>
 </div>
@@ -3289,9 +3303,8 @@ Here is the flow of ''unsupervised learning'':
 #Get a response
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201902021959" modified="202304241949">
+<div title="UploadLog" modifier="rvr" created="201902021959" modified="202304251227">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 21/04/2023 13:02:45 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 22/04/2023 18:43:19 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
 | 22/04/2023 18:47:11 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
 | 22/04/2023 18:47:27 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -3300,7 +3313,8 @@ Here is the flow of ''unsupervised learning'':
 | 23/04/2023 18:28:07 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/04/2023 18:39:48 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 24/04/2023 21:48:22 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 24/04/2023 21:49:09 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 24/04/2023 21:49:09 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 25/04/2023 14:27:55 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201902021957" tags="systemConfig">
 <pre>/***
@@ -3994,7 +4008,7 @@ The more info you give, the more the story will become interesting and more deta
 <pre>Ask it to summarize the Canadian Constitution, WW2, the Yukon Gold rush. You can get an article and copy it into ChatGPT and ask it to summarize. Even after the summary you can ask for the top 3 ideas as bullet points, or the top 5 keywords.
 Ask them to explain it like I'm 5 (~ELI5). Or ask it to explain in 30 words, or &quot;Make it simpler.&quot; </pre>
 </div>
-<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.sortorder="desc" taggly.sortby="created" taggly.excerpts="descr">
+<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.excerpts="descr" taggly.sortby="created" taggly.sortorder="desc">
 <pre></pre>
 </div>
 <div title="typing" modifier="rvr" created="202301252034" modified="202301252048" changecount="3">
