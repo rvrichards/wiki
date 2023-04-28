@@ -516,7 +516,7 @@ Also see [[AdvancedOptions]]</pre>
 
 <!--TCEJNI_TOPSYLDDIT-->
 <div id="storeArea">
-<div title="AI" modifier="rvr" created="201902032210" modified="202304221741" changecount="11">
+<div title="AI" modifier="rvr" created="201902032210" modified="202304281706" changecount="13">
 <pre>In Computer Science we have a field called Artificial Intelligence. AI is a computer or machine that is used to mimic human behaviour. A systems that can function and reason independently and intelligently. There are many fields within AI, see [[AI Fields]]
 
 It is used to replace humans and the work they do. There are three keys things that any AI program/robot/website should be able to do:
@@ -525,7 +525,7 @@ It is used to replace humans and the work they do. There are three keys things t
 * Problem solving - given some inputs, find a solution
 In summary: Intelligent. And non human, therefore artificial.
 
-A subset of AI is , and within that [[Deep Learning]]. 
+The subset of AI's are many, see [[AI Fields]].
 
 Some great AI resources:
 *[[Machine Learning]] - a subfield of AI
@@ -533,7 +533,7 @@ Some great AI resources:
 *[[Bing Chat]]
 </pre>
 </div>
-<div title="AI Fields" modifier="rvr" created="202304221548" modified="202304251210" changecount="27">
+<div title="AI Fields" modifier="rvr" created="202304221548" modified="202304281722" changecount="28">
 <pre>A bulleted list of some of the main disciplines within the field of AI:
 * Artificial Intelligence
 ** [[Machine Learning]]
@@ -562,7 +562,7 @@ Some great AI resources:
 *** Semi-Supervised Learning
 *** Active Learning
 *** Ensemble Methods
-** [[Natural Language Processing|NLP]]
+** [[Natural Language Processing|NLP]] - NLP
 *** Text Classification
 *** Sentiment Analysis
 *** Named Entity Recognition
@@ -588,11 +588,11 @@ Some great AI resources:
 
 </pre>
 </div>
-<div title="AI background" modifier="rvr" created="202304011921" modified="202304011936" changecount="5">
+<div title="AI background" modifier="rvr" created="202304011921" modified="202304281720" changecount="6">
 <pre>As more information is put into AI it becomes smarter, or more accurate. Currently we have:
 
 !!~ChatGPT - By ~OpenAI
-The ~OpenAI chatbot means that it will engage in a &quot;chat&quot; with you, and it will respond to your [[prompts]]. The &quot;prompts&quot; have to be very specific as it uses this to generate a response. It is a Language model (LLM) and uses generative AI meaning it predicts the next words to to generate and may not produce correct responses. 
+The ~OpenAI chatbot means that it will engage in a &quot;chat&quot; with you, and it will respond to your [[prompts]]. The &quot;prompts&quot; have to be very specific as it uses this to generate a response. It is a Large [[Language Model]] (LLM) and uses generative AI meaning it predicts the next words to to generate and may not produce correct responses. 
 Therefore uses the Human Reinforcement Learning with Human Feedback (RLHF) to get more accurate. It uses NLP (Natural Language Processor) to understand what you are asking. Be sure to check the output for accuracy, as it can &quot;make things up&quot;.
 
 *~ChatGPT3.5 - 175 billion parameters, 570 GB data
@@ -746,9 +746,15 @@ window.onClickTag = function(e) {
 //}}}
 </pre>
 </div>
-<div title="Generative Pre-trained Transformer" modifier="rvr" created="202304251156" changecount="1">
-<pre>ChatGTP falls under Comp Sci -&gt; AI -&gt; Deep Learning and uses [[Language Model]] that uses [[Deep Learning]] generate a natural language like text. It is trained on large amounts of text and learns pattersn and relationships between words, phrases, and sentences.
-This makes it useful for chat bots, language translation, and summarization (think books, theses, etc)</pre>
+<div title="Generative Pre-trained Transformer" modifier="rvr" created="202304251156" modified="202304281736" changecount="4">
+<pre>Generative Pre-trained Transformer (GPT) is a type of [[Language Model]].
+ChatGTP falls under GPT and using Language Models to generate a natural language like text. It is trained on large amounts of text and learns patters and relationships between words, phrases, and sentences.
+
+That is, you have to train GPT using large amounts of data, and it learns to predict what should come before and after it. There are no &quot;labels&quot; used for data (see [[Neural Networks]]), it is pure prediction. But it learns patterns and relationships well, and has a deep understanding of structure and semantics. 
+
+Once it is trained - it can then be fine tuned using specific &quot;labelled&quot; data.
+This makes it useful for chat bots, language translation, and summarization (think books, theses, etc)
+</pre>
 </div>
 <div title="Greedy Algorithm" modifier="rvr" created="202003130359" modified="202003130544" changecount="4">
 <pre>A ''greedy algorithm'' is one where at each sep (or iteration) you pick some data the is the best choice at that step and stick with it. At subsequent stages, you pick the optimum value at that step.
@@ -1003,6 +1009,26 @@ Well, we'll look for the nearest neighbours and go with the majority within a ce
 <div title="LSTMN" modifier="rvr" created="202304231533" modified="202304231535" changecount="3">
 <pre>Long short-term memory network or LSTMN - is a variant of [[Neural Networks]].
 This is good for speech recognition</pre>
+</div>
+<div title="Language Model" modifier="rvr" created="202304281726" modified="202304281738" changecount="3">
+<pre>A language model is a type of statistical model that is used to predict the next words in a sentence. This involves probability of a sequence of words. Language models are used in many parts of AI, and the field does overlap in many areas. It is used in [[NLP]] in many areas.
+It can also be used to determine the quality of machine generated text.
+LM are also used by [[Generative Pre-trained Transformer|GPT]].
+A language model is a statistical model used to predict the likelihood of a sequence of words or phrases in a language, and GPT is a type of language model that uses [[Deep Learning]] techniques to generate natural language text.
+
+Often they are called LLM's or Large Language Models. There are basically two types:
+* Base LLM
+** predicts the next word based on text training data
+** Prompt: What is the capital of France? Reply: - it might return &quot;What is France's largest city?&quot;
+** That is, it does not follow instructions.
+** Can easily output toxic output.
+* Instruction Tuned LLM
+** Most research is here.
+** Tries to follow instructions.
+** Prompt: What is the capital of France? Reply: - &quot;The capital of France is Paris.&quot;
+** Often has fine-tuning using &quot;labelled&quot; data, to follow instructions
+** Therefore can return helpful and harmless info.
+** Will have RLHF: Reinforcement Learning with Human Feedback.</pre>
 </div>
 <div title="LessBackupsPlugin" modifier="MPTW" created="201306162218" modified="201306162244" tags="systemConfig">
 <pre>/***
@@ -3303,10 +3329,8 @@ Here is the flow of ''unsupervised learning'':
 #Get a response
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201902021959" modified="202304251227">
+<div title="UploadLog" modifier="rvr" created="201902021959" modified="202304281740">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 22/04/2023 18:43:19 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
-| 22/04/2023 18:47:11 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | failed |
 | 22/04/2023 18:47:27 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 22/04/2023 19:31:51 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 22/04/2023 22:49:11 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -3314,7 +3338,9 @@ Here is the flow of ''unsupervised learning'':
 | 23/04/2023 18:39:48 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 24/04/2023 21:48:22 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 24/04/2023 21:49:09 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
-| 25/04/2023 14:27:55 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 25/04/2023 14:27:55 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 28/04/2023 19:33:40 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 28/04/2023 19:40:55 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201902021957" tags="systemConfig">
 <pre>/***
@@ -4008,7 +4034,7 @@ The more info you give, the more the story will become interesting and more deta
 <pre>Ask it to summarize the Canadian Constitution, WW2, the Yukon Gold rush. You can get an article and copy it into ChatGPT and ask it to summarize. Even after the summary you can ask for the top 3 ideas as bullet points, or the top 5 keywords.
 Ask them to explain it like I'm 5 (~ELI5). Or ask it to explain in 30 words, or &quot;Make it simpler.&quot; </pre>
 </div>
-<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.excerpts="descr" taggly.sortby="created" taggly.sortorder="desc">
+<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.sortorder="desc" taggly.sortby="created" taggly.excerpts="descr">
 <pre></pre>
 </div>
 <div title="typing" modifier="rvr" created="202301252034" modified="202301252048" changecount="3">
