@@ -521,6 +521,11 @@ Also see [[AdvancedOptions]]</pre>
 
 <!--TCEJNI_TOPSYLDDIT-->
 <div id="storeArea">
+<div title=".bashrc" creator="rvr" modifier="rvr" created="202305011319" modified="202305011327" changecount="2">
+<pre>The ''.bashrc'' file is run automatically for both interactive and non-interactive non-login shells.
+This is where I place the majority of my settings and overrides.
+</pre>
+</div>
 <div title="/bin" creator="rvr" modifier="rvr" created="201102080534" modified="202301031316" changecount="12">
 <pre>The ''/bin'' directory is off the root directory in a [[typical filesystem]]. 
 It contains the [[bash]] shell.
@@ -567,9 +572,10 @@ To see the devices you can:
 *@@cat /proc/devices@@ - list all devices
 See [[typical filesystem]].</pre>
 </div>
-<div title="/etc" creator="rvr" modifier="rvr" created="201012091620" modified="202301031212" changecount="27">
+<div title="/etc" creator="rvr" modifier="rvr" created="201012091620" modified="202305011245" changecount="28">
 <pre>''/etc'' contains numerous text based configuration files. Notable there is the defaults for login called: @@login.defs@@. Some /etc directories to know:
 *''/etc/aliases'' - contains a table to redirect local users.
+*''/etc/bash.bashrc'' - the first config file run for non-login [[shell]]s.
 *''/etc/default'' - contains some defaults, notably for [[useradd]].
 *''/etc/environment'' . . . this file will be used to set [[environment variables]].
 *''/etc/exports'' - contains the directories and permissions that a host is willing to share
@@ -1057,8 +1063,9 @@ This allows for 2,097,152 networks and 254 hosts per network.</pre>
 [[RUID|UID]]
 [[rsync]]</pre>
 </div>
-<div title="Index Other" creator="rvr" modifier="rvr" created="201012091619" modified="201904080200" changecount="25">
-<pre>[[/bin]]
+<div title="Index Other" creator="rvr" modifier="rvr" created="201012091619" modified="202305011237" changecount="26">
+<pre>[[.bashrc]]
+[[/bin]]
 [[/boot]]
 [[/etc]]
 ''/etc/exports''
@@ -1728,10 +1735,8 @@ Linux kernel deals only with UID.</pre>
 <div title="Ubuntu" creator="rvr" modifier="rvr" created="201501221841" changecount="1">
 <pre>The ''Ubuntu'' [[distribution]] is ...</pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201012090524" modified="202302272105">
+<div title="UploadLog" modifier="rvr" created="201012090524" modified="202305011327">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 23/01/2023 18:42:11 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 23/01/2023 19:14:01 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 05/02/2023 19:45:04 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 13/02/2023 17:40:58 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 14/02/2023 12:15:34 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
@@ -1739,7 +1744,9 @@ Linux kernel deals only with UID.</pre>
 | 19/02/2023 17:07:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 20/02/2023 09:44:43 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
 | 27/02/2023 14:18:43 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 27/02/2023 22:05:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 27/02/2023 22:05:57 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 28/04/2023 20:50:49 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |
+| 01/05/2023 15:27:38 | rvr | [[/|http://linux.rtfm.tiddlyspot.com/]] | [[store.cgi|http://linux.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://linux.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201012090514" tags="systemConfig">
 <pre>/***
@@ -2426,16 +2433,20 @@ $ jobs %4
 $ fg 4      #Now the program will be in the foreground
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="bash" creator="rvr" modifier="rvr" created="201510052001" modified="202301031309" changecount="13">
-<pre>The Bash shell or ''~Bourne-Again Shell'' is a unix shell and a command language. Bash has two types of variables:
+<div title="bash" creator="rvr" modifier="rvr" created="201510052001" modified="202305011150" changecount="20">
+<pre>The Bash shell or ''~Bourne-Again ~SHell'' is a unix [[shell]] and a command language. It is a superset of the ''sh'' or shell script. See [[shell script example]].
+Bash has two types of variables:
 *''Global variables'' or ''system variables'' or [[environment variables]] - available in all shells.  
 *''Local variables'' or [[shell variables]] - are only available in that shell.
 Variables are traditionally all uppercase and can be displayed with ''env'' or ''printenv''. Variables can be categorized as: String, Integer, Constant, or Array.
 How to [[create variables]].
 &lt;html&gt;&lt;pre&gt;
-$ echo $SHELL
+#!/bin/bash
+echo $SHELL
 /bin/bash
-&lt;/pre&gt;&lt;/html&gt;</pre>
+&lt;/pre&gt;&lt;/html&gt;
+You can create a ''bash'' script - a file that contains bash commands, and other program-like features like loops and conditionals. The bash shell can run this script file, often created to handle repetitive tasks.
+See [[shell script example]].</pre>
 </div>
 <div title="basic commands" creator="rvr" modifier="rvr" created="201501290357" modified="202302191556" changecount="111">
 <pre>Here is a list of linux commands, see also 
@@ -2505,7 +2516,7 @@ On &amp;rArr; BIOS &amp;rArr; Boot Loader
 Check out [[settings]], as well as [[/boot]]
 </pre>
 </div>
-<div title="builtin" creator="rvr" modifier="rvr" created="201102051724" modified="202302191603" changecount="31">
+<div title="builtin" creator="rvr" modifier="rvr" created="201102051724" modified="202305011217" changecount="33">
 <pre>A ''builtin'' is a command that is literally built in in the shell. The shell runs it. For performance reasons (forking) or because it needs direct access to shell internals.
 You can see which commands are builtin by using the [[type]] command.
 Commands (see [[basic commands]])  that are not builtin have to be loaded and run, and that takes time.
@@ -2527,6 +2538,7 @@ Here are some common ones (Bash shell):
 |pwd|The current working directory|pwd|
 |read|Read from standard input|read -p &quot;Name:&quot; name|
 |[[set]]|Set shell attributes.|set -x|
+|[[shopt]]|Set Bash shell options|shopt -s &lt;option-name&gt;|
 |[[type]]|Determine what type of command something is|type -a ll|
 Want to see more? Check out https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html</pre>
 </div>
@@ -2668,11 +2680,11 @@ Background colors all start with 4, foreground with 3
 *9=--sthrikethrough
 </pre>
 </div>
-<div title="command prompt" creator="rvr" modifier="rvr" created="201501300029" modified="201905230024" changecount="37">
+<div title="command prompt" creator="rvr" modifier="rvr" created="201501300029" modified="202305011232" changecount="38">
 <pre>The variable for the ''command prompt'' is ''$~PS1'' or &quot;Prompt String 1&quot; There are 4 prompt strings. You can also do [[color]]
 The ''$'' is the prompt for a normal user.
 The ''#'' is the prompt for the superuser or [[root]] user.
-You can shorten the path listing by using: (&quot;''~PROMPT_DIRTRIM=3''&quot;) in @@,bashrc@@ (Use export)
+You can shorten the path listing by using: (&quot;''~PROMPT_DIRTRIM=3''&quot;) in @@.bashrc@@ (Use export)
 To set a prompt string:
 &lt;html&gt;&lt;pre&gt;
 # Starting off the prompt is &quot;$&quot;
@@ -3245,11 +3257,32 @@ See also [[magic vars]].   !:1</pre>
 *[[ps examples]]
 *[[diff examples]]</pre>
 </div>
-<div title="executable" creator="rvr" modifier="rvr" created="201611280830" changecount="1">
-<pre>To make the file executable: @@chmod +x &lt;filename.sh&gt;@@
-To run the file enter: ./&lt;filename.sh&gt;</pre>
+<div title="executable" creator="rvr" modifier="rvr" created="201611280830" modified="202305011138" changecount="4">
+<pre>To make the file executable: @@chmod +x &lt;filename.sh&gt;@@  Note: all groups given execute [[permissions]].
+To make the file executable only by user : @@chmod u+x &lt;filename.sh&gt;@@
+To make the file executable only by user : @@chmod 744 &lt;filename.sh&gt;@@
+To run the file enter: ./&lt;filename.sh&gt;
+
+File: bb.sh
+&lt;html&gt;&lt;pre&gt;
+#!/bin/bash
+echo $SHELL
+/bin/bash
+&lt;/pre&gt;&lt;/html&gt;
+Let's see how it goes:&lt;html&gt;&lt;pre&gt;
+$ ls
+-rw-rw-r--  1 fred fred   36 May  1 13:32 bb.sh
+$ chmod u+x bb.sh 
+$ ls
+-rwxrw-r--  1 fred fred   36 May  1 13:32 bb.sh*
+$ ./bb.sh 
+/bin/bash
+&lt;/pre&gt;&lt;/html&gt;
+
+
+</pre>
 </div>
-<div title="export" creator="rvr" modifier="rvr" created="201102070448" modified="202211091138" changecount="17">
+<div title="export" creator="rvr" modifier="rvr" created="201102070448" modified="202304281850" changecount="19">
 <pre>Export makes available variables and functions to other programs and other shells. But only while the shell is active. 
 To always have this set, add to [[profile]].
 &lt;html&gt;&lt;pre&gt;
@@ -3273,6 +3306,7 @@ To survive after reboot, add to [[profile]].
 You can also:
 &lt;html&gt;&lt;pre&gt;
 $ echo &quot;export SOMETHING=$HOME/something&quot; &gt;&gt; ~/.bash_profile
+$ echo &quot;export OPENAI_API_KEY='sk-Z..ge'&quot; &gt;&gt; ~/.bashrc
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
 <div title="ffmpeg" creator="rvr" modifier="rvr" created="201804091514" modified="202301031304" changecount="8">
@@ -3832,14 +3866,16 @@ $ locate fun | grep free                 # Finds all files with fun and then it 
 $ locate index.html | grep tardigrade    # Finds files named &quot;index.html&quot; and looks for &quot;tardigrade&quot; in them
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="login" creator="rvr" modifier="rvr" created="201102051817" modified="201705120119" changecount="13">
+<div title="login" creator="rvr" modifier="rvr" created="201102051817" modified="202305011246" changecount="14">
 <pre>In linux, there are some different logins that can happen. A good description is at [[startup]].
 Typically, for a regular interactive login, these are the steps:
 *When you login, a [[home]] directory is assigned, as well a shell is assigned. This can be seen in the [[/etc/passwd]] file.
 *The first thing that is run is [[/etc/profile]] - which is system wide. Typically this will also source (ie call) the file ''/etc/bash.bashrc''
 *Next, typically is ''$HOME/.bash_profile'' or ''$HOME/.bash_login'' and finally ''$HOME/.profile'' - thats all.
 *Often, these will source ''$HOME/.bashrc''. (See [[profile]])
-To login as a different user. from the command shell: ''su user-name''. You will be prompted for a password.</pre>
+To login as a different user. from the command shell: ''su user-name''. You will be prompted for a password.
+
+See also [[shell]] - because that is what we are logging in to.</pre>
 </div>
 <div title="logs" creator="rvr" modifier="rvr" created="201607010803" modified="202004230729" changecount="11">
 <pre>Log files are stored in txt in directory: @@''/var/log''@@
@@ -3853,19 +3889,19 @@ The line that does this: @@*.*;auth,authpriv.none	 -/var/log/syslog@@
 To look for info in these places, use [[grep]]: @@grep &lt;some-string&gt; /var/log/* @@
 </pre>
 </div>
-<div title="ls" creator="rvr" modifier="rvr" created="201501290704" modified="201605090748" changecount="18">
+<div title="ls" creator="rvr" modifier="rvr" created="201501290704" modified="202305011056" changecount="19">
 <pre>The ''list'' command is ''ls''. There are some [[ls examples]].
 There are many [[flags|ls flags]] that can control the output.
 Here is a typical example and an explanation of the results. Hidden files are not shown with the basic command below.
 &lt;html&gt;&lt;pre&gt;
 $ ls -li
  total 48
- 438035 -rw-rw-r-- 2 csnord csnord 65 Jan 28 20:47 apple.txt
- 438035 -rw-rw-r-- 2 csnord csnord 65 Jan 28 20:47 banana.txt
- 438034 -rw-rw-r-- 1 csnord csnord 0 Jan 28 20:30 carrot.txt
- 438036 lrwxrwxrwx 1 csnord csnord 9 Jan 28 20:43 durian.txt -&gt; apple.txt
- 438043 -rw-rw-r-- 1 csnord csnord 37182 Jan 28 22:40 egg.txt
-#inode  permission lnk owner grp   size  mod-datetime filename
+ 438035  -rw-rw-r-- 2    csnord  csnord  65     Jan 28 20:47  apple.txt
+ 438035  -rw-rw-r-- 2    csnord  csnord  65     Jan 28 20:47  banana.txt
+ 438034  -rw-rw-r-- 1    csnord  csnord  0      Jan 28 20:30  carrot.txt
+ 438036  lrwxrwxrwx 1    csnord  csnord  9      Jan 28 20:43  durian.txt -&gt; apple.txt
+ 438043  -rw-rw-r-- 1    csnord  csnord  37182  Jan 28 22:40  egg.txt
+#inode   permission lnk  owner   grp     size   mod-datetime  filename
 &lt;/pre&gt;&lt;/html&gt;Explain:
 *[[inode]] - the number
 *[[permissions]] - file permissions
@@ -4256,16 +4292,16 @@ $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/some/new/path
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
-<div title="permissions" creator="rvr" modifier="rvr" created="201012091631" modified="202301031318" changecount="53">
+<div title="permissions" creator="rvr" modifier="rvr" created="201012091631" modified="202305011101" changecount="55">
 <pre>Linux uses permissions to determine who has access to what resources. These resources could be directories, files or executables.	There are three types of permissions:
 *''r''ead
 *''w''rite
 *e''x''ecute
-Every file belongs to a [[user]] and a [[group]]. Access is controlled by 
+Every file belongs to a [[user]] and a [[group]]. Access is controlled by these three permission groups:
 *[[user]] - typically the user who created the file
 *[[group]] - the group the resource belongs to
 *[[other]] - any user who is not in the group, aka world.
-Each resource has the following has 10 pieces of information about the permissions, which can be seen when doing a listing (ls -l):
+Each resource has the following has 10 pieces of information about the permissions, which can be seen when doing a listing ([[ls]] -l):
 &lt;html&gt;&lt;pre&gt;
 #1234567890    Owner  Group  FSz  Date         Name
  ----------    ------ ------ ---- ------------ ---------
@@ -4714,15 +4750,23 @@ You may also want to check out:
 *[[settings]]
 *[[software]]</pre>
 </div>
-<div title="shell" creator="rvr" modifier="rvr" created="201102050237" modified="202301031205" changecount="18">
-<pre>The ''shell'' is the command line interface for linux. Often it is the [[bash]] shell that is used. It is configured in a [[startup]] sequence. It stands between you and the linux [[kernel]]. 
+<div title="shell" creator="rvr" modifier="rvr" created="201102050237" modified="202305011245" changecount="31">
+<pre>The ''shell'' is the command line interface for linux. The original shell of unix and unix-like operating systems. It is called the ''Bourne Shell'' and the executable for this was ''.sh''.
+There are many improved shells, built on top of Bourne, like [[bash]] - or ''Bourne Again ~SHell''. :) or zsh, csh, ksh, , ...
+Typically today mosy Linux systems use the [[bash]] shell. It is configured in a [[startup]] sequence. It stands between you and the linux [[kernel]]. See [[shell script example]].
 *A shell is either ''interactive'' or ''non-interactive''
 ** ''interactive shell '' - reads user input typed on a keyboard, runs in the current shell and waits for further instructions.
-** ''non-interactive shell '' - executes commands read from a file in a new subshell. Also runs [[Init]] and [[startup]].
+** ''non-interactive shell '' - executes commands read from a file in a new subshell. 
+*** Non-interactive shells are [[Init]], [[startup]], and &quot;executed shell scripts&quot; - See [[shell script example]]. 
+*** When finished running, you return back to original shell.
+*A shell is either ''login'' or ''non-login''
+** If you launch a new terminal - non-login
+** If you actually login via SSH or a login command - you are a &quot;login&quot; shell
+** Programmatically determine this using the [[shopt]] built-in command.
 *Shells can manage foreground and [[background]] processes, and keep a history of commands. 
 *The [[bash]] shell is one of the more common shells. 
 *To see what shells are available on your system, enter @@cat /etc/shells@@
-*To see what shell you have enter @@echo $SHELL@@
+*To see what shell you have enter @@echo $SHELL@@  or @@which sh@@
 *The shell will have a [[command prompt]] to accept your [[commands]].
 See also:
 *[[console]] and [[terminal]]
@@ -4730,7 +4774,7 @@ See also:
 *[[shell programming]]
 If you have made a change of some new program or information, open a new shell or type: @@source ~/.bashrc@@ to update the current shell.</pre>
 </div>
-<div title="shell commands" creator="rvr" modifier="rvr" created="201102051718" modified="202301041605" changecount="28">
+<div title="shell commands" creator="rvr" modifier="rvr" created="201102051718" modified="202305011120" changecount="32">
 <pre>Shell commands ...  see also [[basic commands]].
 See [[shell programming]] and and [[shell misc]].
 There are [[builtin]] shell commands.
@@ -4738,7 +4782,9 @@ There are [[builtin]] shell commands.
 To write a file like ''install.sh'' the first line should tell what shell to invoke, here is the one for the bash shell: @@#!/bin/bash@@
 To [[debug shell]] commands: @@#!/bin/bash -x@@ 
 You need to make the file [[executable]]: @@chmod +x &lt;filename.sh&gt;@@
-To run the file enter: @@./&lt;filename.sh&gt;@@
+To run a bash script enter complete path or relative path plus any parameters:
+* Relative path: @@./&lt;filename.sh&gt; parm1@@
+* Absolute path: @@/home/fred/temp &lt;filename.sh&gt; parm1@@
 When you want to run a command - linux only looks in the [[path]] variable. To have linux in your current directory, you have to specify it by: @@''./''@@
 See [[shell variables]] and [[quoting]].</pre>
 </div>
@@ -4833,6 +4879,25 @@ cd ~/to/some/directory
 
  See also [[command prompt]].</pre>
 </div>
+<div title="shell script example" creator="rvr" modifier="rvr" created="202305011142" modified="202305011149" changecount="5">
+<pre>You specify what kind of shell script the script is in the first line.
+Here is a ''sh'' or Bourne [[shell]] script:
+&lt;html&gt;&lt;pre&gt;
+#!/bin/sh
+echo &quot;What is your name?&quot;
+read name
+echo 'Using single quotes name is $name'
+echo &quot;Using double quotes name is $name&quot;
+&lt;/pre&gt;&lt;/html&gt;
+Sample run:&lt;html&gt;&lt;pre&gt;
+$ ./a1.sh 
+What is your name?
+fred
+Using single quotes name is $name
+Using double quotes name is fred
+&lt;/pre&gt;&lt;/html&gt;
+See also [[bash]].</pre>
+</div>
 <div title="shell variables" creator="rvr" modifier="rvr" created="201102070415" modified="201605180853" changecount="36">
 <pre>Bash shells don't rigidly define [[environment variables]] vs shell variables, but other shells do. I will artificially separate the two for this wiki.
 ''environment variables'' (aka system variables) are read by the command [[shell]], like Bash, and made shell variables from that point on.
@@ -4905,6 +4970,20 @@ $ ./rob.sh rob
 
 &lt;/pre&gt;&lt;/html&gt;</pre>
 </div>
+<div title="shopt" creator="rvr" modifier="rvr" created="202305011218" modified="202305011229" changecount="5">
+<pre>This [[builtin]] command will allow you to set Bash shell options. shopt = ~SHell ~OPTions.
+Command is simple, you can look all options, turn them on or turn them off.
+* List or print all options: ''shopt -p''
+* List all set (on) options: ''shopt -s''
+* List all unset (off) options: ''shopt -u''
+* Set option on: ''shopt -s &lt;some-option&gt;''
+* Set option off: ''shopt -n &lt;some-option&gt;''
+Some options include:
+* Are we a login shell? - ''login_shell''
+* Can we append to history? - ''histappend''
+* Try to fix errors in &quot;cd&quot; - ''dirspell''
+Settings that you want to make permananet, add them to ''bashrc.'' Format: ''shopt -s histappend''</pre>
+</div>
 <div title="shutdown" creator="rvr" modifier="rvr" created="201102022228" modified="202301031207" changecount="11">
 <pre>There are many ways to shutdown from the command line. Or you can use the GUI. You can also [[suspend]].
 
@@ -4960,31 +5039,28 @@ When an ssh session fires up, there is a handshake. Here are the steps:
 
 The ''ssh-agent'' makes it so we don't have to enter the private key to sign a message.</pre>
 </div>
-<div title="startup" creator="rvr" modifier="rvr" created="201502120326" modified="201612060624" changecount="30">
+<div title="startup" creator="rvr" modifier="rvr" created="201502120326" modified="202305011326" changecount="49">
 <pre>There is a ''startup'' routine when a [[shell]] is invoked. 
-We can have a combo of either: (login OR non-login) AND (interactive OR non-interactive) :
+We can have many different types of shells: (login OR non-login) AND (interactive OR non-interactive) :
 *a regular login - authenticated a user, a [[home]] directory is assigned.
-**It checks: ''/etc/profile'' then the first login shell configuration file in the user's home directory.
-**The choices are: ~/.bash_profile,  ~/.bash_login, and ~/.profile and nothing more(?).
-*a non-login - we spawn a session, first checks: ''/etc/bashrc'' and then  ''~/.bashrc''
+**[[/etc/profile]] is read first
+***''/etc/bash.bashrc'' - the default Ubuntu'' /etc/profile'' sources ''/etc/bash.bashrc''
+**Systems differ, so in order, the OS looks for:
+*** @@~/.bash_profile@@ is looked at next.
+*** @@~/.bash_login@@ follows, and finally
+*** @@~/.profile@@ - currently ib my system, this ''is'' the file.
+*a non-login - we spawn a session, first checks: ''/etc/bashrc'' and then  [[.bashrc]].
 *an interactive session - attached to a terminal. Can force different rc file using ''&amp;dash;-norc'' option.
 **see also [[virtual terminal]]
 *a non-interactive session - not attached to a terminal, looks for environmental variable ''~BASH_ENV''
-Here is the list:
-*configuration in [[/etc]] sets global settings.
-**''/etc/environment'' - this file will be used to set environment variables.
-*initialization files in the users home directory will override global settings. This includes
-**setting the [[command prompt]]
-**command line shortcuts
-**setting defaults like text editor
-**setting the [[path]] to execuatable programs
-The order of the ''startup'' files for the Bash shell is:
-#[[/etc/profile]] is read first
-##''/etc/bash.bashrc'' - the default Ubuntu'' /etc/profile'' sources ''/etc/bash.bashrc''
-#~/.bash_profile is looked at next.
-#~/.bash_login follows, and finally
-#~/.profile 
-Bash will find and process the first of the above files and then ignore the rest.
+The process has two steps:
+* First set global configuration system-wide, typically in [[/etc]].
+** Example: ''/etc/environment'' - this file will be used to set environment variables.
+* Then let users settings override global settings
+** Typically, these initialization files are in the users home directory.
+** Like: setting the [[command prompt]], command line shortcuts, setting defaults like text editor, and adding [[path]] vars.
+
+In my system ''~/.profile'' is run and that calls [[.bashrc]]. The majority of my overrides are in .bashrc.
 The above is done on initial ''startup''. Invoking a shell once you are up and running wil only use the ''~/.bashrc'' profile.
 See also [[environment variables]].
 .</pre>
