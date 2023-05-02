@@ -697,6 +697,55 @@ When presented with a load of data, some ideas:
 *Histogram is a good method. Always label axis.
 *</pre>
 </div>
+<div title="Data Integration" modifier="rvr" created="202305021657" modified="202305021730" changecount="5">
+<pre>Data Integration (DI) is combining multiple data sources into one location.
+Here is an approach to organizing this:
+*''Identify the data sources:'' Organize all the URI for all sources: ie databases, files, APIs, and etc.
+*''Understand the data:'' Know the data formats, types, schemas, and data transformations required to integrate the data.
+*''Design a solution:'' Data Integration means bringing all the data sources together into one location. 
+**[[Data pipelines]]  
+**[[Data warehouses]]
+**[[Data lakes]]
+*''Implement the solution:'' Implement solution using different technologies, ie ETL Tools like Apache Kafka or Spark.
+*''Test and validate:'' Once implemented, test &amp; validate for accuracy and consistency.
+*''Monitor and maintain:'' Monitor and maintain the DI solution to ensure it continues to work effectively and efficiently over time.
+**Data sources can change over time and new ones need to be added.
+</pre>
+</div>
+<div title="Data Science" modifier="rvr" created="202305021648" modified="202305021708" changecount="4">
+<pre>Data science is the use of scientific methods, algorithms, and systems to get insights and knowledge from data. 
+It can be accomplished in many ways, such as [[Machine Learning]], data mining, statistics, and big data analytics, to uncover patterns, insights, and trends for science, business, or other applications.
+
+There are several steps in this process, from initial exploration, collection, analysis, modelling, and maintenance. The steps require cross discipline skills. For example, if in the social science, understanding of the topic will change how you collect &amp; model the data. If the data is in API's, csv, SQL, noSql, or needs transformation requires IT expertise. Model creation, statistics &amp; analytics will require statistical knowledge.
+
+See also [[Data Integration]]</pre>
+</div>
+<div title="Data lakes" modifier="rvr" created="202305021723" modified="202305021729" changecount="3">
+<pre>A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale. You can store your data as-is, that is, in its native format. It can be raw data or structured data, in any format. They are designed to handle large volumes and velocities of data. They can use various technologies, such as S3, Hadoop, or Spark. They can be integrated with other data warehouses, or ETL processes.
+
+Data lakes allow you to store large volumes of data efficiently because it is stored in its native format so its saves time and reduce transformation costs, provides a flexible environment for future data exploration, analysis, and new warehousing knowledge when it arrives on the scene.</pre>
+</div>
+<div title="Data pipelines" modifier="rvr" created="202305021712" modified="202305021721" changecount="4">
+<pre>Data pipelines are used to perform [[Data Integration]]
+A data pipeline is a series of steps to move data from one location to another and transform along the way. 
+This is needed for systems/companies that are data driven. It allows the gathering and processing along the way of large volumes of data.
+Here are some typical stages:
+*Data ingestion - could come various and diverse sources
+*Data processing - once data collected, it may need cleaning, filtering, and transformation
+*Data storage - into a DB, warehouse, or a data lake.
+
+
+Data pipelines can be designed using various tools to automate these steps. Often designed to run in batch, to process large amounts of data off hours, or to have real-time data available.
+</pre>
+</div>
+<div title="Data warehouses" modifier="rvr" created="202305021734" modified="202305021743" changecount="2">
+<pre>A ''Data Warehouse'' is designed for BI activities. It is a centralized repository of historical data gathered from numerous sources that is structured, to be used for reporting, analysis, and decision-making. Transactional databases are designed for capturing and managing real-time data, a data warehouse is optimized for retrieving and analyzing large volumes of historical data.
+
+Data warehouses are typically designed using a dimensional model that organizes data into dimensions (think date, time, location) and facts (think measurable data, like costs, counts, sales...) We can then perform analysis on data at different dimensions because we have the facts at that point.  This dimensional model is optimized for querying and reporting, making it easier for many different parts of a company to use it.
+
+Data warehouses are typically populated using an [[ETL]] process, which involves getting data, massaging it and then loading it into the data warehouse. Data warehouse provides a single and unified view of the data that can be used BI. 
+</pre>
+</div>
 <div title="Decision Trees" modifier="rvr" created="201902041809" modified="201902041931" changecount="5">
 <pre>Decision trees as the simplest of [[classifier]]s.
 
@@ -718,6 +767,9 @@ To train a computer we can use [[Neural Networks]]</pre>
 </div>
 <div title="DefaultTiddlers" modifier="rvr" created="201902021959" changecount="1">
 <pre>[[Introduction]]</pre>
+</div>
+<div title="ETL" modifier="rvr" created="202305021734" changecount="1">
+<pre>ETL is ''Extract, Transform, Load''</pre>
 </div>
 <div title="ExtendTagButtonPlugin" modifier="MPTW" created="201306162218" modified="201306162244" tags="systemConfig">
 <pre>/***
@@ -982,10 +1034,11 @@ setStylesheet(&quot;.ts,.ds { font-style:italic; }&quot;,&quot;instantTimestampS
 //}}}
 </pre>
 </div>
-<div title="Introduction" modifier="rvr" created="201902021959" modified="202302032113" changecount="6">
+<div title="Introduction" modifier="rvr" created="201902021959" modified="202305021646" changecount="7">
 <pre>Computer Science Concepts.
-First is [[Machine Learning]]
-Second is [[AI]]
+First is [[AI]]
+Second is [[Machine Learning]]
+Third is [[Data Science]]
 Try out the [[Index]]</pre>
 </div>
 <div title="Introduction to ML" modifier="rvr" created="201902032203" modified="202304251204" changecount="13">
@@ -1201,8 +1254,8 @@ Uses machine learning to know more about what will ask and want. Learns each tim
 *[[Reinforcement Learning]]
 See [[labeled data]].</pre>
 </div>
-<div title="Machine Learning" modifier="YourName" created="201902022002" modified="202304241945" changecount="15">
-<pre>[[Introduction to ML]]
+<div title="Machine Learning" modifier="rvr" created="201902022002" modified="202305021647" changecount="17">
+<pre>[[Introduction to ML]] - subfield of [[AI]] - see [[AI Fields]]
 [[ML Using Python]]
 
 [[algorithm]]
@@ -3329,18 +3382,18 @@ Here is the flow of ''unsupervised learning'':
 #Get a response
 </pre>
 </div>
-<div title="UploadLog" modifier="rvr" created="201902021959" modified="202304281740">
+<div title="UploadLog" modifier="rvr" created="201902021959" modified="202305021743">
 <pre>| !date | !user | !location | !storeUrl | !uploadDir | !toFilename | !backupdir | !origin |
-| 22/04/2023 18:47:27 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 22/04/2023 19:31:51 | RVR | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 22/04/2023 22:49:11 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/04/2023 18:28:07 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
 | 23/04/2023 18:39:48 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 24/04/2023 21:48:22 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 24/04/2023 21:49:09 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 25/04/2023 14:27:55 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
 | 28/04/2023 19:33:40 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
-| 28/04/2023 19:40:55 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
+| 28/04/2023 19:40:55 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |
+| 02/05/2023 19:08:26 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 02/05/2023 19:29:52 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . | ok |
+| 02/05/2023 19:43:37 | rvr | [[/|http://concepts.rtfm.tiddlyspot.com/]] | [[store.cgi|http://concepts.rtfm.tiddlyspot.com/store.cgi]] | . | [[index.html | http://concepts.rtfm.tiddlyspot.com/index.html]] | . |</pre>
 </div>
 <div title="UploadPlugin" modifier="YourName" created="200808080918" modified="201902021957" tags="systemConfig">
 <pre>/***
@@ -4034,7 +4087,7 @@ The more info you give, the more the story will become interesting and more deta
 <pre>Ask it to summarize the Canadian Constitution, WW2, the Yukon Gold rush. You can get an article and copy it into ChatGPT and ask it to summarize. Even after the summary you can ask for the top 3 ideas as bullet points, or the top 5 keywords.
 Ask them to explain it like I'm 5 (~ELI5). Or ask it to explain in 30 words, or &quot;Make it simpler.&quot; </pre>
 </div>
-<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.sortorder="desc" taggly.sortby="created" taggly.excerpts="descr">
+<div title="systemConfig" modifier="MPTW" created="201306162244" modified="201306162244" taggly.excerpts="descr" taggly.sortby="created" taggly.sortorder="desc">
 <pre></pre>
 </div>
 <div title="typing" modifier="rvr" created="202301252034" modified="202301252048" changecount="3">
