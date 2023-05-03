@@ -263,8 +263,6 @@ Error message and password prompt
 
 <li>comments</li>
 
-<li>Comments</li>
-
 <li>conditionals</li>
 
 <li>console</li>
@@ -560,6 +558,8 @@ Error message and password prompt
 <li>Template Strings</li>
 
 <li>Ternary</li>
+
+<li>test run javascript</li>
 
 <li>this</li>
 
@@ -10529,18 +10529,20 @@ Error message and password prompt
 <div created="20210412055401745" creator="rtfm" modified="20220829161121434" modifier="rtfm" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210323182918501" creator="rtfm" modified="20220623200704996" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/Missing</pre>
+<div created="20210323182918501" creator="rtfm" modified="20230503100654234" modifier="rtfm" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Recent</pre>
 </div>
-<div created="20210323182823189" creator="rtfm" modified="20220627063101618" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210323182823189" creator="rtfm" modified="20230503100458711" modifier="rtfm" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/IsLoggedIn"><pre>no</pre></div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div title="$:/status/UserName"><pre></pre></div>
-<div created="20221015040910950" creator="rtfm" list="Introduction DOM" modified="20221015040910950" modifier="rtfm" title="$:/StoryList">
+<div title="$:/status/UserName">
+<pre>rtfm</pre>
+</div>
+<div created="20230503093410828" creator="rtfm" list="[[error tips]] Object Class [[stringify and parsing]] Index Introduction [[test run javascript]]" modified="20230503110216422" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -11094,8 +11096,8 @@ See also [[call]] - which does not make a copy like ''bind'' does , but simply c
 <div created="20220623100626610" creator="rtfm" modified="20220623101458359" modifier="rtfm" title="Browser Support">
 <pre>Some of the more advanced features from ECMAScript 2015 (aka ES6 or ECMAScript 6) are not available in all browsers. The bottom of the MDN docs will have Browser compatibility tables. See [[Classes on MDN|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes]]</pre>
 </div>
-<div created="20210323051332080" creator="rtfm" modified="20220622100402426" modifier="rtfm" title="Built-in Object">
-<pre>Built-in objects are "baked: into JavaScript. They come without you doing anything. One such built-in is [[Array]]s that I'll cover, but others include ''Boolean'', [[Date]], ''Error'', [[Math]], ''~RegExp'', [[Strings]], ...
+<div created="20210323051332080" creator="rtfm" modified="20221021111552910" modifier="rtfm" title="Built-in Object">
+<pre>Built-in objects are "baked" into JavaScript. They come without you doing anything. One such built-in is [[Array]]s that I'll cover, but others include ''Boolean'', [[Date]], ''Error'', [[Math]], ''~RegExp'', [[Strings]], ...
 
 ''Math'' is a built-in Object, with a ''random()'' :
 
@@ -11435,13 +11437,13 @@ alert(b);    // Will display 9 - "var"  leaks outside scope. Bad var, naughty va
 See [[variables]].
 </pre>
 </div>
-<div created="20210323043236218" modified="20210323043817832" tags="" title="comments">
-<pre>Here is a program with 4 ways of doing comments:
+<div created="20210323043236218" creator="rtfm" modified="20230503100436540" modifier="rtfm" tags="" title="comments">
+<pre>There are 4 ways of commenting:
 
-* The whole line is commented out with douible slash. ''//''
-* Partial line, to EOL is commented out - starting at the double slashes: ''//''
-* Multiple lines are commented out between ''&amp;#47;/* ... */&amp;#47;''
-* Portions of a line can be commented out between ''&amp;#47;/* ... */&amp;#47;''
+* The whole line is commented out with double slash. ''&amp;#47;/''
+* Partial line, to EOL is commented out - starting at the double slashes: ''&amp;#47;/''
+* Multiple lines are commented out between ''&amp;#47;* ... *&amp;#47;''
+* Portions of a line can be commented out between ''&amp;#47;* ... *&amp;#47;''
 
 ```
 // The whole line is a comment
@@ -11450,14 +11452,6 @@ console.log(a);   // Partial line to EOL is comment
    will span
    multiple lines */
 console.log( /* --ignored --*/ b);
-</pre>
-</div>
-<div created="20210408054050286" modified="20210408054249132" title="Comments">
-<pre>Comments are done by:
-
-* Single line: ''&amp;#47;/''
-* Multiple lines: ''/*   ...   */''
-
 </pre>
 </div>
 <div created="20210409051311902" creator="rtfm" modified="20220831151411759" modifier="rtfm" title="conditionals">
@@ -12106,7 +12100,7 @@ Support for Emmet snippets and expansion is built right into Visual Studio Code,
 
 See [[linting]].</pre>
 </div>
-<div created="20210408052524199" modified="20210408053543333" title="error tips">
+<div created="20210408052524199" creator="rtfm" modified="20230503110438151" modifier="rtfm" title="error tips">
 <pre>There are some real gotchas with JavaScript. Here are the ones I know:
 
 * JavaScript is case-sensitive.
@@ -12115,6 +12109,8 @@ See [[linting]].</pre>
 ** ''console.log()'' is great for debugging. It's in the ...  console!
 * Order is important. If you have one file defining a fn and another using a fn, the file defining a function must come before!
 * Spelling is important, there is no spell check, just rolls a long 
+* You can print (debug) ''Objects'' using ''console.dir''
+** `console.dir(data, {depth: null, colors: true})`
 
 </pre>
 </div>
@@ -12701,11 +12697,13 @@ console.log("hello, world!", "goodbye cruel world!");
 And the alert will appear on the command line.
 </pre>
 </div>
-<div created="20210323043843774" modified="20210325040734905" tags="" title="HTML TAGS">
+<div created="20210323043843774" creator="rtfm" modified="20230503100529363" modifier="rtfm" tags="" title="HTML TAGS">
 <pre>THere are some HTML tags (no spaces between &amp; and #):
 
 * ''/'' - Forward Slash - use ''&amp; #47;''
 * ''&amp;#96; ''- Backtick - use ''&amp; #96;''
+
+See [[tips]].
 </pre>
 </div>
 <div created="20220614140022761" creator="rtfm" modified="20220614140841674" modifier="rtfm" title="HTMLCollection">
@@ -12758,7 +12756,7 @@ let app = ( function () {
 The return is fudged - often a [[Function]] is returned! This is the value of an ''IIFE'', it creates a [[closure]].
 </pre>
 </div>
-<div created="20210408053857317" creator="rtfm" modified="20220613093429873" modifier="rtfm" title="Index">
+<div created="20210408053857317" creator="rtfm" modified="20230503100619110" modifier="rtfm" title="Index">
 <pre>[[Introduction]]
 
 Organized Alphabetically:
@@ -12768,9 +12766,11 @@ Organized Alphabetically:
 * IndexKO
 * IndexPT
 * IndexUZ
-* [[Other]]</pre>
+* [[Other]]
+
+Formatting [[tips]].</pre>
 </div>
-<div created="20210408054032131" creator="rtfm" modified="20220828075656571" modifier="rtfm" title="IndexAE">
+<div created="20210408054032131" creator="rtfm" modified="20230503100642919" modifier="rtfm" title="IndexAE">
 <pre>Here is the [[Index]] of A to E:
 
 * [[add, remove, toggle styles|DOM classes on an element]]
@@ -12797,7 +12797,7 @@ Organized Alphabetically:
 * [[Constructor Function]]
 * [[conventions]]
 * [[conversions]]
-* [[Comments]]
+* [[comments]]
 * [[Data Types]]
 * [[Default Parameter]]s
 * [[Destructuring Arrays]]
@@ -12963,7 +12963,7 @@ Because Webpack has a module bundler, we can use [[modules]].</pre>
 
 A ''class object'' is a variable that is on the [[Class]].  That means if we had a Bike class variable of "color", then every instance of Bike will have the same color!</pre>
 </div>
-<div created="20210323042606688" creator="rtfm" modified="20220906105533218" modifier="rtfm" tags="" title="Introduction">
+<div created="20210323042606688" creator="rtfm" modified="20230503102202711" modifier="rtfm" tags="" title="Introduction">
 <pre>JavaScript is used in modern web browsers.
 
 Check out the [[Index]].
@@ -12972,6 +12972,7 @@ Some places of interest:
 
 * [[IDE]] - and setup
 * [[how it works]]
+* [[test run javascript]] - test yer code.
 * [[Data Types]]
 * [[Strings]]
 * [[variables]]
@@ -13413,7 +13414,7 @@ age *= 2    // take age and multiply by 2
 age /= 4    // take age and divide by 4
 ```</pre>
 </div>
-<div created="20210409050136115" creator="rtfm" modified="20220904192110819" modifier="rtfm" title="Object">
+<div created="20210409050136115" creator="rtfm" modified="20230503110710145" modifier="rtfm" title="Object">
 <pre>Objects can hold have methods and properties that hold values (key-data pairs), which can be many of the different [[Data Types]] .  In the [[DOM]] there is also a [[Window Object]].
 
 See also native [[Javascript Objects]].
@@ -13473,6 +13474,8 @@ The ''this'' refers to the current object. It is called a method because it is a
 See [[Passing Objects to Functions]].
 
 See [[Merge Objects]];
+
+To debug Objects - use ''console.dir'' - see [[error tips]].
 </pre>
 </div>
 <div created="20220622084514294" creator="rtfm" modified="20220622085847989" modifier="rtfm" title="Object methods">
@@ -14450,6 +14453,19 @@ let stat = data.isPositive ? 'positive.png' : 'negative.png';
 
 </pre>
 </div>
+<div created="20230503094022760" creator="rtfm" modified="20230503102123466" modifier="rtfm" title="test run javascript">
+<pre>You can test run javascript files in many different ways.
+
+* Call from an HTML file - see [[run javascript]]. 
+* Use Node.js - it can run a server to test javascript from the CLI.
+** Node is a runtime environment for executing JavaScript code.
+** From CLI run: ''node filename.js''
+** See: https://node.tiddlyhost.com/
+* Use an IDE - like VSCode.
+** VSCode terminal run: ''node filename.js''
+* Use console that comes with browser "developer tools"
+** See [[dev tools]]</pre>
+</div>
 <div created="20210323181958707" creator="rtfm" modified="20220614084656776" modifier="rtfm" tags="" title="this">
 <pre>The ''this'' keyword is used to indicate the current ''instance'' of an object.
 
@@ -14500,10 +14516,12 @@ Details:
 
 See [[call]].</pre>
 </div>
-<div created="20220828131424570" creator="rtfm" modified="20220828131514727" modifier="rtfm" tags="" title="tips">
+<div created="20220828131424570" creator="rtfm" modified="20230503100546845" modifier="rtfm" tags="" title="tips">
 <pre>Tips for making fancy things. Nice Vue.
 
-@@font-size:2em;color:red; Large and in Red. @@</pre>
+@@font-size:2em;color:red; Large and in Red. @@
+
+See [[HTML TAGS]].</pre>
 </div>
 <div created="20210409052130047" creator="rtfm" modified="20220830191522494" modifier="rtfm" title="truthy or falsy">
 <pre>Things that are ''falsy'': false, 0, "" (all empty strings), [[null]], [[undefined]], NaN

@@ -10158,8 +10158,10 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div title="$:/status/UserName"><pre></pre></div>
-<div created="20221109082744002" creator="rtfm" list="nvm module [[global object]] package.json definitions [[Index N-S]] Index [[Index G-M]] npm [[npm install]] [[npm init]]" modified="20221109112532284" modifier="rtfm" title="$:/StoryList">
+<div title="$:/status/UserName">
+<pre>rtfm</pre>
+</div>
+<div created="20230503101331526" creator="rtfm" list="npm Introduction definitions Index [[How Node Works]] [[Index G-M]] nvm [[install node via nvm]]" modified="20230503103841760" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10493,8 +10495,8 @@ $ nvm alias default node   // Bonus command
 
 ```</pre>
 </div>
-<div created="20210228090927141" creator="rtfm" modified="20221109104542389" modifier="rtfm" tags="" title="Introduction">
-<pre>Node wiki - basics to intermediate.  
+<div created="20210228090927141" creator="rtfm" modified="20230503102531182" modifier="rtfm" tags="" title="Introduction">
+<pre>Node wiki - basics to intermediate.  See [[Index]].
 
 Node is an open source [[asynchronous]]  [[runtime]] environment for executing JavaScript code outside a browser. It is [[event]] driven, single threaded and therefore very efficient. It is not a programming language. It is (repeat after me) ''a runtime environment for executing JavaScript code''. There are many open source libraries to choose from.
 
@@ -10504,6 +10506,7 @@ Originally node was the JS Engine for the Chrome browser (called v8). He wrapped
 
 Check out: 
 
+* [[nvm]]
 * [[definitions]]
 * [[How Node Works]] 
 * [[Install Node]]
@@ -10511,12 +10514,7 @@ Check out:
 * [[Create simple Node Program]]
 * [[Simple Node CLI Program ]] - with node dependencies
 
-Index:
-
-* [[Index A-F]]
-* [[Index G-M]]
-* [[Index N-S]]
-* [[Index T-Z]]</pre>
+</pre>
 </div>
 <div created="20210306063615739" creator="rtfm" modified="20221109105025604" modifier="rtfm" title="module">
 <pre>''Modules'' is an important concept of node. Think of a module as something you create or import as a javascript file or library.
@@ -10606,9 +10604,12 @@ Goodbye cruel world!
 
 ```</pre>
 </div>
-<div created="20220909172034094" creator="rtfm" modified="20221109111954487" modifier="rtfm" title="npm">
+<div created="20220909172034094" creator="rtfm" modified="20230503103819360" modifier="rtfm" title="npm">
 <pre>''npm'' is a package manager for the JavaScript programming language.
 It is the default package manager for the Node.js. Do you have it? Try running `npm -v`. 
+
+It is recommended to use [[nvm]] up update node. However, if you must update via "npm" you can use:  `npm install -g npm@latest`
+
 
 When setting up code from Github, you do not save the the ''/node_modules'' directory as it has 1000s of entries. You simply run the [[package.json]]  file by executing: 
 
@@ -10649,19 +10650,18 @@ Node will install modules into: ''/node_modules''
 
 </pre>
 </div>
-<div created="20210306061352560" creator="rtfm" modified="20221027203452233" modifier="rtfm" title="nvm">
+<div created="20210306061352560" creator="rtfm" modified="20230503104225336" modifier="rtfm" title="nvm">
 <pre>Node Version Manager - nvm is used to run multiple copies of node. To find the latest version run: `nvm -v`
 
 """
 Find the latest nvm version number? https://github.com/nvm-sh/nvm
 What is it used for? To manage multiple active Node.js versions.
 What node versions do I have? `nvm ls`
-How do I install new Nodes? `nvm install &lt;node&gt;`  ( &lt; node&gt; ie ''v18.2.0'')
-How do I install the latest Node ? `nvm install node` 
-Better yet, go to [[install node via nvm]]
+How do I install new Nodes? goto [[install node via nvm]].
+You can use [[npm]] to install, but ''nvm'' is better.
 """
 
-''nvm'' allows you to quickly install and use different versions of node via the command line.
+''nvm'' allows you to quickly install and use different versions of node via the command line. This is the way.
 
 ```
 $ nvm ls
@@ -10675,9 +10675,7 @@ $ nvm ls
 	lts/argon -&gt; v4.9.1 (-&gt; N/A)
 	lts/boron -&gt; v6.17.1 (-&gt; N/A)
 	...
-```
-
-See also [[install node via nvm]]</pre>
+```</pre>
 </div>
 <div created="20220604193044589" creator="rtfm" modified="20220604193052970" modifier="rtfm" tags="" title="PAAS">
 <pre>Platform as a Service.
