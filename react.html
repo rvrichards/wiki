@@ -195,6 +195,10 @@ Error message and password prompt
 
 <li>App.js</li>
 
+<li>basic development</li>
+
+<li>basic development Firebase</li>
+
 <li>basic start</li>
 
 <li>children</li>
@@ -334,6 +338,8 @@ Error message and password prompt
 <li>passing data up</li>
 
 <li>props</li>
+
+<li>React Native</li>
 
 <li>react tools</li>
 
@@ -10315,8 +10321,10 @@ JSX
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div title="$:/status/UserName"><pre></pre></div>
-<div created="20221209174420006" creator="rtfm" list="[[conditional content]] key" modified="20221209194656447" modifier="rtfm" title="$:/StoryList">
+<div title="$:/status/UserName">
+<pre>rtfm</pre>
+</div>
+<div created="20230513173033941" creator="rtfm" list="Introduction Tutorial [[basic development]] [[basic development Firebase]] [[basic start]] JSX" modified="20230513182645890" modifier="rtfm" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
@@ -10511,6 +10519,124 @@ What is curious is what the heck is returned above? It is [[JSX]]. And it's ok.
 This file at the bottom should have an ''export default App;'' so that it can be grabbed by the App element in  [[index.js]].
 
 See also [[function]].</pre>
+</div>
+<div created="20230513173136468" creator="rtfm" modified="20230513204121308" modifier="rtfm" title="basic development">
+<pre>The steps for basic development of a React webapp hooked to a db. For this I use VSCode and for the db Firebase. Aftewr this, the nest step: [[basic development Firebase]]
+
+* Create directory: `~/code/react/app/first`
+* In directory run: `npx create-react-app .`
+* If its not there - get Firebase SDK, run: npm install firebase
+* Run app to see if all is well: `npm start`  (opens up  http://localhost:3000/)
+* In Firebase, create a new Project
+** On the Welcome page click `&lt;/&gt;` to specify a webapp
+** Register the App name, like "SampleApp"
+** There is Firebase SDK code - you'll add to project: `src/firebase.js`
+** Also create folder/file: `pages/home.jsx`
+** This code has your project info.
+** Click on ''Continue to console''
+* From dashboard click ''Build &gt; Firestore Database''
+** You should see "Cloud Firestore" 
+** Click the "Create database" button.
+** Select ''Start in test mode''
+** Select server location
+* Make files like below, and run to test code.
+
+File should look like ''App.js'':
+
+```
+import './App.css';
+import Home from "./pages/home"
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;Home/&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+```
+
+And file ''home.jsx'':
+
+```
+import React from 'react'
+
+export default function home() {
+  return (
+    &lt;div&gt;Hello, World!&lt;/div&gt;
+  )
+}
+```
+
+Finally file ''firebase.js'':
+
+```
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "@firebase/firestore";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA8e...",
+  ...
+  appId: "1:357947..."
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+export const firestore = getFirestore(app);
+```
+
+Next step - change the code to hit the db.  [[basic development Firebase]].
+</pre>
+</div>
+<div created="20230513182650876" creator="rtfm" modified="20230513205032468" modifier="rtfm" title="basic development Firebase">
+<pre>Once you have code working in [[basic development]], we are ready to save to Firebase. Here a few important points:
+
+* we need ''firesbase'' to access SDK
+* we import ''addDoc, collection'' because its a !~NoSql db.
+* function ''addDoc'' adds to the Firestore db.
+* the code: `&lt;input type="text" ref={messageRef} /&gt;` is key.
+
+File: ''home.jsx'':
+
+```
+import React, { useRef } from 'react'
+import { firestore } from "../firebase"
+import { addDoc, collection } from "@firebase/firestore"
+
+export default function Home() {
+  const messageRef = useRef();
+  const ref = collection(firestore, "messages");
+
+  const handleSave = async(e) =&gt; {
+    e.preventDefault();
+    console.log(messageRef.current.value); 
+
+    let data = {
+        message:messageRef.current.value,
+    }
+
+    try {
+        addDoc(ref, data);
+    } catch (e) {
+        console.log(e);
+    }
+  };
+  return (
+    &lt;div&gt;
+        &lt;form onSubmit={handleSave}&gt;
+            &lt;label&gt;Enter data&lt;/label&gt;
+            &lt;input type="text" ref={messageRef} /&gt;
+            &lt;button type="submit"&gt;Save&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+  );
+}
+
+```
+
+</pre>
 </div>
 <div created="20221014144237810" creator="rtfm" modified="20221015034905948" modifier="rtfm" title="basic start">
 <pre>Basic React Program development can be followed in [[Tutorial]]. An [[example file 1]] will get us going. A few points here:
@@ -11583,7 +11709,7 @@ A few things to note here:
 
 </pre>
 </div>
-<div created="20210316042112719" creator="rtfm" modified="20221019192439160" modifier="rtfm" tags="" title="Introduction">
+<div created="20210316042112719" creator="rtfm" modified="20230502190759287" modifier="rtfm" tags="" title="Introduction">
 <pre>React is Front End (UI or "view") library for building User Interfaces. It does this via reusable UI [[Component]]s. The main thing is that it can inject dynamic content into our apps. React uses a [[declarative approach]].
 
 React doesn't have to be used - it just makes it easier to do complex tasks. You can focus more by using React libraries to make [[Component]]s which makes it all easier. Therefore - a web page is HTML+CSS+Javascript. React puts these into a component and give nice shortcuts to ease coding complexity.
@@ -11604,7 +11730,7 @@ To dig into React, here is a list:
 * Working with [[api and data]].
 * Of course, the [[Index]].
 
-Note: "React Native" is different - it is for mobile apps.</pre>
+Note: "[[React Native]]" is different - it is for mobile apps.</pre>
 </div>
 <div created="20221110142512299" creator="rtfm" modified="20221110143400715" modifier="rtfm" title="JavaScript">
 <pre>JavaScript (aka js) is a programming language of the web along with HTML and CSS. It is:
@@ -12102,6 +12228,13 @@ function Fruit(props) {
 
 See [[data passing]].</pre>
 </div>
+<div created="20230502190912637" creator="rtfm" modified="20230503093317005" modifier="rtfm" title="React Native">
+<pre>React Native
+
+Do you have? ''react-native -v''
+
+To install: '' npm install -g react-native-cli''</pre>
+</div>
 <div created="20221013151242679" creator="rtfm" modified="20221019191019241" modifier="rtfm" title="react tools">
 <pre>There are great dev tools for react, Check out "React Developer Tools" as an extension for brave/firefox/chrome. React sites will show an icon in top RH corner. Look for a "component" tab. 
 
@@ -12349,11 +12482,12 @@ See also [[testing]]
 
 """</pre>
 </div>
-<div created="20221014190013730" creator="rtfm" modified="20221019193149710" modifier="rtfm" title="Tutorial">
+<div created="20221014190013730" creator="rtfm" modified="20230513173129484" modifier="rtfm" title="Tutorial">
 <pre>This is like a tutorial, a series of steps to using React that bring in more complex features each step. If you already have basics, skip right to [[create react app]].
 
 * [[basic start]]
 ** [[example file 1]]
+** [[basic development]]
 * [[add babel]]
 ** [[example file 2]]
 * [[JSX]] - to add more power
